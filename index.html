@@ -5,7 +5,7 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="https://hubin97.github.io">
   <title>个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,9 +16,9 @@
   
   <meta property="og:type" content="website">
 <meta property="og:title" content="个人博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="https://hubin97.github.io/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="article:author" content="青空|隐逸">
+<meta property="article:author" content="青空|逸隐">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
@@ -65,7 +65,7 @@
 			<img src="/img/tuzi.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-			<h1 class="header-author"><a href="/">青空|隐逸</a></h1>
+			<h1 class="header-author"><a href="/">青空|逸隐</a></h1>
 		</hgroup>
 		
 
@@ -145,7 +145,7 @@
 				</a>
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">青空|隐逸</h1>
+			  <h1 class="header-author js-header-author">青空|逸隐</h1>
 			</hgroup>
 			
 			
@@ -282,6 +282,99 @@
 
 
   
+    <article id="post-动态表单" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2018/03/28/%E5%8A%A8%E6%80%81%E8%A1%A8%E5%8D%95/" target="_blank">动态表单</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2018/03/28/%E5%8A%A8%E6%80%81%E8%A1%A8%E5%8D%95/" class="archive-article-date">
+        <time datetime="2018-03-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-28</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="动态表单"><a href="#动态表单" class="headerlink" title="动态表单"></a>动态表单</h1><h3 id="一-需求效果展示"><a href="#一-需求效果展示" class="headerlink" title="(一) 需求效果展示"></a>(一) 需求效果展示</h3>   <img src="https://github.com/hubin97/HBDynamicForms/blob/master/HBDynamicForms/表单效果图.gif" width=300 />
+
+<h3 id="二-Sample-code完整编译"><a href="#二-Sample-code完整编译" class="headerlink" title="(二) Sample code完整编译"></a>(二) Sample code完整编译</h3><p>   HBDynamicForms(地址:<a href="https://github.com/hubin97/HBDynamicForms)拉取代码后,终端进入项目当前文件夹下执行" target="_blank" rel="noopener">https://github.com/hubin97/HBDynamicForms)拉取代码后,终端进入项目当前文件夹下执行</a> $pod install</p>
+<h3 id="三-Sample-code目录分析"><a href="#三-Sample-code目录分析" class="headerlink" title="(三) Sample code目录分析"></a>(三) Sample code目录分析</h3>   <img src="https://github.com/hubin97/HBDynamicForms/blob/master/HBDynamicForms/samplecode目录分析.png" width=300 />
+
+<h3 id="四-Sample-code主要框架"><a href="#四-Sample-code主要框架" class="headerlink" title="(四) Sample code主要框架"></a>(四) Sample code主要框架</h3><p>IQKeyboardManager:IQKeyboardManager键盘管理工具是iOS开发过程中时常使用的一个第三方库，能够无污染的嵌入到项目开发过程中而不影响代码本身逻辑. GitHub链接: <a href="https://github.com/hackiftekhar/IQKeyboardManager" target="_blank" rel="noopener">https://github.com/hackiftekhar/IQKeyboardManager</a></p>
+<p>MJExtension: MJExtension是一套字典和模型之间互相转换的超轻量级框架. GitHub链接: <a href="https://github.com/CoderMJLee/MJExtension" target="_blank" rel="noopener">https://github.com/CoderMJLee/MJExtension</a></p>
+<p>SVProgressHUD:一款轻量级的 iOS 第三方控件, 用于显示任务加载时的动画, 非常轻便, 容易使用. 相对MBProgressHUD来说,功能上偏少一些,可定制差一些. GitHub链接: <a href="https://github.com/SVProgressHUD/SVProgressHUD" target="_blank" rel="noopener">https://github.com/SVProgressHUD/SVProgressHUD</a></p>
+<p>当然了, 此案例中的部分框架也是完全可以由大神ibireme的YYKit去代替的,并且可能功能优化上会有更大提升.这里暂未做尝试. GitHub链接: <a href="https://github.com/ibireme/YYKit" target="_blank" rel="noopener">https://github.com/ibireme/YYKit</a></p>
+<p>GCPlaceholderTextView可用UITextView占位分类”UITextView+Placeholder.h”替换,应该更优化合理.(<a href="https://github.com/devxoul/UITextView-Placeholder" target="_blank" rel="noopener">https://github.com/devxoul/UITextView-Placeholder</a>)</p>
+<h4 id="Podfile文件导入框架如下"><a href="#Podfile文件导入框架如下" class="headerlink" title="Podfile文件导入框架如下:"></a>Podfile文件导入框架如下:</h4><figure class="highlight obj-c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> target <span class="string">'HBDynamicForms'</span> <span class="keyword">do</span></span><br><span class="line">  # Uncomment the next line <span class="keyword">if</span> you<span class="string">'re using Swift or would like to use dynamic frameworks</span></span><br><span class="line"><span class="string">  # use_frameworks!</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  # Pods for HBDynamicForms</span></span><br><span class="line"><span class="string">  pod '</span>IQKeyboardManager<span class="string">'</span></span><br><span class="line"><span class="string">  pod '</span>SDWebImage<span class="string">'</span></span><br><span class="line"><span class="string">  pod '</span>SVProgressHUD<span class="string">'</span></span><br><span class="line"><span class="string">  pod '</span>TZImagePickerController<span class="string">'</span></span><br><span class="line"><span class="string">  pod '</span>BaiduMapKit<span class="string">'</span></span><br><span class="line"><span class="string">  pod '</span>MJExtension<span class="string">'</span></span><br><span class="line"><span class="string">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="五-Sample-code结构分析"><a href="#五-Sample-code结构分析" class="headerlink" title="(五) Sample code结构分析"></a>(五) Sample code结构分析</h3><h4 id="Model声明"><a href="#Model声明" class="headerlink" title="Model声明"></a>Model声明</h4><figure class="highlight obj-c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 标题 */</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *title;</span><br><span class="line"><span class="comment">/** 值 */</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *value;</span><br><span class="line"><span class="comment">/** 是否为必填 必选:YES  */</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">BOOL</span> isNotOptional;</span><br><span class="line"><span class="comment">/** 拍照数量 */</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">NSUInteger</span> fileNum;</span><br></pre></td></tr></table></figure>
+<p>当然了,如果页面交互逻辑比较复杂的话,可能会延伸其他的一些附加属性. 如collection布局分section和item模型,然后内部牵涉段的一些操作(eg:折叠/展开,添加/删除等…),item同table一致,也会区分样式布局(根据需要自定义,或仅显示,或可输入,或可选择,或相互关联等…)</p>
+<h4 id="Cell样式"><a href="#Cell样式" class="headerlink" title="Cell样式"></a>Cell样式</h4>   <img src="https://github.com/hubin97/HBDynamicForms/blob/master/HBDynamicForms/cell自定义样式.png" width=300 />
+
+<h4 id="Controller交互"><a href="#Controller交互" class="headerlink" title="Controller交互"></a>Controller交互</h4><p>   案例中交互事件触发多用block处理,cellForRowAtIndexPath代理处较为冗余臃肿,待后续优化.</p>
+<p>   项目中数据较为简单(暂定为20项以内)以plist配置(repairOrder.plist)稍显直观,其实plist相当于数据模型组建的数据源. (注意:主要原因5-&gt;其他原因的动态变化,需要重新拉取段模型)</p>
+<p>   尽量减少大量数据的处理,如果无法避免,则此时则不再适用plist方式配置. 所以尽可能本地化数据,或是找到规律在代码中枚举或者选用其他方式构建数据源将是不错的选择.</p>
+<p>   另外如果需求合适也可选用XLForm. GitHub链接: <a href="https://github.com/xmartlabs/XLForm" target="_blank" rel="noopener">https://github.com/xmartlabs/XLForm</a></p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2018/03/28/%E5%8A%A8%E6%80%81%E8%A1%A8%E5%8D%95/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
 
 
@@ -292,7 +385,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018-2020 <a href="http://yoursite.com/" target="_blank">青空|隐逸</a>
+    		&copy; 2018-2020 <a href="https://hubin97.github.io/" target="_blank">青空|逸隐</a>
     	</div>
       	<div class="footer-right">
 			
