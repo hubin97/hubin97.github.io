@@ -97,8 +97,6 @@
 				
 					<a class="jianshu" href="https://www.jianshu.com/u/3648954cc2ec" title="简书" target="_blank"><i class="icon-jianshu"></i></a>
 				
-					<a class="cocochina" href="http://www.cocoachina.com/bbs/u.php?uid=400748" title="subNav.title.cocochina" target="_blank"><i class="icon-cocochina"></i></a>
-				
 			</div>
 		
 			
@@ -151,8 +149,6 @@
 						<a class="github" target="_blank" href="https://github.com/hubin97" title="GitHub"><i class="icon-github"></i></a>
 			        
 						<a class="jianshu" target="_blank" href="https://www.jianshu.com/u/3648954cc2ec" title="简书"><i class="icon-jianshu"></i></a>
-			        
-						<a class="cocochina" target="_blank" href="http://www.cocoachina.com/bbs/u.php?uid=400748" title="subNav.title.cocochina"><i class="icon-cocochina"></i></a>
 			        
 				</div>
 			</nav>
@@ -298,13 +294,9 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="一-需求效果展示"><a href="#一-需求效果展示" class="headerlink" title="(一) 需求效果展示"></a>(一) 需求效果展示</h3><!--   <img src="动态表单/表单效果图.gif" width=300 />
--->
-<p><img src="/.io//%E8%A1%A8%E5%8D%95%E6%95%88%E6%9E%9C%E5%9B%BE.gif" alt="表单效果图"></p>
+    <h3 id="一-需求效果展示"><a href="#一-需求效果展示" class="headerlink" title="(一) 需求效果展示"></a>(一) 需求效果展示</h3><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gdgg0tl8xng30850eib29.gif" alt="表单效果图"></p>
 <h3 id="二-Sample-code完整编译"><a href="#二-Sample-code完整编译" class="headerlink" title="(二) Sample code完整编译"></a>(二) Sample code完整编译</h3><p>   HBDynamicForms(地址:<a href="https://github.com/hubin97/HBDynamicForms)拉取代码后,终端进入项目当前文件夹下执行" target="_blank" rel="noopener">https://github.com/hubin97/HBDynamicForms)拉取代码后,终端进入项目当前文件夹下执行</a> $pod install</p>
-<h3 id="三-Sample-code目录分析"><a href="#三-Sample-code目录分析" class="headerlink" title="(三) Sample code目录分析"></a>(三) Sample code目录分析</h3><!--   <img src="动态表单/samplecode目录分析.png" width=300 />
--->
-<p><img src="/.io//samplecode%E7%9B%AE%E5%BD%95%E5%88%86%E6%9E%90.png" alt="目录分析"></p>
+<h3 id="三-Sample-code目录分析"><a href="#三-Sample-code目录分析" class="headerlink" title="(三) Sample code目录分析"></a>(三) Sample code目录分析</h3><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gdgg23toevj307v0b4q38.jpg" alt="samplecode目录分析"></p>
 <h3 id="四-Sample-code主要框架"><a href="#四-Sample-code主要框架" class="headerlink" title="(四) Sample code主要框架"></a>(四) Sample code主要框架</h3><p>IQKeyboardManager:IQKeyboardManager键盘管理工具是iOS开发过程中时常使用的一个第三方库，能够无污染的嵌入到项目开发过程中而不影响代码本身逻辑. GitHub链接: <a href="https://github.com/hackiftekhar/IQKeyboardManager" target="_blank" rel="noopener">https://github.com/hackiftekhar/IQKeyboardManager</a></p>
 <p>MJExtension: MJExtension是一套字典和模型之间互相转换的超轻量级框架. GitHub链接: <a href="https://github.com/CoderMJLee/MJExtension" target="_blank" rel="noopener">https://github.com/CoderMJLee/MJExtension</a></p>
 <p>SVProgressHUD:一款轻量级的 iOS 第三方控件, 用于显示任务加载时的动画, 非常轻便, 容易使用. 相对MBProgressHUD来说,功能上偏少一些,可定制差一些. GitHub链接: <a href="https://github.com/SVProgressHUD/SVProgressHUD" target="_blank" rel="noopener">https://github.com/SVProgressHUD/SVProgressHUD</a></p>
@@ -313,9 +305,7 @@
 <h4 id="Podfile文件导入框架如下"><a href="#Podfile文件导入框架如下" class="headerlink" title="Podfile文件导入框架如下:"></a>Podfile文件导入框架如下:</h4><figure class="highlight obj-c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> target <span class="string">'HBDynamicForms'</span> <span class="keyword">do</span></span><br><span class="line">  # Uncomment the next line <span class="keyword">if</span> you<span class="string">'re using Swift or would like to use dynamic frameworks</span></span><br><span class="line"><span class="string">  # use_frameworks!</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  # Pods for HBDynamicForms</span></span><br><span class="line"><span class="string">  pod '</span>IQKeyboardManager<span class="string">'</span></span><br><span class="line"><span class="string">  pod '</span>SDWebImage<span class="string">'</span></span><br><span class="line"><span class="string">  pod '</span>SVProgressHUD<span class="string">'</span></span><br><span class="line"><span class="string">  pod '</span>TZImagePickerController<span class="string">'</span></span><br><span class="line"><span class="string">  pod '</span>BaiduMapKit<span class="string">'</span></span><br><span class="line"><span class="string">  pod '</span>MJExtension<span class="string">'</span></span><br><span class="line"><span class="string">end</span></span><br></pre></td></tr></table></figure>
 <h3 id="五-Sample-code结构分析"><a href="#五-Sample-code结构分析" class="headerlink" title="(五) Sample code结构分析"></a>(五) Sample code结构分析</h3><h4 id="Model声明"><a href="#Model声明" class="headerlink" title="Model声明"></a>Model声明</h4><figure class="highlight obj-c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 标题 */</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *title;</span><br><span class="line"><span class="comment">/** 值 */</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *value;</span><br><span class="line"><span class="comment">/** 是否为必填 必选:YES  */</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">BOOL</span> isNotOptional;</span><br><span class="line"><span class="comment">/** 拍照数量 */</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">NSUInteger</span> fileNum;</span><br></pre></td></tr></table></figure>
 <p>当然了,如果页面交互逻辑比较复杂的话,可能会延伸其他的一些附加属性. 如collection布局分section和item模型,然后内部牵涉段的一些操作(eg:折叠/展开,添加/删除等…),item同table一致,也会区分样式布局(根据需要自定义,或仅显示,或可输入,或可选择,或相互关联等…)</p>
-<h4 id="Cell样式"><a href="#Cell样式" class="headerlink" title="Cell样式"></a>Cell样式</h4><!--   <img src="动态表单/cell自定义样式.png" width=300 />
--->     
-<p><img src="/.io//cell%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%B7%E5%BC%8F.png" alt="cell自定义样式"></p>
+<h4 id="Cell样式"><a href="#Cell样式" class="headerlink" title="Cell样式"></a>Cell样式</h4><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gdgg23yusnj30820apq37.jpg" alt="cell自定义样式.png"></p>
 <h4 id="Controller交互"><a href="#Controller交互" class="headerlink" title="Controller交互"></a>Controller交互</h4><p>   案例中交互事件触发多用block处理,cellForRowAtIndexPath代理处较为冗余臃肿,待后续优化.</p>
 <p>   项目中数据较为简单(暂定为20项以内)以plist配置(repairOrder.plist)稍显直观,其实plist相当于数据模型组建的数据源. (注意:主要原因5-&gt;其他原因的动态变化,需要重新拉取段模型)</p>
 <p>   尽量减少大量数据的处理,如果无法避免,则此时则不再适用plist方式配置. 所以尽可能本地化数据,或是找到规律在代码中枚举或者选用其他方式构建数据源将是不错的选择.</p>
@@ -557,9 +547,9 @@
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://www.jianshu.com/u/3648954cc2ec" target="_blank" class="search-title" title="记录工作和学习过程中的笔记：啦啦啦">
+              <a href="https://github.com/hubin97" target="_blank" class="search-title" title="记录工作和学习过程中的笔记：啦啦啦">
                 
-                  <img src="https://zhousiwei.gitee.io/ibooks/favicon.ico">
+                  <img src="https://hubin97.github.io/img/tuzi.jpg">
                 
                 技术笔记
               </a>
@@ -580,24 +570,6 @@
                   <i class="icon-link icon"></i>
                 
                 简书
-              </a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://blog.csdn.net/qq_17723985" target="_blank" class="search-title" >
-                
-                  <i class="icon-link icon"></i>
-                
-                CSDN
-              </a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://www.cocoachina.com/bbs/u.php?uid=400748" target="_blank" class="search-title" >
-                
-                  <i class="icon-link icon"></i>
-                
-                cocoachina
               </a>
             </li>
           
