@@ -184,6 +184,126 @@
             
 
   
+    <article id="post-博客搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/03/30/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" target="_blank">博客搭建</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/03/30/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="archive-article-date">
+        <time datetime="2020-03-30T14:19:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>####(一)准备工作<br>  首先,公开博客既然可以被外部访问,那么肯定就需要服务器.这里以搭建在github为例,当然也可以选择 码云或者其他的平台.</p>
+<p>  这里有个注意事项,创建的仓库名字必须同github的用户名一致(非昵称), 仓库全称格式:<code>&lt;username&gt;.github.io</code></p>
+<p>  如果这里的仓库名全称格式错了, 那么可能出现的情况是 本地预览正常,但是部署上去查看会显示<strong>页面404</strong>,详情可以去github的<em>Help-&gt;User, Organization, and Project Pages</em>里面查看会有细节说明,或者查阅此文<a href="https://blog.csdn.net/dajian790626/article/details/78595684" target="_blank" rel="noopener">404问题解决方案</a></p>
+<p>###(二)环境配置</p>
+<p>homebrew安装 <a href="https://brew.sh/index_zh-cn" target="_blank" rel="noopener">brew官网</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#x2F;bin&#x2F;bash -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;install.sh)&quot;</span><br></pre></td></tr></table></figure>
+
+<p>nodejs安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$brew install node</span><br></pre></td></tr></table></figure>
+
+<p>hexo安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo npm install hexo-cli -g &#x2F;&#x2F; 全局安装指令</span><br></pre></td></tr></table></figure>
+
+<p><em>注意事项:</em> 如果已经有安装过nodejs, 如react-native; 可能会出现电脑重启后, hexo不能全局执行或是关联版本等问题. 此处可以安装 nvm解决</p>
+<p>环境搭建可参考文章:</p>
+<p><a href="https://476139183.github.io/2018/08/30/Hexo-搭建博客/" target="_blank" rel="noopener">Hexo-搭建博客</a></p>
+<p><a href="https://www.jianshu.com/p/390f202c5b0e" target="_blank" rel="noopener">5分钟搞定个人博客-hexo</a></p>
+<p>###(三)开始撰文<br>指令<code>$hexo new &quot;文件名/文章名&quot; //这是个md文件</code></p>
+<p>生成的文件路径在<em>主目录 -&gt; source -&gt; _posts</em>下面</p>
+<p>###(四)常用指令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$hexo new &quot;文件名&#x2F;文章名&quot; &#x2F;&#x2F; 这是个md文件</span><br><span class="line">$hexo clean    &#x2F;&#x2F; 清理缓存</span><br><span class="line">$hexo generate &#x2F;&#x2F; 生成静态页面</span><br><span class="line">$hexo server   &#x2F;&#x2F; 开启本地预览服务 地址:localhost:4000</span><br><span class="line">$hexo deploy   &#x2F;&#x2F; 部署博客</span><br></pre></td></tr></table></figure>
+<p>###(五)延伸内容</p>
+<p>Mac/Linux如何查找应用所安装路径</p>
+<p>1.查询运行文件所在路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$which hexo</span><br><span class="line">&#96;&#96;&#96;</span><br></pre></td></tr></table></figure>
+<p>$which hexo<br>/Users/Mac/.nvm/versions/node/v13.12.0/bin/hexo // 查询hexo的安装路径 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2.查看文件安装路径：</span><br><span class="line">由于软件安装的地方不止一个地方，所有先说查看文件安装的所有路径(地址)。</span><br><span class="line"></span><br><span class="line">这里以Android为例。比如说我安装了Android，但是不知道文件都安装在哪些地方、放在哪些文件夹里，可 以用下面的命令查看所有的文件路径</span><br><span class="line">在终端输入：</span><br></pre></td></tr></table></figure>
+<p>$whereis android // 验证时,无打印,这里备注下吧</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3.关于文章中图片引用方式</span><br><span class="line"></span><br><span class="line">验证发现&#96;&#96;&#96;![](&#x2F;images&#x2F;image.jpg)&#96;&#96;&#96; 加载无效</span><br><span class="line"></span><br><span class="line">最后总结还是推荐使用图床工具 **iPic**</span><br><span class="line"></span><br><span class="line">官方说明: [资源文件夹](https:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F;docs&#x2F;asset-folders)</span><br><span class="line"></span><br><span class="line">扩展说明: [Hexo中添加本地图片](https:&#x2F;&#x2F;www.cnblogs.com&#x2F;codehome&#x2F;p&#x2F;8428738.html?utm_source&#x3D;debugrun&amp;utm_medium&#x3D;referral)</span><br><span class="line"></span><br><span class="line">###(六)问题随记</span><br><span class="line">1.部署时git报错</span><br></pre></td></tr></table></figure>
+<p>$hexo deploy<br>ERROR Deployer not found: git</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解决方案:</span><br><span class="line"></span><br><span class="line">先执行&#96;&#96;&#96;$npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+<p>再执行<code>$hexo deploy</code></p>
+<p>2.插件安装丢失问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$hexo clean   </span><br><span class="line">ERROR Plugin load failed: hexo-renderer-stylus</span><br><span class="line">Eoor: EISDIR: illegal operation on a directory, read</span><br></pre></td></tr></table></figure>
+<p>解决方案:<br>丢失什么安装什么就好了<code>$sudo npm install hexo-renderer-stylus</code></p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/03/30/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -503,6 +623,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术札记</a>
               </li>
             
             <div class="clearfix"></div>
