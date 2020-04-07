@@ -6,17 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hubin97.github.io">
-  <title>个人博客</title>
+  <title>Archives: 2018/4 | 个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <!-- <meta name="keywords" content="">
-    <meta name="description" content=""> -->
-  
   <meta property="og:type" content="website">
 <meta property="og:title" content="个人博客">
-<meta property="og:url" content="https://hubin97.github.io/index.html">
+<meta property="og:url" content="https://hubin97.github.io/archives/2018/04/index.html">
 <meta property="og:site_name" content="个人博客">
 <meta property="article:author" content="青空|逸隐">
 <meta name="twitter:card" content="summary">
@@ -182,377 +178,40 @@
           </div>
           <div id="js-content" class="content-ll">
             
-
-  
-    <article id="post-博客搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/03/30/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" target="_blank">博客搭建</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/03/30/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-        <time datetime="2020-03-30T14:19:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
-</a>
-
   
   
     
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="一-准备工作"><a href="#一-准备工作" class="headerlink" title="(一)准备工作"></a>(一)准备工作</h3><p>  首先,公开博客既然可以被外部访问,那么肯定就需要服务器.这里以搭建在github为例,当然也可以选择 码云或者其他的平台.</p>
-<p>  这里有个注意事项,创建的仓库名字必须同github的用户名一致(非昵称), 仓库全称格式:<code>&lt;username&gt;.github.io</code></p>
-<p>  如果这里的仓库名全称格式错了, 那么可能出现的情况是 本地预览正常,但是部署上去查看会显示<strong>页面404</strong>,详情可以去github的<em>Help-&gt;User, Organization, and Project Pages</em>里面查看会有细节说明,或者查阅此文<a href="https://blog.csdn.net/dajian790626/article/details/78595684" target="_blank" rel="noopener">404问题解决方案</a></p>
-<h3 id="二-环境配置"><a href="#二-环境配置" class="headerlink" title="(二)环境配置"></a>(二)环境配置</h3><p>homebrew安装 <a href="https://brew.sh/index_zh-cn" target="_blank" rel="noopener">brew官网</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#x2F;bin&#x2F;bash -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;install.sh)&quot;</span><br></pre></td></tr></table></figure>
-
-<p>nodejs安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$brew install node</span><br></pre></td></tr></table></figure>
-
-<p>hexo安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo npm install hexo-cli -g &#x2F;&#x2F; 全局安装指令</span><br></pre></td></tr></table></figure>
-
-<p><em>注意事项:</em> 如果已经有安装过nodejs, 如react-native; 可能会出现电脑重启后, hexo不能全局执行或是关联版本等问题. 此处可以安装 nvm解决</p>
-<p>环境搭建可参考文章:</p>
-<p><a href="https://476139183.github.io/2018/08/30/Hexo-搭建博客/" target="_blank" rel="noopener">Hexo-搭建博客</a></p>
-<p><a href="https://www.jianshu.com/p/390f202c5b0e" target="_blank" rel="noopener">5分钟搞定个人博客-hexo</a></p>
-<h3 id="三-开始撰文"><a href="#三-开始撰文" class="headerlink" title="(三)开始撰文"></a>(三)开始撰文</h3><p>指令<code>$hexo new &quot;文件名/文章名&quot; //这是个md文件</code></p>
-<p>生成的文件路径在<em>主目录 -&gt; source -&gt; _posts</em>下面</p>
-<h3 id="四-常用指令"><a href="#四-常用指令" class="headerlink" title="(四)常用指令"></a>(四)常用指令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$hexo new &quot;文件名&#x2F;文章名&quot; &#x2F;&#x2F; 这是个md文件</span><br><span class="line">$hexo clean    &#x2F;&#x2F; 清理缓存</span><br><span class="line">$hexo generate &#x2F;&#x2F; 生成静态页面</span><br><span class="line">$hexo server   &#x2F;&#x2F; 开启本地预览服务 地址:localhost:4000</span><br><span class="line">$hexo deploy   &#x2F;&#x2F; 部署博客</span><br></pre></td></tr></table></figure>
-<h3 id="五-延伸内容"><a href="#五-延伸内容" class="headerlink" title="(五)延伸内容"></a>(五)延伸内容</h3><p>Mac/Linux如何查找应用所安装路径</p>
-<p>1.查询运行文件所在路径</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$which hexo</span><br><span class="line">&#x2F;Users&#x2F;Mac&#x2F;.nvm&#x2F;versions&#x2F;node&#x2F;v13.12.0&#x2F;bin&#x2F;hexo &#x2F;&#x2F; 查询hexo的安装路径</span><br></pre></td></tr></table></figure>
-
-<p>2.查看文件安装路径：<br>由于软件安装的地方不止一个地方，所有先说查看文件安装的所有路径(地址)。</p>
-<p>这里以Android为例。比如说我安装了Android，但是不知道文件都安装在哪些地方、放在哪些文件夹里，可 以用下面的命令查看所有的文件路径<br>在终端输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$whereis android &#x2F;&#x2F; 验证时,无打印,这里备注下吧</span><br></pre></td></tr></table></figure>
-
-<p>3.关于文章中图片引用方式</p>
-<p>验证发现<code>![](/images/image.jpg)</code> 加载无效</p>
-<p>最后总结还是推荐使用图床工具 <strong>iPic</strong></p>
-<p>官方说明: <a href="https://hexo.io/zh-cn/docs/asset-folders" target="_blank" rel="noopener">资源文件夹</a></p>
-<p>扩展说明: <a href="https://www.cnblogs.com/codehome/p/8428738.html?utm_source=debugrun&utm_medium=referral" target="_blank" rel="noopener">Hexo中添加本地图片</a></p>
-<h3 id="六-问题随记"><a href="#六-问题随记" class="headerlink" title="(六)问题随记"></a>(六)问题随记</h3><p>1.部署时git报错</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$hexo deploy   </span><br><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></table></figure>
-<p>解决方案:<br>先执行<code>$npm install --save hexo-deployer-git</code><br>再执行<code>$hexo deploy</code></p>
-<p>2.插件安装丢失问题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$hexo clean   </span><br><span class="line">ERROR Plugin load failed: hexo-renderer-stylus</span><br><span class="line">Eoor: EISDIR: illegal operation on a directory, read</span><br></pre></td></tr></table></figure>
-<p>解决方案:<br>丢失什么安装什么就好了<code>$sudo npm install hexo-renderer-stylus</code></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/03/30/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+        <div class="archives">
     
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/03/30/hello-world/" target="_blank">Hello World</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/03/30/hello-world/" class="archive-article-date">
-        <time datetime="2020-03-30T10:43:13.504Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/03/30/hello-world/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-为什么iOS更新UI操作必须在主线程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2018/04/07/%E4%B8%BA%E4%BB%80%E4%B9%88iOS%E6%9B%B4%E6%96%B0UI%E6%93%8D%E4%BD%9C%E5%BF%85%E9%A1%BB%E5%9C%A8%E4%B8%BB%E7%BA%BF%E7%A8%8B/" target="_blank">为什么iOS更新UI操作必须在主线程</a>
-  
-    </h1>
-  
-
-
-  
-  
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
 <a href="/2018/04/07/%E4%B8%BA%E4%BB%80%E4%B9%88iOS%E6%9B%B4%E6%96%B0UI%E6%93%8D%E4%BD%9C%E5%BF%85%E9%A1%BB%E5%9C%A8%E4%B8%BB%E7%BA%BF%E7%A8%8B/" class="archive-article-date">
         <time datetime="2018-04-07T07:38:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-07</time>
 </a>
 
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><code>iOS developer</code>都知道UI操作如果在非主线程进行的话是会Crash的。但是本质原因可能很少人真正明白。</p>
-<p>正面的概括回答是：<br><strong>UI操作涉及到渲染访问各种View对象的属性，如果是异步操作会有读写问题。加锁呢，性能损耗大(视图层次深，属性多)。所以主线程操作UI，是约定俗成的开发规则。</strong></p>
-<p>我们来看看Quora网友关于这个”经典”问题的回答：</p>
-<pre><code>Why must the UI always be updated on Main Thread?</code></pre><p>来自 Reinder de Vries 的回答：</p>
-<pre><code>The first one is that, in Cocoa Touch, the UIApplication gets set up on the main thread
-Another reason is graphics rendering: the graphics pipeline of the iPhone is ultimately synchronous.</code></pre><p>他的一个理由是：</p>
-<pre><code>1.在```Cocoa Touch```框架中，```UIApplication```初始化工作是在主线程进行的。而界面上所有的视图都是在UIApplication 实例的叶子节点(内存管理角度)，所以所有的手势交互操作都是在主线程上才能响应
-
-2.图形渲染在iPhone设备本质上是同步的。图形渲染计算最终要显示的像素值，以每秒60帧的频率刷新到屏幕上，绘制到屏幕的过程实际上就是通过```LED display```点亮各个像素。这个过程需要一次将所有将要实现的像素刷新到屏幕上(同时的)。如果要异步化的话，对应的你无法确定这个处理过程是否真正的全部完成。</code></pre><p>他最后指出，在主线程操作UI。能帮助你避免不少的麻烦和减少产生产品缺陷。当然，有部分UI操作是可异步化的，只要最后的更新操作是在主线程</p>
-<ul>
-<li>叠加滤镜效果在视图上  </li>
-<li>创建动态图形，比如动画</li>
-</ul>
-<p>最后推荐了<code>WWDC</code>上关于UI渲染的录像 <a href="https://developer.apple.com/videos/play/wwdc2012/211/" target="_blank" rel="noopener">Building Concurrent User Interfaces on iOS</a></p>
-<p>相关阅读</p>
-<p><a href="https://www.objc.io/issues/2-concurrency/thread-safe-class-design/" target="_blank" rel="noopener">Thread-Safe Class Design</a></p>
-<p><a href="https://stackoverflow.com/questions/18467114/why-must-uikit-operations-be-performed-on-the-main-thread" target="_blank" rel="noopener">Why must UIKit operations be performed on the main thread?</a></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2018/04/07/%E4%B8%BA%E4%BB%80%E4%B9%88iOS%E6%9B%B4%E6%96%B0UI%E6%93%8D%E4%BD%9C%E5%BF%85%E9%A1%BB%E5%9C%A8%E4%B8%BB%E7%BA%BF%E7%A8%8B/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-动态表单" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
+    	 
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2018/03/28/%E5%8A%A8%E6%80%81%E8%A1%A8%E5%8D%95/" target="_blank">动态表单</a>
+	  <a class="archive-article-title" href="/2018/04/07/%E4%B8%BA%E4%BB%80%E4%B9%88iOS%E6%9B%B4%E6%96%B0UI%E6%93%8D%E4%BD%9C%E5%BF%85%E9%A1%BB%E5%9C%A8%E4%B8%BB%E7%BA%BF%E7%A8%8B/" target="_blank">为什么iOS更新UI操作必须在主线程</a>
   
     </h1>
   
 
 
-  
-  
-<a href="/2018/03/28/%E5%8A%A8%E6%80%81%E8%A1%A8%E5%8D%95/" class="archive-article-date">
-        <time datetime="2018-03-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-28</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="一-需求效果展示"><a href="#一-需求效果展示" class="headerlink" title="(一) 需求效果展示"></a>(一) 需求效果展示</h3><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gdgg0tl8xng30850eib29.gif" alt="表单效果图"></p>
-<h3 id="二-Sample-code完整编译"><a href="#二-Sample-code完整编译" class="headerlink" title="(二) Sample code完整编译"></a>(二) Sample code完整编译</h3><p><a href="https://github.com/hubin97/HBDynamicForms" target="_blank" rel="noopener">HBDynamicForms</a><br>拉取代码后,终端进入项目当前文件夹下执行 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$pod install</span><br></pre></td></tr></table></figure>
-<h3 id="三-Sample-code目录分析"><a href="#三-Sample-code目录分析" class="headerlink" title="(三) Sample code目录分析"></a>(三) Sample code目录分析</h3><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gdgg23toevj307v0b4q38.jpg" alt="samplecode目录分析-w300"></p>
-<h3 id="四-Sample-code主要框架"><a href="#四-Sample-code主要框架" class="headerlink" title="(四) Sample code主要框架"></a>(四) Sample code主要框架</h3><p>IQKeyboardManager:IQKeyboardManager键盘管理工具是iOS开发过程中时常使用的一个第三方库，能够无污染的嵌入到项目开发过程中而不影响代码本身逻辑. GitHub链接: <a href="https://github.com/hackiftekhar/IQKeyboardManager" target="_blank" rel="noopener">https://github.com/hackiftekhar/IQKeyboardManager</a></p>
-<p>MJExtension: MJExtension是一套字典和模型之间互相转换的超轻量级框架. GitHub链接: <a href="https://github.com/CoderMJLee/MJExtension" target="_blank" rel="noopener">https://github.com/CoderMJLee/MJExtension</a></p>
-<p>SVProgressHUD:一款轻量级的 iOS 第三方控件, 用于显示任务加载时的动画, 非常轻便, 容易使用. 相对MBProgressHUD来说,功能上偏少一些,可定制差一些. GitHub链接: <a href="https://github.com/SVProgressHUD/SVProgressHUD" target="_blank" rel="noopener">https://github.com/SVProgressHUD/SVProgressHUD</a></p>
-<p>当然了, 此案例中的部分框架也是完全可以由大神ibireme的YYKit去代替的,并且可能功能优化上会有更大提升.这里暂未做尝试. GitHub链接: <a href="https://github.com/ibireme/YYKit" target="_blank" rel="noopener">https://github.com/ibireme/YYKit</a></p>
-<p>GCPlaceholderTextView可用UITextView占位分类”UITextView+Placeholder.h”替换,应该更优化合理.(<a href="https://github.com/devxoul/UITextView-Placeholder" target="_blank" rel="noopener">https://github.com/devxoul/UITextView-Placeholder</a>)</p>
-<h4 id="Podfile文件导入框架如下"><a href="#Podfile文件导入框架如下" class="headerlink" title="Podfile文件导入框架如下:"></a>Podfile文件导入框架如下:</h4><figure class="highlight obj-c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> target <span class="string">'HBDynamicForms'</span> <span class="keyword">do</span></span><br><span class="line">  # Uncomment the next line <span class="keyword">if</span> you<span class="string">'re using Swift or would like to use dynamic frameworks</span></span><br><span class="line"><span class="string">  # use_frameworks!</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  # Pods for HBDynamicForms</span></span><br><span class="line"><span class="string">  pod '</span>IQKeyboardManager<span class="string">'</span></span><br><span class="line"><span class="string">  pod '</span>SDWebImage<span class="string">'</span></span><br><span class="line"><span class="string">  pod '</span>SVProgressHUD<span class="string">'</span></span><br><span class="line"><span class="string">  pod '</span>TZImagePickerController<span class="string">'</span></span><br><span class="line"><span class="string">  pod '</span>BaiduMapKit<span class="string">'</span></span><br><span class="line"><span class="string">  pod '</span>MJExtension<span class="string">'</span></span><br><span class="line"><span class="string">end</span></span><br></pre></td></tr></table></figure>
-<h3 id="五-Sample-code结构分析"><a href="#五-Sample-code结构分析" class="headerlink" title="(五) Sample code结构分析"></a>(五) Sample code结构分析</h3><h4 id="Model声明"><a href="#Model声明" class="headerlink" title="Model声明"></a>Model声明</h4><figure class="highlight obj-c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 标题 */</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *title;</span><br><span class="line"><span class="comment">/** 值 */</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *value;</span><br><span class="line"><span class="comment">/** 是否为必填 必选:YES  */</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">BOOL</span> isNotOptional;</span><br><span class="line"><span class="comment">/** 拍照数量 */</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">NSUInteger</span> fileNum;</span><br></pre></td></tr></table></figure>
-<p>当然了,如果页面交互逻辑比较复杂的话,可能会延伸其他的一些附加属性. 如collection布局分section和item模型,然后内部牵涉段的一些操作(eg:折叠/展开,添加/删除等…),item同table一致,也会区分样式布局(根据需要自定义,或仅显示,或可输入,或可选择,或相互关联等…)</p>
-<h4 id="Cell样式"><a href="#Cell样式" class="headerlink" title="Cell样式"></a>Cell样式</h4><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gdgg23yusnj30820apq37.jpg" alt="cell自定义样式.png-w300"></p>
-<h4 id="Controller交互"><a href="#Controller交互" class="headerlink" title="Controller交互"></a>Controller交互</h4><p>   案例中交互事件触发多用block处理,cellForRowAtIndexPath代理处较为冗余臃肿,待后续优化.</p>
-<p>   项目中数据较为简单(暂定为20项以内)以plist配置(repairOrder.plist)稍显直观,其实plist相当于数据模型组建的数据源. (注意:主要原因5-&gt;其他原因的动态变化,需要重新拉取段模型)</p>
-<p>   尽量减少大量数据的处理,如果无法避免,则此时则不再适用plist方式配置. 所以尽可能本地化数据,或是找到规律在代码中枚举或者选用其他方式构建数据源将是不错的选择.</p>
-<p>   另外如果需求合适也可选用XLForm. GitHub链接: <a href="https://github.com/xmartlabs/XLForm" target="_blank" rel="noopener">https://github.com/xmartlabs/XLForm</a></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -564,41 +223,19 @@ Another reason is graphics rendering: the graphics pipeline of the iPhone is ult
 		</ul>
 	</div>
 
-    
+          
 
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2018/03/28/%E5%8A%A8%E6%80%81%E8%A1%A8%E5%8D%95/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
+    </div></section>
+  
+
+    
 
 
           </div>
@@ -638,9 +275,9 @@ Another reason is graphics rendering: the graphics pipeline of the iPhone is ult
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
