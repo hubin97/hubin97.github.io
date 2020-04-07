@@ -70,11 +70,13 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/" target="_blank">技术栈</a></li>
+				<li><a href="/tags/%E6%8A%80%E6%9C%AF%E6%9C%AD%E8%AE%B0" >技术栈</a></li>
 			
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/" target="_blank">茶煎集</a></li>
+				<li><a href="/tags/%E9%9A%8F%E7%AC%94/" >茶煎集</a></li>
 			
-				<li><a href="/" target="_blank">时间轴</a></li>
+				<li><a href="/tags/%E5%B7%A5%E5%85%B7" >工具栏</a></li>
+			
+				<li><a href="/tags/" >时间轴</a></li>
 			
 			</ul>
 		</nav>
@@ -89,7 +91,7 @@
 				
 			
 				
-					<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+					<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">自我介绍</a>
 				
 			
 		</nav>
@@ -146,6 +148,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -162,11 +166,13 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">技术栈</a></li>
+					<li style="width: 25%"><a href="/tags/%E6%8A%80%E6%9C%AF%E6%9C%AD%E8%AE%B0">技术栈</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">茶煎集</a></li>
+					<li style="width: 25%"><a href="/tags/%E9%9A%8F%E7%AC%94/">茶煎集</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/">时间轴</a></li>
+					<li style="width: 25%"><a href="/tags/%E5%B7%A5%E5%85%B7">工具栏</a></li>
+		        
+					<li style="width: 25%"><a href="/tags/">时间轴</a></li>
 		        
 				</ul>
 			</nav>
@@ -442,6 +448,29 @@
 
 
 
+  
+  <div id="gitment-ctn"></div>
+  
+    <!-- 中文 -->
+    <link rel="stylesheet" href="/lib/gitment.css">
+    <script src="/lib/gitment.js"></script>
+  
+  <script>
+    <!-- id: "常用小工具" -->
+    var gitment = new Gitment({
+      id: "20200407164331",
+      owner: 'hubin97',
+      repo: 'hubin97_io_talk',
+      oauth: {
+        client_id: '5804ff6d4b964ed63177',
+        client_secret: 'fedca725a8d49166f1ed457a9ac468855ec0a00b',
+      },
+    })
+    gitment.render('gitment-ctn')
+  </script>
+
+
+  
 
 
 
@@ -550,7 +579,7 @@
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">自我介绍</a></li>
       
         
     </ul>
