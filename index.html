@@ -372,7 +372,7 @@
 
 
   
-    <article id="post-庚子年记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-20200207" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -380,7 +380,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/02/07/%E5%BA%9A%E5%AD%90%E5%B9%B4%E8%AE%B0/">庚子年记</a>
+	  <a class="article-title" href="/2020/02/07/20200207/">庚子年记</a>
 	
     </h1>
   
@@ -388,7 +388,7 @@
 
   
   
-<a href="/2020/02/07/%E5%BA%9A%E5%AD%90%E5%B9%B4%E8%AE%B0/" class="archive-article-date">
+<a href="/2020/02/07/20200207/" class="archive-article-date">
         <time datetime="2020-02-07T03:50:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-07</time>
 </a>
 
@@ -403,7 +403,7 @@
     
     <p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gdm484lghkj308c04n74a.jpg" alt=""></p>
     
-    <a class="article-more-a" href="/2020/02/07/%E5%BA%9A%E5%AD%90%E5%B9%B4%E8%AE%B0/#more">more >></a>
+    <a class="article-more-a" href="/2020/02/07/20200207/#more">more >></a>
     
     
 
@@ -665,13 +665,9 @@
     
     <p>相机/相册/麦克风权限判断</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 判断相机是否可以打开</span></span><br><span class="line"><span class="keyword">if</span> (![<span class="built_in">UIImagePickerController</span> isSourceTypeAvailable:<span class="built_in">UIImagePickerControllerSourceTypeCamera</span>]) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断相册是否可以打开</span></span><br><span class="line"><span class="keyword">if</span> (![<span class="built_in">UIImagePickerController</span> isSourceTypeAvailable:<span class="built_in">UIImagePickerControllerSourceTypePhotoLibrary</span>]) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 麦克风权限</span></span><br><span class="line"><span class="comment">//<span class="doctag">FIXME:</span>获取麦克风权限(避免iOS10接听时提示权限闪退)</span></span><br><span class="line">[[<span class="built_in">AVAudioSession</span> sharedInstance] requestRecordPermission:^(<span class="built_in">BOOL</span> granted) &#123;</span><br><span class="line">    <span class="keyword">if</span> (granted) &#123;</span><br><span class="line">       <span class="built_in">NSLog</span>(<span class="string">@"用户同意获取麦克风!!!"</span>);</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">       <span class="built_in">NSLog</span>(<span class="string">@"用户不同意获取麦克风!!!"</span>);</span><br><span class="line">       &#125;</span><br><span class="line"> &#125;];</span><br></pre></td></tr></table></figure>
-
-<p>plist文件配置如下</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 相册 --&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>NSPhotoLibraryUsageDescription<span class="tag">&lt;/<span class="name">key</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>App需要您的同意,才能访问相册<span class="tag">&lt;/<span class="name">string</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!-- 相机 --&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>NSCameraUsageDescription<span class="tag">&lt;/<span class="name">key</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>App需要您的同意,才能访问相机<span class="tag">&lt;/<span class="name">string</span>&gt;</span> </span><br><span class="line"> </span><br><span class="line"><span class="comment">&lt;!-- iOS11 新增 --&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>NSPhotoLibraryAddUsageDescription<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">string</span>&gt;</span>App需要您的同意,才能添加照片到相册<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 麦克风 --&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>NSMicrophoneUsageDescription<span class="tag">&lt;/<span class="name">key</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>App需要您的同意,才能访问麦克风<span class="tag">&lt;/<span class="name">string</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!-- 位置 --&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>NSLocationUsageDescription<span class="tag">&lt;/<span class="name">key</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>App需要您的同意,才能访问位置<span class="tag">&lt;/<span class="name">string</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!-- 在使用期间访问位置 --&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>NSLocationWhenInUseUsageDescription<span class="tag">&lt;/<span class="name">key</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>App需要您的同意,才能在使用期间访问位置<span class="tag">&lt;/<span class="name">string</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!-- 始终访问位置 --&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>NSLocationAlwaysUsageDescription<span class="tag">&lt;/<span class="name">key</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>App需要您的同意,才能始终访问位置<span class="tag">&lt;/<span class="name">string</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!-- 日历 --&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>NSCalendarsUsageDescription<span class="tag">&lt;/<span class="name">key</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>App需要您的同意,才能访问日历<span class="tag">&lt;/<span class="name">string</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!-- 提醒事项 --&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>NSRemindersUsageDescription<span class="tag">&lt;/<span class="name">key</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>App需要您的同意,才能访问提醒事项<span class="tag">&lt;/<span class="name">string</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!-- 运动与健身 --&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>NSMotionUsageDescription<span class="tag">&lt;/<span class="name">key</span>&gt;</span> <span class="tag">&lt;<span class="name">string</span>&gt;</span>App需要您的同意,才能访问运动与健身<span class="tag">&lt;/<span class="name">string</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!-- 健康更新 --&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>NSHealthUpdateUsageDescription<span class="tag">&lt;/<span class="name">key</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>App需要您的同意,才能访问健康更新 <span class="tag">&lt;/<span class="name">string</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!-- 健康分享 --&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>NSHealthShareUsageDescription<span class="tag">&lt;/<span class="name">key</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>App需要您的同意,才能访问健康分享<span class="tag">&lt;/<span class="name">string</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!-- 蓝牙 --&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>NSBluetoothPeripheralUsageDescription<span class="tag">&lt;/<span class="name">key</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>App需要您的同意,才能访问蓝牙<span class="tag">&lt;/<span class="name">string</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!-- 媒体资料库 --&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>NSAppleMusicUsageDescription<span class="tag">&lt;/<span class="name">key</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>App需要您的同意,才能访问媒体资料库<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>UIBackgroundModes<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">array</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!-- 在这里写上你在后台模式下要使用权限对应的key --&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>location<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>部分英语提示参考</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>NSLocationUsageDescription<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">string</span>&gt;</span>App need your approval to access location<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>NSMicrophoneUsageDescription<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">string</span>&gt;</span>App need your approval to access microphone<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>NSPhotoLibraryUsageDescription<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">string</span>&gt;</span>App need your approval to access photo album<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>NSCameraUsageDescription<span class="tag">&lt;/<span class="name">key</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">string</span>&gt;</span>App need your approval to access camera<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+    
+    <a class="article-more-a" href="/2018/07/10/iOS%E6%9D%83%E9%99%90%E6%95%B4%E7%90%86/#more">more >></a>
+    
     
 
     
@@ -982,6 +978,95 @@
 
 
   
+    <article id="post-20170302" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2017/03/02/20170302/">20170302</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2017/03/02/20170302/" class="archive-article-date">
+        <time datetime="2017-03-02T11:19:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-02</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gdnqvltorqj308c04pwf3.jpg" alt=""></p>
+<p>湮没南风 过际温柔</p>
+<p>黄叶落 绿枝发 小径通幽现人家</p>
+<p>桑槐驻停悲往事 离别月</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">煎茶集</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
@@ -1111,7 +1196,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">煎茶集</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">涂鸦</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1124,10 +1217,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
