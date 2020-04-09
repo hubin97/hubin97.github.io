@@ -6,20 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hubin97.github.io">
-  <title>常用小工具 | 个人博客</title>
+  <title>iOS收集应用评分 | 个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="Go2Shell  什么, 你还在终端cd往后面拖文件夹? 这个是个不错的快捷方式, 赶紧试试吧  iPic   图床工具, 本地图片快速生成外部预览链接">
+  <meta name="description" content="需求背景还在使用弹框链接跳转收集评分? 太不人性话了,应用用的好好的突然打断,比较闹心. 使用细节SKStoreReviewController 注意: iOS 10.3+ 官方才提供的内置评分系统, 不能做成事件触发弹框评分的方式, 即使测试环境正常, 上架后事件触发仍会表示不响应. 其他细节如下:  即使调用 requestReview, 也不一定会出现UI 测试环境不能点提交按钮 只能评星,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常用小工具">
-<meta property="og:url" content="https://hubin97.github.io/2020/04/07/%E5%B8%B8%E7%94%A8%E5%B0%8F%E5%B7%A5%E5%85%B7/index.html">
+<meta property="og:title" content="iOS收集应用评分">
+<meta property="og:url" content="https://hubin97.github.io/2019/04/24/iOS%E6%94%B6%E9%9B%86%E5%BA%94%E7%94%A8%E8%AF%84%E5%88%86/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="Go2Shell  什么, 你还在终端cd往后面拖文件夹? 这个是个不错的快捷方式, 赶紧试试吧  iPic   图床工具, 本地图片快速生成外部预览链接">
-<meta property="article:published_time" content="2020-04-07T08:43:31.000Z">
-<meta property="article:modified_time" content="2020-04-09T02:41:06.457Z">
+<meta property="og:description" content="需求背景还在使用弹框链接跳转收集评分? 太不人性话了,应用用的好好的突然打断,比较闹心. 使用细节SKStoreReviewController 注意: iOS 10.3+ 官方才提供的内置评分系统, 不能做成事件触发弹框评分的方式, 即使测试环境正常, 上架后事件触发仍会表示不响应. 其他细节如下:  即使调用 requestReview, 也不一定会出现UI 测试环境不能点提交按钮 只能评星,">
+<meta property="article:published_time" content="2019-04-24T02:14:23.000Z">
+<meta property="article:modified_time" content="2020-04-09T09:55:23.049Z">
 <meta property="article:author" content="青空|逸隐">
-<meta property="article:tag" content="工具">
+<meta property="article:tag" content="iOS">
+<meta property="article:tag" content="技术栈">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
@@ -192,14 +193,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-常用小工具" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-iOS收集应用评分" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      常用小工具
+      iOS收集应用评分
     </h1>
   
 
@@ -211,8 +212,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/04/07/%E5%B8%B8%E7%94%A8%E5%B0%8F%E5%B7%A5%E5%85%B7/" class="archive-article-date">
-        <time datetime="2020-04-07T08:43:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
+<a href="/2019/04/24/iOS%E6%94%B6%E9%9B%86%E5%BA%94%E7%94%A8%E8%AF%84%E5%88%86/" class="archive-article-date">
+        <time datetime="2019-04-24T02:14:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-24</time>
 </a>
 
   
@@ -225,7 +226,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">99字</span>
+      <span class="post-count">481字</span>
     </span>
   </span>
 
@@ -234,7 +235,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -245,27 +246,17 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <ol>
-<li><p>Go2Shell</p>
-<p> 什么, 你还在终端<code>cd</code>往后面拖文件夹? 这个是个不错的快捷方式, 赶紧试试吧</p>
-</li>
-<li><p>iPic </p>
-<p> 图床工具, 本地图片快速生成外部预览链接</p>
-<a id="more"></a>
-</li>
-<li><p>LICEcap</p>
-<p> 录制GIF非常方便的一个小工具</p>
-</li>
-<li><p>shadowsocks</p>
-<p> VPN配置常用工具</p>
-</li>
-<li><p>Sublime text</p>
-<p> 轻量级文本编辑工具,适用很多语言</p>
-</li>
-<li><p>Postman</p>
-<p> 接口开发调试常用</p>
-</li>
+    <h3 id="需求背景"><a href="#需求背景" class="headerlink" title="需求背景"></a>需求背景</h3><p>还在使用弹框链接跳转收集评分? 太不人性话了,应用用的好好的突然打断,比较闹心.</p>
+<h3 id="使用细节"><a href="#使用细节" class="headerlink" title="使用细节"></a>使用细节</h3><p><em>SKStoreReviewController</em> 注意: iOS 10.3+ 官方才提供的内置评分系统, 不能做成事件触发弹框评分的方式, 即使测试环境正常, 上架后事件触发仍会表示不响应. 其他细节如下:</p>
+<ol>
+<li>即使调用 requestReview, 也不一定会出现UI</li>
+<li>测试环境不能点提交按钮</li>
+<li>只能评星, 不能提交评论内容</li>
+<li>提示次数不限制, 但不要过于频繁, 官方建议每个版本提示一次</li>
+<li>旧版本收集如果写评论内容:可以在openURL后面拼接 action=write-review, 可以直接跳转到App Store评论页</li>
+<li>参考 <a href="https://developer.apple.com/documentation/storekit/skstorereviewcontroller/requesting_app_store_reviews?language=objc" target="_blank" rel="noopener">官方文档</a></li>
 </ol>
+<h3 id="Simple-code"><a href="#Simple-code" class="headerlink" title="Simple code"></a>Simple code</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;StoreKit/StoreKit.h&gt; </span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> 收集评分</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">- (<span class="keyword">void</span>)showAppStoreReView &#123;</span><br><span class="line">    <span class="built_in">NSDictionary</span> *infoDictionary = [[<span class="built_in">NSBundle</span> mainBundle] infoDictionary];</span><br><span class="line">    <span class="built_in">NSString</span> *app_Version = [infoDictionary objectForKey:<span class="string">@"CFBundleShortVersionString"</span>];</span><br><span class="line">    <span class="built_in">NSString</span> *app_build = [infoDictionary objectForKey:<span class="string">@"CFBundleVersion"</span>];</span><br><span class="line">    _appVersion = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@ (build %@)"</span>,app_Version,app_build];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 是否已经收集评分</span></span><br><span class="line">    <span class="built_in">NSNumber</span> *isShowAppStoreReView = [[[<span class="built_in">NSUserDefaults</span> standardUserDefaults] objectForKey:_appVersion] objectForKey:<span class="string">@"review"</span>];</span><br><span class="line">    <span class="keyword">if</span> (isShowAppStoreReView &amp;&amp; [isShowAppStoreReView isEqualToNumber:@YES]) <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 展示的时刻</span></span><br><span class="line">    <span class="keyword">int</span> shortestTime = <span class="number">50</span>;</span><br><span class="line">    <span class="keyword">int</span> longestTime = <span class="number">500</span>;</span><br><span class="line">    <span class="keyword">int</span> timeInterval = arc4random_uniform(longestTime - shortestTime) + shortestTime;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 测试</span></span><br><span class="line">    <span class="comment">//timeInterval = 10;</span></span><br><span class="line">    [<span class="built_in">NSTimer</span> scheduledTimerWithTimeInterval:timeInterval target:<span class="keyword">self</span> selector:<span class="keyword">@selector</span>(requestReview) userInfo:<span class="literal">nil</span> repeats:<span class="literal">NO</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)requestReview</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSMutableDictionary</span> *reviewDict = [<span class="built_in">NSMutableDictionary</span> dictionaryWithDictionary:[[<span class="built_in">NSUserDefaults</span> standardUserDefaults] objectForKey:_appVersion]];</span><br><span class="line">    [reviewDict setObject:@YES forKey:<span class="string">@"review"</span>];</span><br><span class="line">    [[<span class="built_in">NSUserDefaults</span> standardUserDefaults] setObject:reviewDict forKey:_appVersion];</span><br><span class="line">    [[<span class="built_in">NSUserDefaults</span> standardUserDefaults] synchronize];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (@available(iOS <span class="number">10.3</span>, *)) &#123;</span><br><span class="line">        [[<span class="built_in">UIApplication</span> sharedApplication].keyWindow endEditing:<span class="literal">YES</span>];</span><br><span class="line">        [<span class="built_in">SKStoreReviewController</span> requestReview];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 传统弹框提示跳转(iOS 10.3以下的)太麻烦直接取消提示</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">//    else &#123;</span></span><br><span class="line"><span class="comment">//        //不论iOS版本均可使用APP内部打开网页形式，跳转到App Store 直接编辑评论</span></span><br><span class="line"><span class="comment">//        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"给App打个分吧?" preferredStyle:UIAlertControllerStyleAlert];</span></span><br><span class="line"><span class="comment">//        UIAlertAction * ensure = [UIAlertAction actionWithTitle:@"去评论" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) &#123;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//            dispatch_async(dispatch_get_main_queue(), ^&#123;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//                NSString *APPID = @"xxx";</span></span><br><span class="line"><span class="comment">//                NSString *nsStringToOpen = [NSString stringWithFormat: @"itms-apps://itunes.apple.com/app/id%@?action=write-review",APPID];</span></span><br><span class="line"><span class="comment">//                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:nsStringToOpen]];</span></span><br><span class="line"><span class="comment">//            &#125;);</span></span><br><span class="line"><span class="comment">//        &#125;];</span></span><br><span class="line"><span class="comment">//        UIAlertAction * cancel = [UIAlertAction actionWithTitle:@"下次吧" style:UIAlertActionStyleDefault handler:nil];</span></span><br><span class="line"><span class="comment">//        [alert addAction:cancel];</span></span><br><span class="line"><span class="comment">//        [alert addAction:ensure];</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        [self.window.rootViewController presentViewController:alert animated:YES completion:nil];</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     
 
@@ -312,7 +303,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://hubin97.github.io/2020/04/07/常用小工具/" title="常用小工具" target="_blank">https://hubin97.github.io/2020/04/07/常用小工具/</a>
+          <a href="https://hubin97.github.io/2019/04/24/iOS收集应用评分/" title="iOS收集应用评分" target="_blank">https://hubin97.github.io/2019/04/24/iOS收集应用评分/</a>
         </li>
         
         <li>
@@ -334,7 +325,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">技术栈</a>
         		</li>
       		
 		</ul>
@@ -390,7 +385,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://hubin97.github.io/2020/04/07/%E5%B8%B8%E7%94%A8%E5%B0%8F%E5%B7%A5%E5%85%B7/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://hubin97.github.io/2019/04/24/iOS%E6%94%B6%E9%9B%86%E5%BA%94%E7%94%A8%E8%AF%84%E5%88%86/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -405,9 +400,18 @@
 
 <nav id="article-nav">
   
+    <a href="/2020/02/07/%E5%BA%9A%E5%AD%90%E5%B9%B4%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          庚子年记
+        
+      </div>
+    </a>
   
-    <a href="/2020/03/30/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">博客搭建</div>
+  
+    <a href="/2019/04/09/%E5%88%B6%E4%BD%9CCocoaPods%E5%85%AC%E6%9C%89%E5%BA%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">制作CocoaPods公有库</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -434,7 +438,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#需求背景"><span class="toc-number">1.</span> <span class="toc-text">需求背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用细节"><span class="toc-number">2.</span> <span class="toc-text">使用细节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Simple-code"><span class="toc-number">3.</span> <span class="toc-text">Simple code</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -461,9 +465,9 @@
     <script src="/lib/gitment.js"></script>
   
   <script>
-    <!-- id: "常用小工具" -->
+    <!-- id: "iOS收集应用评分" -->
     var gitment = new Gitment({
-      id: "20200407164331",
+      id: "20190424101423",
       owner: 'hubin97',
       repo: 'hubin97_io_talk',
       oauth: {

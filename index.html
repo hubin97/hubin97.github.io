@@ -75,9 +75,7 @@
 			
 				<li><a href="/tags/%E6%B6%82%E9%B8%A6" >涂鸦墙</a></li>
 			
-				<li><a href="/tags/%E5%B7%A5%E5%85%B7" >工具栏</a></li>
-			
-				<li><a href="/" >时间轴</a></li>
+				<li><a href="/tags/%E5%B7%A5%E5%85%B7" >百宝箱</a></li>
 			
 			</ul>
 		</nav>
@@ -153,8 +151,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -173,15 +169,13 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 20%"><a href="/tags/%E6%8A%80%E6%9C%AF%E6%9C%AD%E8%AE%B0">技术栈</a></li>
+					<li style="width: 25%"><a href="/tags/%E6%8A%80%E6%9C%AF%E6%9C%AD%E8%AE%B0">技术栈</a></li>
 		        
-					<li style="width: 20%"><a href="/tags/%E9%9A%8F%E7%AC%94">茶煎集</a></li>
+					<li style="width: 25%"><a href="/tags/%E9%9A%8F%E7%AC%94">茶煎集</a></li>
 		        
-					<li style="width: 20%"><a href="/tags/%E6%B6%82%E9%B8%A6">涂鸦墙</a></li>
+					<li style="width: 25%"><a href="/tags/%E6%B6%82%E9%B8%A6">涂鸦墙</a></li>
 		        
-					<li style="width: 20%"><a href="/tags/%E5%B7%A5%E5%85%B7">工具栏</a></li>
-		        
-					<li style="width: 20%"><a href="/">时间轴</a></li>
+					<li style="width: 25%"><a href="/tags/%E5%B7%A5%E5%85%B7">百宝箱</a></li>
 		        
 				</ul>
 			</nav>
@@ -462,6 +456,102 @@
 
 
   
+    <article id="post-iOS收集应用评分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2019/04/24/iOS%E6%94%B6%E9%9B%86%E5%BA%94%E7%94%A8%E8%AF%84%E5%88%86/" target="_blank">iOS收集应用评分</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2019/04/24/iOS%E6%94%B6%E9%9B%86%E5%BA%94%E7%94%A8%E8%AF%84%E5%88%86/" class="archive-article-date">
+        <time datetime="2019-04-24T02:14:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-24</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="需求背景"><a href="#需求背景" class="headerlink" title="需求背景"></a>需求背景</h3><p>还在使用弹框链接跳转收集评分? 太不人性话了,应用用的好好的突然打断,比较闹心.</p>
+<h3 id="使用细节"><a href="#使用细节" class="headerlink" title="使用细节"></a>使用细节</h3><p><em>SKStoreReviewController</em> 注意: iOS 10.3+ 官方才提供的内置评分系统, 不能做成事件触发弹框评分的方式, 即使测试环境正常, 上架后事件触发仍会表示不响应. 其他细节如下:</p>
+<ol>
+<li>即使调用 requestReview, 也不一定会出现UI</li>
+<li>测试环境不能点提交按钮</li>
+<li>只能评星, 不能提交评论内容</li>
+<li>提示次数不限制, 但不要过于频繁, 官方建议每个版本提示一次</li>
+<li>旧版本收集如果写评论内容:可以在openURL后面拼接 action=write-review, 可以直接跳转到App Store评论页</li>
+<li>参考 <a href="https://developer.apple.com/documentation/storekit/skstorereviewcontroller/requesting_app_store_reviews?language=objc" target="_blank" rel="noopener">官方文档</a></li>
+</ol>
+<h3 id="Simple-code"><a href="#Simple-code" class="headerlink" title="Simple code"></a>Simple code</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;StoreKit/StoreKit.h&gt; </span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> 收集评分</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">- (<span class="keyword">void</span>)showAppStoreReView &#123;</span><br><span class="line">    <span class="built_in">NSDictionary</span> *infoDictionary = [[<span class="built_in">NSBundle</span> mainBundle] infoDictionary];</span><br><span class="line">    <span class="built_in">NSString</span> *app_Version = [infoDictionary objectForKey:<span class="string">@"CFBundleShortVersionString"</span>];</span><br><span class="line">    <span class="built_in">NSString</span> *app_build = [infoDictionary objectForKey:<span class="string">@"CFBundleVersion"</span>];</span><br><span class="line">    _appVersion = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@ (build %@)"</span>,app_Version,app_build];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 是否已经收集评分</span></span><br><span class="line">    <span class="built_in">NSNumber</span> *isShowAppStoreReView = [[[<span class="built_in">NSUserDefaults</span> standardUserDefaults] objectForKey:_appVersion] objectForKey:<span class="string">@"review"</span>];</span><br><span class="line">    <span class="keyword">if</span> (isShowAppStoreReView &amp;&amp; [isShowAppStoreReView isEqualToNumber:@YES]) <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 展示的时刻</span></span><br><span class="line">    <span class="keyword">int</span> shortestTime = <span class="number">50</span>;</span><br><span class="line">    <span class="keyword">int</span> longestTime = <span class="number">500</span>;</span><br><span class="line">    <span class="keyword">int</span> timeInterval = arc4random_uniform(longestTime - shortestTime) + shortestTime;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 测试</span></span><br><span class="line">    <span class="comment">//timeInterval = 10;</span></span><br><span class="line">    [<span class="built_in">NSTimer</span> scheduledTimerWithTimeInterval:timeInterval target:<span class="keyword">self</span> selector:<span class="keyword">@selector</span>(requestReview) userInfo:<span class="literal">nil</span> repeats:<span class="literal">NO</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)requestReview</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSMutableDictionary</span> *reviewDict = [<span class="built_in">NSMutableDictionary</span> dictionaryWithDictionary:[[<span class="built_in">NSUserDefaults</span> standardUserDefaults] objectForKey:_appVersion]];</span><br><span class="line">    [reviewDict setObject:@YES forKey:<span class="string">@"review"</span>];</span><br><span class="line">    [[<span class="built_in">NSUserDefaults</span> standardUserDefaults] setObject:reviewDict forKey:_appVersion];</span><br><span class="line">    [[<span class="built_in">NSUserDefaults</span> standardUserDefaults] synchronize];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (@available(iOS <span class="number">10.3</span>, *)) &#123;</span><br><span class="line">        [[<span class="built_in">UIApplication</span> sharedApplication].keyWindow endEditing:<span class="literal">YES</span>];</span><br><span class="line">        [<span class="built_in">SKStoreReviewController</span> requestReview];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 传统弹框提示跳转(iOS 10.3以下的)太麻烦直接取消提示</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">//    else &#123;</span></span><br><span class="line"><span class="comment">//        //不论iOS版本均可使用APP内部打开网页形式，跳转到App Store 直接编辑评论</span></span><br><span class="line"><span class="comment">//        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"给App打个分吧?" preferredStyle:UIAlertControllerStyleAlert];</span></span><br><span class="line"><span class="comment">//        UIAlertAction * ensure = [UIAlertAction actionWithTitle:@"去评论" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) &#123;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//            dispatch_async(dispatch_get_main_queue(), ^&#123;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//                NSString *APPID = @"xxx";</span></span><br><span class="line"><span class="comment">//                NSString *nsStringToOpen = [NSString stringWithFormat: @"itms-apps://itunes.apple.com/app/id%@?action=write-review",APPID];</span></span><br><span class="line"><span class="comment">//                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:nsStringToOpen]];</span></span><br><span class="line"><span class="comment">//            &#125;);</span></span><br><span class="line"><span class="comment">//        &#125;];</span></span><br><span class="line"><span class="comment">//        UIAlertAction * cancel = [UIAlertAction actionWithTitle:@"下次吧" style:UIAlertActionStyleDefault handler:nil];</span></span><br><span class="line"><span class="comment">//        [alert addAction:cancel];</span></span><br><span class="line"><span class="comment">//        [alert addAction:ensure];</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        [self.window.rootViewController presentViewController:alert animated:YES completion:nil];</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">技术栈</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-制作CocoaPods公有库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -510,6 +600,10 @@
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
@@ -680,11 +774,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		
 		</ul>
@@ -931,15 +1025,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">技术札记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">涂鸦</a>
+                <a href="javascript:void(0)" class="js-tag color5">技术札记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -948,6 +1042,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">涂鸦</a>
               </li>
             
             <div class="clearfix"></div>
