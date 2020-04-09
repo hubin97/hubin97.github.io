@@ -10,17 +10,17 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="需求背景还在使用弹框链接跳转收集评分? 太不人性话了,应用用的好好的突然打断,比较闹心. 使用细节SKStoreReviewController 注意: iOS 10.3+ 官方才提供的内置评分系统, 不能做成事件触发弹框评分的方式, 即使测试环境正常, 上架后事件触发仍会表示不响应. 其他细节如下:  即使调用 requestReview, 也不一定会出现UI 测试环境不能点提交按钮 只能评星,">
+  <meta name="description" content="需求背景还在使用弹框链接跳转收集评分? 太不人性话了,应用用的好好的突然打断,比较闹心. 使用细节SKStoreReviewController 注意: iOS 10.3+ 官方才提供的内置评分系统, 不能做成事件触发弹框评分的方式, 即使测试环境正常, 上架后事件触发仍会表示不响应. 其他细节如下:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS收集应用评分">
 <meta property="og:url" content="https://hubin97.github.io/2019/04/24/iOS%E6%94%B6%E9%9B%86%E5%BA%94%E7%94%A8%E8%AF%84%E5%88%86/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="需求背景还在使用弹框链接跳转收集评分? 太不人性话了,应用用的好好的突然打断,比较闹心. 使用细节SKStoreReviewController 注意: iOS 10.3+ 官方才提供的内置评分系统, 不能做成事件触发弹框评分的方式, 即使测试环境正常, 上架后事件触发仍会表示不响应. 其他细节如下:  即使调用 requestReview, 也不一定会出现UI 测试环境不能点提交按钮 只能评星,">
+<meta property="og:description" content="需求背景还在使用弹框链接跳转收集评分? 太不人性话了,应用用的好好的突然打断,比较闹心. 使用细节SKStoreReviewController 注意: iOS 10.3+ 官方才提供的内置评分系统, 不能做成事件触发弹框评分的方式, 即使测试环境正常, 上架后事件触发仍会表示不响应. 其他细节如下:">
 <meta property="article:published_time" content="2019-04-24T02:14:23.000Z">
-<meta property="article:modified_time" content="2020-04-09T09:55:23.049Z">
+<meta property="article:modified_time" content="2020-04-09T09:58:24.362Z">
 <meta property="article:author" content="青空|逸隐">
 <meta property="article:tag" content="iOS">
-<meta property="article:tag" content="技术栈">
+<meta property="article:tag" content="技术札记">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
@@ -99,11 +99,11 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" href="https://github.com/hubin97" title="GitHub" target="_blank"><i class="icon-github"></i></a>
+					<a class="github" href="https://github.com/hubin97" target="_blank" rel="noopener" title="GitHub" ><i class="icon-github"></i></a>
 				
-					<a class="jianshu" href="https://www.jianshu.com/u/3648954cc2ec" title="简书" target="_blank"><i class="icon-jianshu"></i></a>
+					<a class="jianshu" href="https://www.jianshu.com/u/3648954cc2ec" target="_blank" rel="noopener" title="简书" ><i class="icon-jianshu"></i></a>
 				
-					<a class="mail" href="mailto:970216474@qq.com" title="NULL" target="_blank"><i class="icon-mail"></i></a>
+					<a class="mail" href="mailto:970216474@qq.com" title="NULL" ><i class="icon-mail"></i></a>
 				
 			</div>
 		
@@ -248,6 +248,8 @@
     
     <h3 id="需求背景"><a href="#需求背景" class="headerlink" title="需求背景"></a>需求背景</h3><p>还在使用弹框链接跳转收集评分? 太不人性话了,应用用的好好的突然打断,比较闹心.</p>
 <h3 id="使用细节"><a href="#使用细节" class="headerlink" title="使用细节"></a>使用细节</h3><p><em>SKStoreReviewController</em> 注意: iOS 10.3+ 官方才提供的内置评分系统, 不能做成事件触发弹框评分的方式, 即使测试环境正常, 上架后事件触发仍会表示不响应. 其他细节如下:</p>
+<a id="more"></a>
+
 <ol>
 <li>即使调用 requestReview, 也不一定会出现UI</li>
 <li>测试环境不能点提交按钮</li>
@@ -329,7 +331,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">技术栈</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		
 		</ul>
@@ -525,7 +527,7 @@
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
-		open_in_new: true,
+		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
@@ -609,6 +611,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">涂鸦</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
@@ -617,19 +623,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">涂鸦</a>
               </li>
             
             <div class="clearfix"></div>
