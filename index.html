@@ -194,6 +194,94 @@
             
 
   
+    <article id="post-知识点备忘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/04/09/%E7%9F%A5%E8%AF%86%E7%82%B9%E5%A4%87%E5%BF%98/">知识点备忘</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/04/09/%E7%9F%A5%E8%AF%86%E7%82%B9%E5%A4%87%E5%BF%98/" class="archive-article-date">
+        <time datetime="2020-04-09T13:38:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="12-24小时制判断"><a href="#12-24小时制判断" class="headerlink" title="12/24小时制判断"></a>12/24小时制判断</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> mark -Private</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> hasAMPM==TURE为12小时制，否则为24小时制</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)hasAMPM</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//获取系统是24小时制或者12小时制</span></span><br><span class="line">    <span class="built_in">NSString</span> *formatStringForHours = [<span class="built_in">NSDateFormatter</span> dateFormatFromTemplate:<span class="string">@"j"</span> options:<span class="number">0</span> locale:[<span class="built_in">NSLocale</span> currentLocale]];</span><br><span class="line">    <span class="built_in">NSRange</span> containsA = [formatStringForHours rangeOfString:<span class="string">@"a"</span>];</span><br><span class="line">    <span class="built_in">BOOL</span> hasAMPM = containsA.location != <span class="built_in">NSNotFound</span>;</span><br><span class="line">    <span class="keyword">return</span> hasAMPM;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2020/04/09/%E7%9F%A5%E8%AF%86%E7%82%B9%E5%A4%87%E5%BF%98/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-常用小工具" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -574,7 +662,10 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> DEBUG</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DLog(fmt,...)     NSLog((@<span class="meta-string">"【Function:%s】【LineNum:%d】"</span> fmt),__FUNCTION__,__LINE__,##__VA_ARGS__)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DebugLogInt(num)      DebugLog(@<span class="meta-string">"int value is %d"</span>,num)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DebugFileLog(fmt,...) NSLog((@<span class="meta-string">"【File：%s】【Function:%s】【LineNum:%d】"</span> fmt),__FILE__,__FUNCTION__,__LINE__,##__VA_ARGS__)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DLog(format,...)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DebugLogInt(num)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DebugFileLog(format,...)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 弱引用</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> WeakSelf __weak typeof(self)ws = self;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Masonry前缀</span></span><br><span class="line"><span class="comment">//#define MAS_SHORTHAND</span></span><br><span class="line"><span class="comment">//#define MAS_SHORTHAND_GLOBALS</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/** null char */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> noNullStr(object) object == nil||[object isKindOfClass:[NSNull class]]?@<span class="meta-string">""</span>:[NSString stringWithFormat:@<span class="meta-string">"%@"</span>,object]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 精度</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> accuracyStr(premium) (([[premium componentsSeparatedByString:@<span class="meta-string">"."</span>] count] == 2 &amp;&amp; [[[premium componentsSeparatedByString:@<span class="meta-string">"."</span>] lastObject] length] &gt; 2)? [NSString stringWithFormat:@<span class="meta-string">"%.2f"</span>,[premium floatValue]]: premium)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> kScreenW  [[UIScreen mainScreen] bounds].size.width</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> kScreenH  [[UIScreen mainScreen] bounds].size.height</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/** 参考IPHONE_6sUI设计图比例 */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IPHONE_6s (kScreenW == 375? YES:NO)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> k6SWScale (([[UIScreen mainScreen] bounds].size.width/375 &lt; 1)? 1 : [[UIScreen mainScreen] bounds].size.width/375)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/** is iPhoneX*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IPHONE_X \</span></span><br><span class="line">(&#123;<span class="built_in">BOOL</span> isPhoneX = <span class="literal">NO</span>;\</span><br><span class="line"><span class="keyword">if</span> (@available(iOS <span class="number">11.0</span>, *)) &#123;\</span><br><span class="line">isPhoneX = [[<span class="built_in">UIApplication</span> sharedApplication] delegate].window.safeAreaInsets.bottom &gt; <span class="number">0.0</span>;\</span><br><span class="line">&#125;\</span><br><span class="line">(isPhoneX);&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">/** 顶部安全区域高度*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> kSafeAreaTopHeight (IPHONE_X ? 44.0f : 20.0)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/** 底部安全区域高度*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> kSafeAreaBottomHeight (IPHONE_X ? 34.0f : 0.0f)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//设置 view 圆角和边框</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DrawViewBorderRadius(View, Radius, Width, Color)\</span></span><br><span class="line">\</span><br><span class="line">[View.layer setCornerRadius:(Radius)];\</span><br><span class="line">[View.layer setMasksToBounds:<span class="literal">YES</span>];\</span><br><span class="line">[View.layer setBorderWidth:(Width)];\</span><br><span class="line">[View.layer setBorderColor:[Color <span class="built_in">CGColor</span>]]</span><br></pre></td></tr></table></figure>
+    <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> DEBUG</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DLog(fmt,...)     NSLog((@<span class="meta-string">"【Function:%s】【LineNum:%d】"</span> fmt),__FUNCTION__,__LINE__,##__VA_ARGS__)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DebugLogInt(num)      DebugLog(@<span class="meta-string">"int value is %d"</span>,num)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DebugFileLog(fmt,...) NSLog((@<span class="meta-string">"【File：%s】【Function:%s】【LineNum:%d】"</span> fmt),__FILE__,__FUNCTION__,__LINE__,##__VA_ARGS__)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DLog(format,...)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DebugLogInt(num)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DebugFileLog(format,...)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2019/04/18/%E5%B8%B8%E7%94%A8%E5%AE%8F%E6%95%B4%E7%90%86/#more">more >></a>
+    
     
 
     
@@ -594,7 +685,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">技术栈</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		
 		</ul>
@@ -981,88 +1072,6 @@
 
 
   
-    <article id="post-20171202" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2017/12/02/20171202/">20171202</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2017/12/02/20171202/" class="archive-article-date">
-        <time datetime="2017-12-02T10:05:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-02</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gdmiqh0uchj30yw0gkncr.jpg" alt=""></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">涂鸦</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1196,11 +1205,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">涂鸦</a>
+                <a href="javascript:void(0)" class="js-tag color4">煎茶集</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">煎茶集</a>
+                <a href="javascript:void(0)" class="js-tag color3">涂鸦</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1217,10 +1226,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
             <div class="clearfix"></div>
