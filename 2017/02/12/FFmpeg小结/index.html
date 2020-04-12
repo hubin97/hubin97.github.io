@@ -6,21 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hubin97.github.io">
-  <title>iOS零碎知识点备忘 | 个人博客</title>
+  <title>FFmpeg小结 | 个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="12&#x2F;24小时制判断123456789101112#pragma mark -Private&#x2F;** hasAMPM&#x3D;&#x3D;TURE为12小时制，否则为24小时制 *&#x2F;- (BOOL)hasAMPM&amp;#123;    &#x2F;&#x2F;获取系统是24小时制或者12小时制    NSString *formatStringForHours &#x3D; [NSDateFormatter dateFormatFromTemplat">
+  <meta name="description" content="FFmpegFFmpeg Github地址 FFmpeg-iOS-build-script Shell scripts to build FFmpeg for iOS and tvOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS零碎知识点备忘">
-<meta property="og:url" content="https://hubin97.github.io/2018/07/09/iOS%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E5%A4%87%E5%BF%98/index.html">
+<meta property="og:title" content="FFmpeg小结">
+<meta property="og:url" content="https://hubin97.github.io/2017/02/12/FFmpeg%E5%B0%8F%E7%BB%93/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="12&#x2F;24小时制判断123456789101112#pragma mark -Private&#x2F;** hasAMPM&#x3D;&#x3D;TURE为12小时制，否则为24小时制 *&#x2F;- (BOOL)hasAMPM&amp;#123;    &#x2F;&#x2F;获取系统是24小时制或者12小时制    NSString *formatStringForHours &#x3D; [NSDateFormatter dateFormatFromTemplat">
-<meta property="article:published_time" content="2018-07-09T03:38:53.000Z">
-<meta property="article:modified_time" content="2020-04-11T06:12:18.078Z">
+<meta property="og:description" content="FFmpegFFmpeg Github地址 FFmpeg-iOS-build-script Shell scripts to build FFmpeg for iOS and tvOS">
+<meta property="article:published_time" content="2017-02-12T03:52:12.000Z">
+<meta property="article:modified_time" content="2020-04-12T04:08:24.982Z">
 <meta property="article:author" content="青空|逸隐">
 <meta property="article:tag" content="技术札记">
+<meta property="article:tag" content="FFmpeg">
 <meta property="article:tag" content="iOS">
+<meta property="article:tag" content="macosx">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
@@ -193,14 +195,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-iOS零碎知识点备忘" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-FFmpeg小结" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      iOS零碎知识点备忘
+      FFmpeg小结
     </h1>
   
 
@@ -212,8 +214,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2018/07/09/iOS%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E5%A4%87%E5%BF%98/" class="archive-article-date">
-        <time datetime="2018-07-09T03:38:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-09</time>
+<a href="/2017/02/12/FFmpeg%E5%B0%8F%E7%BB%93/" class="archive-article-date">
+        <time datetime="2017-02-12T03:52:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-12</time>
 </a>
 
   
@@ -226,7 +228,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">362字</span>
+      <span class="post-count">530字</span>
     </span>
   </span>
 
@@ -235,7 +237,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -246,22 +248,33 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="12-24小时制判断"><a href="#12-24小时制判断" class="headerlink" title="12/24小时制判断"></a>12/24小时制判断</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> mark -Private</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> hasAMPM==TURE为12小时制，否则为24小时制</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)hasAMPM</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//获取系统是24小时制或者12小时制</span></span><br><span class="line">    <span class="built_in">NSString</span> *formatStringForHours = [<span class="built_in">NSDateFormatter</span> dateFormatFromTemplate:<span class="string">@"j"</span> options:<span class="number">0</span> locale:[<span class="built_in">NSLocale</span> currentLocale]];</span><br><span class="line">    <span class="built_in">NSRange</span> containsA = [formatStringForHours rangeOfString:<span class="string">@"a"</span>];</span><br><span class="line">    <span class="built_in">BOOL</span> hasAMPM = containsA.location != <span class="built_in">NSNotFound</span>;</span><br><span class="line">    <span class="keyword">return</span> hasAMPM;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <h3 id="FFmpeg"><a href="#FFmpeg" class="headerlink" title="FFmpeg"></a>FFmpeg</h3><p><a href="https://github.com/FFmpeg/FFmpeg" target="_blank" rel="noopener">FFmpeg Github地址</a></p>
+<p><a href="https://github.com/kewlbear/FFmpeg-iOS-build-script" target="_blank" rel="noopener">FFmpeg-iOS-build-script</a> Shell scripts to build FFmpeg for iOS and tvOS</p>
 <a id="more"></a>
 
-<h3 id="手机号码校验"><a href="#手机号码校验" class="headerlink" title="手机号码校验"></a>手机号码校验</h3><p>2017年8月8日，工信部发布2017年第10批《电信网码号资源使用证书》颁发结果公示，涵盖130个新号段。<br>其中新批电信199号段、移动198号段、联通166号段。<br><code>^1(3[0-9]|4[57]|5[0-35-9]|6[6]|7[06-8]|8[0-9]|9[89])\d{8}$</code></p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)isMobileNO:(<span class="built_in">NSString</span> *)phoneNumber &#123;</span><br><span class="line">    <span class="built_in">NSString</span> *MOBILE = <span class="string">@"^1(3[0-9]|4[57]|5[0-35-9]|6[6]|7[06-8]|8[0-9]|9[89])\\d&#123;8&#125;$"</span>;</span><br><span class="line">    <span class="built_in">NSPredicate</span> *regextestmobile = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF MATCHES %@"</span>, MOBILE];</span><br><span class="line">    <span class="keyword">return</span> [regextestmobile evaluateWithObject:phoneNumber];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;build-ffmpeg.sh arm64 armv7 armv7s i386 x86_64</span><br><span class="line">.&#x2F;build-ffmpeg.sh arm64 arm64e armv7 armv7s i386 x86_64</span><br><span class="line"></span><br><span class="line">libavcodec提供了更广泛的编解码器的实现。</span><br><span class="line">libavformat实现了流协议，容器格式和基本I &#x2F; O访问。</span><br><span class="line">libavutil包括哈希，解压缩器和各种实用程序功能。</span><br><span class="line">libavfilter提供了通过过滤器链改变解码的音频和视频的方法。</span><br><span class="line">libavdevice提供访问捕获和回放设备的抽象。</span><br><span class="line">libswresample实现音频混合和重采样例程。</span><br><span class="line">libswscale实现颜色转换和缩放例程。</span><br></pre></td></tr></table></figure>
 
-<h3 id="沙箱操作"><a href="#沙箱操作" class="headerlink" title="沙箱操作"></a>沙箱操作</h3><!--iOS开发向沙盒中写入文件、文件夹以及从沙盒中读取文件
--->
-<!--[document](http://blog.csdn.net/lizhilin_vip/article/details/53185482)
--->
+<p>— - - — - - — -  -</p>
+<p>致敬雷神 - <a href="https://blog.csdn.net/leixiaohua1020/article/details/47071547" target="_blank" rel="noopener">最简单的基于FFmpeg的移动端例子：IOS HelloWorld</a></p>
+<p>FFMPEG跨平台iOS&amp;Android高级开发实践视频教程..<br>链接: <code>https://pan.baidu.com/s/1nv4WsD7</code>  密码: <code>3knk</code></p>
+<h3 id="FFmpeg-iOS-篇"><a href="#FFmpeg-iOS-篇" class="headerlink" title="FFmpeg iOS 篇"></a>FFmpeg iOS 篇</h3><p>“一键编译”的脚本<br><a href="http://www.jianshu.com/p/52516bdc1eb5" target="_blank" rel="noopener">iOS下使用FFMPEG的一些总结</a></p>
+<h3 id="FFmpeg-Mac-OS-X-篇"><a href="#FFmpeg-Mac-OS-X-篇" class="headerlink" title="FFmpeg Mac OS X 篇"></a>FFmpeg Mac OS X 篇</h3><h4 id="编译流程"><a href="#编译流程" class="headerlink" title="编译流程"></a>编译流程</h4><p>(一)下载FFMPEG源代码生成静态包</p>
+<p>1.官网下载链接:</p>
+<pre><code>-&gt;Get the Sources
+ [地址下载](http://ffmpeg.org/download.html#build-mac)</code></pre><p>2.由以上github链接下载名为 <a href="https://github.com/FFmpeg/FFmpeg" target="_blank" rel="noopener">FFmpeg-master源代码</a> </p>
+<pre><code>`git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg`*</code></pre><p>3.终端进入源代码文件夹,依次执行以下指令</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> $  .&#x2F;configure --disable-yasm --enable-shared</span><br><span class="line">$  make</span><br><span class="line">$  sudo make install</span><br></pre></td></tr></table></figure>
 
-<p>1.获取document下面所有文件 (包括文件夹及文件夹里面的文件)</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *docPath = [<span class="built_in">NSSearchPathForDirectoriesInDomains</span>(<span class="built_in">NSDocumentDirectory</span>, <span class="built_in">NSUserDomainMask</span>, <span class="literal">YES</span>) objectAtIndex:<span class="number">0</span>];</span><br><span class="line">    <span class="built_in">NSString</span> *imagesPath = [docPath stringByAppendingPathComponent:<span class="string">@"xxx"</span>];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSFileManager</span> *fileManager = [<span class="built_in">NSFileManager</span> defaultManager];</span><br><span class="line">    <span class="built_in">NSDirectoryEnumerator</span> *dirEnum = [fileManager enumeratorAtPath:imagesPath];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSString</span> *fileName;</span><br><span class="line">    <span class="keyword">while</span> (fileName = [dirEnum nextObject])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"----------FielName : %@"</span> , fileName);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"-----------------FileFullPath : %@"</span> , [imagesPath stringByAppendingPathComponent:fileName]) ;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>4.生成的文件包在  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$sudo make install 内会有提示 </span><br><span class="line">&#x2F;Applications&#x2F;Xcode 7.3.app&#x2F;Contents&#x2F;Developer&#x2F;Toolchains&#x2F;XcodeDefault.xctoolchain&#x2F;usr&#x2F;bin&#x2F;ranlib: file: &#x2F;usr&#x2F;local&#x2F;lib&#x2F;libavcodec.a(vc1dsp_mmx.o) has no symbols</span><br></pre></td></tr></table></figure>
 
-<p>2.分别获取文件夹名, 文件夹里面的文件名</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getUploadImageTask</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSString</span> *docPath = [<span class="built_in">NSSearchPathForDirectoriesInDomains</span>(<span class="built_in">NSDocumentDirectory</span>, <span class="built_in">NSUserDomainMask</span>, <span class="literal">YES</span>) objectAtIndex:<span class="number">0</span>];</span><br><span class="line">    <span class="built_in">NSString</span> *imagesPath = [docPath stringByAppendingPathComponent:<span class="string">@"xxx"</span>];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSFileManager</span> *fileManager = [<span class="built_in">NSFileManager</span> defaultManager];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 获取文件夹的名字数组</span></span><br><span class="line">    <span class="built_in">NSArray</span> *dirFileList = [[<span class="built_in">NSArray</span> alloc] initWithArray:[fileManager contentsOfDirectoryAtPath:imagesPath error:<span class="literal">nil</span>]];</span><br><span class="line">    DLog(<span class="string">@"dirFileList:%@"</span>,dirFileList);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 遍历文件夹取图片名数组</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">NSString</span> *dirName <span class="keyword">in</span> dirFileList)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">NSString</span> *imageTotalPath = [imagesPath stringByAppendingPathComponent:dirName];</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">NSArray</span> *imageFileList = [[<span class="built_in">NSArray</span> alloc] initWithArray:[fileManager contentsOfDirectoryAtPath:imageTotalPath error:<span class="literal">nil</span>]];</span><br><span class="line">        DLog(<span class="string">@"imageFileList:%@"</span>,imageFileList);</span><br><span class="line">        </span><br><span class="line">        [_dataSource addObject: @&#123;dirName : imageFileList&#125;];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时进入路径/usr/local中将lib中与ffmpeg相关的.a拷出; 进入路径/usr/local中将include中lib中与ffmpeg相关的文件夹拷出放入自定义创建的ffmpeg_static_311文件中</p>
+<p><strong>[注意]!!!: 至于如何对比是否与ffmpeg相关可以参考以下链接的描述 <a href="http://evermeet.cx/ffmpeg/" target="_blank" rel="noopener">static FFmpeg binaries for Mac OS X Intel 64bit</a></strong></p>
+<p>(二) Xcode Demo编译</p>
+<p>1.将得到的ffmpeg_static_311文件,拷入项目中开始编译:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error: &#x2F;Users&#x2F;andy&#x2F;Desktop&#x2F;FFMPEG-MACOSX-DEMO&#x2F;FFMPEG-MACOSX-DEMO&#x2F;ffmpeg_static_311&#x2F;lib&#x2F;pkgconfig&#x2F;..&#x2F;..&#x2F;Cellar&#x2F;python&#x2F;2.7.11&#x2F;lib&#x2F;pkgconfig&#x2F;python-2.7.pc: No such file or directory</span><br></pre></td></tr></table></figure>
+<p>解决方案: 剔除ffmpeg_static_311/lib中的pkgconfig文件夹</p>
+
     
 
     
@@ -307,7 +320,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://hubin97.github.io/2018/07/09/iOS零碎知识点备忘/" title="iOS零碎知识点备忘" target="_blank">https://hubin97.github.io/2018/07/09/iOS零碎知识点备忘/</a>
+          <a href="https://hubin97.github.io/2017/02/12/FFmpeg小结/" title="FFmpeg小结" target="_blank">https://hubin97.github.io/2017/02/12/FFmpeg小结/</a>
         </li>
         
         <li>
@@ -333,7 +346,15 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">FFmpeg</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">macosx</a>
         		</li>
       		
 		</ul>
@@ -389,7 +410,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://hubin97.github.io/2018/07/09/iOS%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E5%A4%87%E5%BF%98/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://hubin97.github.io/2017/02/12/FFmpeg%E5%B0%8F%E7%BB%93/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -404,18 +425,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2018/07/10/iOS%E6%9D%83%E9%99%90%E6%95%B4%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/03/02/20170302/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          iOS权限整理
+          20170302
         
       </div>
     </a>
   
   
-    <a href="/2018/05/11/Texture/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Texture</div>
+    <a href="/2017/02/08/20170208/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">20170208</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -442,7 +463,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#12-24小时制判断"><span class="toc-number">1.</span> <span class="toc-text">12&#x2F;24小时制判断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#手机号码校验"><span class="toc-number">2.</span> <span class="toc-text">手机号码校验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#沙箱操作"><span class="toc-number">3.</span> <span class="toc-text">沙箱操作</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#FFmpeg"><span class="toc-number">1.</span> <span class="toc-text">FFmpeg</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FFmpeg-iOS-篇"><span class="toc-number">2.</span> <span class="toc-text">FFmpeg iOS 篇</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FFmpeg-Mac-OS-X-篇"><span class="toc-number">3.</span> <span class="toc-text">FFmpeg Mac OS X 篇</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#编译流程"><span class="toc-number">3.1.</span> <span class="toc-text">编译流程</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -469,9 +490,9 @@
     <script src="/lib/gitment.js"></script>
   
   <script>
-    <!-- id: "iOS零碎知识点备忘" -->
+    <!-- id: "FFmpeg小结" -->
     var gitment = new Gitment({
-      id: "20180709113853",
+      id: "20170212115212",
       owner: 'hubin97',
       repo: 'hubin97_io_talk',
       oauth: {

@@ -20,10 +20,10 @@
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdpt95qmw6j31fc0pq765.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdpt9z8k8dj314e0sy0tp.jpg">
 <meta property="article:published_time" content="2017-03-13T06:18:25.000Z">
-<meta property="article:modified_time" content="2020-04-11T06:34:37.121Z">
+<meta property="article:modified_time" content="2020-04-12T03:41:40.951Z">
 <meta property="article:author" content="青空|逸隐">
-<meta property="article:tag" content="iOS">
 <meta property="article:tag" content="技术札记">
+<meta property="article:tag" content="iOS">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdpt6y5ufij30bs04m0so.jpg">
   
@@ -254,6 +254,8 @@
 <p>如果仅仅是为了实现推送这一功能,选择可能会有很多; 但是使用三方框架肯定是非常快捷方便的.本文以极光推送的集成为例.</p>
 <p>若要实现简易图文推送,只需使用iOS10新特性服务扩展即可<code>UNNotificationServiceExtension</code>;</p>
 <p>但是如果仍需定义通知栏收到推送的显示内容以及样式,则需要通知内容扩展<code>UNNotificationContentExtension</code></p>
+<a id="more"></a>
+
 <p>接下来三个段落主要由以上需求展开.</p>
 <h3 id="一-集成极光推送"><a href="#一-集成极光推送" class="headerlink" title="一: 集成极光推送"></a>一: 集成极光推送</h3><h4 id="1-极光开发者服务控制台创建应用-完成创建操作可获得一个AppKey-此AppKey在后续代码集成时需要用到"><a href="#1-极光开发者服务控制台创建应用-完成创建操作可获得一个AppKey-此AppKey在后续代码集成时需要用到" class="headerlink" title="1.极光开发者服务控制台创建应用,完成创建操作可获得一个AppKey,此AppKey在后续代码集成时需要用到."></a>1.极光开发者服务控制台创建应用,完成创建操作可获得一个AppKey,此AppKey在后续代码集成时需要用到.</h4><p>控制台操作可参考: <a href="https://docs.jiguang.cn/jpush/console/Instructions/" target="_blank" rel="noopener">极光文档-控制台使用指南</a></p>
 <h4 id="2-制作证书-App证书-推送证书-证书相关配置文件"><a href="#2-制作证书-App证书-推送证书-证书相关配置文件" class="headerlink" title="2.制作证书(App证书,推送证书,证书相关配置文件)"></a>2.制作证书(App证书,推送证书,证书相关配置文件)</h4><p>以个人开发者账号为例. 首先,创建一个App所需的bundle id ;接着可视情况分别创建开发/发布证书; 再则申请相应的推送证书,并下载推送证书(极光推送服务控制台需要上传.p12推送证书文件); 最后根据App证书配置证书描述文件.</p>
@@ -349,11 +351,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		
 		</ul>
@@ -633,11 +635,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">涂鸦</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">涂鸦</a>
+                <a href="javascript:void(0)" class="js-tag color5">技术札记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">FFmpeg</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -645,7 +651,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">技术札记</a>
+                <a href="javascript:void(0)" class="js-tag color2">macosx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -746,6 +760,15 @@
                   <img src="http://wendingding.com/鲸鱼.png">
                 
                 文顶顶
+              </a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://www.cnblogs.com/kenshincui/" target="_blank" class="search-title" title="CODING 完美世界...">
+                
+                  <i class="icon-link icon"></i>
+                
+                Kenshin Cui
               </a>
             </li>
           
