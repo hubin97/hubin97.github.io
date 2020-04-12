@@ -194,6 +194,91 @@
             
 
   
+    <article id="post-为什么iOS更新UI操作必须在主线程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2018/04/07/%E4%B8%BA%E4%BB%80%E4%B9%88iOS%E6%9B%B4%E6%96%B0UI%E6%93%8D%E4%BD%9C%E5%BF%85%E9%A1%BB%E5%9C%A8%E4%B8%BB%E7%BA%BF%E7%A8%8B/">为什么iOS更新UI操作必须在主线程</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2018/04/07/%E4%B8%BA%E4%BB%80%E4%B9%88iOS%E6%9B%B4%E6%96%B0UI%E6%93%8D%E4%BD%9C%E5%BF%85%E9%A1%BB%E5%9C%A8%E4%B8%BB%E7%BA%BF%E7%A8%8B/" class="archive-article-date">
+        <time datetime="2018-04-07T07:38:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-07</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p><code>iOSer</code>都知道UI操作如果在非主线程进行的话是会Crash的。但是本质原因可能很少人真正明白。</p>
+<p>正面的概括回答是：<br><strong>UI操作涉及到渲染访问各种View对象的属性，如果是异步操作会有读写问题。加锁呢，性能损耗大(视图层次深，属性多)。所以主线程操作UI，是约定俗成的开发规则。</strong></p>
+    
+    <a class="article-more-a" href="/2018/04/07/%E4%B8%BA%E4%BB%80%E4%B9%88iOS%E6%9B%B4%E6%96%B0UI%E6%93%8D%E4%BD%9C%E5%BF%85%E9%A1%BB%E5%9C%A8%E4%B8%BB%E7%BA%BF%E7%A8%8B/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-博客搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -782,11 +867,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">FFmpeg</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">FFmpeg</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -1142,11 +1227,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+                <a href="javascript:void(0)" class="js-tag color2">FFmpeg</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">FFmpeg</a>
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1154,11 +1239,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">标记</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color3">标记</a>
               </li>
              
               <li class="article-tag-list-item">
