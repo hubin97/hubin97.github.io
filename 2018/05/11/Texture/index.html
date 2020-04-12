@@ -10,22 +10,22 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="一、简介AsyncDisplayKit 是一个UI框架，最初诞生于 Facebook 的 Paper 应用程序。它是为了解决 Paper 团队面临的核心问题之一：如何尽可能缓解主线程的压力？Texture（原名AsyncDisplayKit）是FaceBook开源的一款能够保持界面流畅的框架。建立在UIKit之上，可以保持最复杂的用户界面的流畅和响应。（smooth and responsive）">
+  <meta name="description" content="一、简介Texture（原名AsyncDisplayKit）是FaceBook开源的一款能够保持界面流畅的框架。建立在UIKit之上，可以保持最复杂的用户界面的流畅和响应。（smooth and responsive）;  最初诞生于 Facebook 的 Paper 应用程序。它是为了解决 Paper 团队面临的核心问题之一：如何尽可能缓解主线程的压力？ Texture 是达摩克利斯之剑, 所以">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Texture">
 <meta property="og:url" content="https://hubin97.github.io/2018/05/11/Texture/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="一、简介AsyncDisplayKit 是一个UI框架，最初诞生于 Facebook 的 Paper 应用程序。它是为了解决 Paper 团队面临的核心问题之一：如何尽可能缓解主线程的压力？Texture（原名AsyncDisplayKit）是FaceBook开源的一款能够保持界面流畅的框架。建立在UIKit之上，可以保持最复杂的用户界面的流畅和响应。（smooth and responsive）">
+<meta property="og:description" content="一、简介Texture（原名AsyncDisplayKit）是FaceBook开源的一款能够保持界面流畅的框架。建立在UIKit之上，可以保持最复杂的用户界面的流畅和响应。（smooth and responsive）;  最初诞生于 Facebook 的 Paper 应用程序。它是为了解决 Paper 团队面临的核心问题之一：如何尽可能缓解主线程的压力？ Texture 是达摩克利斯之剑, 所以">
 <meta property="og:image" content="http://box.kancloud.cn/2015-11-19_564d5003b06b2.png">
 <meta property="og:image" content="http://box.kancloud.cn/2015-11-19_564d5003c469c.png">
 <meta property="og:image" content="http://box.kancloud.cn/2015-11-19_564d5003d8c06.png">
 <meta property="og:image" content="https://segmentfault.com/img/remote/1460000007991860?w=200&h=200/view">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1519620-9f6d47a8ffeffc6c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="article:published_time" content="2018-05-11T14:11:52.000Z">
-<meta property="article:modified_time" content="2020-04-11T15:41:49.797Z">
+<meta property="article:modified_time" content="2020-04-12T02:13:03.963Z">
 <meta property="article:author" content="青空|逸隐">
-<meta property="article:tag" content="技术札记">
 <meta property="article:tag" content="iOS">
+<meta property="article:tag" content="技术札记">
 <meta property="article:tag" content="标记">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://box.kancloud.cn/2015-11-19_564d5003b06b2.png">
@@ -253,7 +253,9 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h1><h4 id="AsyncDisplayKit-是一个UI框架，最初诞生于-Facebook-的-Paper-应用程序。它是为了解决-Paper-团队面临的核心问题之一：如何尽可能缓解主线程的压力？"><a href="#AsyncDisplayKit-是一个UI框架，最初诞生于-Facebook-的-Paper-应用程序。它是为了解决-Paper-团队面临的核心问题之一：如何尽可能缓解主线程的压力？" class="headerlink" title="AsyncDisplayKit 是一个UI框架，最初诞生于 Facebook 的 Paper 应用程序。它是为了解决 Paper 团队面临的核心问题之一：如何尽可能缓解主线程的压力？"></a>AsyncDisplayKit 是一个UI框架，最初诞生于 Facebook 的 Paper 应用程序。它是为了解决 Paper 团队面临的核心问题之一：如何尽可能缓解主线程的压力？</h4><p>Texture（原名AsyncDisplayKit）是FaceBook开源的一款能够保持界面流畅的框架。建立在UIKit之上，可以保持最复杂的用户界面的流畅和响应。（smooth and responsive）</p>
+    <h1 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h1><p>Texture（原名AsyncDisplayKit）是FaceBook开源的一款能够保持界面流畅的框架。建立在UIKit之上，可以保持最复杂的用户界面的流畅和响应。（smooth and responsive）; </p>
+<p>最初诞生于 Facebook 的 Paper 应用程序。它是为了解决 Paper 团队面临的核心问题之一：如何尽可能缓解主线程的压力？</p>
+<p><em>Texture 是达摩克利斯之剑, 所以再选择这个框架的时候需要额外的斟酌. 先确认弊端,再决定是否项目中要不要去使用它吧</em></p>
 <h2 id="1、使用优缺点"><a href="#1、使用优缺点" class="headerlink" title="1、使用优缺点"></a>1、使用优缺点</h2><ul>
 <li>需要自己造轮子</li>
 <li>不支持大家常用的storyboard、xib、autoLayout，影响开发效率</li>
@@ -327,7 +329,7 @@
 </tbody></table>
 </li>
 </ul>
-<p>####静态库<br>AsyncDisplayKit可以当做静态库引入</p>
+<h4 id="静态库"><a href="#静态库" class="headerlink" title="静态库"></a>静态库</h4><p>AsyncDisplayKit可以当做静态库引入</p>
 <blockquote>
 <ul>
 <li>拷贝整个工程到你的目录下，添加AsyncDisplayKit.xcodeproj到你的workspace</li>
@@ -495,11 +497,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -612,7 +614,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、简介"><span class="toc-number">1.</span> <span class="toc-text">一、简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#AsyncDisplayKit-是一个UI框架，最初诞生于-Facebook-的-Paper-应用程序。它是为了解决-Paper-团队面临的核心问题之一：如何尽可能缓解主线程的压力？"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">AsyncDisplayKit 是一个UI框架，最初诞生于 Facebook 的 Paper 应用程序。它是为了解决 Paper 团队面临的核心问题之一：如何尽可能缓解主线程的压力？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1、使用优缺点"><span class="toc-number">1.1.</span> <span class="toc-text">1、使用优缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-优化原理"><span class="toc-number">1.2.</span> <span class="toc-text">2.优化原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ASDK-认为，阻塞主线程的任务，主要分为上面这三大类。"><span class="toc-number">1.2.1.</span> <span class="toc-text">ASDK 认为，阻塞主线程的任务，主要分为上面这三大类。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为了尽量优化性能，ASDK-尝试对-UIKit-组件进行封装："><span class="toc-number">1.2.2.</span> <span class="toc-text">为了尽量优化性能，ASDK 尝试对 UIKit 组件进行封装：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Nodes节点"><span class="toc-number">1.3.</span> <span class="toc-text">3.Nodes节点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、使用"><span class="toc-number">2.</span> <span class="toc-text">二、使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-ASImageNode"><span class="toc-number">2.1.</span> <span class="toc-text">1.ASImageNode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-ASTextNode"><span class="toc-number">2.2.</span> <span class="toc-text">2.ASTextNode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-ASTableNode-ASCollectionNode"><span class="toc-number">2.3.</span> <span class="toc-text">3.ASTableNode&#x2F;ASCollectionNode</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、布局"><span class="toc-number">3.</span> <span class="toc-text">三、布局</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ASDK-拥有自己的一套成熟布局方案，虽然学习成本略高，但至少比原生的-AutoLayout-写起来舒服，重点是性能比起-AutoLayout-好的不是一点点。（ASDK不支持autoLayout）"><span class="toc-number">3.0.0.1.</span> <span class="toc-text">ASDK 拥有自己的一套成熟布局方案，虽然学习成本略高，但至少比原生的 AutoLayout 写起来舒服，重点是性能比起 AutoLayout 好的不是一点点。（ASDK不支持autoLayout）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-布局类"><span class="toc-number">3.1.</span> <span class="toc-text">1. 布局类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-示例"><span class="toc-number">3.2.</span> <span class="toc-text">2.示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ASAbsoluteLayoutSpec"><span class="toc-number">3.2.1.</span> <span class="toc-text">ASAbsoluteLayoutSpec</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ASBackgroundLayoutSpec"><span class="toc-number">3.2.2.</span> <span class="toc-text">ASBackgroundLayoutSpec</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ASInsetLayoutSpec"><span class="toc-number">3.2.3.</span> <span class="toc-text">ASInsetLayoutSpec</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ASOverlayLayoutSpec"><span class="toc-number">3.2.4.</span> <span class="toc-text">ASOverlayLayoutSpec</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、简介"><span class="toc-number">1.</span> <span class="toc-text">一、简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、使用优缺点"><span class="toc-number">1.1.</span> <span class="toc-text">1、使用优缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-优化原理"><span class="toc-number">1.2.</span> <span class="toc-text">2.优化原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ASDK-认为，阻塞主线程的任务，主要分为上面这三大类。"><span class="toc-number">1.2.1.</span> <span class="toc-text">ASDK 认为，阻塞主线程的任务，主要分为上面这三大类。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为了尽量优化性能，ASDK-尝试对-UIKit-组件进行封装："><span class="toc-number">1.2.2.</span> <span class="toc-text">为了尽量优化性能，ASDK 尝试对 UIKit 组件进行封装：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Nodes节点"><span class="toc-number">1.3.</span> <span class="toc-text">3.Nodes节点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#静态库"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">静态库</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、使用"><span class="toc-number">2.</span> <span class="toc-text">二、使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-ASImageNode"><span class="toc-number">2.1.</span> <span class="toc-text">1.ASImageNode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-ASTextNode"><span class="toc-number">2.2.</span> <span class="toc-text">2.ASTextNode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-ASTableNode-ASCollectionNode"><span class="toc-number">2.3.</span> <span class="toc-text">3.ASTableNode&#x2F;ASCollectionNode</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、布局"><span class="toc-number">3.</span> <span class="toc-text">三、布局</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ASDK-拥有自己的一套成熟布局方案，虽然学习成本略高，但至少比原生的-AutoLayout-写起来舒服，重点是性能比起-AutoLayout-好的不是一点点。（ASDK不支持autoLayout）"><span class="toc-number">3.0.0.1.</span> <span class="toc-text">ASDK 拥有自己的一套成熟布局方案，虽然学习成本略高，但至少比原生的 AutoLayout 写起来舒服，重点是性能比起 AutoLayout 好的不是一点点。（ASDK不支持autoLayout）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-布局类"><span class="toc-number">3.1.</span> <span class="toc-text">1. 布局类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-示例"><span class="toc-number">3.2.</span> <span class="toc-text">2.示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ASAbsoluteLayoutSpec"><span class="toc-number">3.2.1.</span> <span class="toc-text">ASAbsoluteLayoutSpec</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ASBackgroundLayoutSpec"><span class="toc-number">3.2.2.</span> <span class="toc-text">ASBackgroundLayoutSpec</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ASInsetLayoutSpec"><span class="toc-number">3.2.3.</span> <span class="toc-text">ASInsetLayoutSpec</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ASOverlayLayoutSpec"><span class="toc-number">3.2.4.</span> <span class="toc-text">ASOverlayLayoutSpec</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -791,11 +793,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">技术札记</a>
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+                <a href="javascript:void(0)" class="js-tag color5">技术札记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -908,7 +910,7 @@
     	<section class="tools-section tools-section-me" q-show="aboutme">
         
           
-  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>iOS开发、<br>开源爱好者<br><br>联系QQ:970216474<br><br>写博客主要是为了自己的总结温习<br><br>如果能帮助到大家的话<br>再好不过了!O(∩_∩)O哈哈~</div>
+  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>iOS开发、<br>开源爱好者<br><br>联系QQ:970216474<br><br>写博客的原因<br><br>主要是为了自己的总结回顾<br><br>如果能帮助到大家的话<br><br>那再好不过了!O(∩_∩)O哈哈~</div>
   	  	
     	</section>
     
