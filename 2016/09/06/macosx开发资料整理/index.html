@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hubin97.github.io">
-  <title>制作CocoaPods公有库 | 个人博客</title>
+  <title>macosx开发资料整理 | 个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="最终实现效果执行$pod search xxx 123456789-&gt; HBKitTools (0.0.3)   个人常用开发组件   pod &#39;HBKitTools&#39;, &#39;~&gt; 0.0.3&#39;   - Homepage: https:&#x2F;&#x2F;github.com&#x2F;hubin97&#x2F;HBKitTools   - Sourc">
+  <meta name="description" content="macosx开发资料整理macOS 应用开发技术   官方例子 张鹏伟博客 macosx开发的一些轮子 项目实例: Debug The Api &#x2F; Origin Designer BRDrawer - 仿Mac QQ登录界面的效果实现源码    Mac与ios开发的差别（个人整合） toolbar添加自定义的地items DockTitle以及">
 <meta property="og:type" content="article">
-<meta property="og:title" content="制作CocoaPods公有库">
-<meta property="og:url" content="https://hubin97.github.io/2019/04/09/%E5%88%B6%E4%BD%9CCocoaPods%E5%85%AC%E6%9C%89%E5%BA%93/index.html">
+<meta property="og:title" content="macosx开发资料整理">
+<meta property="og:url" content="https://hubin97.github.io/2016/09/06/macosx%E5%BC%80%E5%8F%91%E8%B5%84%E6%96%99%E6%95%B4%E7%90%86/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="最终实现效果执行$pod search xxx 123456789-&gt; HBKitTools (0.0.3)   个人常用开发组件   pod &#39;HBKitTools&#39;, &#39;~&gt; 0.0.3&#39;   - Homepage: https:&#x2F;&#x2F;github.com&#x2F;hubin97&#x2F;HBKitTools   - Sourc">
-<meta property="article:published_time" content="2019-04-09T07:20:30.000Z">
-<meta property="article:modified_time" content="2020-04-09T09:29:08.937Z">
+<meta property="og:description" content="macosx开发资料整理macOS 应用开发技术   官方例子 张鹏伟博客 macosx开发的一些轮子 项目实例: Debug The Api &#x2F; Origin Designer BRDrawer - 仿Mac QQ登录界面的效果实现源码    Mac与ios开发的差别（个人整合） toolbar添加自定义的地items DockTitle以及">
+<meta property="article:published_time" content="2016-09-06T03:03:20.000Z">
+<meta property="article:modified_time" content="2020-04-12T03:20:28.485Z">
 <meta property="article:author" content="青空|逸隐">
-<meta property="article:tag" content="iOS">
-<meta property="article:tag" content="技术札记">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
@@ -193,14 +191,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-制作CocoaPods公有库" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-macosx开发资料整理" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      制作CocoaPods公有库
+      macosx开发资料整理
     </h1>
   
 
@@ -212,8 +210,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2019/04/09/%E5%88%B6%E4%BD%9CCocoaPods%E5%85%AC%E6%9C%89%E5%BA%93/" class="archive-article-date">
-        <time datetime="2019-04-09T07:20:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-09</time>
+<a href="/2016/09/06/macosx%E5%BC%80%E5%8F%91%E8%B5%84%E6%96%99%E6%95%B4%E7%90%86/" class="archive-article-date">
+        <time datetime="2016-09-06T03:03:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-06</time>
 </a>
 
   
@@ -226,7 +224,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.2k字</span>
+      <span class="post-count">286字</span>
     </span>
   </span>
 
@@ -235,7 +233,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">5分</span>
+      <span class="post-count">1分</span>
     </span>
   </span>
 </div>
@@ -246,50 +244,28 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="最终实现效果"><a href="#最终实现效果" class="headerlink" title="最终实现效果"></a>最终实现效果</h3><p>执行<code>$pod search xxx</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-&gt; HBKitTools (0.0.3)</span><br><span class="line">   个人常用开发组件</span><br><span class="line">   pod &#39;HBKitTools&#39;, &#39;~&gt; 0.0.3&#39;</span><br><span class="line">   - Homepage: https:&#x2F;&#x2F;github.com&#x2F;hubin97&#x2F;HBKitTools</span><br><span class="line">   - Source:   https:&#x2F;&#x2F;github.com&#x2F;hubin97&#x2F;HBKitTools.git</span><br><span class="line">   - Versions: 0.0.3, 0.0.2, 0.0.1 [trunk repo]</span><br><span class="line">   - Subspecs:</span><br><span class="line">     - HBKitTools&#x2F;HBCategorys (0.0.3)</span><br><span class="line">     - HBKitTools&#x2F;HBUIViews (0.0.3)</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+    <h3 id="macosx开发资料整理"><a href="#macosx开发资料整理" class="headerlink" title="macosx开发资料整理"></a>macosx开发资料整理</h3><p><br><a href="http://www.macdev.io" target="_blank" rel="noopener">macOS 应用开发技术</a>  </p>
+<p><br><a href="developer.apple.com/library/prerelease/mac/samplecode/MYRecorder">官方例子</a></p>
+<p><br><a href="http://blog.csdn.net/y_zhangpengwei/article/details/50803016" target="_blank" rel="noopener">张鹏伟博客</a></p>
+<p><br><a href="http://lianxu.me/code/" target="_blank" rel="noopener">macosx开发的一些轮子</a></p>
+<p><br><a href="http://www.cocoachina.com/bbs/read.php?tid-329370-fpage-2.html" target="_blank" rel="noopener">项目实例: Debug The Api / Origin Designer</a></p>
+<p><br><a href="https://github.com/BokkkRottt/BRDrawer" target="_blank" rel="noopener">BRDrawer - 仿Mac QQ登录界面的效果实现源码</a>   </p>
+<p><br><a href="http://www.cnblogs.com/aBigRoybot/archive/2012/02/21/2361874.html" target="_blank" rel="noopener">Mac与ios开发的差别（个人整合）</a></p>
+<p><br><a href="http://www.cocoachina.com/bbs/read.php?tid-303-keyword-toolbar.html" target="_blank" rel="noopener">toolbar添加自定义的地items</a></p>
+<p><br><a href="http://blog.csdn.net/skynullcode/article/details/50426314" target="_blank" rel="noopener">DockTitle以及消息通知提示的研究</a></p>
+<p><br><a href="http://www.cocoachina.com/bbs/read.php?tid-458615-fpage-5.html" target="_blank" rel="noopener">标题栏</a></p>
+<p><br><a href="http://www.cocoachina.com/bbs/read.php?tid-1678756-fpage-5.html" target="_blank" rel="noopener">窗口居中</a></p>
+<p><br><a href="http://blog.csdn.net/y_zhangpengwei/article/details/50856892" target="_blank" rel="noopener">利用CABasicAnimation实现图片旋转</a></p>
+<p><br><a href="https://github.com/hubin97/-NSTableView/commits/master" target="_blank" rel="noopener">自定义NSTableView</a></p>
+<p> UI<br><a href="http://www.cocoachina.com/bbs/read.php?tid-1687096-fpage-2.html" target="_blank" rel="noopener">调整窗口(Window）大小</a></p>
+<p><a href="http://www.cocoachina.com/bbs/read.php?tid-1678756-fpage-5.html" target="_blank" rel="noopener">nswindow不能屏幕居中，纯代码实现非xib</a></p>
+<p>   窗口关闭, 最小化, 居中, 退出</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">你说的是最小化窗口吗？(<span class="built_in">NSWindow</span>) </span><br><span class="line">- (<span class="keyword">void</span>)performClose:(<span class="keyword">nullable</span> <span class="keyword">id</span>)sender; </span><br><span class="line">- (<span class="keyword">void</span>)performMiniaturize:(<span class="keyword">nullable</span> <span class="keyword">id</span>)sender; </span><br><span class="line">- (<span class="keyword">void</span>)performZoom:(<span class="keyword">nullable</span> <span class="keyword">id</span>)sender; </span><br><span class="line"> </span><br><span class="line">退出(<span class="built_in">NSApplication</span>) </span><br><span class="line">- (<span class="keyword">void</span>)terminate:(<span class="keyword">nullable</span> <span class="keyword">id</span>)sender</span><br></pre></td></tr></table></figure>
 
-<h3 id="申请pod账号"><a href="#申请pod账号" class="headerlink" title="申请pod账号"></a>申请pod账号</h3><p>使用<code>$pod trunk me</code>来查看自己的账号信息，如果没有账号的话需要先注册一下：</p>
-<p>注册指令使用<code>$pod trunk register xxx@qq.com &quot;&lt;username&gt;&quot;</code>, 然后登录邮箱验证即可</p>
-<p>邮箱验证完, 再次终端确认一下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$pod trunk me</span><br><span class="line">  - Name:     username</span><br><span class="line">  - Email:    xxx@qq.com</span><br><span class="line">  - Since:    March 29th, 21:16</span><br><span class="line">  - Pods:</span><br><span class="line">    - HBKitTools</span><br><span class="line">  - Sessions:</span><br><span class="line">    - March 29th, 21:16 - August 15th, 01:02. IP: xxx.xxx.xxx.xx</span><br></pre></td></tr></table></figure>
-
-<h3 id="创建并配置podspec文件"><a href="#创建并配置podspec文件" class="headerlink" title="创建并配置podspec文件"></a>创建并配置podspec文件</h3><p>创建指令<code>$pod spec create &lt;filename&gt;</code>; </p>
-<p><strong>这里提前说一下</strong>,最好先使用<code>$pod search &lt;filename&gt;</code>查一下<code>filename</code>库名是否已有人创建, 避免发布的时候报错又得重新走一遍流程.</p>
-<p>然后根据项目文件结构配置podspec文件, 如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">Pod::Spec.new do |spec|</span><br><span class="line">  </span><br><span class="line">  # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #</span><br><span class="line">  spec.name         &#x3D; &quot;HBKitTools&quot;</span><br><span class="line">  spec.version      &#x3D; &quot;0.0.3&quot;</span><br><span class="line">  spec.summary      &#x3D; &quot;个人常用开发组件&quot;</span><br><span class="line">  spec.description  &#x3D; &quot;个人常用开发组件-自定义视图,常用分类,技术总结类目等.&quot;</span><br><span class="line">  spec.homepage     &#x3D; &quot;https:&#x2F;&#x2F;github.com&#x2F;hubin97&#x2F;HBKitTools&quot;</span><br><span class="line"></span><br><span class="line">  # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #</span><br><span class="line">  spec.license      &#x3D; &#123; :type &#x3D;&gt; &quot;MIT&quot;, :file &#x3D;&gt; &quot;LICENSE&quot; &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #</span><br><span class="line">  spec.author             &#x3D; &#123; &quot;Hubin_Huang&quot; &#x3D;&gt; &quot;970216474@qq.com&quot; &#125;</span><br><span class="line"></span><br><span class="line">  # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #</span><br><span class="line">  spec.platform     &#x3D; :ios, &quot;9.0&quot;</span><br><span class="line"></span><br><span class="line">  # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #</span><br><span class="line">  spec.source       &#x3D; &#123; :git &#x3D;&gt; &quot;https:&#x2F;&#x2F;github.com&#x2F;hubin97&#x2F;HBKitTools.git&quot;, :tag &#x3D;&gt; &quot;#&#123;spec.version&#125;&quot; &#125;</span><br><span class="line"></span><br><span class="line">  # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #</span><br><span class="line">  spec.source_files  &#x3D; &quot;HBKitTools&#x2F;HBKitTools&#x2F;*.h&quot;</span><br><span class="line">  </span><br><span class="line">  spec.subspec &#39;HBCategorys&#39; do |dd|</span><br><span class="line">    dd.source_files  &#x3D; &quot;HBKitTools&#x2F;HBKitTools&#x2F;HBCategorys&#x2F;*&quot;</span><br><span class="line">  end</span><br><span class="line">  </span><br><span class="line">  spec.subspec &#39;HBUIViews&#39; do |dd|</span><br><span class="line">    dd.source_files  &#x3D; &quot;HBKitTools&#x2F;HBKitTools&#x2F;HBUIViews&#x2F;*&quot;</span><br><span class="line">  end</span><br><span class="line">  </span><br><span class="line">  # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #</span><br><span class="line">  spec.requires_arc &#x3D; true</span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-
-<p>关键部分文件结构如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">├── HBKitTools</span><br><span class="line">│   ├── HBCategorys</span><br><span class="line">│   │   ├── HBCategorys.h</span><br><span class="line">│   │   ├── UILabel+HBAlignment.h</span><br><span class="line">│   │   ├── UILabel+HBAlignment.m</span><br><span class="line">│   │   ├── UIView+HBExtension.h</span><br><span class="line">│   │   └── UIView+HBExtension.m</span><br><span class="line">│   ├── HBKitTools.h</span><br><span class="line">│   └── HBUIViews</span><br><span class="line">│       ├── HBTitleView.h</span><br><span class="line">│       ├── HBTitleView.m</span><br><span class="line">│       └── HBUIViews.h</span><br></pre></td></tr></table></figure>
-
-<p>一些配置字符解释, 可以参考 <a href="https://www.jianshu.com/p/dd8eeaa3519f" target="_blank" rel="noopener">podspec配置相关</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">文件匹配</span><br><span class="line">*匹配所有文件</span><br><span class="line">c*匹配以名字C开头的文件</span><br><span class="line">*c匹配以名字c结尾的文件</span><br><span class="line">*c*匹配所有名字包含c的文件</span><br><span class="line">**文件夹以及递归子文件夹</span><br><span class="line">?任意一个字符(注意是一个字符)</span><br><span class="line">[set] 匹配多个字符,支持取反</span><br><span class="line">&#123;p,q&#125; 匹配名字包括p 或者 q的文件</span><br></pre></td></tr></table></figure>
-
-<h3 id="验证podspec文件"><a href="#验证podspec文件" class="headerlink" title="验证podspec文件"></a>验证podspec文件</h3><p>在包含podspec文件夹下, 执行 <code>$pod lib lint</code> 或者 <code>$pod lib lint xxx.podspec</code></p>
-<p>验证通过一般最后会有提示<code>xxx passed validation.</code></p>
-<p>这个时候的验证出现的问题, 主要是一些路径的配置错误, 如: <em>spec.source_files</em> 或者子路径,常见提示<br><code>- ERROR | [iOS] file patterns: The source_files pattern did not match any file.</code></p>
-<h3 id="发布podspec文件"><a href="#发布podspec文件" class="headerlink" title="发布podspec文件"></a>发布podspec文件</h3><p>先用git指令把代码提到github远端, 并打上标签版本号</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$git add *</span><br><span class="line">$git commit -m &quot;提交描述信息&quot;</span><br><span class="line">$git tag &#39;0.0.1&#39;  #tag版本</span><br><span class="line">$git push --tags</span><br></pre></td></tr></table></figure>
-<p>当然了,在打标签的时候可以使用指令<code>$git tag</code> 或者 <code>$git tag -l</code>去查看已有标签; 另外部分时候标签操作不够简明清晰, 建议使用<strong>source tree</strong>去操作.</p>
-<p>发布执行 <code>$pod trunk push</code>或者 <code>$pod trunk push --allow-warnings</code></p>
-<h3 id="查看发布的开源库"><a href="#查看发布的开源库" class="headerlink" title="查看发布的开源库"></a>查看发布的开源库</h3><p>使用<code>$pod search &lt;filename&gt;</code>或者<code>$pod search &lt;filename&gt; --simple</code>立即查看? 但是实际上部署到cocoapods上去还需要一段时间生效, 另外你的本地也可能会存在缓存问题. </p>
-<p>这个时候通过 <code>https://cocoapods.org/pods/filename</code>去直接访问库的详细信息, filename即为开源库名称. <strong>访问可能有时候会页面空白,请刷新重试</strong></p>
-<!--![](https://tva1.sinaimg.cn/large/00831rSTgy1gdnmyz5vaej30go08ct8s.jpg)
--->
-<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><p>1.项目名称在cocoapod已经有人创建过了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[!] You (xxx@xx.com) are not allowed to push new versons for this pod.the owners of this pod are xxx@xx.com.</span><br></pre></td></tr></table></figure>
-<p>解决方案: 改名重头来过</p>
-<p>2.本地的git tag跟podspec的版本不对应;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR | [iOS] unknown: Encountered an unknown error (Pod::DSLError) during validation.</span><br></pre></td></tr></table></figure>
-
-<p>查看podspec配置和git tag列表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">spec.version      &#x3D; &quot;0.0.2&quot; #podspec文件配置</span><br><span class="line">-- - --- --- </span><br><span class="line">$git tag -l</span><br><span class="line">0.0.1</span><br><span class="line">0.0.2</span><br><span class="line">0.0.3</span><br><span class="line">$git tag  #修改完再查看</span><br><span class="line">0.0.1</span><br><span class="line">0.0.2</span><br></pre></td></tr></table></figure>
-<p>解决方案: 使用<code>source tree</code>对标签进行修正 (命令行操作远端可参考: <a href="https://www.cnblogs.com/fanheyan/articles/9753363.html" target="_blank" rel="noopener">Git中tag的用法及作用</a>)</p>
-<p>3.提示无远端分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- ERROR | [iOS] unknown: Encountered an unknown error ([!] &#x2F;usr&#x2F;bin&#x2F;git clone ... —depth 1 —branch 0.0.1 ... </span><br><span class="line">fatal: Remote branch 0.0.1 not found in upstream origin</span><br><span class="line">) during validation.</span><br><span class="line"></span><br><span class="line">[!] The spec did not pass validation, due to 1 error.</span><br></pre></td></tr></table></figure>
-<p>解决方案: 检查本地代码和标签并推到远端</p>
-<h3 id="相关参考"><a href="#相关参考" class="headerlink" title="相关参考"></a>相关参考</h3><p>pod trunk 几个常用指令 <a href="https://www.dazhuanlan.com/2020/02/02/5e36624336d55/" target="_blank" rel="noopener">参考细说 pod trunk</a></p>
+<p>部分问题和代码</p>
+<p><a href="http://www.cocoachina.com/bbs/read.php?tid-460345-fpage-2-page-2.html" target="_blank" rel="noopener">想求教下osx 开发应用，如何用代码控制最小化和退出？</a></p>
+<p>最小化直接调用当前window的 <code>[self.window miniaturize:sender];</code>就可以了，不需要通过通知去实现，除非是一些特殊情况，可能需要！ </p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// NSButton</span></span><br><span class="line">  ImageBut * but = [[ImageBut alloc]initWithFrame:<span class="built_in">CGRectMake</span>(l-n, <span class="number">0</span>, <span class="number">20</span>, <span class="number">20</span>)]; </span><br><span class="line">        [but setAutoresizingMask:<span class="number">9</span>]; </span><br><span class="line">        [but setImage:[<span class="built_in">NSImage</span> imageNamed:butimg]]; </span><br><span class="line">        [but setAction:<span class="keyword">@selector</span>(ManButClick:)]; </span><br><span class="line">        [_TopView addSubview: but]; </span><br><span class="line"> </span><br><span class="line">imagebut 是我写的一个类 也是个按钮</span><br></pre></td></tr></table></figure>
 
     
 
@@ -336,7 +312,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://hubin97.github.io/2019/04/09/制作CocoaPods公有库/" title="制作CocoaPods公有库" target="_blank">https://hubin97.github.io/2019/04/09/制作CocoaPods公有库/</a>
+          <a href="https://hubin97.github.io/2016/09/06/macosx开发资料整理/" title="macosx开发资料整理" target="_blank">https://hubin97.github.io/2016/09/06/macosx开发资料整理/</a>
         </li>
         
         <li>
@@ -353,21 +329,6 @@
   <div class="article-info article-info-index">
     
     
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
     
 
     
@@ -418,7 +379,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://hubin97.github.io/2019/04/09/%E5%88%B6%E4%BD%9CCocoaPods%E5%85%AC%E6%9C%89%E5%BA%93/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://hubin97.github.io/2016/09/06/macosx%E5%BC%80%E5%8F%91%E8%B5%84%E6%96%99%E6%95%B4%E7%90%86/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -433,20 +394,15 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/04/18/%E5%B8%B8%E7%94%A8%E5%AE%8F%E6%95%B4%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/02/08/20170208/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          常用宏整理
+          20170208
         
       </div>
     </a>
   
-  
-    <a href="/2018/07/10/iOS%E6%9D%83%E9%99%90%E6%95%B4%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">iOS权限整理</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
@@ -471,7 +427,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#最终实现效果"><span class="toc-number">1.</span> <span class="toc-text">最终实现效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#申请pod账号"><span class="toc-number">2.</span> <span class="toc-text">申请pod账号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建并配置podspec文件"><span class="toc-number">3.</span> <span class="toc-text">创建并配置podspec文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#验证podspec文件"><span class="toc-number">4.</span> <span class="toc-text">验证podspec文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#发布podspec文件"><span class="toc-number">5.</span> <span class="toc-text">发布podspec文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看发布的开源库"><span class="toc-number">6.</span> <span class="toc-text">查看发布的开源库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见问题"><span class="toc-number">7.</span> <span class="toc-text">常见问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关参考"><span class="toc-number">8.</span> <span class="toc-text">相关参考</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#macosx开发资料整理"><span class="toc-number">1.</span> <span class="toc-text">macosx开发资料整理</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -498,9 +454,9 @@
     <script src="/lib/gitment.js"></script>
   
   <script>
-    <!-- id: "制作CocoaPods公有库" -->
+    <!-- id: "macosx开发资料整理" -->
     var gitment = new Gitment({
-      id: "20190409152030",
+      id: "20160906110320",
       owner: 'hubin97',
       repo: 'hubin97_io_talk',
       oauth: {
