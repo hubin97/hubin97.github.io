@@ -416,11 +416,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		
 		</ul>
@@ -504,11 +504,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		
 		</ul>
@@ -593,11 +593,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		
 		</ul>
@@ -682,11 +682,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		
 		</ul>
@@ -770,11 +770,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		
 		</ul>
@@ -849,173 +849,9 @@
 <li>网上资源少</li>
 <li>但是可以和UIKit混合开发</li>
 </ul>
-<h2 id="2-优化原理"><a href="#2-优化原理" class="headerlink" title="2.优化原理"></a>2.优化原理</h2><ul>
-<li><p>布局：<br>iOS自带的Autolayout在布局性能上存在瓶颈，并且只能在主线程进行计算。（参考Auto Layout Performance on iOS）因此ASDK弃用了Autolayout，自己参考自家的ComponentKit设计了一套布局方式。</p>
-</li>
-<li><p>渲染<br>对于大量文本，图片等的渲染，UIKit组件只能在主线程并且可能会造成GPU绘制的资源紧张。ASDK使用了一些方法，比如图层的预混合等，并且异步的在后台绘制图层，不阻塞主线程的运行。</p>
-</li>
-<li><p>系统对象创建与销毁<br>UIKit组件封装了CALayer图层的对象，在创建、调整、销毁的时候，都会在主线程消耗资源。ASDK自己设计了一套Node机制，也能够调用。</p>
-</li>
-<li><p>实际上，从上面的一些解释也可以看出，ASDK最大的特点就是”异步”。<br>将消耗时间的渲染、图片解码、布局以及其它 UI 操作等等全部移出主线程，这样主线程就可以对用户的操作及时做出反应，来达到流畅运行的目的。</p>
-</li>
-</ul>
-<h3 id="ASDK-认为，阻塞主线程的任务，主要分为上面这三大类。"><a href="#ASDK-认为，阻塞主线程的任务，主要分为上面这三大类。" class="headerlink" title="ASDK 认为，阻塞主线程的任务，主要分为上面这三大类。"></a><code>ASDK 认为，阻塞主线程的任务，主要分为上面这三大类。</code></h3><h3 id="为了尽量优化性能，ASDK-尝试对-UIKit-组件进行封装："><a href="#为了尽量优化性能，ASDK-尝试对-UIKit-组件进行封装：" class="headerlink" title="为了尽量优化性能，ASDK 尝试对 UIKit 组件进行封装："></a><code>为了尽量优化性能，ASDK 尝试对 UIKit 组件进行封装：</code></h3><h2 id="3-Nodes节点"><a href="#3-Nodes节点" class="headerlink" title="3.Nodes节点"></a>3.Nodes节点</h2><ul>
-<li><p>如果你之前使用过views，那么你应该已经知道如何使用nodes，大部分的方法都有一个等效的node，大部分的UIView和CALayer的属性都有类似的可用的。任何情况都会有一点点命名差异（例如，clipsToBounds和masksToBounds），node基本上都是默认使用UIView的名字，唯一的例外是node使用position而不是center</p>
-</li>
-<li><p>当然，你也可以直接访问底层view和layer，使用node.view和node.layer</p>
-</li>
-<li><p>关系图<br><img src="http://box.kancloud.cn/2015-11-19_564d5003b06b2.png" alt=""><br>这是常见的 UIView 和 CALayer 的关系：View 持有 Layer 用于显示，View 响应触摸事件。</p>
-</li>
-</ul>
-<p><img src="http://box.kancloud.cn/2015-11-19_564d5003c469c.png" alt="关系图"><br><img src="http://box.kancloud.cn/2015-11-19_564d5003d8c06.png" alt="不需要响应触摸事件"></p>
-<ul>
-<li>Node控件<table>
-<thead>
-<tr>
-<th><strong>ASDK</strong></th>
-<th><strong>UIKit</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ASDisplayNode</td>
-<td>UIView</td>
-</tr>
-<tr>
-<td>ASCellNode</td>
-<td>UITableViewCell/UICollectionViewCell</td>
-</tr>
-<tr>
-<td>ASTextNode</td>
-<td>UILabel</td>
-</tr>
-<tr>
-<td>ASImageNode/ASNetworkImageNode</td>
-<td>UIImageView</td>
-</tr>
-<tr>
-<td>ASVideoNode</td>
-<td>AVPlayerLayer</td>
-</tr>
-<tr>
-<td>ASControlNode</td>
-<td>UIControl</td>
-</tr>
-<tr>
-<td>ASScrollNode</td>
-<td>UIScrollView</td>
-</tr>
-<tr>
-<td>ASEditableTextNode</td>
-<td>UITextView</td>
-</tr>
-<tr>
-<td>ASMultiplexImageNode（图片管理）</td>
-<td>UIImageView</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-<h4 id="静态库"><a href="#静态库" class="headerlink" title="静态库"></a>静态库</h4><p>AsyncDisplayKit可以当做静态库引入</p>
-<blockquote>
-<ul>
-<li>拷贝整个工程到你的目录下，添加AsyncDisplayKit.xcodeproj到你的workspace</li>
-<li>在build phases中，在Target Dependencies下添加AsyncDisplayKit Library</li>
-<li>在build phases中，添加libAsyncDisplayKit.a, AssetsLibrary, Photos等框架到Link Binary With Libraries中</li>
-<li>在build settings中，添加-lc++和-ObjC到 project linker flags</li>
-</ul>
-</blockquote>
-<h1 id="二、使用"><a href="#二、使用" class="headerlink" title="二、使用"></a>二、使用</h1><p>主要介绍常用控件ASTableNode/ASCollectionNode的使用，代码放在GitHub上的<a href="https://github.com/LineShine/ASDK_Demo.git" target="_blank" rel="noopener">ASDK_Demo</a>。</p>
-<h2 id="1-ASImageNode"><a href="#1-ASImageNode" class="headerlink" title="1.ASImageNode"></a>1.ASImageNode</h2><blockquote>
-<ul>
-<li>使用ASNetworkImageNode的URL设置网络图片。</li>
-<li>ASNetworkImageNode有图片下载的ASNetworkImageNodeDelegate</li>
-<li>ASImageNode使用ASDK的图片管理类<strong>PINCache,PINRemoteImage</strong></li>
-<li>如果不打算引入PINRemoteImage和PINCache，你会失去对jpeg的更好的支持，你需要自行引入你自己的cache系统，需要遵从ASImageCacheProtocol</li>
-</ul>
-</blockquote>
-<h2 id="2-ASTextNode"><a href="#2-ASTextNode" class="headerlink" title="2.ASTextNode"></a>2.ASTextNode</h2><p>ASTextNode没有text属性，只能使用attributedText</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//居中</span><br><span class="line">NSMutableParagraphStyle * paragraphStyle = [[NSMutableParagraphStyle alloc] init];</span><br><span class="line">paragraphStyle.alignment = NSTextAlignmentCenter;</span><br><span class="line">        </span><br><span class="line">labelNode.attributedText = [[NSAttributedString alloc] initWithString:@<span class="string">"居中文字"</span> attributes:@&#123;NSFontAttributeName: [UIFont systemFontOfSize:<span class="number">18</span>],</span><br><span class="line">                                                                                                      NSForegroundColorAttributeName:[UIColor blackColor],</span><br><span class="line">                                                                                                      NSBackgroundColorAttributeName : [UIColor clearColor],</span><br><span class="line">                                                                                                      NSParagraphStyleAttributeName:paragraphStyle&#125;];</span><br></pre></td></tr></table></figure>
-<h2 id="3-ASTableNode-ASCollectionNode"><a href="#3-ASTableNode-ASCollectionNode" class="headerlink" title="3.ASTableNode/ASCollectionNode"></a>3.ASTableNode/ASCollectionNode</h2><ul>
-<li>ASTableNode/ASCollectionNode不支持复用机制，每次滚动都会重新创建cell。</li>
-<li>ASTableNode并不提供类似UITableview的-tableView:heightForRowAtIndexPath:方法，这是因为节点基于自己的约束来确定自己的高度，就是说你不再需要写代码来确定这个细节，一个node通过-layoutSpecThatFits:方法返回的布局规则确定了行高，所有的节点只要提供了约束大小，就有能力自己确定自己的尺寸</li>
-<li>使用 Batch Fetching 进行无限滚动，即预加载功能</li>
-</ul>
-<h1 id="三、布局"><a href="#三、布局" class="headerlink" title="三、布局"></a>三、布局</h1><p><a href="http://www.jianshu.com/p/afc69cd9e824" target="_blank" rel="noopener">引用1</a><br><a href="https://segmentfault.com/a/1190000007991853#articleHeader11" target="_blank" rel="noopener">引用2</a></p>
-<h4 id="ASDK-拥有自己的一套成熟布局方案，虽然学习成本略高，但至少比原生的-AutoLayout-写起来舒服，重点是性能比起-AutoLayout-好的不是一点点。（ASDK不支持autoLayout）"><a href="#ASDK-拥有自己的一套成熟布局方案，虽然学习成本略高，但至少比原生的-AutoLayout-写起来舒服，重点是性能比起-AutoLayout-好的不是一点点。（ASDK不支持autoLayout）" class="headerlink" title="ASDK 拥有自己的一套成熟布局方案，虽然学习成本略高，但至少比原生的 AutoLayout 写起来舒服，重点是性能比起 AutoLayout 好的不是一点点。（ASDK不支持autoLayout）"></a>ASDK 拥有自己的一套成熟布局方案，虽然学习成本略高，但至少比原生的 AutoLayout 写起来舒服，重点是性能比起 AutoLayout 好的不是一点点。（ASDK不支持autoLayout）</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//下面这个方法就是用来建立布局规则对象，产生 node 大小以及所有子 node 大小的地方，你创建的布局规则对象一直持续到这个方法返回的时间点，经过了这个时间点后，它就不可变了。尤其重要要记住的一点事，千万不要缓存布局规则对象，当你以后需要他的时候，请重新创建。</span><br><span class="line">//调用时机：ASDisplayNode 在初始化之后会检查是否有子视图，如果有就会调用</span><br><span class="line">- (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize</span><br></pre></td></tr></table></figure>
-<h2 id="1-布局类"><a href="#1-布局类" class="headerlink" title="1. 布局类"></a>1. 布局类</h2><ul>
-<li>ASAbsoluteLayoutSpec（绝对布局约束)</li>
-<li>ASBackgroundLayoutSpec（背景布局规则）</li>
-<li>ASInsetLayoutSpec（边距布局规则）</li>
-<li>ASOverlayLayoutSpec（覆盖布局规则）</li>
-<li>ASRatioLayoutSpec（比例布局规则）</li>
-<li>ASRelativeLayoutSpec（相对布局规则）</li>
-<li>ASCenterLayoutSpec（中心布局规则）</li>
-<li>ASStackLayoutSpec（堆叠布局规则）</li>
-<li>ASWrapperLayoutSpec （填充布局规则）</li>
-</ul>
-<h2 id="2-示例"><a href="#2-示例" class="headerlink" title="2.示例"></a>2.示例</h2><h3 id="ASAbsoluteLayoutSpec"><a href="#ASAbsoluteLayoutSpec" class="headerlink" title="ASAbsoluteLayoutSpec"></a>ASAbsoluteLayoutSpec</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize&#123;</span><br><span class="line">  self.childNode.style.layoutPosition = CGPointMake(<span class="number">100</span>, <span class="number">100</span>);</span><br><span class="line">  self.childNode.style.preferredLayoutSize = ASLayoutSizeMake(ASDimensionMake(<span class="number">100</span>), ASDimensionMake(<span class="number">100</span>));</span><br><span class="line"></span><br><span class="line">  ASAbsoluteLayoutSpec *absoluteLayout = [ASAbsoluteLayoutSpec absoluteLayoutSpecWithChildren:@[self.childNode]];</span><br><span class="line">  <span class="keyword">return</span> absoluteLayout;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>使用方法和原生的绝对布局类似</p>
-</blockquote>
-<h3 id="ASBackgroundLayoutSpec"><a href="#ASBackgroundLayoutSpec" class="headerlink" title="ASBackgroundLayoutSpec"></a>ASBackgroundLayoutSpec</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize&#123;</span><br><span class="line">  ASBackgroundLayoutSpec *backgroundLayout = [ASBackgroundLayoutSpec backgroundLayoutSpecWithChild:self.childNodeB background:self.childNodeA];</span><br><span class="line">  <span class="keyword">return</span> backgroundLayout;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>把childNodeA 做为 childNodeB 的背景，也就是 childNodeB 在上层，要注意的是 ASBackgroundLayoutSpec 事实上根本不会改变视图的层级关系</p>
-</blockquote>
-<h3 id="ASInsetLayoutSpec"><a href="#ASInsetLayoutSpec" class="headerlink" title="ASInsetLayoutSpec"></a>ASInsetLayoutSpec</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize&#123;</span><br><span class="line">    ASInsetLayoutSpec *inset = [ASInsetLayoutSpec insetLayoutSpecWithInsets:UIEdgeInsetsZero child:_childNode];</span><br><span class="line">    <span class="keyword">return</span> insetLayout;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>_childNode 相对于父视图边距都为 0，相当于填充整个父视图。</p>
-</blockquote>
-<h3 id="ASOverlayLayoutSpec"><a href="#ASOverlayLayoutSpec" class="headerlink" title="ASOverlayLayoutSpec"></a>ASOverlayLayoutSpec</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">- (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize&#123;</span><br><span class="line"></span><br><span class="line">  _photoNode.style.preferredSize = CGSizeMake(USER_IMAGE_HEIGHT*<span class="number">2</span>, USER_IMAGE_HEIGHT*<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">  // INIFINITY(插入无边界)</span><br><span class="line">  UIEdgeInsets insets = UIEdgeInsetsMake(INFINITY, <span class="number">12</span>, <span class="number">12</span>, <span class="number">12</span>);</span><br><span class="line">  ASInsetLayoutSpec *textInsetSpec = [ASInsetLayoutSpec insetLayoutSpecWithInsets:insets child:_titleNode];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> [ASOverlayLayoutSpec overlayLayoutSpecWithChild:_photoNode </span><br><span class="line">                                                 overlay:textInsetSpec];</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>类似于ASBackgroundLayoutSpec，都是设置层级关系<br>###ASRatioLayoutSpec</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize&#123;</span><br><span class="line">    ASRatioLayoutSpec *ratioLayout = [ASRatioLayoutSpec ratioLayoutSpecWithRatio:<span class="number">1.0</span>f child:self.childNodeA];</span><br><span class="line">    <span class="keyword">return</span> ratioLayout;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>比较常用的一个类，作用是设置自身的高宽比，例如设置正方形的视图<br>###ASRelativeLayoutSpec<br><img src="https://segmentfault.com/img/remote/1460000007991860?w=200&h=200/view" alt=""></p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//把 childNodeA 显示在右上角。</span><br><span class="line">    self.childNodeA.style.preferredSize = CGSizeMake(<span class="number">100</span>, <span class="number">100</span>);</span><br><span class="line">    ASRelativeLayoutSpec *relativeLayout = [ASRelativeLayoutSpec relativePositionLayoutSpecWithHorizontalPosition:ASRelativeLayoutSpecPositionEnd verticalPosition:ASRelativeLayoutSpecPositionStart sizingOption:ASRelativeLayoutSpecSizingOptionDefault child:self.childNodeA];</span><br><span class="line">    <span class="keyword">return</span> relativeLayout;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>它可以把视图布局在：左上、左下、右上、右下四个顶点以外，还可以设置成居中布局。<br>###ASCenterLayoutSpec</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize&#123;</span><br><span class="line">    self.childNodeA.style.preferredSize = CGSizeMake(<span class="number">100</span>, <span class="number">100</span>);</span><br><span class="line">    ASCenterLayoutSpec *relativeLayout = [ASCenterLayoutSpec centerLayoutSpecWithCenteringOptions:ASCenterLayoutSpecCenteringXY sizingOptions:ASCenterLayoutSpecSizingOptionDefault child:self.childNodeA];</span><br><span class="line">    <span class="keyword">return</span> relativeLayout;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>###ASWrapperLayoutSpec</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize&#123;    </span><br><span class="line">    ASWrapperLayoutSpec *wrapperLayout = [ASWrapperLayoutSpec wrapperWithLayoutElement:self.childNodeA];</span><br><span class="line">    <span class="keyword">return</span> wrapperLayout;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>填充整个视图</p>
-</blockquote>
-<p>##ASStackLayoutSpec</p>
-<blockquote>
-<p>可以说这是最常用的类，而且相对于其他类来说在功能上是最接近于 AutoLayout 的。<br>之所以称之为盒子布局是因为它和 CSS 中 Flexbox 很相似，不清楚 Flexbox 的可以看下<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool" target="_blank" rel="noopener">这篇博客(HTML布局)</a>。</p>
-</blockquote>
-<p><strong>示例</strong><br><img src="http://upload-images.jianshu.io/upload_images/1519620-9f6d47a8ffeffc6c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">- (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize&#123;</span><br><span class="line"></span><br><span class="line">  // 当用户名和位置信息文本太长时,收缩堆放视图来适应屏幕,而不是将所有内容向右堆放</span><br><span class="line">  ASStackLayoutSpec *nameLocationStack = [ASStackLayoutSpec verticalStackLayoutSpec];</span><br><span class="line">  nameLocationStack.style.flexShrink = <span class="number">1.0</span>;</span><br><span class="line">  nameLocationStack.style.flexGrow = <span class="number">1.0</span>;</span><br><span class="line"></span><br><span class="line">  //如果从服务器获取位置信息,并检查位置信息是否可用</span><br><span class="line">  <span class="keyword">if</span> (_postLocationNode.attributedText) &#123;</span><br><span class="line">    nameLocationStack.children = @[_usernameNode, _postLocationNode];</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    nameLocationStack.children = @[_usernameNode];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  //水平堆放</span><br><span class="line">  ASStackLayoutSpec *headerStackSpec = [ASStackLayoutSpec   stackLayoutSpecWithDirection:ASStackLayoutDirectionHorizontal</span><br><span class="line">                     spacing:<span class="number">40</span>     </span><br><span class="line">              justifyContent:ASStackLayoutJustifyContentStart</span><br><span class="line">                  alignItems:ASStackLayoutAlignItemsCenter</span><br><span class="line">                    children:@[nameLocationStack, _postTimeNode]];</span><br><span class="line"></span><br><span class="line">  //插入堆放</span><br><span class="line">  <span class="keyword">return</span> [ASInsetLayoutSpec insetLayoutSpecWithInsets:UIEdgeInsetsMake(<span class="number">0</span>, <span class="number">10</span>, <span class="number">0</span>, <span class="number">10</span>)    </span><br><span class="line">                                                child:headerStackSpec];</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>简单的说明下各个参数的作用：<br>1.<code>direction</code>：主轴的方向，有两个可选值：</p>
-<ul>
-<li>纵向：<code>ASStackLayoutDirectionVertical</code>(默认)</li>
-<li>横向：<code>ASStackLayoutDirectionHorizontal</code></li>
-</ul>
-<p>2.<code>spacing</code>: 主轴上视图排列的间距，比如有四个视图，那么它们之间的存在三个间距值都应该是<code>spacing</code><br>3.<code>justifyContent</code>: 主轴上的排列方式，有五个可选值：</p>
-<ul>
-<li><code>ASStackLayoutJustifyContentStart</code> 从前往后排列</li>
-<li><code>ASStackLayoutJustifyContentCenter</code> 居中排列</li>
-<li><code>ASStackLayoutJustifyContentEnd</code> 从后往前排列</li>
-<li><code>ASStackLayoutJustifyContentSpaceBetween</code> 间隔排列，两端无间隔</li>
-<li><code>ASStackLayoutJustifyContentSpaceAround</code> 间隔排列，两端有间隔</li>
-</ul>
-<p>4.<code>alignItems</code>: 交叉轴上的排列方式，有五个可选值：</p>
-<ul>
-<li><code>ASStackLayoutAlignItemsStart</code> 从前往后排列</li>
-<li><code>ASStackLayoutAlignItemsEnd</code> 从后往前排列</li>
-<li><code>ASStackLayoutAlignItemsCenter</code> 居中排列</li>
-<li><code>ASStackLayoutAlignItemsStretch</code> 拉伸排列</li>
-<li><code>ASStackLayoutAlignItemsBaselineFirst</code> 以第一个文字元素基线排列（主轴是横向才可用）</li>
-<li><code>ASStackLayoutAlignItemsBaselineLast</code> 以最后一个文字元素基线排列（主轴是横向才可用）</li>
-</ul>
-<p>5.<code>children</code>: 包含的视图。数组内元素顺序同样代表着布局时排列的顺序</p>
-</blockquote>
-
+    
+    <a class="article-more-a" href="/2018/05/11/Texture/#more">more >></a>
+    
     
 
     
@@ -1031,11 +867,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -1386,7 +1222,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">技术札记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1394,11 +1230,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">技术札记</a>
+                <a href="javascript:void(0)" class="js-tag color3">标记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">标记</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
