@@ -283,6 +283,83 @@
 
 
   
+    <article id="post-知识点总结2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/02/10/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%932/">知识点总结2</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/02/10/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%932/" class="archive-article-date">
+        <time datetime="2020-02-10T06:18:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-10</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="3-消息传递和消息转发"><a href="#3-消息传递和消息转发" class="headerlink" title="3.消息传递和消息转发"></a>3.消息传递和消息转发</h3><h4 id="消息传递"><a href="#消息传递" class="headerlink" title="消息传递"></a>消息传递</h4><p>(1)核心方法</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> objc_msgSend(<span class="keyword">void</span> <span class="comment">/*id self, SEL op, ...*/</span>)</span><br><span class="line"><span class="keyword">void</span> objc_msgSendSuper(<span class="keyword">void</span> <span class="comment">/* struct objc_super *super, SEL op, ...*/</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>objc_super</code>结构体解析:</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> objc_msgSendSuper(<span class="keyword">void</span> <span class="comment">/* struct objc_super *super, SEL op, ...*/</span>)</span><br><span class="line"></span><br><span class="line">   <span class="keyword">struct</span> objc_super &#123;</span><br><span class="line">   </span><br><span class="line">	  <span class="comment">/// Specifies an instance of a class</span></span><br><span class="line">   	  __<span class="keyword">unsafe_unretained</span> <span class="keyword">id</span> receiver;   <span class="comment">// 编译器关键字 (仍是当前对象 --&gt; self)</span></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2020/02/10/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%932/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-20200207" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -367,7 +444,7 @@
 
 
   
-    <article id="post-知识点总结(一)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-知识点总结1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -375,7 +452,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/01/12/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93(%E4%B8%80)/">知识点总结(一)</a>
+	  <a class="article-title" href="/2020/01/12/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%931/">知识点总结(一)</a>
 	
     </h1>
   
@@ -383,7 +460,7 @@
 
   
   
-<a href="/2020/01/12/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93(%E4%B8%80)/" class="archive-article-date">
+<a href="/2020/01/12/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%931/" class="archive-article-date">
         <time datetime="2020-01-12T09:59:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-12</time>
 </a>
 
@@ -405,7 +482,7 @@
 </ul>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注意:对子视图遍历为倒序遍历,最后添加到<span class="built_in">UIWindow</span>上的视图,最先遍历</span><br></pre></td></tr></table></figure>
     
-    <a class="article-more-a" href="/2020/01/12/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93(%E4%B8%80)/#more">more >></a>
+    <a class="article-more-a" href="/2020/01/12/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%931/#more">more >></a>
     
     
 
@@ -1000,109 +1077,9 @@
 
 
   
-    <article id="post-Texture" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2018/05/11/Texture/">Texture</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2018/05/11/Texture/" class="archive-article-date">
-        <time datetime="2018-05-11T14:11:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-11</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h1><p>Texture（原名AsyncDisplayKit）是FaceBook开源的一款能够保持界面流畅的框架。建立在UIKit之上，可以保持最复杂的用户界面的流畅和响应。（smooth and responsive）; 最初诞生于 Facebook 的 Paper 应用程序。它是为了解决 Paper 团队面临的核心问题之一：如何尽可能缓解主线程的压力？</p>
-<p><strong>Texture 是达摩克利斯之剑, 所以再选择这个框架的时候需要额外的斟酌. 先确认弊端,再决定是否项目中要不要去使用它吧</strong></p>
-<h2 id="1、使用优缺点"><a href="#1、使用优缺点" class="headerlink" title="1、使用优缺点"></a>1、使用优缺点</h2><ul>
-<li>需要自己造轮子</li>
-<li>不支持大家常用的storyboard、xib、autoLayout，影响开发效率</li>
-<li>代码没有UIKit使用熟练</li>
-<li>网上资源少</li>
-<li>但是可以和UIKit混合开发</li>
-</ul>
-    
-    <a class="article-more-a" href="/2018/05/11/Texture/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">标记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1257,11 +1234,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color3">标记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">标记</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
