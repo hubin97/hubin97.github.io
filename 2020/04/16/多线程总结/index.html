@@ -6,22 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hubin97.github.io">
-  <title>iOS收集应用评分 | 个人博客</title>
+  <title>多线程总结 | 个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="需求背景还在使用弹框链接跳转收集评分? 太不人性话了,应用用的好好的突然打断,比较闹心. 使用细节SKStoreReviewController 注意: iOS 10.3+ 官方才提供的内置评分系统, 不能做成事件触发弹框评分的方式, 即使测试环境正常, 上架后事件触发仍会表示不响应. 其他细节如下:">
+  <meta name="description" content="多线程概念及原理1.(单核CPU) 同一时间, CPU只能处理1个线程,只有一个线程在执行 2.多线程”同时”执行, 是CPU快速的在多个线程之间的切换 3.CPU调度线程的时间足够快,就造成了多线程的”同时”执行 4.如果线程数非常多,CPU会在n个线程之间切换,消耗大量的CPU资源">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS收集应用评分">
-<meta property="og:url" content="https://hubin97.github.io/2019/04/24/iOS%E6%94%B6%E9%9B%86%E5%BA%94%E7%94%A8%E8%AF%84%E5%88%86/index.html">
+<meta property="og:title" content="多线程总结">
+<meta property="og:url" content="https://hubin97.github.io/2020/04/16/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="需求背景还在使用弹框链接跳转收集评分? 太不人性话了,应用用的好好的突然打断,比较闹心. 使用细节SKStoreReviewController 注意: iOS 10.3+ 官方才提供的内置评分系统, 不能做成事件触发弹框评分的方式, 即使测试环境正常, 上架后事件触发仍会表示不响应. 其他细节如下:">
-<meta property="article:published_time" content="2019-04-24T02:14:23.000Z">
-<meta property="article:modified_time" content="2020-04-09T10:19:19.243Z">
+<meta property="og:description" content="多线程概念及原理1.(单核CPU) 同一时间, CPU只能处理1个线程,只有一个线程在执行 2.多线程”同时”执行, 是CPU快速的在多个线程之间的切换 3.CPU调度线程的时间足够快,就造成了多线程的”同时”执行 4.如果线程数非常多,CPU会在n个线程之间切换,消耗大量的CPU资源">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdvtkr9najj30x20i0tcz.jpg">
+<meta property="article:published_time" content="2020-04-16T11:08:54.000Z">
+<meta property="article:modified_time" content="2020-04-16T13:48:31.242Z">
 <meta property="article:author" content="青空|逸隐">
 <meta property="article:tag" content="技术札记">
 <meta property="article:tag" content="iOS">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdvtkr9najj30x20i0tcz.jpg">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
   
@@ -193,14 +195,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-iOS收集应用评分" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-多线程总结" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      iOS收集应用评分
+      多线程总结
     </h1>
   
 
@@ -212,8 +214,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2019/04/24/iOS%E6%94%B6%E9%9B%86%E5%BA%94%E7%94%A8%E8%AF%84%E5%88%86/" class="archive-article-date">
-        <time datetime="2019-04-24T02:14:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-24</time>
+<a href="/2020/04/16/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%BB%E7%BB%93/" class="archive-article-date">
+        <time datetime="2020-04-16T11:08:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-16</time>
 </a>
 
   
@@ -226,7 +228,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">481字</span>
+      <span class="post-count">936字</span>
     </span>
   </span>
 
@@ -235,7 +237,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
+      <span class="post-count">3分</span>
     </span>
   </span>
 </div>
@@ -246,19 +248,65 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="需求背景"><a href="#需求背景" class="headerlink" title="需求背景"></a>需求背景</h3><p>还在使用弹框链接跳转收集评分? 太不人性话了,应用用的好好的突然打断,比较闹心.</p>
-<h3 id="使用细节"><a href="#使用细节" class="headerlink" title="使用细节"></a>使用细节</h3><p><em>SKStoreReviewController</em> 注意: iOS 10.3+ 官方才提供的内置评分系统, 不能做成事件触发弹框评分的方式, 即使测试环境正常, 上架后事件触发仍会表示不响应. 其他细节如下:</p>
+    <h4 id="多线程概念及原理"><a href="#多线程概念及原理" class="headerlink" title="多线程概念及原理"></a>多线程概念及原理</h4><p>1.(单核CPU) 同一时间, CPU只能处理1个线程,只有一个线程在执行</p>
+<p>2.多线程”同时”执行, 是CPU快速的在多个线程之间的切换</p>
+<p>3.CPU调度线程的时间足够快,就造成了多线程的”同时”执行</p>
+<p>4.如果线程数非常多,CPU会在n个线程之间切换,消耗大量的CPU资源</p>
 <a id="more"></a>
 
-<ol>
-<li>即使调用 requestReview, 也不一定会出现UI</li>
-<li>测试环境不能点提交按钮</li>
-<li>只能评星, 不能提交评论内容</li>
-<li>提示次数不限制, 但不要过于频繁, 官方建议每个版本提示一次</li>
-<li>旧版本收集如果写评论内容:可以在openURL后面拼接 action=write-review, 可以直接跳转到App Store评论页</li>
-<li>参考 <a href="https://developer.apple.com/documentation/storekit/skstorereviewcontroller/requesting_app_store_reviews?language=objc" target="_blank" rel="noopener">官方文档</a></li>
-</ol>
-<h3 id="Simple-code"><a href="#Simple-code" class="headerlink" title="Simple code"></a>Simple code</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;StoreKit/StoreKit.h&gt; </span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> 收集评分</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">- (<span class="keyword">void</span>)showAppStoreReView &#123;</span><br><span class="line">    <span class="built_in">NSDictionary</span> *infoDictionary = [[<span class="built_in">NSBundle</span> mainBundle] infoDictionary];</span><br><span class="line">    <span class="built_in">NSString</span> *app_Version = [infoDictionary objectForKey:<span class="string">@"CFBundleShortVersionString"</span>];</span><br><span class="line">    <span class="built_in">NSString</span> *app_build = [infoDictionary objectForKey:<span class="string">@"CFBundleVersion"</span>];</span><br><span class="line">    _appVersion = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@ (build %@)"</span>,app_Version,app_build];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 是否已经收集评分</span></span><br><span class="line">    <span class="built_in">NSNumber</span> *isShowAppStoreReView = [[[<span class="built_in">NSUserDefaults</span> standardUserDefaults] objectForKey:_appVersion] objectForKey:<span class="string">@"review"</span>];</span><br><span class="line">    <span class="keyword">if</span> (isShowAppStoreReView &amp;&amp; [isShowAppStoreReView isEqualToNumber:@YES]) <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 展示的时刻</span></span><br><span class="line">    <span class="keyword">int</span> shortestTime = <span class="number">50</span>;</span><br><span class="line">    <span class="keyword">int</span> longestTime = <span class="number">500</span>;</span><br><span class="line">    <span class="keyword">int</span> timeInterval = arc4random_uniform(longestTime - shortestTime) + shortestTime;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 测试</span></span><br><span class="line">    <span class="comment">//timeInterval = 10;</span></span><br><span class="line">    [<span class="built_in">NSTimer</span> scheduledTimerWithTimeInterval:timeInterval target:<span class="keyword">self</span> selector:<span class="keyword">@selector</span>(requestReview) userInfo:<span class="literal">nil</span> repeats:<span class="literal">NO</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)requestReview</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSMutableDictionary</span> *reviewDict = [<span class="built_in">NSMutableDictionary</span> dictionaryWithDictionary:[[<span class="built_in">NSUserDefaults</span> standardUserDefaults] objectForKey:_appVersion]];</span><br><span class="line">    [reviewDict setObject:@YES forKey:<span class="string">@"review"</span>];</span><br><span class="line">    [[<span class="built_in">NSUserDefaults</span> standardUserDefaults] setObject:reviewDict forKey:_appVersion];</span><br><span class="line">    [[<span class="built_in">NSUserDefaults</span> standardUserDefaults] synchronize];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (@available(iOS <span class="number">10.3</span>, *)) &#123;</span><br><span class="line">        [[<span class="built_in">UIApplication</span> sharedApplication].keyWindow endEditing:<span class="literal">YES</span>];</span><br><span class="line">        [<span class="built_in">SKStoreReviewController</span> requestReview];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 传统弹框提示跳转(iOS 10.3以下的)太麻烦直接取消提示</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">//    else &#123;</span></span><br><span class="line"><span class="comment">//        //不论iOS版本均可使用APP内部打开网页形式，跳转到App Store 直接编辑评论</span></span><br><span class="line"><span class="comment">//        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"给App打个分吧?" preferredStyle:UIAlertControllerStyleAlert];</span></span><br><span class="line"><span class="comment">//        UIAlertAction * ensure = [UIAlertAction actionWithTitle:@"去评论" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) &#123;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//            dispatch_async(dispatch_get_main_queue(), ^&#123;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//                NSString *APPID = @"xxx";</span></span><br><span class="line"><span class="comment">//                NSString *nsStringToOpen = [NSString stringWithFormat: @"itms-apps://itunes.apple.com/app/id%@?action=write-review",APPID];</span></span><br><span class="line"><span class="comment">//                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:nsStringToOpen]];</span></span><br><span class="line"><span class="comment">//            &#125;);</span></span><br><span class="line"><span class="comment">//        &#125;];</span></span><br><span class="line"><span class="comment">//        UIAlertAction * cancel = [UIAlertAction actionWithTitle:@"下次吧" style:UIAlertActionStyleDefault handler:nil];</span></span><br><span class="line"><span class="comment">//        [alert addAction:cancel];</span></span><br><span class="line"><span class="comment">//        [alert addAction:ensure];</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        [self.window.rootViewController presentViewController:alert animated:YES completion:nil];</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>延伸知识点: <strong>循环</strong></p>
+<p>1.循环的速度是非常快的  </p>
+<p>2.操作内存的栈空间,速度非常快  <code>// NSString *str = @“Hello”; 存储在常量区</code></p>
+<p>3.操作内存的堆空间,速度有点慢  <code>// alloc</code></p>
+<p>4.循环非常消耗CPU资源</p>
+<p>5.I/O操作 速度非常慢</p>
+<hr>
+<h4 id="多线程优缺点"><a href="#多线程优缺点" class="headerlink" title="多线程优缺点"></a>多线程优缺点</h4><p>优点:</p>
+<p>1.能适当提高程序的执行效率</p>
+<p>2.能适当提高资源的利用率</p>
+<p>3.线程上的任务执行完成后,线程会自动销毁</p>
+<p>缺点:</p>
+<p>1.开启线程需要占用一定的内存空间(默认情况下,每个线程占用512KB)</p>
+<p>2.如果开启大量的线程,会占用大量的内存空间,降低程序的性能</p>
+<p>3.线程越多,CPU在调用线程上的开销就越大</p>
+<p>4.程序设计更加复杂,比如线程间的通信,多线程共享(例如:多线程在同一时刻修改某个数值)</p>
+<hr>
+<h4 id="多线程技术方案"><a href="#多线程技术方案" class="headerlink" title="多线程技术方案"></a>多线程技术方案</h4><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdvtkr9najj30x20i0tcz.jpg" alt=""></p>
+<!--一套通用的多线程API, 或者说接口/C函数(此处不是方法);  
+方法面向对象,方法属于对象,调用方法时需要对象; 而函数可以直接调用
+Mac基于Unix
+
+=========================
+pthread    nil 代表空对象,   NULL代表空地址
+
+-->
+<hr>
+<h4 id="互斥锁和自旋锁"><a href="#互斥锁和自旋锁" class="headerlink" title="互斥锁和自旋锁"></a>互斥锁和自旋锁</h4><p>区别:</p>
+<p><strong>互斥锁:</strong>如果发现其他线程正在执行锁定的代码,线程会进入<strong>休眠(就绪状态)</strong>,等待其他线程时间片到打开锁后,线程会被唤醒(执行)</p>
+<p><strong>自旋锁:</strong>如果发现有其他线程正在锁定代码,线程会用<strong>死循环</strong>的方式,一直等待锁定的代码执行完成,<code>自旋锁更适合执行不耗时的代码</code></p>
+<ul>
+<li>原子属性内部有一把自旋锁</li>
+<li>原子属性不能保证同时读写的操作安全性</li>
+<li>故而原子属性不能解决卖票的共享资源抢占问题</li>
+<li>需要用到互斥锁,把读和写的操作包装成一个原子块</li>
+</ul>
+<p>延伸知识点: <strong>GCD信号量:</strong></p>
+<p>定义:</p>
+<p>信号量就是一种可用来控制访问资源的数量的标识，设定了一个信号量，在线程访问之前，加上信号量的处理，则可告知系统按照我们指定的信号量数量来执行多个线程。</p>
+<p>其实，这有点类似锁机制了，只不过信号量都是系统帮助我们处理了，我们只需要在执行线程之前，设定一个信号量值，并且在使用时，加上信号量处理方法就行了。</p>
+<p><strong>注意</strong>，正常的使用顺序是<em>先降低然后再提高</em>，这两个函数通常<em>成对使用</em>。　</p>
+<p>核心方法如下:</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建信号量，参数：信号量的初值，如果小于0则会返回NULL</span></span><br><span class="line">dispatch_semaphore_create(信号量值)</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 等待降低信号量</span></span><br><span class="line">dispatch_semaphore_wait(信号量，等待时间)</span><br><span class="line"><span class="comment">// 提高信号量</span></span><br><span class="line">dispatch_semaphore_signal(信号量)</span><br></pre></td></tr></table></figure>
+
+<p>参考: </p>
+<p><a href="https://www.cnblogs.com/yajunLi/p/6274282.html" target="_blank" rel="noopener">iOS GCD中级篇 - dispatch_semaphore（信号量）的理解及使用</a></p>
+<p><a href="https://www.jianshu.com/p/2f0225b67f6c" target="_blank" rel="noopener">IOS GCD中的信号量</a></p>
+<hr>
+<h4 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h4><p>线程同时操作是不安全的,多个线程同时操作同一个全局变量<br>在多个线程进行读写操作时,仍然能保证数据的正确,线程才是安全的</p>
+<p><strong>几乎所有UIKit提供的类都是线程不安全的,所以更新UI操作需要放在主线程</strong></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">线程间通信(从子线程回到主线程)</span><br><span class="line"><span class="built_in">dispatch_async</span>(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</span><br><span class="line">	<span class="comment">// 执⾏耗时的异步操作...</span></span><br><span class="line">	<span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 回到主线程,执⾏UI刷新操作</span></span><br><span class="line">	&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 
     
 
@@ -305,7 +353,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://hubin97.github.io/2019/04/24/iOS收集应用评分/" title="iOS收集应用评分" target="_blank">https://hubin97.github.io/2019/04/24/iOS收集应用评分/</a>
+          <a href="https://hubin97.github.io/2020/04/16/多线程总结/" title="多线程总结" target="_blank">https://hubin97.github.io/2020/04/16/多线程总结/</a>
         </li>
         
         <li>
@@ -387,7 +435,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://hubin97.github.io/2019/04/24/iOS%E6%94%B6%E9%9B%86%E5%BA%94%E7%94%A8%E8%AF%84%E5%88%86/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://hubin97.github.io/2020/04/16/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%BB%E7%BB%93/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -402,18 +450,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/01/12/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%931/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          知识点总结(一)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/04/18/%E5%B8%B8%E7%94%A8%E5%AE%8F%E6%95%B4%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">常用宏整理</div>
+    <a href="/2020/04/07/%E5%B8%B8%E7%94%A8%E5%B0%8F%E5%B7%A5%E5%85%B7/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">常用小工具</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -440,7 +479,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#需求背景"><span class="toc-number">1.</span> <span class="toc-text">需求背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用细节"><span class="toc-number">2.</span> <span class="toc-text">使用细节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Simple-code"><span class="toc-number">3.</span> <span class="toc-text">Simple code</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#多线程概念及原理"><span class="toc-number">1.</span> <span class="toc-text">多线程概念及原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多线程优缺点"><span class="toc-number">2.</span> <span class="toc-text">多线程优缺点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多线程技术方案"><span class="toc-number">3.</span> <span class="toc-text">多线程技术方案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#互斥锁和自旋锁"><span class="toc-number">4.</span> <span class="toc-text">互斥锁和自旋锁</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#线程安全"><span class="toc-number">5.</span> <span class="toc-text">线程安全</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -467,9 +506,9 @@
     <script src="/lib/gitment.js"></script>
   
   <script>
-    <!-- id: "iOS收集应用评分" -->
+    <!-- id: "多线程总结" -->
     var gitment = new Gitment({
-      id: "20190424101423",
+      id: "20200416190854",
       owner: 'hubin97',
       repo: 'hubin97_io_talk',
       oauth: {

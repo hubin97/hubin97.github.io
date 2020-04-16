@@ -194,6 +194,97 @@
             
 
   
+    <article id="post-多线程总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/04/16/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%BB%E7%BB%93/">多线程总结</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/04/16/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%BB%E7%BB%93/" class="archive-article-date">
+        <time datetime="2020-04-16T11:08:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-16</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="多线程概念及原理"><a href="#多线程概念及原理" class="headerlink" title="多线程概念及原理"></a>多线程概念及原理</h4><p>1.(单核CPU) 同一时间, CPU只能处理1个线程,只有一个线程在执行</p>
+<p>2.多线程”同时”执行, 是CPU快速的在多个线程之间的切换</p>
+<p>3.CPU调度线程的时间足够快,就造成了多线程的”同时”执行</p>
+<p>4.如果线程数非常多,CPU会在n个线程之间切换,消耗大量的CPU资源</p>
+    
+    <a class="article-more-a" href="/2020/04/16/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%BB%E7%BB%93/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-常用小工具" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -291,7 +382,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/02/10/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%932/">知识点总结2</a>
+	  <a class="article-title" href="/2020/02/10/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%932/">知识点总结(二)</a>
 	
     </h1>
   
@@ -1004,94 +1095,6 @@
 
 
   
-    <article id="post-iOS零碎知识点备忘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2018/07/09/iOS%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E5%A4%87%E5%BF%98/">iOS零碎知识点备忘</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2018/07/09/iOS%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E5%A4%87%E5%BF%98/" class="archive-article-date">
-        <time datetime="2018-07-09T03:38:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-09</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="12-24小时制判断"><a href="#12-24小时制判断" class="headerlink" title="12/24小时制判断"></a>12/24小时制判断</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> mark -Private</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> hasAMPM==TURE为12小时制，否则为24小时制</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)hasAMPM</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//获取系统是24小时制或者12小时制</span></span><br><span class="line">    <span class="built_in">NSString</span> *formatStringForHours = [<span class="built_in">NSDateFormatter</span> dateFormatFromTemplate:<span class="string">@"j"</span> options:<span class="number">0</span> locale:[<span class="built_in">NSLocale</span> currentLocale]];</span><br><span class="line">    <span class="built_in">NSRange</span> containsA = [formatStringForHours rangeOfString:<span class="string">@"a"</span>];</span><br><span class="line">    <span class="built_in">BOOL</span> hasAMPM = containsA.location != <span class="built_in">NSNotFound</span>;</span><br><span class="line">    <span class="keyword">return</span> hasAMPM;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2018/07/09/iOS%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E5%A4%87%E5%BF%98/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1229,6 +1232,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">技术札记</a>
               </li>
              
@@ -1245,19 +1252,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color3">标记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">标记</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
             
             <div class="clearfix"></div>
