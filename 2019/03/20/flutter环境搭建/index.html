@@ -6,16 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hubin97.github.io">
-  <title>Tag: 标记 | 个人博客</title>
+  <title>flutter+VSCode+Xcode环境搭建 | 个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="个人博客">
-<meta property="og:url" content="https://hubin97.github.io/tags/%E6%A0%87%E8%AE%B0/index.html">
+  <meta name="description" content="环境搭建1. 路径配置(1) 下载flutter安装包：https:&#x2F;&#x2F;github.com&#x2F;flutter&#x2F;flutter&#x2F;releases。 (2) 解压安装包到你想安装的目录下, 终端获取路径地址 $ pwd (3) 配置终端全局应用 常用指令 12$ vim .bash_profile$ source ～&#x2F;.bash_profile">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flutter+VSCode+Xcode环境搭建">
+<meta property="og:url" content="https://hubin97.github.io/2019/03/20/flutter%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="环境搭建1. 路径配置(1) 下载flutter安装包：https:&#x2F;&#x2F;github.com&#x2F;flutter&#x2F;flutter&#x2F;releases。 (2) 解压安装包到你想安装的目录下, 终端获取路径地址 $ pwd (3) 配置终端全局应用 常用指令 12$ vim .bash_profile$ source ～&#x2F;.bash_profile">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge3qk85upqj30pm0hmjuy.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge3rk1r9g0j31a20higmy.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge3rogev6oj314k0hu40m.jpg">
+<meta property="article:published_time" content="2019-03-20T02:10:09.000Z">
+<meta property="article:modified_time" content="2020-04-23T08:15:45.411Z">
 <meta property="article:author" content="青空|逸隐">
+<meta property="article:tag" content="技术札记">
+<meta property="article:tag" content="flutter">
+<meta property="article:tag" content="热更新">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge3qk85upqj30pm0hmjuy.jpg">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
   
@@ -187,41 +198,177 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-flutter环境搭建" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2018/05/11/Texture/" class="archive-article-date">
-        <time datetime="2018-05-11T14:11:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-11</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2018/05/11/Texture/">Texture</a>
-	
+    <h1 class="article-title" itemprop="name">
+      flutter+VSCode+Xcode环境搭建
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2019/03/20/flutter%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="archive-article-date">
+        <time datetime="2019-03-20T02:10:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-20</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">2.6k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">14分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><h4 id="1-路径配置"><a href="#1-路径配置" class="headerlink" title="1. 路径配置"></a>1. 路径配置</h4><p>(1) 下载flutter安装包：<a href="https://github.com/flutter/flutter/releases" target="_blank" rel="noopener">https://github.com/flutter/flutter/releases</a>。</p>
+<p>(2) 解压安装包到你想安装的目录下, 终端获取路径地址 <code>$ pwd</code></p>
+<p>(3) 配置终端全局应用</p>
+<p>常用指令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vim .bash_profile</span><br><span class="line">$ source ～&#x2F;.bash_profile</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<p>配置参考</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Setting PATH for Flutter</span><br><span class="line">export PUB_HOSTED_URL&#x3D;https:&#x2F;&#x2F;pub.flutter-io.cn</span><br><span class="line">export FLUTTER_STORAGE_BASE_URL&#x3D;https:&#x2F;&#x2F;storage.flutter-io.cn</span><br><span class="line">export PATH&#x3D;&#x2F;Users&#x2F;Mac&#x2F;Documents&#x2F;WORKPLACE&#x2F;flutter&#x2F;bin:$PATH  &#x2F;&#x2F; 安装包路径, 此处以实际安装路径为主</span><br><span class="line">#export ANDROID_HOME&#x3D;&quot;&#x2F;Users&#x2F;用户名&#x2F;Documents&#x2F;android_sdk&quot; &#x2F;&#x2F;android sdk目录，替换为你自己的即可</span><br><span class="line">#export PATH&#x3D;$&#123;PATH&#125;:$&#123;ANDROID_HOME&#125;&#x2F;tools</span><br><span class="line">#export PATH&#x3D;$&#123;PATH&#125;:$&#123;ANDROID_HOME&#125;&#x2F;platform-tools</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>: 如果你使用终端是<code>zsh</code>，终端启动时 <code>~/.bash_profile</code> 将不会被加载，解决办法就是修改 <code>～/.zshrc</code> ，在其中添加：<code>source ～/.bash_profile</code></p>
+<p>此情况的一般现象是, 电脑重启后, 指令又会失效</p>
+<p>(4) 确保安装<code>Xcode</code>和<code>VSCode</code></p>
+<p>随着Xcode版本迭代,可能下载需要很长时间. 但是此时主要在意的是模拟器, 路径<code>Xcode -&gt; Open Developer Tool -&gt; Simulator</code>, 打开它, 以便flutter检测连接到</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge3qk85upqj30pm0hmjuy.jpg" alt=""></p>
+<p>在VSCode安装好后, 我们可以找到里面有足够多的插件, 用以支持各种不同语音, 甚至不同体验优化的插件, 我们对这些插件可以进行最优最大化的针对配置. 当然这里我们仅需要下载<code>Dart</code>插件, 注意下载完重启一下(一般会有提示)</p>
+<h4 id="2-检查flutter的相关配置"><a href="#2-检查flutter的相关配置" class="headerlink" title="2. 检查flutter的相关配置"></a>2. 检查flutter的相关配置</h4><p>在Flutter命令行运行如下命令来查看是否还需要安装其它依赖, 检查你的环境并在命令行窗口中显示报告.</p>
+<p>示例如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">$ flutter doctor</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 执行结果</span><br><span class="line">$ flutter doctor</span><br><span class="line">Doctor summary (to see all details, run flutter doctor -v):</span><br><span class="line">[✓] Flutter (Channel stable, v1.0.0, on Mac OS X 10.14.1 18B75, locale</span><br><span class="line">    zh-Hans-CN)</span><br><span class="line">[✗] Android toolchain - develop for Android devices</span><br><span class="line">    ✗ Unable to locate Android SDK.</span><br><span class="line">      Install Android Studio from:</span><br><span class="line">      https:&#x2F;&#x2F;developer.android.com&#x2F;studio&#x2F;index.html</span><br><span class="line">      On first launch it will assist you in installing the Android SDK</span><br><span class="line">      components.</span><br><span class="line">      (or visit https:&#x2F;&#x2F;flutter.io&#x2F;setup&#x2F;#android-setup for detailed</span><br><span class="line">      instructions).</span><br><span class="line">      If Android SDK has been installed to a custom location, set $ANDROID_HOME</span><br><span class="line">      to that location.</span><br><span class="line">      You may also want to add it to your PATH environment variable.</span><br><span class="line"></span><br><span class="line">[!] iOS toolchain - develop for iOS devices (Xcode 10.1)</span><br><span class="line">    ✗ libimobiledevice and ideviceinstaller are not installed. To install with</span><br><span class="line">      Brew, run:</span><br><span class="line">        brew update</span><br><span class="line">        brew install --HEAD usbmuxd</span><br><span class="line">        brew link usbmuxd</span><br><span class="line">        brew install --HEAD libimobiledevice</span><br><span class="line">        brew install ideviceinstaller</span><br><span class="line">    ✗ ios-deploy not installed. To install with Brew:</span><br><span class="line">        brew install ios-deploy</span><br><span class="line">    ✗ CocoaPods not installed.</span><br><span class="line">        CocoaPods is used to retrieve the iOS platform side&#39;s plugin code that</span><br><span class="line">        responds to your plugin usage on the Dart side.</span><br><span class="line">        Without resolving iOS dependencies with CocoaPods, plugins will not work</span><br><span class="line">        on iOS.</span><br><span class="line">        For more info, see https:&#x2F;&#x2F;flutter.io&#x2F;platform-plugins</span><br><span class="line">      To install:</span><br><span class="line">        brew install cocoapods</span><br><span class="line">        pod setup</span><br><span class="line">[!] Android Studio (not installed)</span><br><span class="line">[✓] VS Code (version 1.30.1)</span><br><span class="line">[✓] Connected device (1 available)</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-安装到iOS设备"><a href="#3-安装到iOS设备" class="headerlink" title="3.安装到iOS设备"></a>3.安装到iOS设备</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 确认安装brew</span><br><span class="line">$ brew -v</span><br><span class="line">Homebrew 1.2.3</span><br><span class="line">Homebrew&#x2F;homebrew-core (git revision bc4e; last commit 2017-06-23)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 注意要翻墙!</span><br><span class="line">brew update</span><br><span class="line">brew install --HEAD libimobiledevice</span><br><span class="line">brew install ideviceinstaller ios-deploy cocoapods</span><br><span class="line">pod setup</span><br></pre></td></tr></table></figure>
+
+<p>遇到的几个报错</p>
+<p>(1) 执行<code>brew install --HEAD libimobiledevice</code>报错</p>
+<p>问题原因: 尝试创建Frameworks文件夹,但是没有权限<br>解决方案:  <code>sudo mkdir /usr/local/Frameworks</code></p>
+<p>(2) 执行 <code>brew install ideviceinstaller ios-deploy</code> cocoapods 报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">$ brew install ideviceinstaller ios-deploy cocoapods</span><br><span class="line">Updating Homebrew...</span><br><span class="line">Warning: ideviceinstaller 1.1.0_4 is already installed and up-to-date</span><br><span class="line">To reinstall 1.1.0_4, run &#96;brew reinstall ideviceinstaller&#96;</span><br><span class="line">Warning: ios-deploy 1.9.4 is already installed and up-to-date</span><br><span class="line">To reinstall 1.9.4, run &#96;brew reinstall ios-deploy&#96;</span><br><span class="line">Warning: cocoapods 1.5.3_1 is already installed, it&#39;s just not linked</span><br><span class="line">You can use &#96;brew link cocoapods&#96; to link this version.</span><br><span class="line"></span><br><span class="line">$ brew link cocoapods</span><br><span class="line">Linking &#x2F;usr&#x2F;local&#x2F;Cellar&#x2F;cocoapods&#x2F;1.5.3_1... </span><br><span class="line">Error: Could not symlink bin&#x2F;pod</span><br><span class="line">Target &#x2F;usr&#x2F;local&#x2F;bin&#x2F;pod</span><br><span class="line">already exists. You may want to remove it:</span><br><span class="line">  rm &#39;&#x2F;usr&#x2F;local&#x2F;bin&#x2F;pod&#39;</span><br><span class="line"></span><br><span class="line">To force the link and overwrite all conflicting files:</span><br><span class="line">  brew link --overwrite cocoapods</span><br><span class="line"></span><br><span class="line">To list all files that would be deleted:</span><br><span class="line">  brew link --overwrite --dry-run cocoapods</span><br><span class="line"></span><br><span class="line">$ brew link --overwrite --dry-run cocoapods</span><br><span class="line">Would remove:</span><br><span class="line">&#x2F;usr&#x2F;local&#x2F;bin&#x2F;pod</span><br><span class="line">&#x2F;usr&#x2F;local&#x2F;bin&#x2F;xcodeproj</span><br><span class="line">bogon:~ MyMac$ brew link --overwrite cocoapods</span><br><span class="line">Linking &#x2F;usr&#x2F;local&#x2F;Cellar&#x2F;cocoapods&#x2F;1.5.3_1... 2 symlinks created</span><br><span class="line"></span><br><span class="line">$ pod setup</span><br><span class="line">Setting up CocoaPods master repo</span><br></pre></td></tr></table></figure>
+<p>解决方案: 按照提示逐步执行相关指令</p>
+<p>提示: 如果这些命令中的任何一个失败并出现错误，请运行brew doctor并按照说明解决问题.</p>
+<p>(3) 有关安装其他组件的信息运行<code>$ flutter doctor</code> 查看安装情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">$ flutter doctor</span><br><span class="line">Doctor summary (to see all details, run flutter doctor -v):</span><br><span class="line">[✓] Flutter (Channel stable, v1.0.0, on Mac OS X 10.14.1 18B75, locale</span><br><span class="line">    zh-Hans-CN)</span><br><span class="line">[✗] Android toolchain - develop for Android devices</span><br><span class="line">    ✗ Unable to locate Android SDK.</span><br><span class="line">      Install Android Studio from:</span><br><span class="line">      https:&#x2F;&#x2F;developer.android.com&#x2F;studio&#x2F;index.html</span><br><span class="line">      On first launch it will assist you in installing the Android SDK</span><br><span class="line">      components.</span><br><span class="line">      (or visit https:&#x2F;&#x2F;flutter.io&#x2F;setup&#x2F;#android-setup for detailed</span><br><span class="line">      instructions).</span><br><span class="line">      If Android SDK has been installed to a custom location, set $ANDROID_HOME</span><br><span class="line">      to that location.</span><br><span class="line">      You may also want to add it to your PATH environment variable.</span><br><span class="line"></span><br><span class="line">[!] iOS toolchain - develop for iOS devices (Xcode 10.1)</span><br><span class="line">    ✗ Verify that all connected devices have been paired with this computer in</span><br><span class="line">      Xcode.</span><br><span class="line">      If all devices have been paired, libimobiledevice and ideviceinstaller</span><br><span class="line">      may require updating.</span><br><span class="line">      To update with Brew, run:</span><br><span class="line">        brew update</span><br><span class="line">        brew uninstall --ignore-dependencies libimobiledevice</span><br><span class="line">        brew uninstall --ignore-dependencies usbmuxd</span><br><span class="line">        brew install --HEAD usbmuxd</span><br><span class="line">        brew unlink usbmuxd</span><br><span class="line">        brew link usbmuxd</span><br><span class="line">        brew install --HEAD libimobiledevice</span><br><span class="line">        brew install ideviceinstaller</span><br><span class="line">[!] Android Studio (not installed)</span><br><span class="line">[✓] VS Code (version 1.30.1)</span><br><span class="line">[✓] Connected device (1 available)</span><br><span class="line"></span><br><span class="line">! Doctor found issues in 3 categories.</span><br><span class="line">bogon:~ MyMac$ flutter devices</span><br><span class="line">1 connected device:</span><br><span class="line"></span><br><span class="line">iPhone X • 79C409D5-B7AA-44B8-B5DA-8657BDEAE0B0 • ios • iOS 12.1 (simulator)</span><br></pre></td></tr></table></figure>
+
+<p>根据提示顺序执行一遍<br>￼</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ flutter doctor</span><br><span class="line">Doctor summary (to see all details, run flutter doctor -v):</span><br><span class="line">[✓] Flutter (Channel stable, v1.0.0, on Mac OS X 10.14.1 18B75, locale zh-Hans-CN)</span><br><span class="line">[✗] Android toolchain - develop for Android devices</span><br><span class="line">    ✗ Unable to locate Android SDK.</span><br><span class="line">      Install Android Studio from: https:&#x2F;&#x2F;developer.android.com&#x2F;studio&#x2F;index.html</span><br><span class="line">      On first launch it will assist you in installing the Android SDK components.</span><br><span class="line">      (or visit https:&#x2F;&#x2F;flutter.io&#x2F;setup&#x2F;#android-setup for detailed instructions).</span><br><span class="line">      If Android SDK has been installed to a custom location, set $ANDROID_HOME to that location.</span><br><span class="line">      You may also want to add it to your PATH environment variable.</span><br><span class="line"></span><br><span class="line">[✓] iOS toolchain - develop for iOS devices (Xcode 10.1)</span><br><span class="line">[!] Android Studio (not installed)</span><br><span class="line">[✓] VS Code (version 1.30.1)</span><br><span class="line">[✓] Connected device (1 available)</span><br><span class="line"></span><br><span class="line">! Doctor found issues in 2 categories.</span><br></pre></td></tr></table></figure>
+<p>如上, 其实我们仅需要在iOS运行的话,这样就足够了, Android Studio没有配置不影响开发预览了.</p>
+<h3 id="项目创建"><a href="#项目创建" class="headerlink" title="项目创建"></a>项目创建</h3><p>(1) 查看电脑上是否有可连接设备或者模拟器设备</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ flutter devices &#x2F;&#x2F;  查看连接的设备列表</span><br><span class="line">$ flutter emulators  &#x2F;&#x2F;  查看模拟器设备列表</span><br></pre></td></tr></table></figure>
+
+<p>(2) 创建项目  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ flutter create projectname</span><br></pre></td></tr></table></figure>
+
+<p>示例如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">$ flutter create flutter_01</span><br><span class="line">Creating project flutter_01...</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner.xcworkspace&#x2F;contents.xcworkspacedata (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Info.plist (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Assets.xcassets&#x2F;LaunchImage.imageset&#x2F;LaunchImage@2x.png (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Assets.xcassets&#x2F;LaunchImage.imageset&#x2F;LaunchImage@3x.png (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Assets.xcassets&#x2F;LaunchImage.imageset&#x2F;README.md (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Assets.xcassets&#x2F;LaunchImage.imageset&#x2F;Contents.json (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Assets.xcassets&#x2F;LaunchImage.imageset&#x2F;LaunchImage.png (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Assets.xcassets&#x2F;AppIcon.appiconset&#x2F;Icon-App-76x76@2x.png (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Assets.xcassets&#x2F;AppIcon.appiconset&#x2F;Icon-App-29x29@1x.png (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Assets.xcassets&#x2F;AppIcon.appiconset&#x2F;Icon-App-40x40@1x.png (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Assets.xcassets&#x2F;AppIcon.appiconset&#x2F;Icon-App-20x20@1x.png (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Assets.xcassets&#x2F;AppIcon.appiconset&#x2F;Icon-App-1024x1024@1x.png (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Assets.xcassets&#x2F;AppIcon.appiconset&#x2F;Icon-App-83.5x83.5@2x.png (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Assets.xcassets&#x2F;AppIcon.appiconset&#x2F;Icon-App-20x20@3x.png (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Assets.xcassets&#x2F;AppIcon.appiconset&#x2F;Contents.json (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Assets.xcassets&#x2F;AppIcon.appiconset&#x2F;Icon-App-20x20@2x.png (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Assets.xcassets&#x2F;AppIcon.appiconset&#x2F;Icon-App-29x29@3x.png (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Assets.xcassets&#x2F;AppIcon.appiconset&#x2F;Icon-App-40x40@2x.png (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Assets.xcassets&#x2F;AppIcon.appiconset&#x2F;Icon-App-60x60@3x.png (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Assets.xcassets&#x2F;AppIcon.appiconset&#x2F;Icon-App-60x60@2x.png (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Assets.xcassets&#x2F;AppIcon.appiconset&#x2F;Icon-App-76x76@1x.png (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Assets.xcassets&#x2F;AppIcon.appiconset&#x2F;Icon-App-40x40@3x.png (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Assets.xcassets&#x2F;AppIcon.appiconset&#x2F;Icon-App-29x29@2x.png (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Base.lproj&#x2F;LaunchScreen.storyboard (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;Base.lproj&#x2F;Main.storyboard (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner.xcodeproj&#x2F;project.xcworkspace&#x2F;contents.xcworkspacedata (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner.xcodeproj&#x2F;xcshareddata&#x2F;xcschemes&#x2F;Runner.xcscheme (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Flutter&#x2F;Debug.xcconfig (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Flutter&#x2F;Release.xcconfig (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Flutter&#x2F;AppFrameworkInfo.plist (created)</span><br><span class="line">  flutter_01&#x2F;test&#x2F;widget_test.dart (created)</span><br><span class="line">  flutter_01&#x2F;flutter_01.iml (created)</span><br><span class="line">  flutter_01&#x2F;.gitignore (created)</span><br><span class="line">  flutter_01&#x2F;.metadata (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;AppDelegate.h (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;main.m (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner&#x2F;AppDelegate.m (created)</span><br><span class="line">  flutter_01&#x2F;ios&#x2F;Runner.xcodeproj&#x2F;project.pbxproj (created)</span><br><span class="line">  flutter_01&#x2F;android&#x2F;app&#x2F;src&#x2F;main&#x2F;res&#x2F;mipmap-mdpi&#x2F;ic_launcher.png (created)</span><br><span class="line">  flutter_01&#x2F;android&#x2F;app&#x2F;src&#x2F;main&#x2F;res&#x2F;mipmap-hdpi&#x2F;ic_launcher.png (created)</span><br><span class="line">  flutter_01&#x2F;android&#x2F;app&#x2F;src&#x2F;main&#x2F;res&#x2F;drawable&#x2F;launch_background.xml (created)</span><br><span class="line">  flutter_01&#x2F;android&#x2F;app&#x2F;src&#x2F;main&#x2F;res&#x2F;mipmap-xxxhdpi&#x2F;ic_launcher.png (created)</span><br><span class="line">  flutter_01&#x2F;android&#x2F;app&#x2F;src&#x2F;main&#x2F;res&#x2F;mipmap-xxhdpi&#x2F;ic_launcher.png (created)</span><br><span class="line">  flutter_01&#x2F;android&#x2F;app&#x2F;src&#x2F;main&#x2F;res&#x2F;values&#x2F;styles.xml (created)</span><br><span class="line">  flutter_01&#x2F;android&#x2F;app&#x2F;src&#x2F;main&#x2F;res&#x2F;mipmap-xhdpi&#x2F;ic_launcher.png (created)</span><br><span class="line">  flutter_01&#x2F;android&#x2F;app&#x2F;src&#x2F;main&#x2F;AndroidManifest.xml (created)</span><br><span class="line">  flutter_01&#x2F;android&#x2F;gradle&#x2F;wrapper&#x2F;gradle-wrapper.properties (created)</span><br><span class="line">  flutter_01&#x2F;android&#x2F;gradle.properties (created)</span><br><span class="line">  flutter_01&#x2F;android&#x2F;settings.gradle (created)</span><br><span class="line">  flutter_01&#x2F;pubspec.yaml (created)</span><br><span class="line">  flutter_01&#x2F;README.md (created)</span><br><span class="line">  flutter_01&#x2F;lib&#x2F;main.dart (created)</span><br><span class="line">  flutter_01&#x2F;android&#x2F;app&#x2F;build.gradle (created)</span><br><span class="line">  flutter_01&#x2F;android&#x2F;app&#x2F;src&#x2F;main&#x2F;java&#x2F;com&#x2F;example&#x2F;flutter01&#x2F;MainActivity.java (created)</span><br><span class="line">  flutter_01&#x2F;android&#x2F;build.gradle (created)</span><br><span class="line">  flutter_01&#x2F;android&#x2F;flutter_01_android.iml (created)</span><br><span class="line">  flutter_01&#x2F;.idea&#x2F;runConfigurations&#x2F;main_dart.xml (created)</span><br><span class="line">  flutter_01&#x2F;.idea&#x2F;libraries&#x2F;Flutter_for_Android.xml (created)</span><br><span class="line">  flutter_01&#x2F;.idea&#x2F;libraries&#x2F;Dart_SDK.xml (created)</span><br><span class="line">  flutter_01&#x2F;.idea&#x2F;libraries&#x2F;KotlinJavaRuntime.xml (created)</span><br><span class="line">  flutter_01&#x2F;.idea&#x2F;modules.xml (created)</span><br><span class="line">  flutter_01&#x2F;.idea&#x2F;workspace.xml (created)</span><br><span class="line">Running &quot;flutter packages get&quot; in flutter_01...              6.7s</span><br><span class="line">Wrote 64 files.</span><br><span class="line"></span><br><span class="line">All done!</span><br><span class="line">[✓] Flutter is fully installed. (Channel stable, v1.0.0, on Mac OS X 10.14.1 18B75, locale</span><br><span class="line">    zh-Hans-CN)</span><br><span class="line">[✗] Android toolchain - develop for Android devices is not installed.</span><br><span class="line">[✓] iOS toolchain - develop for iOS devices is fully installed. (Xcode 10.1)</span><br><span class="line">[!] Android Studio is not available. (not installed)</span><br><span class="line">[✓] VS Code is fully installed. (version 1.30.1)</span><br><span class="line">[✓] Connected device is fully installed. (1 available)</span><br><span class="line"></span><br><span class="line">Run &quot;flutter doctor&quot; for information about installing additional components.</span><br><span class="line"></span><br><span class="line">In order to run your application, type:</span><br><span class="line"></span><br><span class="line">  $ cd flutter_01</span><br><span class="line">  $ flutter run</span><br><span class="line"></span><br><span class="line">Your application code is in flutter_01&#x2F;lib&#x2F;main.dart.</span><br></pre></td></tr></table></figure>
+
+<h3 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h3><p>这里可以有两种方式</p>
+<p>(1) 指令执行项目</p>
+<p>如上创建项目的最后日志打印, 当然了, 这种方式对项目的可视化操作不是很友好</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd project</span><br><span class="line">$ flutter run</span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge3rk1r9g0j31a20higmy.jpg" alt=""></p>
+<p>(2) 借助VSCode运行项目</p>
+<p>用VSCode打开项目, 可以配置自己习惯的快捷方式, 去运行flutter. 这里就没有太多的复述了, 熟悉VSCode并去实践吧…<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ge3rogev6oj314k0hu40m.jpg" alt=""></p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>Dart 官方教程/文章收集整理贴 <a href="https://www.dart-china.org/t/topic/541" target="_blank" rel="noopener">https://www.dart-china.org/t/topic/541</a></p>
+<p>Flutter中文网 <a href="https://book.flutterchina.club" target="_blank" rel="noopener">https://book.flutterchina.club</a></p>
+<p>技术胖博客 <a href="https://jspang.com/post/flutterDemo.html" target="_blank" rel="noopener">https://jspang.com/post/flutterDemo.html</a></p>
+<p>Flutter仿微信项目实战,这才是期待中的跨平台框架 <a href="https://github.com/iosyaowei/wechat_clone_flutter" target="_blank" rel="noopener">https://github.com/iosyaowei/wechat_clone_flutter</a></p>
+<p>Dart系列教程：Dart Force Framework <a href="https://www.bilibili.com/video/av3156676/" target="_blank" rel="noopener">https://www.bilibili.com/video/av3156676/</a></p>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>感谢老板打赏哦!<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          青空|逸隐
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://hubin97.github.io/2019/03/20/flutter环境搭建/" title="flutter+VSCode+Xcode环境搭建" target="_blank">https://hubin97.github.io/2019/03/20/flutter环境搭建/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -231,29 +378,161 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">标记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">热更新</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    
 
     
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://hubin97.github.io/2019/03/20/flutter%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+    <a href="/2019/04/09/%E5%88%B6%E4%BD%9CCocoaPods%E5%85%AC%E6%9C%89%E5%BA%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          制作CocoaPods公有库
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/10/iOS%E6%9D%83%E9%99%90%E6%95%B4%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iOS权限整理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#环境搭建"><span class="toc-number">1.</span> <span class="toc-text">环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-路径配置"><span class="toc-number">1.1.</span> <span class="toc-text">1. 路径配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-检查flutter的相关配置"><span class="toc-number">1.2.</span> <span class="toc-text">2. 检查flutter的相关配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-安装到iOS设备"><span class="toc-number">1.3.</span> <span class="toc-text">3.安装到iOS设备</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目创建"><span class="toc-number">2.</span> <span class="toc-text">项目创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行项目"><span class="toc-number">3.</span> <span class="toc-text">运行项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">4.</span> <span class="toc-text">参考</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div id="gitment-ctn"></div>
+  
+    <!-- 中文 -->
+    <link rel="stylesheet" href="/lib/gitment.css">
+    <script src="/lib/gitment.js"></script>
+  
+  <script>
+    <!-- id: "flutter+VSCode+Xcode环境搭建" -->
+    var gitment = new Gitment({
+      id: "20190320101009",
+      owner: 'hubin97',
+      repo: 'hubin97_io_talk',
+      oauth: {
+        client_id: '5804ff6d4b964ed63177',
+        client_secret: 'fedca725a8d49166f1ed457a9ac468855ec0a00b',
+      },
+    })
+    gitment.render('gitment-ctn')
+  </script>
+
+
+  
 
 
 
@@ -295,9 +574,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

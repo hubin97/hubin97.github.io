@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="个人博客">
 <meta property="og:description" content="5.Block实质(1)定义Block是将函数及其执行上下文封装起来的对象.Block调用即函数的调用.">
 <meta property="article:published_time" content="2020-04-18T13:15:48.000Z">
-<meta property="article:modified_time" content="2020-04-19T13:17:30.724Z">
+<meta property="article:modified_time" content="2020-04-22T04:06:46.632Z">
 <meta property="article:author" content="青空|逸隐">
 <meta property="article:tag" content="技术札记">
 <meta property="article:tag" content="iOS">
@@ -226,7 +226,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">657字</span>
+      <span class="post-count">695字</span>
     </span>
   </span>
 
@@ -264,7 +264,7 @@
 <p>简述下面代码是否有问题?</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">__block Block *blkSelf = <span class="keyword">self</span>;</span><br><span class="line">_blk = ^<span class="keyword">int</span>(<span class="keyword">int</span> num) &#123;</span><br><span class="line">	<span class="comment">// value = 2</span></span><br><span class="line">	<span class="keyword">return</span> num * blkSelf.value</span><br><span class="line">&#125;;</span><br><span class="line">_blk(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
 
-<p>MRC下正常;<br>ARC下有循环引用,会引起内存泄露.<br>案例分析:</p>
+<p>MRC下正常, <code>__block</code>修饰对象不会增加其引用计数;<br>ARC下有循环引用,会引起内存泄露,<code>__block</code>修饰对象会被强引用,无法避免的循环引用,需<code>手动断环</code>.<br>案例分析:</p>
 <p>当前对象持有 block, block又持有<strong>block变量,而</strong>block变量又持有当前对象,所以形成一个环. </p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">__block Block *blkSelf = <span class="keyword">self</span>;</span><br><span class="line">_blk = ^<span class="keyword">int</span>(<span class="keyword">int</span> num) &#123;</span><br><span class="line">	<span class="comment">// value = 2</span></span><br><span class="line">	<span class="keyword">int</span> result = num * blkSelf.value;</span><br><span class="line">	blkSelf = <span class="literal">nil</span>; <span class="comment">// 断环</span></span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br><span class="line">_blk(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
 
@@ -616,11 +616,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">涂鸦</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">涂鸦</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -628,7 +628,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color2">FFmpeg</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -636,11 +636,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">FFmpeg</a>
+                <a href="javascript:void(0)" class="js-tag color2">macosx</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">macosx</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -750,6 +758,15 @@
                   <i class="icon-link icon"></i>
                 
                 Kenshin Cui
+              </a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://cuiqingcai.com/category/technique/python" target="_blank" class="search-title" title="静觅，静静寻觅生活的美好。">
+                
+                  <img src="https://qiniu.cuiqingcai.com/2019-07-26-032109.png">
+                
+                崔庆才
               </a>
             </li>
           

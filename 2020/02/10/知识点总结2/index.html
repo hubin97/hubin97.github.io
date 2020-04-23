@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdtfsjv2bbj31i20okjus.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdtgmw34j1j31ji0rigpi.jpg">
 <meta property="article:published_time" content="2020-02-10T06:18:29.000Z">
-<meta property="article:modified_time" content="2020-04-14T15:15:42.254Z">
+<meta property="article:modified_time" content="2020-04-22T05:37:01.169Z">
 <meta property="article:author" content="青空|逸隐">
 <meta property="article:tag" content="技术札记">
 <meta property="article:tag" content="iOS">
@@ -229,7 +229,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">853字</span>
+      <span class="post-count">862字</span>
     </span>
   </span>
 
@@ -293,9 +293,9 @@ objc_Sendmsg(obj, @selector(foo))</code></pre><p>3.runtime如何通过selector�
 <p><strong>注意:</strong> <code>+ (void)load</code>方法在文件加载时,且在<code>mian()</code>之前调用, 所以程序启动后, method1和method2方法其实已经交换了</p>
 <hr>
 <hr>
-<h3 id="4-弱引用管理"><a href="#4-弱引用管理" class="headerlink" title="4.弱引用管理"></a>4.弱引用管理</h3><p>探讨问题:</p>
+<h3 id="4-内存管理"><a href="#4-内存管理" class="headerlink" title="4.内存管理"></a>4.内存管理</h3><h4 id="弱引用管理"><a href="#弱引用管理" class="headerlink" title="弱引用管理"></a>弱引用管理</h4><p>探讨问题:</p>
 <p><code>当一个obj废弃时,指向它的weak指针为何会自动置为nil?</code></p>
-<pre><code>解析: 当一个对象被dealloc()之后, 在dealloc的内部实现中会调用弱引用清除函数 weak_clear_no_lock(), 然后在这个函数的内部实现中, 会根据当前对象指针查找弱引用表, 拿到当前对象所相对应的弱引用列表, 遍历这个列表的所有弱引用指针都置为nil.</code></pre>
+<pre><code>解析: 当一个对象被dealloc()之后, 在dealloc的内部实现中会调用弱引用清除函数 weak_clear_no_lock(), 然后在这个函数的内部实现中, 会根据当前对象指针查找弱引用表, 拿到当前对象所相对应的弱引用列表, 遍历这个列表的所有弱引用指针都置为nil.</code></pre><h4 id="自动释放池"><a href="#自动释放池" class="headerlink" title="自动释放池"></a>自动释放池</h4>
     
 
     
@@ -476,7 +476,7 @@ objc_Sendmsg(obj, @selector(foo))</code></pre><p>3.runtime如何通过selector�
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-消息传递和消息转发"><span class="toc-number">1.</span> <span class="toc-text">3.消息传递和消息转发</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#消息传递"><span class="toc-number">1.1.</span> <span class="toc-text">消息传递</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#消息转发"><span class="toc-number">1.2.</span> <span class="toc-text">消息转发</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Method-Swizzling"><span class="toc-number">1.3.</span> <span class="toc-text">Method Swizzling</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-弱引用管理"><span class="toc-number">2.</span> <span class="toc-text">4.弱引用管理</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-消息传递和消息转发"><span class="toc-number">1.</span> <span class="toc-text">3.消息传递和消息转发</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#消息传递"><span class="toc-number">1.1.</span> <span class="toc-text">消息传递</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#消息转发"><span class="toc-number">1.2.</span> <span class="toc-text">消息转发</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Method-Swizzling"><span class="toc-number">1.3.</span> <span class="toc-text">Method Swizzling</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-内存管理"><span class="toc-number">2.</span> <span class="toc-text">4.内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#弱引用管理"><span class="toc-number">2.1.</span> <span class="toc-text">弱引用管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自动释放池"><span class="toc-number">2.2.</span> <span class="toc-text">自动释放池</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -647,11 +647,11 @@ objc_Sendmsg(obj, @selector(foo))</code></pre><p>3.runtime如何通过selector�
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">涂鸦</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">涂鸦</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -659,7 +659,7 @@ objc_Sendmsg(obj, @selector(foo))</code></pre><p>3.runtime如何通过selector�
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color2">FFmpeg</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -667,11 +667,19 @@ objc_Sendmsg(obj, @selector(foo))</code></pre><p>3.runtime如何通过selector�
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">FFmpeg</a>
+                <a href="javascript:void(0)" class="js-tag color2">macosx</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">macosx</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -781,6 +789,15 @@ objc_Sendmsg(obj, @selector(foo))</code></pre><p>3.runtime如何通过selector�
                   <i class="icon-link icon"></i>
                 
                 Kenshin Cui
+              </a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://cuiqingcai.com/category/technique/python" target="_blank" class="search-title" title="静觅，静静寻觅生活的美好。">
+                
+                  <img src="https://qiniu.cuiqingcai.com/2019-07-26-032109.png">
+                
+                崔庆才
               </a>
             </li>
           
