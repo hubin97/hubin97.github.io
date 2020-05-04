@@ -194,6 +194,102 @@
             
 
   
+    <article id="post-OC到Swift小结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/05/04/OC%E5%88%B0Swift%E5%B0%8F%E7%BB%93/">OC到Swift小结</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/05/04/OC%E5%88%B0Swift%E5%B0%8F%E7%BB%93/" class="archive-article-date">
+        <time datetime="2020-05-04T14:58:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-04</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="一-Swift混编相关"><a href="#一-Swift混编相关" class="headerlink" title="一. Swift混编相关"></a>一. Swift混编相关</h4><h5 id="1-Swift调用OC-借助桥接文件"><a href="#1-Swift调用OC-借助桥接文件" class="headerlink" title="(1) Swift调用OC, 借助桥接文件"></a>(1) Swift调用OC, 借助桥接文件</h5><pre><code>1.手动生成 命名格式 &lt;target&gt;-Bridging-Header.h 的文件  
+2.把需要引入Swift的头文件添加到桥接文件</code></pre><h5 id="2-OC调用Swift-Xcode默认生成头文件命名格式-lt-target-gt-Swift-h"><a href="#2-OC调用Swift-Xcode默认生成头文件命名格式-lt-target-gt-Swift-h" class="headerlink" title="(2) OC调用Swift, Xcode默认生成头文件命名格式: &lt;target&gt;-Swift.h"></a>(2) OC调用Swift, Xcode默认生成头文件命名格式: &lt;target&gt;-Swift.h</h5><pre><code>1.导入默认生成的头文件
+2.暴露的Swift类, 需要继承 NSObject
+3.使用@objc 标记需要暴露的成员; 另外@objc可以重命名Swift暴露给OC的符号名(类名,属性, 函数名等)
+4.使用@objcMembers修饰, 默认暴露所有成员</code></pre>
+    
+    <a class="article-more-a" href="/2020/05/04/OC%E5%88%B0Swift%E5%B0%8F%E7%BB%93/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-知识点总结3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1005,95 +1101,6 @@
 
 
   
-    <article id="post-制作CocoaPods公有库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/04/09/%E5%88%B6%E4%BD%9CCocoaPods%E5%85%AC%E6%9C%89%E5%BA%93/">制作CocoaPods公有库</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/04/09/%E5%88%B6%E4%BD%9CCocoaPods%E5%85%AC%E6%9C%89%E5%BA%93/" class="archive-article-date">
-        <time datetime="2019-04-09T07:20:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-09</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="最终实现效果"><a href="#最终实现效果" class="headerlink" title="最终实现效果"></a>最终实现效果</h3><p>执行<code>$pod search xxx</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-&gt; HBKitTools (0.0.3)</span><br><span class="line">   个人常用开发组件</span><br><span class="line">   pod &#39;HBKitTools&#39;, &#39;~&gt; 0.0.3&#39;</span><br><span class="line">   - Homepage: https:&#x2F;&#x2F;github.com&#x2F;hubin97&#x2F;HBKitTools</span><br><span class="line">   - Source:   https:&#x2F;&#x2F;github.com&#x2F;hubin97&#x2F;HBKitTools.git</span><br><span class="line">   - Versions: 0.0.3, 0.0.2, 0.0.1 [trunk repo]</span><br><span class="line">   - Subspecs:</span><br><span class="line">     - HBKitTools&#x2F;HBCategorys (0.0.3)</span><br><span class="line">     - HBKitTools&#x2F;HBUIViews (0.0.3)</span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2019/04/09/%E5%88%B6%E4%BD%9CCocoaPods%E5%85%AC%E6%9C%89%E5%BA%93/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1228,11 +1235,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">涂鸦</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">涂鸦</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1256,7 +1263,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">标记</a>
+                <a href="javascript:void(0)" class="js-tag color3">OC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1265,6 +1276,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">标记</a>
               </li>
              
               <li class="article-tag-list-item">
