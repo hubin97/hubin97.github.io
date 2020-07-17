@@ -194,6 +194,98 @@
             
 
   
+    <article id="post-终端指令备忘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/07/17/%E7%BB%88%E7%AB%AF%E6%8C%87%E4%BB%A4%E5%A4%87%E5%BF%98/">终端指令备忘</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/07/17/%E7%BB%88%E7%AB%AF%E6%8C%87%E4%BB%A4%E5%A4%87%E5%BF%98/" class="archive-article-date">
+        <time datetime="2020-07-17T09:15:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-17</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="1-Mac-Linux如何查找应用所安装路径"><a href="#1-Mac-Linux如何查找应用所安装路径" class="headerlink" title="1.Mac/Linux如何查找应用所安装路径"></a>1.Mac/Linux如何查找应用所安装路径</h4><p>一、查询运行文件所在路径</p>
+<p><code>$ which ant</code></p>
+<p>例如查询ant的安装路径<br><code>/usr/local/Cellar/ant/1.9.3/bin/ant</code></p>
+<p>二、查看文件安装路径：</p>
+<p>由于软件安装的地方不止一个地方，所有先说查看文件安装的所有路径(地址)。</p>
+<p>这里以Android为例。比如说我安装了Android，但是不知道文件都安装在哪些地方、放在哪些文件夹里，可 以用下面的命令查看所有的文件路径<br>在终端输入：</p>
+<p><code>$ whereis android</code></p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vim</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Swift零碎知识点总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -427,11 +519,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
         		</li>
       		
 		</ul>
@@ -1006,95 +1098,6 @@
 
 
   
-    <article id="post-iOS收集应用评分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/04/24/iOS%E6%94%B6%E9%9B%86%E5%BA%94%E7%94%A8%E8%AF%84%E5%88%86/">iOS收集应用评分</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/04/24/iOS%E6%94%B6%E9%9B%86%E5%BA%94%E7%94%A8%E8%AF%84%E5%88%86/" class="archive-article-date">
-        <time datetime="2019-04-24T02:14:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-24</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="需求背景"><a href="#需求背景" class="headerlink" title="需求背景"></a>需求背景</h3><p>还在使用弹框链接跳转收集评分? 太不人性话了,应用用的好好的突然打断,比较闹心.</p>
-<h3 id="使用细节"><a href="#使用细节" class="headerlink" title="使用细节"></a>使用细节</h3><p><em>SKStoreReviewController</em> 注意: iOS 10.3+ 官方才提供的内置评分系统, 不能做成事件触发弹框评分的方式, 即使测试环境正常, 上架后事件触发仍会表示不响应. 其他细节如下:</p>
-    
-    <a class="article-more-a" href="/2019/04/24/iOS%E6%94%B6%E9%9B%86%E5%BA%94%E7%94%A8%E8%AF%84%E5%88%86/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1253,15 +1256,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">OC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1278,6 +1281,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vim</a>
               </li>
             
             <div class="clearfix"></div>
