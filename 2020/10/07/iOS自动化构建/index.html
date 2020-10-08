@@ -6,16 +6,34 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hubin97.github.io">
-  <title>Archives | 个人博客</title>
+  <title>iOS自动化构建 | 个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="个人博客">
-<meta property="og:url" content="https://hubin97.github.io/archives/page/2/index.html">
+  <meta name="description" content="前言本案例主要目的是实现iOS的打包发布并邮件通知功能,采用Jenkins+Git+Xcode+CocoaPods,当然了还有一些不可或缺的插件; 部署的系统一般用macOS,各平台编译工具使然,毕竟若要多平台构建方便的话, Windows整个黑苹果不太合理. 环境搭建">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS自动化构建">
+<meta property="og:url" content="https://hubin97.github.io/2020/10/07/iOS%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA/index.html">
 <meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="前言本案例主要目的是实现iOS的打包发布并邮件通知功能,采用Jenkins+Git+Xcode+CocoaPods,当然了还有一些不可或缺的插件; 部署的系统一般用macOS,各平台编译工具使然,毕竟若要多平台构建方便的话, Windows整个黑苹果不太合理. 环境搭建">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgk5bokn8j30qu040js3.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgp2eby5wj30pu01ut8z.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgp3lu4oyj30pm02yq3c.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgp4ockrlj30q607owfv.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgn3bauj6j30k005m0t9.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgovb19w9j30oi0iuq5c.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgozxdjwcj30lq07kq3n.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgx6rb8xnj31880oqq78.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgwhnl2z1j30io05oaal.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgwphbdfsj31q00pg77s.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgwnqzqe4j31ga0jojts.jpg">
+<meta property="article:published_time" content="2020-10-07T01:50:24.000Z">
+<meta property="article:modified_time" content="2020-10-08T01:09:35.083Z">
 <meta property="article:author" content="青空|隐逸">
+<meta property="article:tag" content="技术札记">
+<meta property="article:tag" content="iOS">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgk5bokn8j30qu040js3.jpg">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
   
@@ -187,282 +205,187 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-iOS自动化构建" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/07/20200207/" class="archive-article-date">
-        <time datetime="2020-02-07T03:50:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-07</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/02/07/20200207/">庚子年记</a>
-	
+    <h1 class="article-title" itemprop="name">
+      iOS自动化构建
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-          
+<a href="/2020/10/07/iOS%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA/" class="archive-article-date">
+        <time datetime="2020-10-07T01:50:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-07</time>
+</a>
 
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">2.9k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">12分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>本案例主要目的是实现iOS的打包发布并邮件通知功能,采用<code>Jenkins+Git+Xcode+CocoaPods</code>,当然了还有一些不可或缺的插件; 部署的系统一般用macOS,各平台编译工具使然,毕竟若要多平台构建方便的话, Windows整个黑苹果不太合理.</p>
+<h4 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h4><a id="more"></a>
+
+<h5 id="一-JDK安装相关"><a href="#一-JDK安装相关" class="headerlink" title="(一) JDK安装相关"></a>(一) JDK安装相关</h5><p>确保系统有安装JDK. 没有的话,那就只能去<a href="https://www.oracle.com/cn/java/technologies/javase/javase-jdk8-downloads.html" target="_blank" rel="noopener">Oracle官网</a>上去下了, 不过目前好像要注册账号了, 有点麻烦的样子.</p>
+<p>此处就以以下版本为例<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgk5bokn8j30qu040js3.jpg" alt=""></p>
+<p>注意,JDK安装后,必须<code>$ vim ~/.bash_profile</code>把jdk路径配置一下,然后<code>$ source ~/.bash_profile</code> 生效; 这样就不会再重启后导致jdk指令无效了,关于bash_profile不清楚可以参考<a href="https://itbilu.com/linux/management/NyI9cjipl.html" target="_blank" rel="noopener">profile、bash_profile、bashrc文件的作用与区别</a>. </p>
+<p>配置示例:</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Setting PATH <span class="keyword">for</span> JDK</span><br><span class="line">JAVA_HOME=<span class="string">"/Library/Java/JavaVirtualMachines/jdk1.8.0_251.jdk/Contents/Home"</span></span><br><span class="line">export JAVA_HOME</span><br><span class="line">CLASS_PATH=<span class="string">"$JAVA_HOME/lib"</span></span><br><span class="line">PATH=<span class="string">".$PATH:$JAVA_HOME/bin"</span></span><br></pre></td></tr></table></figure>
+
+<p>额外补充:</p>
+<p>1.在终端输入 <code>$ /usr/libexec/java_home</code> 可以得到<code>JAVA_HOME</code>的路径; 无效时,可试着先执行下<code>$ source ~/.bash_profile</code><br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgp2eby5wj30pu01ut8z.jpg" alt=""><br>2.检查环境. 输入 <code>echo $JAVA_HOME</code> 得到配置的路径，说明配置完毕.无效时,可试着先执行下<code>$ source ~/.bash_profile</code><br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgp3lu4oyj30pm02yq3c.jpg" alt=""><br>3.注意是 <code>$ java -version</code>而不是 <code>$ java --version</code><br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgp4ockrlj30q607owfv.jpg" alt=""></p>
+<h5 id="二-Jenkins安装相关"><a href="#二-Jenkins安装相关" class="headerlink" title="(二) Jenkins安装相关"></a>(二) Jenkins安装相关</h5><p>安装的方式有多种, 比如</p>
+<p>1.可以在 <a href="https://jenkins.io" target="_blank" rel="noopener">Jenkins 的官网</a> 下载最新的 war 包。下载完成后，打开终端，进入到 war 包所在目录，执行以下命令：</p>
+<p><code>$ java -jar jenkins.war --httpPort=8080</code></p>
+<p>2.可以终端直接执行</p>
+<p><code>$ brew install jenkins</code></p>
+<p>3.还有其他的,如在Docker中下载并运行Jenkins,等等</p>
+<p>待Jenkins启动后，在浏览器页面输入以下地址: <code>http://localhost:8080</code>,<br>这样就打开Jenkins管理页面了.</p>
+<p>此处不管以何种方式安装jenkins, 安装完成后打开地址都会遇到一个问题, 如何进入操作主页面呢? 如<code>http://localhost:8080</code>显示的重设初始密码的界面, 这个时候其实只要根据页面提示的路径拿到密码重设即可.</p>
+<h5 id="三-构建配置相关"><a href="#三-构建配置相关" class="headerlink" title="(三) 构建配置相关"></a>(三) 构建配置相关</h5><p>步骤细节点可能会有多处, 可以参考下面的参考文章. 此处就不再敖述, 只记录一些容易入坑点.</p>
+<p>1.关于插件问题</p>
+<p>这个还是根据需求下载会比较好点, iOS打包并不一定必须Xcode插件,可以用脚本代替. 拉取代码Git插件,钥匙串、证书管理插件<code>Keychain and Provisioning Profiles Management</code>,邮箱通知<code>Extended E-mail Notification</code>插件等.</p>
+<p>2.钥匙串和证书管理插件配置补充<br>插件<code>Keychain and Provisioning Profiles Management</code>下载后重启jenkins. 可以在管理Jenkins面板找到<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgn3bauj6j30k005m0t9.jpg" alt=""></p>
+<p>配置钥匙串时注意, 先找到登录钥匙串的位置. 实际上此钥匙串关联着Xcode编译项目所用的AppleId账号及密码,亦是Team、证书、描述文件编译通过的保障. 细节可参考下面参考文章的链接. 但是钥匙串路径可能会有不同, 隐藏文件下的可以用<code>&quot;cmd+shift+.&quot;</code>去查看.</p>
+<p>上传钥匙串,默认存在<code>login.keychain</code>中，而macOS升级到10.12后会存在<code>login.keychain-db</code>,<br>这个时候需要拷贝出来修改后缀再上传,否则无法识别.</p>
+<p>另外补充一点,建议把钥匙串、证书、描述文件以及打包导出配置plist文件统一拷贝放到一个相对<strong>安全</strong>且又<strong>可以访问到</strong>的文件夹下<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgovb19w9j30oi0iuq5c.jpg" alt=""></p>
+<p>3.参考文章部分可能年代久远了, 随着Xcode版本更替,有的指令并不适用, 比如下面的打包导出指令</p>
+<p><code>xcrun -sdk iphoneos PackageApplication &quot;./Release-iphoneos/${APP_NAME}.app&quot; -o ~/&quot;${IPANAME}&quot;</code></p>
+<p>工具包中并无<code>PackageApplication</code>文件了,有的人提供方案从旧版本Xcode拷贝一个这样的文件到新Xcode里面去. 这个就不推荐去试了,很麻烦.  所以一般而言最新的iOS打包都是采用<code>打包导出配置plist文件</code>, 注意archivePath后跟的路径要与<code>xcodebuild archive</code>生成包文件路径一致</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">echo</span> <span class="string">"+++++++++++++++++archive+++++++++++++++++"</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">xcrun -sdk iphoneos PackageApplication <span class="string">"./Release-iphoneos/<span class="variable">$&#123;APP_NAME&#125;</span>.app"</span> -o ~/<span class="string">"<span class="variable">$&#123;IPANAME&#125;</span>"</span></span></span><br><span class="line">xcodebuild archive -workspace "$&#123;APP_NAME&#125;.xcworkspace" -scheme $&#123;APP_NAME&#125; -configuration 'Release' -archivePath "$&#123;WORKSPACE&#125;/build/$&#123;APP_NAME&#125;.xcarchive"</span><br></pre></td></tr></table></figure>
+<p>变量exportFileConfig_PATH存放的路径即为导出配置plist文件路径.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">echo</span> <span class="string">"+++++++++++++++++export+++++++++++++++++"</span></span></span><br><span class="line">xcodebuild -exportArchive -archivePath $&#123;WORKSPACE&#125;/build/$&#123;APP_NAME&#125;.xcarchive \</span><br><span class="line">-exportPath $&#123;IPA_PATH&#125; \</span><br><span class="line">-exportOptionsPlist $&#123;exportFileConfig_PATH&#125; \</span><br><span class="line">-allowProvisioningUpdates \</span><br><span class="line">-quiet</span><br></pre></td></tr></table></figure>
+<p>plist配置文件其实可以由已往的手动打包后的文件夹里面拿来修改. 其中export_method项,可以根据打包类型进行相应设置。可选的值有：<code>app-store</code>、<code>ad-hoc</code>、<code>development</code>、<code>enterprise</code><br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgozxdjwcj30lq07kq3n.jpg" alt=""></p>
+<p>4.使用cocoapods管理的项目, clean、build前先<code>$ pod install</code>一下还是有必要的, 注意前面的一些编码格式配置还是加一下, 防止编码问题</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash -l</span></span><br><span class="line">export LANG=en_US.UTF-8</span><br><span class="line">export LANGUAGE=en_US.UTF-8</span><br><span class="line">export LC_ALL=en_US.UTF-8</span><br><span class="line">pod install --verbose --no-repo-update</span><br></pre></td></tr></table></figure>
+<p>5.特殊注意事项</p>
+<p>(1) 当前连接的WiFi必须能到达远程代码仓库,否则代码无法更新 </p>
+<p>(2) 因使用shell脚本打包, 取版本号做ipa存放路径名, 版本更新时需要修改info.plist文件,而不是直接修改general,否则版本号获取不到,可能会导致后续无法成功打包上传</p>
+<p>(3) 根据Xcode项目配置的签名方式不同,shell脚本需要做相应的调整.导出plist文件也要变更. 这里给出一个手动签名和自动签名比较图<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgx6rb8xnj31880oqq78.jpg" alt=""></p>
+<p>构建错误日志</p>
+<p>错误一:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">2020-10-07 15:41:25.199 xcodebuild[31298:244367]  DTDeviceKit: deviceType from b84fe20c60c909c233795932857884d923e09df2 was NULL</span><br><span class="line">note: Using new build system</span><br><span class="line">note: Building targets in parallel</span><br><span class="line">note: Using codesigning identity override: Apple Distribution: Shenzhen xxx Digital Technology Co., Ltd.</span><br><span class="line">note: Planning build</span><br><span class="line">note: Constructing build description</span><br><span class="line">warning: The iOS deployment target &#39;IPHONEOS_DEPLOYMENT_TARGET&#39; is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.0.99. (in target &#39;MJRefresh&#39; from project &#39;Pods&#39;)</span><br><span class="line">... </span><br><span class="line">error: xxx has conflicting provisioning settings. xxx is automatically signed, but code signing identity Apple Distribution: xxx Digital Technology Co., Ltd. has been manually specified. Set the code signing identity value to &quot;Apple Development&quot; in the build settings editor, or switch to manual signing in the Signing &amp; Capabilities editor. (in target &#39;xxx&#39; from project &#39;xxx&#39;)</span><br><span class="line">...</span><br><span class="line">warning: The iOS deployment target &#39;IPHONEOS_DEPLOYMENT_TARGET&#39; is set to 8.0, but the range of supported deployment target versions is 9.0 to 14.0.99. (in target &#39;SnapKit&#39; from project &#39;Pods&#39;)</span><br><span class="line"></span><br><span class="line">** BUILD FAILED **</span><br></pre></td></tr></table></figure>
+<p>根据中间段错误提示分析可知, 既已指定自动签名了, 这里再次指定配手动有冲突? </p>
+<p>大致意思就是说, Xcode项目配置为自动签名, 而Jenkins构建的shell里面指定了证书相当于手动签名配置. 就是下面shell中执行<code>xcodebuild -workspace</code>部分的这句<code>CODE_SIGN_IDENTITY=&quot;${CODE_SIGN_DISTRIBUTION}&quot;</code>了. 其实去掉这句就构建编译正常了, 否则就修改Xcode项目为手动签名,并提交推送到远端仓库. 另外相应的导出plist配置文件也要做调整 signingStyle:  automatic / manual, 还有其他不一致的内容,可回顾前文的对照图. </p>
+<p>错误二:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">** ARCHIVE SUCCEEDED **</span><br><span class="line"></span><br><span class="line">📚  *** export ***</span><br><span class="line">2020-10-07 16:48:38.790 xcodebuild[44921:304862] [MT] IDEDistribution: -[IDEDistributionLogging _createLoggingBundleAtPath:]: Created bundle at path &#39;&#x2F;var&#x2F;folders&#x2F;hh&#x2F;wjpls_gn7vd6pmk1_22g51h00000gp&#x2F;T&#x2F;xxx_2020-10-07_16-48-38.790.xcdistributionlogs&#39;.</span><br><span class="line">error: exportArchive: &quot;xxx.app&quot; requires a provisioning profile with the Access WiFi Information, Associated Domains, and Push Notifications features.</span><br><span class="line"></span><br><span class="line">Error Domain&#x3D;IDEProvisioningErrorDomain Code&#x3D;9 &quot;&quot;xxx.app&quot; requires a provisioning profile with the Access WiFi Information, Associated Domains, and Push Notifications features.&quot; UserInfo&#x3D;&#123;IDEDistributionIssueSeverity&#x3D;3, NSLocalizedDescription&#x3D;&quot;xxx.app&quot; requires a provisioning profile with the Access WiFi Information, Associated Domains, and Push Notifications features., NSLocalizedRecoverySuggestion&#x3D;Add a profile to the &quot;provisioningProfiles&quot; dictionary in your Export Options property list.&#125;</span><br><span class="line"></span><br><span class="line">** EXPORT FAILED **</span><br></pre></td></tr></table></figure>
+<p>这就是为什么要修改了, 不修改因为签名方式不一致, 且部分参数都不一致的, 所以导出直接失败</p>
+<p>6.构建shell (推荐使用automatic签名方式)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash -l</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 工程名</span></span><br><span class="line">APP_NAME="xxx"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 证书 此处需要主要Xcode项目配置, 如果已配置了自动签名,此处可以去掉, 否则必须加上; 不然构建时编译会出错</span></span><br><span class="line"><span class="meta">#</span><span class="bash">CODE_SIGN_DISTRIBUTION=<span class="string">"Apple Distribution: xxx Digital Technology Co., Ltd."</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 编译模式</span></span><br><span class="line">development_mode='Release'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> info.plist路径</span></span><br><span class="line">project_infoplist_path="./$&#123;APP_NAME&#125;/Info.plist"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 取App版本号</span></span><br><span class="line">bundleShortVersion=$(/usr/libexec/PlistBuddy -c "print CFBundleShortVersionString" "$&#123;project_infoplist_path&#125;")</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 取App build号</span></span><br><span class="line">bundleVersion=$(/usr/libexec/PlistBuddy -c "print CFBundleVersion" "$&#123;project_infoplist_path&#125;")</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 设置ipa导出后存放路径(文件夹名)</span></span><br><span class="line">IPANAME="$&#123;APP_NAME&#125;_$&#123;bundleShortVersion&#125;(build$&#123;bundleVersion&#125;)_No$&#123;BUILD_NUMBER&#125;"</span><br><span class="line">echo "🏷  *** 构建信息# App名称:$&#123;APP_NAME&#125;/App版本号:$&#123;bundleShortVersion&#125;/build版本号:$&#123;bundleVersion&#125;/构建版本:$&#123;BUILD_NUMBER&#125; ***"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 导出ipa配置plist文件路径</span></span><br><span class="line">exportFileConfig_PATH="/Library/Jenkins/plist/AdHocExportOptions.plist"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 要上传的ipa文件路径, 此处路径同上要求, 必须是能访问到的且权限足够,否则出现无法写入</span></span><br><span class="line">IPA_PATH=$&#123;WORKSPACE&#125;/ipas/$&#123;IPANAME&#125; #"~/Documents/Jenkins/$&#123;IPANAME&#125;"</span><br><span class="line">echo $&#123;IPA_PATH&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> ipa全路径</span></span><br><span class="line">IPA_FilePath="$&#123;IPA_PATH&#125;/$&#123;APP_NAME&#125;.ipa"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">//下面2行是没有Cocopods的用法</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">echo</span> <span class="string">"📌  *** clean ***"</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">xcodebuild -target <span class="string">"<span class="variable">$&#123;APP_NAME&#125;</span>"</span>  -configuration <span class="string">'Release'</span> clean</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">echo</span> <span class="string">"🛠  *** build ***"</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">xcodebuild -target <span class="string">"<span class="variable">$&#123;APP_NAME&#125;</span>"</span> -sdk iphoneos -configuration <span class="string">'Release'</span> CODE_SIGN_IDENTITY=<span class="string">"<span class="variable">$&#123;CODE_SIGN_DISTRIBUTION&#125;</span>"</span> SYMROOT=<span class="string">'$(PWD)'</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">//下面2行是集成有Cocopods的用法</span></span><br><span class="line">echo "📌  *** clean ***"</span><br><span class="line">xcodebuild -workspace "$&#123;APP_NAME&#125;.xcworkspace" -scheme "$&#123;APP_NAME&#125;"  -configuration $&#123;development_mode&#125; clean</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">echo</span> <span class="string">"🛠  *** build ***"</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#xcodebuild -workspace "$&#123;APP_NAME&#125;.xcworkspace" -scheme "$&#123;APP_NAME&#125;" -sdk iphoneos -configuration $&#123;development_mode&#125; CODE_SIGN_IDENTITY="$&#123;CODE_SIGN_DISTRIBUTION&#125;" SYMROOT='$(PWD)'</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">xcodebuild -workspace <span class="string">"<span class="variable">$&#123;APP_NAME&#125;</span>.xcworkspace"</span> -scheme <span class="string">"<span class="variable">$&#123;APP_NAME&#125;</span>"</span> -sdk iphoneos -configuration <span class="string">'Release'</span> SYMROOT=<span class="string">'$(PWD)'</span></span></span><br><span class="line"></span><br><span class="line">echo "📦  *** archive ***" # 注意 PackageApplication已废弃</span><br><span class="line"><span class="meta">#</span><span class="bash">xcrun -sdk iphoneos PackageApplication <span class="string">"./Release-iphoneos/<span class="variable">$&#123;APP_NAME&#125;</span>.app"</span> -o ~/<span class="string">"<span class="variable">$&#123;IPANAME&#125;</span>"</span></span></span><br><span class="line">xcodebuild archive -workspace "$&#123;APP_NAME&#125;.xcworkspace" -scheme $&#123;APP_NAME&#125; -configuration $&#123;development_mode&#125; -archivePath "$&#123;WORKSPACE&#125;/build/$&#123;APP_NAME&#125;.xcarchive"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">使用 security 解锁钥匙串. 是在子节点 ssh 登录上去之后，keychain 没有被解锁.导致打包失败.</span></span><br><span class="line"><span class="meta">#</span><span class="bash">解决方案是用 security unlock-keychain 命令将证书解锁。加不加看情况吧, 这里没啥影响</span></span><br><span class="line"><span class="meta">#</span><span class="bash">security -v unlock-keychain -p <span class="string">"Aa123456"</span></span></span><br><span class="line"></span><br><span class="line">echo "📚  *** export ***"</span><br><span class="line">xcodebuild -exportArchive -archivePath $&#123;WORKSPACE&#125;/build/$&#123;APP_NAME&#125;.xcarchive \</span><br><span class="line">-exportPath $&#123;IPA_PATH&#125; \</span><br><span class="line">-exportOptionsPlist $&#123;exportFileConfig_PATH&#125; \</span><br><span class="line">-allowProvisioningUpdates \</span><br><span class="line">-quiet</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 检测导出</span></span><br><span class="line">if [ -e $&#123;IPA_FilePath&#125; ]; then</span><br><span class="line">echo "✅  *** ipa导出成功 ***"</span><br><span class="line">else</span><br><span class="line">echo "❌  *** ipa导出失败 ***"</span><br><span class="line">exit 1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">echo '🚀  *** 准备发布 ***'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 蒲公英上的User Key</span></span><br><span class="line">uKey="6232df2fxxxedf94cee004"</span><br><span class="line"><span class="meta">#</span><span class="bash"> 蒲公英上的API Key</span></span><br><span class="line">apiKey="698515e0xxxb8cb23b64ebca1e"</span><br><span class="line"><span class="meta">#</span><span class="bash"> 要上传的ipa文件路径</span></span><br><span class="line">ipa_uploadpath=$&#123;IPA_FilePath&#125;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 打印下全路径</span></span><br><span class="line">echo "IPA_FilePath:$&#123;ipa_uploadpath&#125;"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 执行上传至蒲公英的命令</span></span><br><span class="line">echo '☕️  *** 开始发布 ***'</span><br><span class="line"><span class="meta">#</span><span class="bash">curl -F <span class="string">"file=@<span class="variable">$&#123;ipa_uploadpath&#125;</span>"</span> -F <span class="string">"uKey=<span class="variable">$&#123;uKey&#125;</span>"</span> -F <span class="string">"_api_key=<span class="variable">$&#123;apiKey&#125;</span>"</span> http://www.pgyer.com/apiv1/app/upload</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 将 git 上最后一次提交的注释设置为蒲公英的更新说明</span></span><br><span class="line">MSG=`git log -1 --pretty=%B`</span><br><span class="line">PASSWORD=123456</span><br><span class="line">curl -F "file=@$&#123;ipa_uploadpath&#125;" -F "uKey=$&#123;uKey&#125;" -F "_api_key=$&#123;apiKey&#125;" -F "updateDescription=$&#123;MSG&#125;" -F "password=$&#123;PASSWORD&#125;" http://www.pgyer.com/apiv1/app/upload #https://qiniu-storage.pgyer.com/apiv1/app/upload</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">echo ''</span><br><span class="line">echo '🎉🎉🎉  *** 等待邮件通知 ***'</span><br></pre></td></tr></table></figure>
+<h5 id="四-构建后配置相关"><a href="#四-构建后配置相关" class="headerlink" title="(四) 构建后配置相关"></a>(四) 构建后配置相关</h5><p>这里一般是邮件通知配置, 相应的可能有多种方案实现. 这里列出3种可行方式</p>
+<p>(1) 使用上传后的蒲公英邮件下发通知, 蒲公英平台上配置即可.</p>
+<p>(2) 直接使用Jenkins自带的邮件通知, 也会有构建后操作模块提供配置</p>
+<p>(3) 使用邮箱插件<code>Extended E-mail Notification</code>. 自定义更加方便</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgwhnl2z1j30io05oaal.jpg" alt=""></p>
+<p>全局配置中,<code>Jenkins Location -&gt;Jenkins URL</code>可配置当前ip地址, <code>Extended E-mail Notification</code>以及<code>邮件通知</code>都得配置<code>SMTP server</code>, 因为一个是系统提供的, 一个是插件提供的<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgwphbdfsj31q00pg77s.jpg" alt=""><br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjgwnqzqe4j31ga0jojts.jpg" alt=""></p>
+<p>此处注意, 暂用1.7.1版本, 若更新会没有<code>Use SMTP Authentication</code>可选,构建报错<code>&quot;ERROR: Could not send email as a part of the post-build publishers.&quot;</code></p>
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><p><a href="https://www.jianshu.com/p/41ecb06ae95f" target="_blank" rel="noopener">手把手教你利用Jenkins持续集成iOS项目</a></p>
+<p><a href="https://juejin.im/post/6860260103791050760" target="_blank" rel="noopener">iOS 的自动构建流程</a></p>
+<p><a href="https://www.jianshu.com/p/06b93058c83d" target="_blank" rel="noopener">jenkins 配置keychains和描述文件</a></p>
+<p><a href="https://hasaik.com/posts/3fe685e0.html" target="_blank" rel="noopener">Jenkins + Gitlab + Docker + Spring Boot 实现自动部署</a></p>
+<p><a href="https://www.shangmayuan.com/a/2345b06cf64b4fedb5779139.html" target="_blank" rel="noopener">Jenkins 打包遇到的问题及解决</a></p>
+<p><a href="http://www.pgyer.com/doc/view/jenkins_ios" target="_blank" rel="noopener">使用 Jenkins 实现持续集成 (iOS)</a></p>
+<p><a href="https://stackoverflow.com/questions/45748140/xcode-9-distribution-build-fails-because-format-of-exportoptions-plist-has-chang" target="_blank" rel="noopener">Xcode 9 distribution build fails because format of exportOptions.plist has changed in new release</a></p>
+<h4 id="遗留问题"><a href="#遗留问题" class="headerlink" title="遗留问题"></a>遗留问题</h4><p>1.fastlane的快速构建</p>
+<p>2.应用在蒲公英发布后的回调信息截取然后写到邮件上去?</p>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>感谢老板打赏哦!<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          青空|隐逸
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://hubin97.github.io/2020/10/07/iOS自动化构建/" title="iOS自动化构建" target="_blank">https://hubin97.github.io/2020/10/07/iOS自动化构建/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
   </div>
-</article>
-  
+  <div class="article-info article-info-index">
     
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/01/12/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%931/" class="archive-article-date">
-        <time datetime="2020-01-12T09:59:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-12</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/01/12/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%931/">知识点总结(一)</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/04/24/iOS%E6%94%B6%E9%9B%86%E5%BA%94%E7%94%A8%E8%AF%84%E5%88%86/" class="archive-article-date">
-        <time datetime="2019-04-24T02:14:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-24</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/04/24/iOS%E6%94%B6%E9%9B%86%E5%BA%94%E7%94%A8%E8%AF%84%E5%88%86/">iOS收集应用评分</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/04/18/%E5%B8%B8%E7%94%A8%E5%AE%8F%E6%95%B4%E7%90%86/" class="archive-article-date">
-        <time datetime="2019-04-18T03:22:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-18</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/04/18/%E5%B8%B8%E7%94%A8%E5%AE%8F%E6%95%B4%E7%90%86/">常用宏整理</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/04/12/Python%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-        <time datetime="2019-04-12T03:23:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-12</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/04/12/Python%E7%AC%94%E8%AE%B0/">Python笔记</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/04/09/%E5%88%B6%E4%BD%9CCocoaPods%E5%85%AC%E6%9C%89%E5%BA%93/" class="archive-article-date">
-        <time datetime="2019-04-09T07:20:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-09</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/04/09/%E5%88%B6%E4%BD%9CCocoaPods%E5%85%AC%E6%9C%89%E5%BA%93/">制作CocoaPods公有库</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -478,228 +401,141 @@
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://hubin97.github.io/2020/10/07/iOS%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/03/20/flutter%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-        <time datetime="2019-03-20T02:10:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-20</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/19/%E5%B8%B8%E7%94%A8%E5%AE%8F%E6%95%B4%E7%90%86%E4%BA%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">常用常量整理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/03/20/flutter%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">Flutter+VSCode+Xcode环境搭建</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">热更新</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#环境搭建"><span class="toc-number">2.</span> <span class="toc-text">环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#一-JDK安装相关"><span class="toc-number">2.1.</span> <span class="toc-text">(一) JDK安装相关</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二-Jenkins安装相关"><span class="toc-number">2.2.</span> <span class="toc-text">(二) Jenkins安装相关</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#三-构建配置相关"><span class="toc-number">2.3.</span> <span class="toc-text">(三) 构建配置相关</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#四-构建后配置相关"><span class="toc-number">2.4.</span> <span class="toc-text">(四) 构建后配置相关</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考文章"><span class="toc-number">3.</span> <span class="toc-text">参考文章</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#遗留问题"><span class="toc-number">4.</span> <span class="toc-text">遗留问题</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
   
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2018/07/10/iOS%E6%9D%83%E9%99%90%E6%95%B4%E7%90%86/" class="archive-article-date">
-        <time datetime="2018-07-10T10:03:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-10</time>
-</a>
-
-        </div>
-    	 
+  <div id="gitment-ctn"></div>
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2018/07/10/iOS%E6%9D%83%E9%99%90%E6%95%B4%E7%90%86/">iOS权限整理</a>
-	
-    </h1>
+    <!-- 中文 -->
+    <link rel="stylesheet" href="/lib/gitment.css">
+    <script src="/lib/gitment.js"></script>
   
+  <script>
+    <!-- id: "iOS自动化构建" -->
+    var gitment = new Gitment({
+      id: "20201007095024",
+      owner: 'hubin97',
+      repo: 'hubin97_io_talk',
+      oauth: {
+        client_id: '5804ff6d4b964ed63177',
+        client_secret: 'fedca725a8d49166f1ed457a9ac468855ec0a00b',
+      },
+    })
+    gitment.render('gitment-ctn')
+  </script>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2018/07/09/iOS%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E5%A4%87%E5%BF%98/" class="archive-article-date">
-        <time datetime="2018-07-09T03:38:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-09</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2018/07/09/iOS%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E5%A4%87%E5%BF%98/">iOS零碎知识点备忘</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2018/05/11/Texture/" class="archive-article-date">
-        <time datetime="2018-05-11T14:11:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-11</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2018/05/11/Texture/">Texture</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">标记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/">Next &amp;raquo; </a>
-    </nav>
   
 
 
@@ -742,8 +578,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
