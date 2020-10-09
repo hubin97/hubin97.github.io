@@ -194,6 +194,98 @@
             
 
   
+    <article id="post-iOS自动化构建二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/10/09/iOS%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E4%BA%8C/">iOS自动化构建(二)</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/10/09/iOS%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E4%BA%8C/" class="archive-article-date">
+        <time datetime="2020-10-09T08:35:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-09</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>fastlane对于ci带来的操作简化, 不仅仅是终端显示的可视化的细节详尽.<br>还有功能模块分类, 根据业务需求不同的操作过程步骤简化. 接上前一篇,这篇主要介绍 <code>fastlane+pgyer+bugly</code>实现区分类型自动打包上传ipa到蒲公英,上传符号表到bugly,然后下发邮件,关联钉钉群机器人进行通知. 下面进入正题</p>
+    
+    <a class="article-more-a" href="/2020/10/09/iOS%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E4%BA%8C/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-iOS自动化构建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -202,7 +294,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/10/07/iOS%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA/">iOS自动化构建</a>
+	  <a class="article-title" href="/2020/10/07/iOS%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA/">iOS自动化构建(一)</a>
 	
     </h1>
   
@@ -1016,101 +1108,9 @@
 
 
   
-    <article id="post-知识点总结2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/02/10/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%932/">知识点总结(二)</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/02/10/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%932/" class="archive-article-date">
-        <time datetime="2020-02-10T06:18:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-10</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="3-消息传递和消息转发"><a href="#3-消息传递和消息转发" class="headerlink" title="3.消息传递和消息转发"></a>3.消息传递和消息转发</h3><h4 id="消息传递"><a href="#消息传递" class="headerlink" title="消息传递"></a>消息传递</h4><p>(1)核心方法</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> objc_msgSend(<span class="keyword">void</span> <span class="comment">/*id self, SEL op, ...*/</span>)</span><br><span class="line"><span class="keyword">void</span> objc_msgSendSuper(<span class="keyword">void</span> <span class="comment">/* struct objc_super *super, SEL op, ...*/</span>)</span><br></pre></td></tr></table></figure>
-
-<p><code>objc_super</code>结构体解析:</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> objc_msgSendSuper(<span class="keyword">void</span> <span class="comment">/* struct objc_super *super, SEL op, ...*/</span>)</span><br><span class="line"></span><br><span class="line">   <span class="keyword">struct</span> objc_super &#123;</span><br><span class="line">   </span><br><span class="line">	  <span class="comment">/// Specifies an instance of a class</span></span><br><span class="line">   	  __<span class="keyword">unsafe_unretained</span> <span class="keyword">id</span> receiver;   <span class="comment">// 编译器关键字 (仍是当前对象 --&gt; self)</span></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/02/10/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%932/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
