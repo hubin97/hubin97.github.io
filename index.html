@@ -296,24 +296,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">➜  devhhb (master) ✗ pod trunk --help</span><br><span class="line">Usage:</span><br><span class="line"></span><br><span class="line">    $ pod trunk COMMAND</span><br><span class="line"></span><br><span class="line">      Interact with the CocoaPods API (e.g. publishing new specs)</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line"></span><br><span class="line">    + add-owner      Add an owner to a pod</span><br><span class="line">    + delete         Deletes a version of a pod.</span><br><span class="line">    + deprecate      Deprecates a pod.</span><br><span class="line">    + info           Returns information about a Pod.</span><br><span class="line">    + me             Display information about your sessions</span><br><span class="line">    + push           Publish a podspec</span><br><span class="line">    + register       Manage sessions</span><br><span class="line">    + remove-owner   Remove an owner from a pod</span><br></pre></td></tr></table></figure>
 
 <p><strong>补充</strong>:<br>1.查看个人账号信息 <code>$pod trunk me</code><br>2.注册账号 <code>$pod trunk register xxx@qq.com [username]</code><br>3.查看库信息 <code>$pod trunk info Moya</code></p>
-<h5 id="关于pod-lib"><a href="#关于pod-lib" class="headerlink" title="关于pod lib"></a>关于pod lib</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">➜  devhhb (master) ✗ pod lib --help</span><br><span class="line">Usage:</span><br><span class="line"></span><br><span class="line">    $ pod lib COMMAND</span><br><span class="line"></span><br><span class="line">      Develop pods</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line"></span><br><span class="line">    + create       Creates a new Pod</span><br><span class="line">    + lint         Validates a Pod</span><br></pre></td></tr></table></figure>
-<p><strong>补充</strong>:<br>1.引入github上的模板创建一个pod库 <code>$pod lib create [pod name]</code><br>2.校验本地<code>.podspec</code>文件是否有效 <code>$pod lib lint [pod name]. podspec</code>; 若当前终端路径与.podspec文件同级<code>$pod lib lint</code>即可.<br>3.校验时, 后面可拼接 忽略警告 <code>--allow-warnings</code>; 查看详情 <code>--verbose</code></p>
-<h5 id="关于pod-spec"><a href="#关于pod-spec" class="headerlink" title="关于pod spec"></a>关于pod spec</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">➜  devhhb (master) ✔ pod spec --help</span><br><span class="line">Usage:</span><br><span class="line"></span><br><span class="line">    $ pod spec COMMAND</span><br><span class="line"></span><br><span class="line">      Manage pod specs</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line"></span><br><span class="line">    + cat          Prints a spec file</span><br><span class="line">    + create       Create spec file stub.</span><br><span class="line">    + edit         Edit a spec file</span><br><span class="line">    + lint         Validates a spec file</span><br><span class="line">    + which        Prints the path of the given spec</span><br></pre></td></tr></table></figure>
-<p><strong>补充</strong>:<br>1.创建spec文件创建指令<code>$pod spec create [filename]</code><br>2.<code>lint</code>同<code>$pod lib lint</code><br>3.打印spec路径<code>$ pod spec which [QUERY]</code></p>
-<h4 id="简述步骤"><a href="#简述步骤" class="headerlink" title="简述步骤"></a>简述步骤</h4><h5 id="创建-pod-lib-create-pod-name"><a href="#创建-pod-lib-create-pod-name" class="headerlink" title="创建 $pod lib create [pod name]"></a>创建 <code>$pod lib create [pod name]</code></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  Desktop pod lib create testPods</span><br><span class="line">Cloning &#96;https:&#x2F;&#x2F;github.com&#x2F;CocoaPods&#x2F;pod-template.git&#96; into &#96;testPods&#96;.</span><br><span class="line">Configuring testPods template.</span><br><span class="line"></span><br><span class="line">------------------------------</span><br><span class="line">...后续省略若干问答填写</span><br></pre></td></tr></table></figure>
-<p><strong>补充</strong>:<br>1.通过模板创建的项目成功编译后提交推送到github</p>
-<h5 id="编辑-podspec文件"><a href="#编辑-podspec文件" class="headerlink" title="编辑 podspec文件"></a>编辑 <code>podspec</code>文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;文件匹配规则 </span><br><span class="line">*匹配所有文件</span><br><span class="line">c*匹配以名字C开头的文件</span><br><span class="line">*c匹配以名字c结尾的文件</span><br><span class="line">*c*匹配所有名字包含c的文件</span><br><span class="line">**文件夹以及递归子文件夹</span><br><span class="line">?任意一个字符(注意是一个字符)</span><br><span class="line">[set] 匹配多个字符,支持取反</span><br><span class="line">&#123;p,q&#125; 匹配名字包括p 或者 q的文件</span><br></pre></td></tr></table></figure>
-<p>模板编辑参考:<br>1.<a href="https://github.com/hubin97/HBSwiftKitExample/blob/main/HBSwiftKit.podspec" target="_blank" rel="noopener">HBSwiftKit.podspec</a><br>2.<a href="https://github.com/ibireme/YYKit/blob/master/YYKit.podspec" target="_blank" rel="noopener">YYKit.podspec</a><br>3.<a href="https://github.com/Alamofire/Alamofire/blob/master/Alamofire.podspec" target="_blank" rel="noopener">Alamofire.podspec</a><br>4.<a href="https://github.com/Moya/Moya/blob/master/Moya.podspec" target="_blank" rel="noopener">Moya.podspec</a></p>
-<p><strong>补充</strong>:<br>1.编辑完成后先本地校验spec通过, <code>$pod lib lint</code>或者<code>pod spec lint [NAME.podspec]</code>.<br>2.发布<code>$pod trunk push [NAME.podspec]</code>到Trunk, 这样会制作成公开库, 私有库使用<code>$pod repo push REPO [NAME.podspec]</code>. 官方原文如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Deploying a library</span><br><span class="line"></span><br><span class="line">pod trunk push [NAME.podspec] will deploy your Podspec to Trunk and make it publicly available. You can also deploy Podspecs to your own private specs repo with pod repo push REPO [NAME.podspec].</span><br><span class="line"></span><br><span class="line">Deploying with push:</span><br><span class="line"></span><br><span class="line">(1)Lints your Podspec locally. You can lint at any time with pod spec lint [NAME.podspec]</span><br><span class="line">(2)A successful lint pushes your Podspec to Trunk or your private specs repo</span><br><span class="line">(3)Trunk will publish a canonical JSON representation of your Podspec</span><br></pre></td></tr></table></figure>
-<p>3.注意spec文件中s.source的引入路径 <code>s.source           = { :git =&gt; &#39;https://github.com/xxx.git&#39;, :tag =&gt; s.version.to_s }</code><br>后面关联的是<code>tag</code>, 且版本号取的是<code>s.version.to_s</code>; 所以在远端的spec文件中的<code>s.version</code>必须要有添加的<code>tag</code>版本号与之对应. 例如: 你更新一个<code>s.version = &#39;0.0.2&#39;</code>的sepc文件, 那么也应该推送一个带有标签<code>0.0.2</code>的tag与之对应. 这样才能拉取代码后并匹配相应的tag节点版本</p>
-<h5 id="测试Pods"><a href="#测试Pods" class="headerlink" title="测试Pods"></a>测试Pods</h5><p>常规测试当然是在项目中引入即可, <code>$pod install</code>, 另外也可以使用<code>$pod search [pod name]</code>或者<code>pod search HBSwiftKit --simple</code><br><strong>补充</strong>:<br>只是需要注意, 发布后一般需要10多分钟才能生效.大致原因可能与官方下面描述有关:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Documenting a Pod</span><br><span class="line">Right now the best place to get information on documenting your Pods is NSHipster&#39;s blog post on Obj-C and Swift Documentation. CocoaDocs will release an appledoc&#x2F;jazzy parsed code based on your Podspec&#39;s public API roughly 15 minutes after it is pushed. More information on CocoaDocs can be found on the CocoaDocs developer README</span><br></pre></td></tr></table></figure>
-
-<h4 id="相关引用"><a href="#相关引用" class="headerlink" title="相关引用"></a>相关引用</h4><p><a href="https://guides.cocoapods.org/making/making-a-cocoapod.html" target="_blank" rel="noopener">Making a CocoaPod</a></p>
-<p><a href="https://guides.cocoapods.org/making/using-pod-lib-create.html" target="_blank" rel="noopener">Using Pod Lib Create</a></p>
-<p><a href="https://guides.cocoapods.org/making/specs-and-specs-repo.html" target="_blank" rel="noopener">Specs and the Specs Repo</a></p>
-
+    
+    <a class="article-more-a" href="/2021/04/12/%E5%88%B6%E4%BD%9C%E5%85%AC%E5%BC%80Pods/#more">more >></a>
+    
     
 
     
@@ -1253,23 +1238,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">FFmpeg</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">FFmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">macosx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1278,6 +1255,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
               </li>
              
               <li class="article-tag-list-item">
