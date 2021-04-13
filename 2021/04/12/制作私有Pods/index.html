@@ -10,15 +10,18 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="12345678910111213141516➜  ytmqtt (master) ✔ pod repo --helpUsage:    $ pod repo [COMMAND]      Manage spec-repositoriesCommands:    + add          Add a spec repo    + add-cdn      Add a spec repo bac">
+  <meta name="description" content="准备资料关于pod repo12345678910111213141516➜  ytmqtt (master) ✔ pod repo --helpUsage:    $ pod repo [COMMAND]      Manage spec-repositoriesCommands:    + add          Add a spec repo    + add-cdn      Add a">
 <meta property="og:type" content="article">
 <meta property="og:title" content="制作私有Pods">
 <meta property="og:url" content="https://hubin97.github.io/2021/04/12/%E5%88%B6%E4%BD%9C%E7%A7%81%E6%9C%89Pods/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="12345678910111213141516➜  ytmqtt (master) ✔ pod repo --helpUsage:    $ pod repo [COMMAND]      Manage spec-repositoriesCommands:    + add          Add a spec repo    + add-cdn      Add a spec repo bac">
+<meta property="og:description" content="准备资料关于pod repo12345678910111213141516➜  ytmqtt (master) ✔ pod repo --helpUsage:    $ pod repo [COMMAND]      Manage spec-repositoriesCommands:    + add          Add a spec repo    + add-cdn      Add a">
 <meta property="article:published_time" content="2021-04-12T08:01:46.000Z">
-<meta property="article:modified_time" content="2021-04-12T09:16:13.904Z">
+<meta property="article:modified_time" content="2021-04-13T03:00:12.440Z">
 <meta property="article:author" content="醉疏狂">
+<meta property="article:tag" content="iOS">
+<meta property="article:tag" content="Pod">
+<meta property="article:tag" content="技术栈">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
@@ -221,7 +224,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">56字</span>
+      <span class="post-count">1.1k字</span>
     </span>
   </span>
 
@@ -230,7 +233,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">5分</span>
     </span>
   </span>
 </div>
@@ -241,8 +244,59 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">➜  ytmqtt (master) ✔ pod repo --help</span><br><span class="line">Usage:</span><br><span class="line"></span><br><span class="line">    $ pod repo [COMMAND]</span><br><span class="line"></span><br><span class="line">      Manage spec-repositories</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line"></span><br><span class="line">    + add          Add a spec repo</span><br><span class="line">    + add-cdn      Add a spec repo backed by a CDN</span><br><span class="line">    + lint         Validates all specs in a repo</span><br><span class="line">    &gt; list         List repos</span><br><span class="line">    + push         Push new specifications to a spec-repo</span><br><span class="line">    + remove       Remove a spec repo</span><br><span class="line">    + update       Update a spec repo</span><br></pre></td></tr></table></figure>
+    <h4 id="准备资料"><a href="#准备资料" class="headerlink" title="准备资料"></a>准备资料</h4><h5 id="关于pod-repo"><a href="#关于pod-repo" class="headerlink" title="关于pod repo"></a>关于pod repo</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">➜  ytmqtt (master) ✔ pod repo --help</span><br><span class="line">Usage:</span><br><span class="line"></span><br><span class="line">    $ pod repo [COMMAND]</span><br><span class="line"></span><br><span class="line">      Manage spec-repositories</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line"></span><br><span class="line">    + add          Add a spec repo</span><br><span class="line">    + add-cdn      Add a spec repo backed by a CDN</span><br><span class="line">    + lint         Validates all specs in a repo</span><br><span class="line">    &gt; list         List repos</span><br><span class="line">    + push         Push new specifications to a spec-repo</span><br><span class="line">    + remove       Remove a spec repo</span><br><span class="line">    + update       Update a spec repo</span><br></pre></td></tr></table></figure>
+<p><strong>补充</strong><br>1.私有库必须使用<code>$pod repo push REPO [NAME.podspec]</code>; 公开库发布使用<code>$pod trunk push [NAME.podspec]</code>发布到Trunk. 官方文档在<a href="https://guides.cocoapods.org/making/getting-setup-with-trunk.html" target="_blank" rel="noopener">Getting setup with Trunk</a>有说明.  </p>
+<a id="more"></a>
+<p>2.<code>$pod repo</code>同<code>$pod repo list</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">➜  devhhb (master) ✗ pod repo</span><br><span class="line"></span><br><span class="line">giteeSpec</span><br><span class="line">- Type: git (master)</span><br><span class="line">- URL:  git@gitee.com:devhhb&#x2F;specs.git</span><br><span class="line">- Path: &#x2F;Users&#x2F;design&#x2F;.cocoapods&#x2F;repos&#x2F;giteeSpec</span><br><span class="line"></span><br><span class="line">trunk</span><br><span class="line">- Type: CDN</span><br><span class="line">- URL:  https:&#x2F;&#x2F;cdn.cocoapods.org&#x2F;</span><br><span class="line">- Path: &#x2F;Users&#x2F;design&#x2F;.cocoapods&#x2F;repos&#x2F;trunk</span><br><span class="line"></span><br><span class="line">2 repos</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">3.若使私有库能如公开库一样执行&#96;$pod search [pod name]&#96;,&#96;$pod install&#96; 等. 那么必须就得自行创建一个本地的repo文件夹充当spec的版本索引目录表. &#96;$pod repo add giteeSpec git@gitee.com:devhhb&#x2F;specs.git&#96;  </span><br><span class="line">4.一贯做法, 本地私有库spec文件会统一管理, 可以参考官方例子[artsy-specs](https:&#x2F;&#x2F;github.com&#x2F;artsy&#x2F;Specs), 阿里云[aliyun](https:&#x2F;&#x2F;github.com&#x2F;aliyun&#x2F;aliyun-specs) 或者已生成的私有[Specs](https:&#x2F;&#x2F;gitee.com&#x2F;devhhb&#x2F;specs).  </span><br><span class="line">后续执行指令&#96;$pod repo push REPO [NAME.podspec]&#96;发布私有库后, 生成的文件目录大致如下</span><br><span class="line">![](https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;008eGmZEgy1gphwkc4qf9j31da042mxk.jpg)</span><br></pre></td></tr></table></figure>
+<p>➜  giteeSpec (master) ✔ tree<br>.<br>├── README.en.md<br>├── README.md<br>├── YTHttp<br>│   └── 0.0.1<br>│       └── YTHttp.podspec<br>└── YTMqtt<br>    ├── 0.0.1<br>    │   └── YTMqtt.podspec<br>    └── 0.0.2<br>        └── YTMqtt.podspec</p>
+<p>5 directories, 5 files</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">##### 关于podfile解读</span><br></pre></td></tr></table></figure>
+<p>注意pod引入的几种方式,<br>pod ‘xxx’ #use the latest version of a Pod<br>pod ‘xxx’, ‘0.0.1’ #specify that version number<br>pod ‘xxx’, ‘&gt;= 0.0.1’ #Version 0.0.1 and any higher version<br>pod ‘xxx’, ‘<del>&gt; 0.1.2’ #’</del>&gt; 0.1.2’ Version 0.1.2 and the versions up to 0.2, not including 0.2 and higher</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">所以假定私有库有两个版本 0.0.1和0.0.2; 那么版本更新时, pod ‘xxx’, &#39;~&gt; 0.0.1’, 引入的仍然是0.0.2; 因为&#96;只要&lt; 0.1.0&#96;就满足了</span><br></pre></td></tr></table></figure>
+<p>官方文档描述如下<br>Specifying pod versions</p>
+<p>When starting out with a project it is likely that you will want to use the latest version of a Pod. If this is the case, simply omit the version requirements.<br>pod ‘SSZipArchive’<br>Later on in the project you may want to freeze to a specific version of a Pod, in which case you can specify that version number.<br>pod ‘Objection’, ‘0.9’<br>Besides no version, or a specific one, it is also possible to use logical operators:</p>
+<p>‘&gt; 0.1’ Any version higher than 0.1<br>‘&gt;= 0.1’ Version 0.1 and any higher version<br>‘&lt; 0.1’ Any version lower than 0.1<br>‘&lt;= 0.1’ Version 0.1 and any lower version<br>In addition to the logic operators CocoaPods has an optimistic operator ~&gt;:</p>
+<p>‘<del>&gt; 0.1.2’ Version 0.1.2 and the versions up to 0.2, not including 0.2 and higher<br>‘</del>&gt; 0.1’ Version 0.1 and the versions up to 1.0, not including 1.0 and higher<br>‘~&gt; 0’ Version 0 and the versions up to 1.0, not including 1.0 and higher</p>
+<pre><code>**补充**  
+1.本地pod引入方式`pod &apos;Alamofire&apos;, :path =&gt; &apos;~/Documents/Alamofire&apos;`
+2.Podfile的根目录中有一个隐式抽象目标，因此项目有多个target时可以省略外层抽象target
 
+#### 简述步骤
+
+##### 创建私有repo
+1.创建私有repo管理仓库specs, 并添加到本地. 可以是
+`$pod repo add giteeSpec git@gitee.com:devhhb/specs.git`  
+2.执行`$pod repo`查看, 并`cd`到目标私有repo文件夹, `$pod lint .`加以校验
+
+##### 制作私有Pod
+制作私有Pod过程前面基本同[制作公开Pods](https://hubin97.github.io/2021/04/12/制作公开Pods/)流程, 仅发布时需要注意.  
+必须使用`$pod repo push REPO [NAME.podspec]`  
+必须使用`$pod repo push REPO [NAME.podspec]`  
+必须使用`$pod repo push REPO [NAME.podspec]`  
+
+**补充**   
+1.同样的需要本地校验spec文件. `$pod lib lint`或者`pod spec lint [NAME.podspec]`.  
+2.注意执行发布指令`$ pod repo push REPO_NAME SPEC_NAME.podspec`时, 当前所处的终端路径和前面创建私有repo文件夹名称. 例
+`$pod repo push giteeSpec YTMqtt.podspec`,
+`$pod repo push artsy-specs ~/Desktop/Artsy+OSSUIFonts.podspec`
+
+##### 测试Pods
+使用私有库时需要在Podfile文件中顶部先引入私有库源`source &apos;[Private Pods URL]&apos;`
+
+例如.   
+要使用`pod &apos;Artsy+OSSUIFonts&apos;`那么提前引入`source &apos;https://github.com/artsy/Specs.git&apos;`  
+要使用`pod &apos;IotLinkKit&apos;`那么提前引入`source &apos;https://github.com/aliyun/aliyun-specs.git&apos;`  
+要使用`pod &apos;YTMqtt&apos;, &apos;0.0.1&apos;`那么提前引入`source &apos;git@gitee.com:devhhb/specs.git&apos;`
+
+
+#### 相关引用
+
+[Podfile](https://guides.cocoapods.org/using/the-podfile.html)
+
+[Getting setup with Trunk](https://guides.cocoapods.org/making/getting-setup-with-trunk.html)
+
+[Private Pods](https://guides.cocoapods.org/making/private-cocoapods.html)</code></pre>
     
 
     
@@ -305,6 +359,25 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Pod</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">技术栈</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -399,7 +472,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#准备资料"><span class="toc-number">1.</span> <span class="toc-text">准备资料</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#关于pod-repo"><span class="toc-number">1.1.</span> <span class="toc-text">关于pod repo</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -582,11 +655,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+                <a href="javascript:void(0)" class="js-tag color2">FFmpeg</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">FFmpeg</a>
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
