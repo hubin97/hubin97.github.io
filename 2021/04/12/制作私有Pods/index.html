@@ -10,15 +10,15 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="准备资料关于pod repo12345678910111213141516➜  ytmqtt (master) ✔ pod repo --helpUsage:    $ pod repo [COMMAND]      Manage spec-repositoriesCommands:    + add          Add a spec repo    + add-cdn      Add a">
+  <meta name="description" content="-Updatte 20210602: 更多CocoaPods实现细节, 原理, 源码实践参考CocoaPods历险记  准备资料关于pod repo12345678910111213141516➜  ytmqtt (master) ✔ pod repo --helpUsage:    $ pod repo [COMMAND]      Manage spec-repositoriesCommand">
 <meta property="og:type" content="article">
 <meta property="og:title" content="制作私有Pods">
 <meta property="og:url" content="https://hubin97.github.io/2021/04/12/%E5%88%B6%E4%BD%9C%E7%A7%81%E6%9C%89Pods/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="准备资料关于pod repo12345678910111213141516➜  ytmqtt (master) ✔ pod repo --helpUsage:    $ pod repo [COMMAND]      Manage spec-repositoriesCommands:    + add          Add a spec repo    + add-cdn      Add a">
+<meta property="og:description" content="-Updatte 20210602: 更多CocoaPods实现细节, 原理, 源码实践参考CocoaPods历险记  准备资料关于pod repo12345678910111213141516➜  ytmqtt (master) ✔ pod repo --helpUsage:    $ pod repo [COMMAND]      Manage spec-repositoriesCommand">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1gphwkc4qf9j31da042mxk.jpg">
 <meta property="article:published_time" content="2021-04-12T08:01:46.000Z">
-<meta property="article:modified_time" content="2021-04-13T03:18:54.486Z">
+<meta property="article:modified_time" content="2021-06-02T09:59:17.417Z">
 <meta property="article:author" content="醉疏狂">
 <meta property="article:tag" content="iOS">
 <meta property="article:tag" content="Pod">
@@ -226,7 +226,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1k字</span>
+      <span class="post-count">1.1k字</span>
     </span>
   </span>
 
@@ -246,7 +246,8 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h4 id="准备资料"><a href="#准备资料" class="headerlink" title="准备资料"></a>准备资料</h4><h5 id="关于pod-repo"><a href="#关于pod-repo" class="headerlink" title="关于pod repo"></a>关于pod repo</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">➜  ytmqtt (master) ✔ pod repo --help</span><br><span class="line">Usage:</span><br><span class="line"></span><br><span class="line">    $ pod repo [COMMAND]</span><br><span class="line"></span><br><span class="line">      Manage spec-repositories</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line"></span><br><span class="line">    + add          Add a spec repo</span><br><span class="line">    + add-cdn      Add a spec repo backed by a CDN</span><br><span class="line">    + lint         Validates all specs in a repo</span><br><span class="line">    &gt; list         List repos</span><br><span class="line">    + push         Push new specifications to a spec-repo</span><br><span class="line">    + remove       Remove a spec repo</span><br><span class="line">    + update       Update a spec repo</span><br></pre></td></tr></table></figure>
+    <p><em>-Updatte 20210602: 更多CocoaPods实现细节, 原理, 源码实践参考<a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzA5MTM1NTc2Ng==&action=getalbum&album_id=1477103239887142918&scene=173&from_msgid=2458322728&from_itemidx=1&count=3&nolastread=1#wechat_redirect" target="_blank" rel="noopener">CocoaPods历险记</a></em> </p>
+<h4 id="准备资料"><a href="#准备资料" class="headerlink" title="准备资料"></a>准备资料</h4><h5 id="关于pod-repo"><a href="#关于pod-repo" class="headerlink" title="关于pod repo"></a>关于pod repo</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">➜  ytmqtt (master) ✔ pod repo --help</span><br><span class="line">Usage:</span><br><span class="line"></span><br><span class="line">    $ pod repo [COMMAND]</span><br><span class="line"></span><br><span class="line">      Manage spec-repositories</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line"></span><br><span class="line">    + add          Add a spec repo</span><br><span class="line">    + add-cdn      Add a spec repo backed by a CDN</span><br><span class="line">    + lint         Validates all specs in a repo</span><br><span class="line">    &gt; list         List repos</span><br><span class="line">    + push         Push new specifications to a spec-repo</span><br><span class="line">    + remove       Remove a spec repo</span><br><span class="line">    + update       Update a spec repo</span><br></pre></td></tr></table></figure>
 <p><strong>补充</strong><br>1.私有库必须使用<code>$pod repo push REPO [NAME.podspec]</code>; 公开库发布使用<code>$pod trunk push [NAME.podspec]</code>发布到Trunk. 官方文档在<a href="https://guides.cocoapods.org/making/getting-setup-with-trunk.html" target="_blank" rel="noopener">Getting setup with Trunk</a>有说明.  </p>
 <a id="more"></a>
 <p>2.<code>$pod repo</code>同<code>$pod repo list</code></p>
@@ -640,7 +641,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -652,7 +653,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">标记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -661,10 +666,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">标记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -730,6 +731,15 @@
     	<section class="tools-section tools-section-friends" q-show="friends">
   		
         <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://github.com/ipader/SwiftGuide/blob/master/2019/SwiftDevelopers.md" target="_blank" class="search-title" title="各路大神专栏">
+                
+                  <i class="icon-link icon"></i>
+                
+                Swift知名开发者
+              </a>
+            </li>
           
             <li class="search-li">
               <a href="https://onevcat.com/#blog" target="_blank" class="search-title" title="嗨，我是王巍 (@onevcat)，一名 iOS 开发者。">
