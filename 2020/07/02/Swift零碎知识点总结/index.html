@@ -10,19 +10,19 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="1. 基本数据类型 2. iOS-UIAlertController弹出延迟情况123456&#x2F;&#x2F; 原因1.不在主线程 或是runloop没及时更新UI&#x2F;&#x2F; 原因2.点击的cell属性selectionStyle 为 .noneDispatchQueue.main.async &amp;#123;	showSystemSingleAlert(title: &quot;温馨提示&quot;, leftTitle: &quot;我知道了&quot;,">
+  <meta name="description" content="Update 2022&#x2F;04&#x2F;13 &#x3D;&gt; 3. Moya参数带数组GET请求 1. 基本数据类型   2. iOS-UIAlertController弹出延迟情况123456&#x2F;&#x2F; 原因1.不在主线程 或是runloop没及时更新UI&#x2F;&#x2F; 原因2.点击的cell属性selectionStyle 为 .noneDispatchQueue.main.async &amp;#123;	showSystemS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Swift零碎知识点总结">
 <meta property="og:url" content="https://hubin97.github.io/2020/07/02/Swift%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="1. 基本数据类型 2. iOS-UIAlertController弹出延迟情况123456&#x2F;&#x2F; 原因1.不在主线程 或是runloop没及时更新UI&#x2F;&#x2F; 原因2.点击的cell属性selectionStyle 为 .noneDispatchQueue.main.async &amp;#123;	showSystemSingleAlert(title: &quot;温馨提示&quot;, leftTitle: &quot;我知道了&quot;,">
+<meta property="og:description" content="Update 2022&#x2F;04&#x2F;13 &#x3D;&gt; 3. Moya参数带数组GET请求 1. 基本数据类型   2. iOS-UIAlertController弹出延迟情况123456&#x2F;&#x2F; 原因1.不在主线程 或是runloop没及时更新UI&#x2F;&#x2F; 原因2.点击的cell属性selectionStyle 为 .noneDispatchQueue.main.async &amp;#123;	showSystemS">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggcrjxqkboj31kc07iwl8.jpg">
 <meta property="article:published_time" content="2020-07-02T09:35:55.000Z">
-<meta property="article:modified_time" content="2020-10-07T15:15:34.053Z">
+<meta property="article:modified_time" content="2022-04-14T02:30:53.802Z">
 <meta property="article:author" content="醉疏狂">
-<meta property="article:tag" content="技术札记">
 <meta property="article:tag" content="iOS">
 <meta property="article:tag" content="Swift">
+<meta property="article:tag" content="技术札记">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggcrjxqkboj31kc07iwl8.jpg">
   
@@ -226,7 +226,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">282字</span>
+      <span class="post-count">218字</span>
     </span>
   </span>
 
@@ -246,15 +246,21 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h4 id="1-基本数据类型"><a href="#1-基本数据类型" class="headerlink" title="1. 基本数据类型"></a>1. 基本数据类型</h4><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggcrjxqkboj31kc07iwl8.jpg" alt=""></p>
+    <p><em>Update 2022/04/13 =&gt; 3. Moya参数带数组GET请求</em></p>
+<h4 id="1-基本数据类型"><a href="#1-基本数据类型" class="headerlink" title="1. 基本数据类型"></a>1. 基本数据类型</h4><!--![](https://tva1.sinaimg.cn/large/007S8ZIlgy1ggcrjxqkboj31kc07iwl8.jpg)
+-->
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggcrjxqkboj31kc07iwl8.jpg" width="80%" height="80%">
+
 <h4 id="2-iOS-UIAlertController弹出延迟情况"><a href="#2-iOS-UIAlertController弹出延迟情况" class="headerlink" title="2. iOS-UIAlertController弹出延迟情况"></a>2. iOS-UIAlertController弹出延迟情况</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 原因1.不在主线程 或是runloop没及时更新UI</span></span><br><span class="line"><span class="comment">// 原因2.点击的cell属性selectionStyle 为 .none</span></span><br><span class="line"><span class="type">DispatchQueue</span>.main.async &#123;</span><br><span class="line">	showSystemSingleAlert(title: <span class="string">"温馨提示"</span>, leftTitle: <span class="string">"我知道了"</span>, message: <span class="string">"设备离线,暂不支持操作"</span>) &#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
 
-<h4 id="3-Moya框架缺陷-不支持数组作为请求参数"><a href="#3-Moya框架缺陷-不支持数组作为请求参数" class="headerlink" title="3. Moya框架缺陷:不支持数组作为请求参数"></a>3. Moya框架缺陷:不支持数组作为请求参数</h4><p><a href="https://www.jianshu.com/p/19f3d02739ff" target="_blank" rel="noopener">参考: iOS Swift moya框架发送数组作为请求参数（GET/POST）</a></p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Alamofire</span><br><span class="line"></span><br><span class="line"><span class="comment">/// get  编码修改</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">BracketLessGetEncoding</span>: <span class="title">ParameterEncoding</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">encode</span><span class="params">(<span class="number">_</span> urlRequest: URLRequestConvertible, with parameters: Parameters?)</span></span> <span class="keyword">throws</span> -&gt; <span class="type">URLRequest</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> request = <span class="keyword">try</span> <span class="type">URLEncoding</span>().encode(urlRequest, with: parameters)</span><br><span class="line">        request.url = <span class="type">URL</span>(string: request.url!.absoluteString.replacingOccurrences(of: <span class="string">"%5B%5D="</span>, with: <span class="string">"="</span>))</span><br><span class="line">        <span class="keyword">return</span> request</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// post  编码修改 (未验证)</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">JSONArrayEncoding</span>: <span class="title">ParameterEncoding</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> `<span class="keyword">default</span>` = <span class="type">JSONArrayEncoding</span>()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">encode</span><span class="params">(<span class="number">_</span> urlRequest: URLRequestConvertible, with parameters: Parameters?)</span></span> <span class="keyword">throws</span> -&gt; <span class="type">URLRequest</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> request = <span class="keyword">try</span> urlRequest.asURLRequest()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> json = parameters?[<span class="string">"jsonArray"</span>] <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> request</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> data = <span class="keyword">try</span> <span class="type">JSONSerialization</span>.data(withJSONObject: json, options: [])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> request.value(forHTTPHeaderField: <span class="string">"Content-Type"</span>) == <span class="literal">nil</span> &#123;</span><br><span class="line">            request.setValue(<span class="string">"application/json"</span>, forHTTPHeaderField: <span class="string">"Content-Type"</span>)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        request.httpBody = data</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> request</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-Moya参数带数组GET请求"><a href="#3-Moya参数带数组GET请求" class="headerlink" title="3. Moya参数带数组GET请求"></a>3. Moya参数带数组GET请求</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;&#x2F; get编码使用 URLEncoding(arrayEncoding: .noBrackets) 代替</span><br><span class="line">var task: Task &#123;</span><br><span class="line">	return .requestParameters(parameters: params, encoding: URLEncoding(arrayEncoding: .noBrackets))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="4-经典OC谓词去重"><a href="#4-经典OC谓词去重" class="headerlink" title="4. 经典OC谓词去重"></a>4. 经典OC谓词去重</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/// 返回arr2 不被arr1包含的元素</span></span><br><span class="line"><span class="keyword">let</span> arr1: <span class="type">NSArray</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]</span><br><span class="line"><span class="keyword">let</span> arr2: <span class="type">NSArray</span> = [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br><span class="line"><span class="keyword">let</span> predicate = <span class="type">NSPredicate</span>(format: <span class="string">"NOT (SELF IN %@)"</span>, arr1)</span><br><span class="line"><span class="keyword">let</span> <span class="built_in">filter</span> = arr2.filtered(using: predicate)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">filter</span>)</span><br><span class="line"><span class="comment">// [9, 10]</span></span><br></pre></td></tr></table></figure>
 
+<p><em>补充<code>swift</code>数组去重</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">extension Extension_Array where Element: Equatable &#123;</span><br><span class="line">    public func deduplication() -&gt; Array&lt;Element&gt; &#123;</span><br><span class="line">        return self.enumerated().filter(&#123; self.firstIndex(of: $0.element) &#x3D;&#x3D; $0.offset &#125;).map(&#123; $0.element &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     
 
     
@@ -270,11 +276,6 @@
                 <p class="reward-p"><i class="icon icon-quo-left"></i>感谢老板打赏哦!<i
                     class="icon icon-quo-right"></i></p>
                 <div class="reward-box">
-                  
-                  <div class="reward-box-item">
-                    <img class="reward-img" src="/img/alipay.jpg">
-                    <span class="reward-type">支付宝</span>
-                  </div>
                   
                   
                   <div class="reward-box-item">
@@ -322,15 +323,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		
 		</ul>
@@ -411,8 +412,8 @@
     </a>
   
   
-    <a href="/2020/05/11/Mac%E7%BB%88%E7%AB%AF%E7%BE%8E%E5%8C%96/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Mac终端美化</div>
+    <a href="/2020/05/20/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">第三方库</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -439,7 +440,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-基本数据类型"><span class="toc-number">1.</span> <span class="toc-text">1. 基本数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-iOS-UIAlertController弹出延迟情况"><span class="toc-number">2.</span> <span class="toc-text">2. iOS-UIAlertController弹出延迟情况</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Moya框架缺陷-不支持数组作为请求参数"><span class="toc-number">3.</span> <span class="toc-text">3. Moya框架缺陷:不支持数组作为请求参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-经典OC谓词去重"><span class="toc-number">4.</span> <span class="toc-text">4. 经典OC谓词去重</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-基本数据类型"><span class="toc-number">1.</span> <span class="toc-text">1. 基本数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-iOS-UIAlertController弹出延迟情况"><span class="toc-number">2.</span> <span class="toc-text">2. iOS-UIAlertController弹出延迟情况</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Moya参数带数组GET请求"><span class="toc-number">3.</span> <span class="toc-text">3. Moya参数带数组GET请求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-经典OC谓词去重"><span class="toc-number">4.</span> <span class="toc-text">4. 经典OC谓词去重</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -491,7 +492,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017-2021 <a href="https://hubin97.github.io/" target="_blank">醉疏狂</a>
+    		&copy; 2017-2023 <a href="https://hubin97.github.io/" target="_blank">醉疏狂</a>
     	</div>
       	<div class="footer-right">
 			
@@ -539,23 +540,6 @@
 
 
 <!--  -->
-
-<script>
-  /* 标签页标题切换 */
-  var originTitle = document.title;
-  var titleTime;
-  document.addEventListener("visibilitychange", function () {
-    if (document.hidden) {
-      document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
-      clearTimeout(titleTime);
-    } else {
-      document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
-      titleTime = setTimeout(function () {
-        document.title = originTitle;
-      }, 2000);
-    }
-  });
-</script>
 
 
     
@@ -618,11 +602,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">技术札记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -634,11 +626,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OC</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
+                <a href="javascript:void(0)" class="js-tag color3">OC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -646,7 +638,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color3">RN</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -815,6 +807,24 @@
               </a>
             </li>
           
+            <li class="search-li">
+              <a href="https://tech.meituan.com" target="_blank" class="search-title" title="一行代码，亿万生活。">
+                
+                  <i class="icon-link icon"></i>
+                
+                美团技术团队
+              </a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://tech.youzan.com" target="_blank" class="search-title" title="Thoughts,stories and ideas。">
+                
+                  <i class="icon-link icon"></i>
+                
+                有赞技术团队
+              </a>
+            </li>
+          
         </ul>
   		
     	</section>
@@ -824,7 +834,7 @@
     	<section class="tools-section tools-section-me" q-show="aboutme">
         
           
-  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>移动端, 前端开发、<br>开源爱好者<br><br>联系QQ:970216474<br><br>写博客的原因<br><br>主要是为了自己的总结回顾<br><br>如果能帮助到大家的话<br><br>那再好不过了!O(∩_∩)O哈哈~</div>
+  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>移动端, 前端开发、<br>开源爱好者<br><br>写博客的原因<br><br>主要是为了自己的总结回顾<br><br>如果能帮助到大家的话<br><br>那再好不过了!O(∩_∩)O哈哈~</div>
   	  	
     	</section>
     

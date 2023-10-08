@@ -191,7 +191,7 @@
             
 
   
-    <article id="post-Mac终端美化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-iOS自动化构建三" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -199,7 +199,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/05/11/Mac%E7%BB%88%E7%AB%AF%E7%BE%8E%E5%8C%96/">Mac终端美化</a>
+	  <a class="article-title" href="/2020/12/14/iOS%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E4%B8%89/">iOS自动化构建(三)</a>
 	
     </h1>
   
@@ -207,8 +207,8 @@
 
   
   
-<a href="/2020/05/11/Mac%E7%BB%88%E7%AB%AF%E7%BE%8E%E5%8C%96/" class="archive-article-date">
-        <time datetime="2020-05-11T08:13:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-11</time>
+<a href="/2020/12/14/iOS%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E4%B8%89/" class="archive-article-date">
+        <time datetime="2020-12-14T06:48:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-14</time>
 </a>
 
   
@@ -220,9 +220,12 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h3><h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geoleohvalj30y40h43zc.jpg" alt=""></h2>
+    <p><em>Update date: 2021-7-17</em><br><strong>1.上传dsym文件到bugly插件更换. bugly -&gt; upload_dsym_to_bugly;<br>2021年6月28日开始, bugly不再支持使用openApi的方式上传符号表，需要使用官方提供的命令行上传工具进行上传.</strong><br><strong>2.替换工作如下:</strong><br>(1) 先安装插件<code>fastlane add_plugin upload_dsym_to_bugly</code><br>(2) 修改替换Fastlane文件上传部分</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">upload_dsym_to_bugly(</span><br><span class="line">   <span class="symbol">file_path:</span> <span class="string">"<span class="subst">#&#123;$output_path&#125;</span>/xxx.app.dSYM.zip"</span>,</span><br><span class="line">   <span class="symbol">app_key:</span> <span class="string">"1976e296xxx09b004729"</span>,</span><br><span class="line">   <span class="symbol">app_id:</span><span class="string">"91dxxx5a"</span>,</span><br><span class="line">   <span class="symbol">bundle_id:</span> <span class="string">'[bundle id]'</span>,</span><br><span class="line">   <span class="symbol">version:</span> get_version_number,</span><br><span class="line">   <span class="symbol">raise_if_error:</span> <span class="literal">false</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>(3) 注意<code>upload_dsym_to_bugly</code>插件目前对于<code>output_path</code>路径下的文件夹有符号不支持报错情况,如”ABC(build1)”; 目前改成 “ABC_build1”</p>
+<hr>
     
-    <a class="article-more-a" href="/2020/05/11/Mac%E7%BB%88%E7%AB%AF%E7%BE%8E%E5%8C%96/#more">more >></a>
+    <a class="article-more-a" href="/2020/12/14/iOS%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E4%B8%89/#more">more >></a>
     
     
 
@@ -238,6 +241,14 @@
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        		</li>
+      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
         		</li>
@@ -275,7 +286,7 @@
 
 
   
-    <article id="post-OC到Swift小结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-iOS自动化构建二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -283,7 +294,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/05/04/OC%E5%88%B0Swift%E5%B0%8F%E7%BB%93/">OC到Swift小结</a>
+	  <a class="article-title" href="/2020/10/09/iOS%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E4%BA%8C/">iOS自动化构建(二)</a>
 	
     </h1>
   
@@ -291,8 +302,8 @@
 
   
   
-<a href="/2020/05/04/OC%E5%88%B0Swift%E5%B0%8F%E7%BB%93/" class="archive-article-date">
-        <time datetime="2020-05-04T14:58:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-04</time>
+<a href="/2020/10/09/iOS%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E4%BA%8C/" class="archive-article-date">
+        <time datetime="2020-10-09T08:35:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-09</time>
 </a>
 
   
@@ -304,13 +315,14 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h4 id="一-Swift混编相关"><a href="#一-Swift混编相关" class="headerlink" title="一. Swift混编相关"></a>一. Swift混编相关</h4><h5 id="1-Swift调用OC-借助桥接文件"><a href="#1-Swift调用OC-借助桥接文件" class="headerlink" title="(1) Swift调用OC, 借助桥接文件"></a>(1) Swift调用OC, 借助桥接文件</h5><pre><code>1.手动生成 命名格式 &lt;target&gt;-Bridging-Header.h 的文件  
-2.把需要引入Swift的头文件添加到桥接文件</code></pre><h5 id="2-OC调用Swift-Xcode默认生成头文件命名格式-lt-target-gt-Swift-h"><a href="#2-OC调用Swift-Xcode默认生成头文件命名格式-lt-target-gt-Swift-h" class="headerlink" title="(2) OC调用Swift, Xcode默认生成头文件命名格式: &lt;target&gt;-Swift.h"></a>(2) OC调用Swift, Xcode默认生成头文件命名格式: &lt;target&gt;-Swift.h</h5><pre><code>1.导入默认生成的头文件
-2.暴露的Swift类, 需要继承 NSObject
-3.使用@objc 标记需要暴露的成员; 另外@objc可以重命名Swift暴露给OC的符号名(类名,属性, 函数名等)
-4.使用@objcMembers修饰, 默认暴露所有成员</code></pre>
+    <p><em>UPDATE: 2022/09/15</em></p>
+<h4 id="备注下常用指令"><a href="#备注下常用指令" class="headerlink" title="备注下常用指令"></a>备注下常用指令</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// </span><br><span class="line"><span class="meta">$</span><span class="bash"> fastlane install_plugins</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> fastlane update_plugins</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>fastlane对于ci带来的操作简化, 不仅仅是终端显示的可视化的细节详尽.<br>还有功能模块分类, 根据业务需求不同的操作过程步骤简化. 接上前一篇,这篇主要介绍 <code>fastlane+pgyer+bugly</code>实现区分类型自动打包上传ipa到蒲公英,上传符号表到bugly,然后下发邮件,关联钉钉群机器人进行通知. 下面进入正题</p>
     
-    <a class="article-more-a" href="/2020/05/04/OC%E5%88%B0Swift%E5%B0%8F%E7%BB%93/#more">more >></a>
+    <a class="article-more-a" href="/2020/10/09/iOS%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E4%BA%8C/#more">more >></a>
     
     
 
@@ -327,16 +339,203 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-iOS自动化构建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/10/07/iOS%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA/">iOS自动化构建(一)</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/10/07/iOS%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA/" class="archive-article-date">
+        <time datetime="2020-10-07T01:50:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-07</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>本案例主要目的是实现iOS的打包发布并邮件通知功能,采用<code>Jenkins+Git+Xcode+CocoaPods</code>,当然了还有一些不可或缺的插件; 部署的系统一般用macOS,各平台编译工具使然,毕竟若要多平台构建方便的话, Windows整个黑苹果不太合理.</p>
+<h4 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h4>
+    
+    <a class="article-more-a" href="/2020/10/07/iOS%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-常用宏整理二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/09/19/%E5%B8%B8%E7%94%A8%E5%AE%8F%E6%95%B4%E7%90%86%E4%BA%8C/">常用常量整理</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/09/19/%E5%B8%B8%E7%94%A8%E5%AE%8F%E6%95%B4%E7%90%86%E4%BA%8C/" class="archive-article-date">
+        <time datetime="2020-09-19T06:08:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-19</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p><em>Update 2022/4/13  iPhone 11 安全区域48</em> </p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/// 屏幕宽高</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kScreenWidth  = <span class="type">UIScreen</span>.main.bounds.size.width</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kScreenHeight = <span class="type">UIScreen</span>.main.bounds.size.height</span><br><span class="line"></span><br><span class="line"><span class="comment">/// 系统版本</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kSystemVersion = <span class="type">Float</span>(<span class="type">UIDevice</span>.current.systemVersion) ?? <span class="number">0.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/// 默认导航栏高度</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kNavBarHeight: <span class="type">CGFloat</span> = <span class="number">44.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/// 状态栏高度 iPhone X (44.0) / iPhone 11 (48.0) / 20.0</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kStatusBarHeight: <span class="type">CGFloat</span> = <span class="type">UIApplication</span>.shared.statusBarFrame.size.height</span><br><span class="line"></span><br><span class="line"><span class="comment">/// 是否有前刘海  (iPhone X系统 iOS 11+)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kIsHaveBangs = kSystemVersion &lt; <span class="number">11.0</span> ? <span class="literal">false</span>: (kStatusBarHeight &gt; <span class="number">20.0</span> ? <span class="literal">true</span>: <span class="literal">false</span>)</span><br><span class="line"><span class="comment">//@available(iOS 11.0, *)</span></span><br><span class="line"><span class="comment">//public let kIsHaveBangs = (UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0.0) &gt; 0.0 ? true: false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/// 顶部安全区域高度</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kTopSafeHeight: <span class="type">CGFloat</span> = kIsHaveBangs ? kStatusBarHeight : <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/// 底部安全区域高度</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kBottomSafeHeight: <span class="type">CGFloat</span> = kIsHaveBangs ? <span class="number">34</span>: <span class="number">0.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/// 状态栏和导航栏总高度</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kNavBarAndSafeHeight: <span class="type">CGFloat</span> = kStatusBarHeight + kNavBarHeight</span><br><span class="line"></span><br><span class="line"><span class="comment">/// tabbar和底部安全区域总高度</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kTabBarAndSafeHeight: <span class="type">CGFloat</span> = kBottomSafeHeight + <span class="number">49.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//MARK: - Info</span></span><br><span class="line"><span class="comment">/// UIDevice</span></span><br><span class="line"><span class="comment">/// systemVersion</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kSystemVersion = <span class="type">Float</span>(<span class="type">UIDevice</span>.current.systemVersion) ?? <span class="number">0.0</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kiOS9Later  = (kSystemVersion &gt;= <span class="number">9</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kiOS10Later = (kSystemVersion &gt;= <span class="number">10</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kiOS11Later = (kSystemVersion &gt;= <span class="number">11</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kiOS12Later = (kSystemVersion &gt;= <span class="number">12</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kiOS13Later = (kSystemVersion &gt;= <span class="number">13</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kiOS14Later = (kSystemVersion &gt;= <span class="number">14</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">/// uuidString</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kUUIDString = <span class="type">UIDevice</span>.current.identifierForVendor?.uuidString ?? <span class="string">""</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/// info.plist</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kInfoPlist = <span class="type">Bundle</span>.main.infoDictionary ?? <span class="type">Dictionary</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">/// Top of stack Vc</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">StackTopViewController</span><span class="params">(<span class="number">_</span> vc: UIViewController? = <span class="literal">nil</span>)</span></span> -&gt; <span class="type">UIViewController?</span> &#123;</span><br><span class="line">    <span class="comment">//注意UIApplication.shared.keyWindow?.rootViewController有时为nil 比如当页面有菊花在转的时候，这个rootViewController就为nil</span></span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">let</span> tmpRootVc = <span class="type">UIApplication</span>.shared.delegate?.window??.rootViewController <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;</span><br><span class="line">    <span class="keyword">let</span> rootVc = vc ?? tmpRootVc</span><br><span class="line">    <span class="keyword">var</span> currentVc: <span class="type">UIViewController?</span></span><br><span class="line">    <span class="comment">//presentedViewController 和presentingViewController</span></span><br><span class="line">    <span class="comment">//当A弹出B //A.presentedViewController=B //B.presentingViewController=A</span></span><br><span class="line">    <span class="keyword">if</span> rootVc.presentedViewController != <span class="literal">nil</span> &#123;</span><br><span class="line">        currentVc = <span class="type">StackTopViewController</span>(rootVc.presentedViewController)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (rootVc.isKind(of: <span class="type">UITabBarController</span>.classForCoder())) &#123;</span><br><span class="line">        currentVc = <span class="type">StackTopViewController</span>((rootVc <span class="keyword">as</span>! <span class="type">UITabBarController</span>).selectedViewController)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (rootVc.isKind(of: <span class="type">UINavigationController</span>.classForCoder())) &#123;</span><br><span class="line">        currentVc = <span class="type">StackTopViewController</span>((rootVc <span class="keyword">as</span>! <span class="type">UINavigationController</span>).visibleViewController)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        currentVc = rootVc</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> currentVc</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// 根据字符串获取工程中的对应Swift类</span></span><br><span class="line"><span class="comment">/// \\ 使用 swiftClassFromString("xxx") as? UIViewController.Type</span></span><br><span class="line"><span class="comment">///</span></span><br><span class="line"><span class="comment">/// - Parameter aClassName: 类名字符串</span></span><br><span class="line"><span class="comment">/// - Returns: 类</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">swiftClassFromString</span><span class="params">(<span class="number">_</span> aClassName: String)</span></span> -&gt; <span class="type">AnyClass?</span> &#123;</span><br><span class="line">    <span class="comment">// 获取工程名</span></span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">let</span> appName = <span class="type">Bundle</span>.main.object(forInfoDictionaryKey: <span class="string">"CFBundleName"</span>) <span class="keyword">as</span>? <span class="type">String</span> <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;</span><br><span class="line">    <span class="comment">// 过滤无效字符 空格不转换的话 得不到准确类名</span></span><br><span class="line">    <span class="keyword">let</span> formattedAppName = appName.replacingOccurrences(of: <span class="string">" "</span>, with: <span class="string">"_"</span>)</span><br><span class="line">    <span class="comment">// 拼接控制器名</span></span><br><span class="line">    <span class="keyword">let</span> classStringName = <span class="string">"\(formattedAppName).\(aClassName)"</span></span><br><span class="line">    <span class="comment">// 将控制名转换为类</span></span><br><span class="line">    <span class="keyword">return</span> <span class="type">NSClassFromString</span>(classStringName)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// 自定义Log打印</span></span><br><span class="line"><span class="comment">/// - Parameters:</span></span><br><span class="line"><span class="comment">///   - items: 输出文本</span></span><br><span class="line"><span class="comment">///   - filePath: 文件名</span></span><br><span class="line"><span class="comment">///   - method: 方法</span></span><br><span class="line"><span class="comment">///   - line: 所在行数</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">printLog</span><span class="params">(<span class="number">_</span> items: <span class="keyword">Any</span>, filePath: String = #filePath, method: String = #function, line: Int = #line)</span></span> &#123;</span><br><span class="line">    #<span class="keyword">if</span> <span class="type">DEBUG</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(URL(fileURLWithPath: filePath).lastPathComponent)[line:\(line),method:\(method)]: \(items)"</span>)</span><br><span class="line">    #endif</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
         		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">常用工具类</a>
+        		</li>
       		
 		</ul>
 	</div>
@@ -371,7 +570,7 @@
 
 
   
-    <article id="post-知识点总结3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-终端指令备忘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -379,7 +578,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/04/18/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%933/">知识点总结(三)</a>
+	  <a class="article-title" href="/2020/07/17/%E7%BB%88%E7%AB%AF%E6%8C%87%E4%BB%A4%E5%A4%87%E5%BF%98/">终端指令备忘</a>
 	
     </h1>
   
@@ -387,8 +586,8 @@
 
   
   
-<a href="/2020/04/18/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%933/" class="archive-article-date">
-        <time datetime="2020-04-18T13:15:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-18</time>
+<a href="/2020/07/17/%E7%BB%88%E7%AB%AF%E6%8C%87%E4%BB%A4%E5%A4%87%E5%BF%98/" class="archive-article-date">
+        <time datetime="2020-07-17T09:15:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-17</time>
 </a>
 
   
@@ -400,10 +599,14 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="5-Block实质"><a href="#5-Block实质" class="headerlink" title="5.Block实质"></a>5.Block实质</h3><h4 id="1-定义"><a href="#1-定义" class="headerlink" title="(1)定义"></a>(1)定义</h4><p>Block是将<code>函数</code>及其<code>执行上下文</code>封装起来的<code>对象</code>.<br>Block调用即函数的调用.</p>
-    
-    <a class="article-more-a" href="/2020/04/18/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%933/#more">more >></a>
-    
+    <h4 id="1-Mac-Linux如何查找应用所安装路径"><a href="#1-Mac-Linux如何查找应用所安装路径" class="headerlink" title="1.Mac/Linux如何查找应用所安装路径"></a>1.Mac/Linux如何查找应用所安装路径</h4><p>一、查询运行文件所在路径</p>
+<p><code>$ which ant</code></p>
+<p>例如查询ant的安装路径<br><code>/usr/local/Cellar/ant/1.9.3/bin/ant</code></p>
+<p>二、查看文件安装路径：</p>
+<p>由于软件安装的地方不止一个地方，所有先说查看文件安装的所有路径(地址)。</p>
+<p>这里以Android为例。比如说我安装了Android，但是不知道文件都安装在哪些地方、放在哪些文件夹里，可 以用下面的命令查看所有的文件路径<br>在终端输入：</p>
+<p><code>$ whereis android</code></p>
+
     
 
     
@@ -423,7 +626,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vim</a>
         		</li>
       		
 		</ul>
@@ -459,7 +662,7 @@
 
 
   
-    <article id="post-多线程总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Swift零碎知识点总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -467,7 +670,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/04/16/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%BB%E7%BB%93/">多线程总结</a>
+	  <a class="article-title" href="/2020/07/02/Swift%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/">Swift零碎知识点总结</a>
 	
     </h1>
   
@@ -475,8 +678,8 @@
 
   
   
-<a href="/2020/04/16/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%BB%E7%BB%93/" class="archive-article-date">
-        <time datetime="2020-04-16T11:08:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-16</time>
+<a href="/2020/07/02/Swift%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" class="archive-article-date">
+        <time datetime="2020-07-02T09:35:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-02</time>
 </a>
 
   
@@ -488,12 +691,14 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h4 id="多线程概念及原理"><a href="#多线程概念及原理" class="headerlink" title="多线程概念及原理"></a>多线程概念及原理</h4><p>1.(单核CPU) 同一时间, CPU只能处理1个线程,只有一个线程在执行</p>
-<p>2.多线程”同时”执行, 是CPU快速的在多个线程之间的切换</p>
-<p>3.CPU调度线程的时间足够快,就造成了多线程的”同时”执行</p>
-<p>4.如果线程数非常多,CPU会在n个线程之间切换,消耗大量的CPU资源</p>
+    <p><em>Update 2022/04/13 =&gt; 3. Moya参数带数组GET请求</em></p>
+<h4 id="1-基本数据类型"><a href="#1-基本数据类型" class="headerlink" title="1. 基本数据类型"></a>1. 基本数据类型</h4><!--![](https://tva1.sinaimg.cn/large/007S8ZIlgy1ggcrjxqkboj31kc07iwl8.jpg)
+-->
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggcrjxqkboj31kc07iwl8.jpg" width="80%" height="80%">
+
+<h4 id="2-iOS-UIAlertController弹出延迟情况"><a href="#2-iOS-UIAlertController弹出延迟情况" class="headerlink" title="2. iOS-UIAlertController弹出延迟情况"></a>2. iOS-UIAlertController弹出延迟情况</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 原因1.不在主线程 或是runloop没及时更新UI</span></span><br><span class="line"><span class="comment">// 原因2.点击的cell属性selectionStyle 为 .none</span></span><br><span class="line"><span class="type">DispatchQueue</span>.main.async &#123;</span><br><span class="line">	showSystemSingleAlert(title: <span class="string">"温馨提示"</span>, leftTitle: <span class="string">"我知道了"</span>, message: <span class="string">"设备离线,暂不支持操作"</span>) &#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     
-    <a class="article-more-a" href="/2020/04/16/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%BB%E7%BB%93/#more">more >></a>
+    <a class="article-more-a" href="/2020/07/02/Swift%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/#more">more >></a>
     
     
 
@@ -509,12 +714,114 @@
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-第三方库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/05/20/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/">第三方库</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/05/20/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/" class="archive-article-date">
+        <time datetime="2020-05-20T11:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="AFNetworking"><a href="#AFNetworking" class="headerlink" title="*AFNetworking"></a>*AFNetworking</h4><p><em>框架模块</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AFNetworking</span><br><span class="line">UIKit模块</span><br><span class="line">请求序列</span><br><span class="line">会话| 网络监听 | 安全处理</span><br></pre></td></tr></table></figure>
+
+<p><em>主要类</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">NSURLSession | AFSecurityPolicy | AFNetworkReachability</span><br><span class="line">AFURLSessionManager</span><br><span class="line">AFHTTPSessionManager</span><br><span class="line">AFURLRequestSerialzation | AFURLResponseSerialzation</span><br></pre></td></tr></table></figure>
+<p><em>AFURLSessionManager</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">创建和管理NSURLSession, NSURLSessionTask</span><br><span class="line">实现NSURLSessionDelegate等协议的代理方法</span><br><span class="line">引入AFSecurityPolicy保证请求安全</span><br><span class="line">引入AFNetworkReachability监听网络状态</span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2020/05/20/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		
 		</ul>
@@ -550,7 +857,7 @@
 
 
   
-    <article id="post-常用小工具" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -558,7 +865,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/04/07/%E5%B8%B8%E7%94%A8%E5%B0%8F%E5%B7%A5%E5%85%B7/">常用小工具</a>
+	  <a class="article-title" href="/2020/05/20/%E7%AE%97%E6%B3%95/">算法</a>
 	
     </h1>
   
@@ -566,8 +873,8 @@
 
   
   
-<a href="/2020/04/07/%E5%B8%B8%E7%94%A8%E5%B0%8F%E5%B7%A5%E5%85%B7/" class="archive-article-date">
-        <time datetime="2020-04-07T08:43:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
+<a href="/2020/05/20/%E7%AE%97%E6%B3%95/" class="archive-article-date">
+        <time datetime="2020-05-20T10:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
 </a>
 
   
@@ -579,14 +886,10 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <ol>
-<li><p>Go2Shell</p>
-<p> 什么, 你还在终端<code>cd</code>往后面拖文件夹? 这个是个不错的快捷方式, 赶紧试试吧</p>
-</li>
-<li><p>iPic </p>
-<p> 图床工具, 本地图片快速生成外部预览链接</p>
+    <h4 id="字符串反转"><a href="#字符串反转" class="headerlink" title="字符串反转"></a>字符串反转</h4><p>给定字符串 “hello, world”, 实现将其反转</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">void char_reverse(char* cha)</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F; 指向第一个字符</span><br><span class="line">    char* begin &#x3D; cha;</span><br><span class="line">    &#x2F;&#x2F; 指向最后一个字符</span><br><span class="line">    char* end &#x3D; cha + strlen(cha) - 1;</span><br><span class="line">    </span><br><span class="line">    while (begin &lt; end) &#123;</span><br><span class="line">        &#x2F;&#x2F; 交换前后两个字符,同时移动指针</span><br><span class="line">        char temp &#x3D; *begin;</span><br><span class="line">        *(begin++) &#x3D; *end;</span><br><span class="line">        *(end--) &#x3D; temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     
-    <a class="article-more-a" href="/2020/04/07/%E5%B8%B8%E7%94%A8%E5%B0%8F%E5%B7%A5%E5%85%B7/#more">more >></a>
+    <a class="article-more-a" href="/2020/05/20/%E7%AE%97%E6%B3%95/#more">more >></a>
     
     
 
@@ -603,99 +906,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-知识点总结2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/02/10/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%932/">知识点总结(二)</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/02/10/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%932/" class="archive-article-date">
-        <time datetime="2020-02-10T06:18:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-10</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="3-消息传递和消息转发"><a href="#3-消息传递和消息转发" class="headerlink" title="3.消息传递和消息转发"></a>3.消息传递和消息转发</h3><h4 id="消息传递"><a href="#消息传递" class="headerlink" title="消息传递"></a>消息传递</h4><p>(1)核心方法</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> objc_msgSend(<span class="keyword">void</span> <span class="comment">/*id self, SEL op, ...*/</span>)</span><br><span class="line"><span class="keyword">void</span> objc_msgSendSuper(<span class="keyword">void</span> <span class="comment">/* struct objc_super *super, SEL op, ...*/</span>)</span><br></pre></td></tr></table></figure>
-
-<p><code>objc_super</code>结构体解析:</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> objc_msgSendSuper(<span class="keyword">void</span> <span class="comment">/* struct objc_super *super, SEL op, ...*/</span>)</span><br><span class="line"></span><br><span class="line">   <span class="keyword">struct</span> objc_super &#123;</span><br><span class="line">   </span><br><span class="line">	  <span class="comment">/// Specifies an instance of a class</span></span><br><span class="line">   	  __<span class="keyword">unsafe_unretained</span> <span class="keyword">id</span> receiver;   <span class="comment">// 编译器关键字 (仍是当前对象 --&gt; self)</span></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/02/10/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%932/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		
 		</ul>
@@ -731,7 +950,7 @@
 
 
   
-    <article id="post-20200207" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-架构-框架" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -739,7 +958,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/02/07/20200207/">庚子年记</a>
+	  <a class="article-title" href="/2020/05/20/%E6%9E%B6%E6%9E%84-%E6%A1%86%E6%9E%B6/">架构/框架</a>
 	
     </h1>
   
@@ -747,8 +966,8 @@
 
   
   
-<a href="/2020/02/07/20200207/" class="archive-article-date">
-        <time datetime="2020-02-07T03:50:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-07</time>
+<a href="/2020/05/20/%E6%9E%B6%E6%9E%84-%E6%A1%86%E6%9E%B6/" class="archive-article-date">
+        <time datetime="2020-05-20T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
 </a>
 
   
@@ -760,9 +979,15 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gdm484lghkj308c04n74a.jpg" alt=""></p>
+    <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p><code>模块化</code>, <code>分层</code>, <code>解耦</code>, <code>降低代码重合度</code></p>
+<h4 id="1-图片缓存"><a href="#1-图片缓存" class="headerlink" title="1. 图片缓存"></a>1. 图片缓存</h4><!--![](https://tva1.sinaimg.cn/large/e6c9d24egy1h13ksttfyij20qy0agaas.jpg)
+-->
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Manager</span><br><span class="line">内存 | 磁盘 | 网络</span><br><span class="line">Code Manager</span><br><span class="line">图片解码 | 图片压缩&#x2F;解压缩</span><br></pre></td></tr></table></figure>
+
+<p><em>图片是通过什么方式读写的, 过程是怎样的?</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">以图片URL的单向Hash值作为Key读取</span><br><span class="line">读取过程:  内存 -&gt; 磁盘 -&gt; 网络下载</span><br></pre></td></tr></table></figure>
     
-    <a class="article-more-a" href="/2020/02/07/20200207/#more">more >></a>
+    <a class="article-more-a" href="/2020/05/20/%E6%9E%B6%E6%9E%84-%E6%A1%86%E6%9E%B6/#more">more >></a>
     
     
 
@@ -779,102 +1004,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-知识点总结1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/01/12/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%931/">知识点总结(一)</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/01/12/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%931/" class="archive-article-date">
-        <time datetime="2020-01-12T09:59:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-12</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="1-事件传递与视图响应链"><a href="#1-事件传递与视图响应链" class="headerlink" title="1.事件传递与视图响应链"></a>1.事件传递与视图响应链</h3><h4 id="事件传递-确认响应视图"><a href="#事件传递-确认响应视图" class="headerlink" title="事件传递 (确认响应视图)"></a>事件传递 (确认响应视图)</h4><ul>
-<li>方法</li>
-</ul>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">UIView</span> *)hitTest:(<span class="built_in">CGPoint</span>)point withEvent:(<span class="built_in">UIEvent</span> *)event</span><br><span class="line">- (<span class="built_in">BOOL</span>)pointInside:(<span class="built_in">CGPoint</span>)point withEvent:(<span class="built_in">UIEvent</span> *)event</span><br></pre></td></tr></table></figure>
-<ul>
-<li>流程</li>
-</ul>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注意:对子视图遍历为倒序遍历,最后添加到<span class="built_in">UIWindow</span>上的视图,最先遍历</span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/01/12/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%931/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		
 		</ul>
@@ -910,7 +1048,7 @@
 
 
   
-    <article id="post-iOS收集应用评分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-设计模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -918,7 +1056,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2019/04/24/iOS%E6%94%B6%E9%9B%86%E5%BA%94%E7%94%A8%E8%AF%84%E5%88%86/">iOS收集应用评分</a>
+	  <a class="article-title" href="/2020/05/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
 	
     </h1>
   
@@ -926,8 +1064,8 @@
 
   
   
-<a href="/2019/04/24/iOS%E6%94%B6%E9%9B%86%E5%BA%94%E7%94%A8%E8%AF%84%E5%88%86/" class="archive-article-date">
-        <time datetime="2019-04-24T02:14:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-24</time>
+<a href="/2020/05/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+        <time datetime="2020-05-20T08:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
 </a>
 
   
@@ -939,10 +1077,21 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="需求背景"><a href="#需求背景" class="headerlink" title="需求背景"></a>需求背景</h3><p>还在使用弹框链接跳转收集评分? 太不人性话了,应用用的好好的突然打断,比较闹心.</p>
-<h3 id="使用细节"><a href="#使用细节" class="headerlink" title="使用细节"></a>使用细节</h3><p><em>SKStoreReviewController</em> 注意: iOS 10.3+ 官方才提供的内置评分系统, 不能做成事件触发弹框评分的方式, 即使测试环境正常, 上架后事件触发仍会表示不响应. 其他细节如下:</p>
+    <h4 id="1-六大设计原则"><a href="#1-六大设计原则" class="headerlink" title="1. 六大设计原则"></a>1. 六大设计原则</h4><p><em>单一职责原则</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个类只负责一件事</span><br></pre></td></tr></table></figure>
+<p><em>开闭原则</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对修改关闭, 对扩展开放</span><br></pre></td></tr></table></figure>
+<p><em>接口隔离原则</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 如 Tableview的 delegate处理事件回调&#x2F; dataSource处理数据源</span><br><span class="line">使用多个专门的协议, 而不是一个庞大臃肿的协议.</span><br><span class="line">协议中的方法尽可以的少</span><br></pre></td></tr></table></figure>
+<p><em>依赖倒置原则</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">抽象不应该依赖于具体实现, 具体实现可以依赖于抽象</span><br></pre></td></tr></table></figure>
+
+<p><em>里氏替换原则</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 如KVO</span><br><span class="line">父类可以被子类无缝替换, 且原因功能不受任何影响</span><br></pre></td></tr></table></figure>
+<p><em>迪米特原则</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">一个对象应当对其他对象有尽可能少的了解</span><br><span class="line">高内聚, 低耦合</span><br></pre></td></tr></table></figure>
     
-    <a class="article-more-a" href="/2019/04/24/iOS%E6%94%B6%E9%9B%86%E5%BA%94%E7%94%A8%E8%AF%84%E5%88%86/#more">more >></a>
+    <a class="article-more-a" href="/2020/05/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/#more">more >></a>
     
     
 
@@ -959,99 +1108,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-常用宏整理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/04/18/%E5%B8%B8%E7%94%A8%E5%AE%8F%E6%95%B4%E7%90%86/">常用宏整理</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/04/18/%E5%B8%B8%E7%94%A8%E5%AE%8F%E6%95%B4%E7%90%86/" class="archive-article-date">
-        <time datetime="2019-04-18T03:22:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-18</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> DEBUG</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DLog(fmt,...)     NSLog((@<span class="meta-string">"【Function:%s】【LineNum:%d】"</span> fmt),__FUNCTION__,__LINE__,##__VA_ARGS__)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DebugLogInt(num)      DebugLog(@<span class="meta-string">"int value is %d"</span>,num)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DebugFileLog(fmt,...) NSLog((@<span class="meta-string">"【File：%s】【Function:%s】【LineNum:%d】"</span> fmt),__FILE__,__FUNCTION__,__LINE__,##__VA_ARGS__)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DLog(format,...)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DebugLogInt(num)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DebugFileLog(format,...)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2019/04/18/%E5%B8%B8%E7%94%A8%E5%AE%8F%E6%95%B4%E7%90%86/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		
 		</ul>
@@ -1089,7 +1154,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1102,7 +1167,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017-2021 <a href="https://hubin97.github.io/" target="_blank">醉疏狂</a>
+    		&copy; 2017-2023 <a href="https://hubin97.github.io/" target="_blank">醉疏狂</a>
     	</div>
       	<div class="footer-right">
 			
@@ -1150,23 +1215,6 @@
 
 
 <!--  -->
-
-<script>
-  /* 标签页标题切换 */
-  var originTitle = document.title;
-  var titleTime;
-  document.addEventListener("visibilitychange", function () {
-    if (document.hidden) {
-      document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
-      clearTimeout(titleTime);
-    } else {
-      document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
-      titleTime = setTimeout(function () {
-        document.title = originTitle;
-      }, 2000);
-    }
-  });
-</script>
 
 
     
@@ -1229,11 +1277,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">技术札记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1245,11 +1301,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OC</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
+                <a href="javascript:void(0)" class="js-tag color3">OC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1257,7 +1313,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color3">RN</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1426,6 +1482,24 @@
               </a>
             </li>
           
+            <li class="search-li">
+              <a href="https://tech.meituan.com" target="_blank" class="search-title" title="一行代码，亿万生活。">
+                
+                  <i class="icon-link icon"></i>
+                
+                美团技术团队
+              </a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://tech.youzan.com" target="_blank" class="search-title" title="Thoughts,stories and ideas。">
+                
+                  <i class="icon-link icon"></i>
+                
+                有赞技术团队
+              </a>
+            </li>
+          
         </ul>
   		
     	</section>
@@ -1435,7 +1509,7 @@
     	<section class="tools-section tools-section-me" q-show="aboutme">
         
           
-  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>移动端, 前端开发、<br>开源爱好者<br><br>联系QQ:970216474<br><br>写博客的原因<br><br>主要是为了自己的总结回顾<br><br>如果能帮助到大家的话<br><br>那再好不过了!O(∩_∩)O哈哈~</div>
+  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>移动端, 前端开发、<br>开源爱好者<br><br>写博客的原因<br><br>主要是为了自己的总结回顾<br><br>如果能帮助到大家的话<br><br>那再好不过了!O(∩_∩)O哈哈~</div>
   	  	
     	</section>
     

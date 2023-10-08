@@ -191,7 +191,7 @@
             
 
   
-    <article id="post-Python笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -199,7 +199,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2019/04/12/Python%E7%AC%94%E8%AE%B0/">Python笔记</a>
+	  <a class="article-title" href="/2020/05/20/%E7%BD%91%E7%BB%9C/">网络</a>
 	
     </h1>
   
@@ -207,8 +207,8 @@
 
   
   
-<a href="/2019/04/12/Python%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-        <time datetime="2019-04-12T03:23:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-12</time>
+<a href="/2020/05/20/%E7%BD%91%E7%BB%9C/" class="archive-article-date">
+        <time datetime="2020-05-20T07:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
 </a>
 
   
@@ -220,16 +220,35 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="学习引用"><a href="#学习引用" class="headerlink" title="学习引用"></a>学习引用</h3><p><a href="https://python3-cookbook.readthedocs.io/zh_CN/latest/c03/p04_binary_octal_hexadecimal_int.html" target="_blank" rel="noopener">Python 3 深入教程</a></p>
-<p><a href="https://blog.csdn.net/luanpeng825485697/article/details/78387573" target="_blank" rel="noopener">python基础系列教程——python基础语法全解</a></p>
-<p><a href="https://pypi.org/project/requests/" target="_blank" rel="noopener">requests框架</a><br><code>$pip install //requests requests 2.21.0</code></p>
-<p><a href="https://shimo.im/docs/U5L5Tg08f14lfsiI/read" target="_blank" rel="noopener">33个Python爬虫项目实操介绍</a></p>
-<p><a href="https://scrapy-chs.readthedocs.io/zh_CN/latest/intro/overview.html" target="_blank" rel="noopener">Scrapy 0.24.1文档</a></p>
-<p><a href="https://blog.csdn.net/qq_36148847/article/details/79167267" target="_blank" rel="noopener">python3 网页解析工具1之XPath
-</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/29436838" target="_blank" rel="noopener">学爬虫利器XPath,看这一篇就够了</a></p>
+    <h4 id="1-HTTP协议"><a href="#1-HTTP协议" class="headerlink" title="1. HTTP协议"></a>1. HTTP协议</h4><p><code>超文本传输协议</code></p>
+<p><em>请求/响应报文</em></p>
+<p>请求报文</p>
+<ul>
+<li>方法  // get/post..</li>
+<li>URL  // 地址</li>
+<li>协议版本  // 1.0.0</li>
+<li>CRLF</li>
+<li>首部字段名: 值  // <code>&quot;Content-Type&quot;: &quot;application/json; charset=utf-8&quot;</code></li>
+<li>实体主体  // body(post)</li>
+</ul>
+<p>响应报文</p>
+<ul>
+<li>版本</li>
+<li>状态码</li>
+<li>短语</li>
+<li>CRLF</li>
+<li>首部字段名: 值  //</li>
+<li>实体主体  </li>
+</ul>
+<p><em>HTTP请求方式</em></p>
+<p><code>GET</code> <code>POST</code> <code>HEAD</code> <code>PUT</code> <code>DELETE</code> <code>OPTIONS</code></p>
+<p><em>GET和POST方式的区别</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GET请求参数以?分割拼接到URL后面, POST请求参数在Body里面</span><br><span class="line">GET参数长度限制2048字符, POST一般没有限制</span><br><span class="line">GET请求不安全, POST请求比较安全</span><br></pre></td></tr></table></figure>
+
+<p><em>从语义层区别</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">GET: 获取资源.  安全的 幂等的 可缓存的</span><br><span class="line">POST: 处理资源.  非安全的 非幂等的 不可缓存的</span><br><span class="line"></span><br><span class="line">安全性: 不应该引起Server端的任何状态变化 GET&#x2F;HEAD&#x2F;OPTIONS</span><br><span class="line">幂等性: 同一个请求方法执行多次和执行一次的&#96;效果&#96;完全相同. PUT&#x2F;DELETE</span><br><span class="line">可缓存性: 请求是否可以被缓存. GET&#x2F;HEAD</span><br></pre></td></tr></table></figure>
     
-    <a class="article-more-a" href="/2019/04/12/Python%E7%AC%94%E8%AE%B0/#more">more >></a>
+    <a class="article-more-a" href="/2020/05/20/%E7%BD%91%E7%BB%9C/#more">more >></a>
     
     
 
@@ -245,197 +264,16 @@
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-制作CocoaPods公有库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/04/09/%E5%88%B6%E4%BD%9CCocoaPods%E5%85%AC%E6%9C%89%E5%BA%93/">制作CocoaPods公有库</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/04/09/%E5%88%B6%E4%BD%9CCocoaPods%E5%85%AC%E6%9C%89%E5%BA%93/" class="archive-article-date">
-        <time datetime="2019-04-09T07:20:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-09</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="最终实现效果"><a href="#最终实现效果" class="headerlink" title="最终实现效果"></a>最终实现效果</h3><p>执行<code>$pod search xxx</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-&gt; HBKitTools (0.0.3)</span><br><span class="line">   个人常用开发组件</span><br><span class="line">   pod &#39;HBKitTools&#39;, &#39;~&gt; 0.0.3&#39;</span><br><span class="line">   - Homepage: https:&#x2F;&#x2F;github.com&#x2F;hubin97&#x2F;HBKitTools</span><br><span class="line">   - Source:   https:&#x2F;&#x2F;github.com&#x2F;hubin97&#x2F;HBKitTools.git</span><br><span class="line">   - Versions: 0.0.3, 0.0.2, 0.0.1 [trunk repo]</span><br><span class="line">   - Subspecs:</span><br><span class="line">     - HBKitTools&#x2F;HBCategorys (0.0.3)</span><br><span class="line">     - HBKitTools&#x2F;HBUIViews (0.0.3)</span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2019/04/09/%E5%88%B6%E4%BD%9CCocoaPods%E5%85%AC%E6%9C%89%E5%BA%93/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-flutter环境搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/03/20/flutter%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">Flutter+VSCode+Xcode环境搭建</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/03/20/flutter%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-        <time datetime="2019-03-20T02:10:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-20</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><h4 id="1-路径配置"><a href="#1-路径配置" class="headerlink" title="1. 路径配置"></a>1. 路径配置</h4><p>(1) 下载flutter安装包：<a href="https://github.com/flutter/flutter/releases" target="_blank" rel="noopener">https://github.com/flutter/flutter/releases</a>。</p>
-<p>(2) 解压安装包到你想安装的目录下, 终端获取路径地址 <code>$ pwd</code></p>
-<p>(3) 配置终端全局应用</p>
-<p>常用指令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vim .bash_profile</span><br><span class="line">$ source ～&#x2F;.bash_profile</span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2019/03/20/flutter%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">热更新</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		
 		</ul>
@@ -471,7 +309,7 @@
 
 
   
-    <article id="post-iOS权限整理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-RunLoop" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -479,7 +317,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2018/07/10/iOS%E6%9D%83%E9%99%90%E6%95%B4%E7%90%86/">iOS权限整理</a>
+	  <a class="article-title" href="/2020/05/20/RunLoop/">RunLoop</a>
 	
     </h1>
   
@@ -487,8 +325,8 @@
 
   
   
-<a href="/2018/07/10/iOS%E6%9D%83%E9%99%90%E6%95%B4%E7%90%86/" class="archive-article-date">
-        <time datetime="2018-07-10T10:03:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-10</time>
+<a href="/2020/05/20/RunLoop/" class="archive-article-date">
+        <time datetime="2020-05-20T06:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
 </a>
 
   
@@ -500,10 +338,17 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>相机/相册/麦克风权限判断</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 判断相机是否可以打开</span></span><br><span class="line"><span class="keyword">if</span> (![<span class="built_in">UIImagePickerController</span> isSourceTypeAvailable:<span class="built_in">UIImagePickerControllerSourceTypeCamera</span>]) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断相册是否可以打开</span></span><br><span class="line"><span class="keyword">if</span> (![<span class="built_in">UIImagePickerController</span> isSourceTypeAvailable:<span class="built_in">UIImagePickerControllerSourceTypePhotoLibrary</span>]) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 麦克风权限</span></span><br><span class="line"><span class="comment">//<span class="doctag">FIXME:</span>获取麦克风权限(避免iOS10接听时提示权限闪退)</span></span><br><span class="line">[[<span class="built_in">AVAudioSession</span> sharedInstance] requestRecordPermission:^(<span class="built_in">BOOL</span> granted) &#123;</span><br><span class="line">    <span class="keyword">if</span> (granted) &#123;</span><br><span class="line">       <span class="built_in">NSLog</span>(<span class="string">@"用户同意获取麦克风!!!"</span>);</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">       <span class="built_in">NSLog</span>(<span class="string">@"用户不同意获取麦克风!!!"</span>);</span><br><span class="line">       &#125;</span><br><span class="line"> &#125;];</span><br></pre></td></tr></table></figure>
+    <h4 id="1-概念"><a href="#1-概念" class="headerlink" title="1. 概念"></a>1. 概念</h4><ul>
+<li><code>RunLoop</code>是通过内部维护的<code>事件循环</code>来对<code>事件/消息进行管理</code>的一个<code>对象</code>.</li>
+</ul>
+<p><em>事件循环</em></p>
+<ul>
+<li>没有消息需要处理时, 休眠以避免资源占用 (<code>用户态</code> =&gt; <code>内核态</code>)</li>
+<li>有消息需要处理时, 立即被唤醒 (<code>内核态</code> =&gt; <code>用户态</code>)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int main() &#123; </span><br><span class="line">	&#x2F;&#x2F; 启动主线程RunLoop, 接收消息, 处理, 等待(并非死循环).</span><br><span class="line">	&#x2F;&#x2F; UIApplicationMain</span><br><span class="line">	执行体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     
-    <a class="article-more-a" href="/2018/07/10/iOS%E6%9D%83%E9%99%90%E6%95%B4%E7%90%86/#more">more >></a>
+    <a class="article-more-a" href="/2020/05/20/RunLoop/#more">more >></a>
     
     
 
@@ -519,13 +364,17 @@
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
       		
 		</ul>
 	</div>
@@ -560,7 +409,7 @@
 
 
   
-    <article id="post-iOS零碎知识点备忘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Block" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -568,7 +417,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2018/07/09/iOS%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E5%A4%87%E5%BF%98/">iOS零碎知识点备忘</a>
+	  <a class="article-title" href="/2020/05/20/Block/">Block</a>
 	
     </h1>
   
@@ -576,8 +425,8 @@
 
   
   
-<a href="/2018/07/09/iOS%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E5%A4%87%E5%BF%98/" class="archive-article-date">
-        <time datetime="2018-07-09T03:38:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-09</time>
+<a href="/2020/05/20/Block/" class="archive-article-date">
+        <time datetime="2020-05-20T05:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
 </a>
 
   
@@ -589,9 +438,13 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="12-24小时制判断"><a href="#12-24小时制判断" class="headerlink" title="12/24小时制判断"></a>12/24小时制判断</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> mark -Private</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> hasAMPM==TURE为12小时制，否则为24小时制</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)hasAMPM</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//获取系统是24小时制或者12小时制</span></span><br><span class="line">    <span class="built_in">NSString</span> *formatStringForHours = [<span class="built_in">NSDateFormatter</span> dateFormatFromTemplate:<span class="string">@"j"</span> options:<span class="number">0</span> locale:[<span class="built_in">NSLocale</span> currentLocale]];</span><br><span class="line">    <span class="built_in">NSRange</span> containsA = [formatStringForHours rangeOfString:<span class="string">@"a"</span>];</span><br><span class="line">    <span class="built_in">BOOL</span> hasAMPM = containsA.location != <span class="built_in">NSNotFound</span>;</span><br><span class="line">    <span class="keyword">return</span> hasAMPM;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <h4 id="1-Block简述"><a href="#1-Block简述" class="headerlink" title="1. Block简述"></a>1. Block简述</h4><p><em>Block是将<code>函数</code>及其<code>执行上下文</code>封装起来的<code>对象</code>.</em></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">block_impl</span> &#123;</span></span><br><span class="line">	<span class="keyword">void</span> *isa;  <span class="comment">//isa指针, block是对象的标志</span></span><br><span class="line">	<span class="keyword">int</span> Flags;</span><br><span class="line">	<span class="keyword">int</span> Reserved;</span><br><span class="line">	<span class="keyword">void</span> * FuncPtr; <span class="comment">// 函数指针</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>Block调用即函数的调用</em></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> value = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span>(^Block)(<span class="keyword">int</span>) = ^<span class="keyword">int</span>(<span class="keyword">int</span> num)&#123;</span><br><span class="line">		<span class="keyword">return</span> num * value;</span><br><span class="line">	&#125;;</span><br><span class="line">	Block(<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">使用`clang-rewrite-objc file.m`可查看编译之后的`.cpp`文件内容. </span><br><span class="line">=&gt;</span><br><span class="line">((<span class="keyword">int</span> (*)(__block_impl *, <span class="keyword">int</span>))((__block_impl *)Block) -&gt;FuncPtr)((__block_impl *)Block, <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
     
-    <a class="article-more-a" href="/2018/07/09/iOS%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9%E5%A4%87%E5%BF%98/#more">more >></a>
+    <a class="article-more-a" href="/2020/05/20/Block/#more">more >></a>
     
     
 
@@ -608,11 +461,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		
 		</ul>
@@ -648,7 +505,7 @@
 
 
   
-    <article id="post-Texture" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-多线程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -656,7 +513,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2018/05/11/Texture/">Texture</a>
+	  <a class="article-title" href="/2020/05/20/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
 	
     </h1>
   
@@ -664,8 +521,8 @@
 
   
   
-<a href="/2018/05/11/Texture/" class="archive-article-date">
-        <time datetime="2018-05-11T14:11:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-11</time>
+<a href="/2020/05/20/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="archive-article-date">
+        <time datetime="2020-05-20T05:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
 </a>
 
   
@@ -677,17 +534,126 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h1><p>Texture（原名AsyncDisplayKit）是FaceBook开源的一款能够保持界面流畅的框架。建立在UIKit之上，可以保持最复杂的用户界面的流畅和响应。（smooth and responsive）; 最初诞生于 Facebook 的 Paper 应用程序。它是为了解决 Paper 团队面临的核心问题之一：如何尽可能缓解主线程的压力？</p>
-<p><strong>Texture 是达摩克利斯之剑, 所以再选择这个框架的时候需要额外的斟酌. 先确认弊端,再决定是否项目中要不要去使用它吧</strong></p>
-<h2 id="1、使用优缺点"><a href="#1、使用优缺点" class="headerlink" title="1、使用优缺点"></a>1、使用优缺点</h2><ul>
-<li>需要自己造轮子</li>
-<li>不支持大家常用的storyboard、xib、autoLayout，影响开发效率</li>
-<li>代码没有UIKit使用熟练</li>
-<li>网上资源少</li>
-<li>但是可以和UIKit混合开发</li>
+    <h4 id="1-GCD"><a href="#1-GCD" class="headerlink" title="1. GCD"></a>1. GCD</h4><p><em>同步/异步和串行/并发</em></p>
+<ul>
+<li><code>dispatch_sync(serial_queue, ^{// 任务});</code></li>
+<li><code>dispatch_async(serial_queue, ^{// 任务});</code></li>
+<li><code>dispatch_sync(concurrent_queue, ^{// 任务});</code></li>
+<li><code>dispatch_async(concurrent_queue, ^{// 任务});</code></li>
+</ul>
+<p><em>同步串行</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 死锁: 原因, 队列引起的循环等待, (viewDidLoad和队列Block相互等待)</span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">	dispatch_sync(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">		&#x2F;&#x2F; doSomething</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 自定义队列, 正常运行 (区分串行队列和主队列)</span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">	dispatch_sync(serialQueue, ^&#123;</span><br><span class="line">		&#x2F;&#x2F; doSomething</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2020/05/20/%E5%A4%9A%E7%BA%BF%E7%A8%8B/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-内存管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/05/20/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">内存管理</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/05/20/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="archive-article-date">
+        <time datetime="2020-05-20T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="1-内存布局"><a href="#1-内存布局" class="headerlink" title="1. 内存布局"></a>1. 内存布局</h4><ul>
+<li><code>stack</code>: 栈区, 方法调用. (高地址)</li>
+<li><code>heap</code>: 堆区, 通过alloc等分配的对象</li>
+<li><code>bss</code>: 未初始化的全局变量等</li>
+<li><code>data</code>: 已初始化的全局变量等</li>
+<li><code>text</code>: 程序代码</li>
+</ul>
+<h4 id="2-内存管理方案"><a href="#2-内存管理方案" class="headerlink" title="2. 内存管理方案"></a>2. 内存管理方案</h4><p><em>系统方案</em></p>
+<ul>
+<li><code>TaggedPointer</code> (小对象: 如 <code>NSNumber</code>)</li>
+<li><code>NONPOINTER_ISA</code> (非指针型isa, arm64架构程序)</li>
+<li>散列表(<code>side tables</code>) (<code>spinlock_t</code>(自旋锁), <code>RefcountMap</code>(引用计算表), <code>weak_table_t</code>(弱引用表))</li>
+</ul>
+<p><em>快速分流</em></p>
+<ul>
+<li><code>Side Tables</code>的本质是一张<code>Hash表</code>.  [对象指针(Key) ==(hash函数)=&gt; <code>Side Table</code>(Value)]</li>
+<li>Hash查找: 给定值是对象的内存地址, 目标值是数组下标索引.</li>
 </ul>
     
-    <a class="article-more-a" href="/2018/05/11/Texture/#more">more >></a>
+    <a class="article-more-a" href="/2020/05/20/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/#more">more >></a>
     
     
 
@@ -704,15 +670,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">标记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		
 		</ul>
@@ -748,7 +714,7 @@
 
 
   
-    <article id="post-为什么iOS更新UI操作必须在主线程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Runtime" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -756,7 +722,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2018/04/07/%E4%B8%BA%E4%BB%80%E4%B9%88iOS%E6%9B%B4%E6%96%B0UI%E6%93%8D%E4%BD%9C%E5%BF%85%E9%A1%BB%E5%9C%A8%E4%B8%BB%E7%BA%BF%E7%A8%8B/">为什么iOS更新UI操作必须在主线程</a>
+	  <a class="article-title" href="/2020/05/20/Runtime/">Runtime</a>
 	
     </h1>
   
@@ -764,8 +730,8 @@
 
   
   
-<a href="/2018/04/07/%E4%B8%BA%E4%BB%80%E4%B9%88iOS%E6%9B%B4%E6%96%B0UI%E6%93%8D%E4%BD%9C%E5%BF%85%E9%A1%BB%E5%9C%A8%E4%B8%BB%E7%BA%BF%E7%A8%8B/" class="archive-article-date">
-        <time datetime="2018-04-07T07:38:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-07</time>
+<a href="/2020/05/20/Runtime/" class="archive-article-date">
+        <time datetime="2020-05-20T03:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
 </a>
 
   
@@ -777,10 +743,26 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p><code>iOSer</code>都知道UI操作如果在非主线程进行的话是会Crash的。但是本质原因可能很少人真正明白。</p>
-<p>正面的概括回答是：<br><strong>UI操作涉及到渲染访问各种View对象的属性，如果是异步操作会有读写问题。加锁呢，性能损耗大(视图层次深，属性多)。所以主线程操作UI，是约定俗成的开发规则。</strong></p>
+    <h4 id="1-数据结构"><a href="#1-数据结构" class="headerlink" title="1. 数据结构"></a>1. 数据结构</h4><p>(1) id &lt;=&gt; <code>objc_object</code> [<code>isa_t</code>, ]</p>
+<p>(2) Class &lt;=&gt; <code>objc_class</code> (继承<code>objc_object</code>)  [1.<code>Class superClass</code>, 2.<code>cache_t cache</code>, 3.<code>class_data_bits_t bits</code>]</p>
+<p>(3) <code>isa</code>指针  </p>
+<ul>
+<li>指针型isa, isa的值代表Class的地址</li>
+<li>非指针型isa, isa的值的部分代表Class的地址</li>
+</ul>
+<p>(4) <code>isa</code>指向</p>
+<ul>
+<li>对象实例的isa指向 类对象</li>
+<li>类的isa指向 原类对象</li>
+</ul>
+<p>(5) <code>cache_t</code></p>
+<ul>
+<li>用于快速查找方法执行函数  </li>
+<li>是可增量扩展的哈希表结构  </li>
+<li>是局部性原理的最佳应用</li>
+</ul>
     
-    <a class="article-more-a" href="/2018/04/07/%E4%B8%BA%E4%BB%80%E4%B9%88iOS%E6%9B%B4%E6%96%B0UI%E6%93%8D%E4%BD%9C%E5%BF%85%E9%A1%BB%E5%9C%A8%E4%B8%BB%E7%BA%BF%E7%A8%8B/#more">more >></a>
+    <a class="article-more-a" href="/2020/05/20/Runtime/#more">more >></a>
     
     
 
@@ -798,6 +780,14 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		
 		</ul>
@@ -833,7 +823,7 @@
 
 
   
-    <article id="post-博客搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Objective-C语言" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -841,7 +831,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2018/03/30/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+	  <a class="article-title" href="/2020/05/20/Objective-C%E8%AF%AD%E8%A8%80/">Objective-C语言</a>
 	
     </h1>
   
@@ -849,8 +839,8 @@
 
   
   
-<a href="/2018/03/30/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-        <time datetime="2018-03-30T14:19:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-30</time>
+<a href="/2020/05/20/Objective-C%E8%AF%AD%E8%A8%80/" class="archive-article-date">
+        <time datetime="2020-05-20T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
 </a>
 
   
@@ -862,10 +852,23 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="一-准备工作"><a href="#一-准备工作" class="headerlink" title="(一)准备工作"></a>(一)准备工作</h3><p>  首先,公开博客既然可以被外部访问,那么肯定就需要服务器.这里以搭建在github为例,当然也可以选择 码云或者其他的平台.</p>
-<p>  这里有个注意事项,创建的仓库名字必须同github的用户名一致(非昵称), 仓库全称格式:<code>&lt;username&gt;.github.io</code></p>
+    <h4 id="1-分类-Category"><a href="#1-分类-Category" class="headerlink" title="1. 分类(Category)"></a>1. 分类(Category)</h4><ul>
+<li>分类作用</li>
+</ul>
+<ol>
+<li>声明私有方法</li>
+<li>分解体积庞大的类</li>
+<li>把Framework的私有方法公开</li>
+</ol>
+<ul>
+<li>分类的特点</li>
+</ul>
+<ol>
+<li>运行时决议</li>
+<li>可以为系统类添加分类</li>
+</ol>
     
-    <a class="article-more-a" href="/2018/03/30/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/#more">more >></a>
+    <a class="article-more-a" href="/2020/05/20/Objective-C%E8%AF%AD%E8%A8%80/#more">more >></a>
     
     
 
@@ -882,9 +885,193 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-UI视图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/05/20/UI%E8%A7%86%E5%9B%BE/">UI视图</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/05/20/UI%E8%A7%86%E5%9B%BE/" class="archive-article-date">
+        <time datetime="2020-05-20T01:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="1-TableView重用机制"><a href="#1-TableView重用机制" class="headerlink" title="1. TableView重用机制"></a>1. TableView重用机制</h4><ol>
+<li>重用池等待重用队列  </li>
+<li>主窗口正使用的队列  </li>
+<li>考虑重用标识检索队列取的视图</li>
+</ol>
+    
+    <a class="article-more-a" href="/2020/05/20/UI%E8%A7%86%E5%9B%BE/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Mac终端美化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/05/11/Mac%E7%BB%88%E7%AB%AF%E7%BE%8E%E5%8C%96/">Mac终端美化</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/05/11/Mac%E7%BB%88%E7%AB%AF%E7%BE%8E%E5%8C%96/" class="archive-article-date">
+        <time datetime="2020-05-11T08:13:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-11</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h3><h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geoleohvalj30y40h43zc.jpg" alt=""></h2>
+    
+    <a class="article-more-a" href="/2020/05/11/Mac%E7%BB%88%E7%AB%AF%E7%BE%8E%E5%8C%96/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
         		</li>
@@ -922,7 +1109,7 @@
 
 
   
-    <article id="post-动态表单" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-OC到Swift小结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -930,7 +1117,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2018/03/28/%E5%8A%A8%E6%80%81%E8%A1%A8%E5%8D%95/">动态表单</a>
+	  <a class="article-title" href="/2020/05/04/OC%E5%88%B0Swift%E5%B0%8F%E7%BB%93/">OC到Swift小结</a>
 	
     </h1>
   
@@ -938,8 +1125,8 @@
 
   
   
-<a href="/2018/03/28/%E5%8A%A8%E6%80%81%E8%A1%A8%E5%8D%95/" class="archive-article-date">
-        <time datetime="2018-03-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-28</time>
+<a href="/2020/05/04/OC%E5%88%B0Swift%E5%B0%8F%E7%BB%93/" class="archive-article-date">
+        <time datetime="2020-05-04T14:58:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-04</time>
 </a>
 
   
@@ -951,9 +1138,14 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="一-需求效果展示"><a href="#一-需求效果展示" class="headerlink" title="(一) 需求效果展示"></a>(一) 需求效果展示</h3><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gdgg0tl8xng30850eib29.gif" alt="表单效果图"></p>
+    <p><em>Update: 2022/04/17</em></p>
+<h4 id="一-Swift混编相关"><a href="#一-Swift混编相关" class="headerlink" title="一. Swift混编相关"></a>一. Swift混编相关</h4><h5 id="1-Swift调用OC-借助桥接文件"><a href="#1-Swift调用OC-借助桥接文件" class="headerlink" title="(1) Swift调用OC, 借助桥接文件"></a>(1) Swift调用OC, 借助桥接文件</h5><pre><code>1.手动生成 命名格式 &lt;target&gt;-Bridging-Header.h 的文件  
+2.把需要引入Swift的头文件添加到桥接文件</code></pre><h5 id="2-OC调用Swift-Xcode默认生成头文件命名格式-lt-target-gt-Swift-h"><a href="#2-OC调用Swift-Xcode默认生成头文件命名格式-lt-target-gt-Swift-h" class="headerlink" title="(2) OC调用Swift, Xcode默认生成头文件命名格式: &lt;target&gt;-Swift.h"></a>(2) OC调用Swift, Xcode默认生成头文件命名格式: &lt;target&gt;-Swift.h</h5><pre><code>1.导入默认生成的头文件
+2.暴露的Swift类, 需要继承 NSObject
+3.使用@objc 标记需要暴露的成员; 另外@objc可以重命名Swift暴露给OC的符号名(类名,属性, 函数名等)
+4.使用@objcMembers修饰, 默认暴露所有成员</code></pre>
     
-    <a class="article-more-a" href="/2018/03/28/%E5%8A%A8%E6%80%81%E8%A1%A8%E5%8D%95/#more">more >></a>
+    <a class="article-more-a" href="/2020/05/04/OC%E5%88%B0Swift%E5%B0%8F%E7%BB%93/#more">more >></a>
     
     
 
@@ -969,94 +1161,16 @@
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
+        		</li>
+      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-20171202" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2017/12/02/20171202/">20171202</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2017/12/02/20171202/" class="archive-article-date">
-        <time datetime="2017-12-02T10:05:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-02</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gdmiqh0uchj30yw0gkncr.jpg" alt=""></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">涂鸦</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
         		</li>
       		
 		</ul>
@@ -1094,7 +1208,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1107,7 +1221,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017-2021 <a href="https://hubin97.github.io/" target="_blank">醉疏狂</a>
+    		&copy; 2017-2023 <a href="https://hubin97.github.io/" target="_blank">醉疏狂</a>
     	</div>
       	<div class="footer-right">
 			
@@ -1155,23 +1269,6 @@
 
 
 <!--  -->
-
-<script>
-  /* 标签页标题切换 */
-  var originTitle = document.title;
-  var titleTime;
-  document.addEventListener("visibilitychange", function () {
-    if (document.hidden) {
-      document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
-      clearTimeout(titleTime);
-    } else {
-      document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
-      titleTime = setTimeout(function () {
-        document.title = originTitle;
-      }, 2000);
-    }
-  });
-</script>
 
 
     
@@ -1234,11 +1331,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">技术札记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1250,11 +1355,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OC</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
+                <a href="javascript:void(0)" class="js-tag color3">OC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1262,7 +1367,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color3">RN</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1431,6 +1536,24 @@
               </a>
             </li>
           
+            <li class="search-li">
+              <a href="https://tech.meituan.com" target="_blank" class="search-title" title="一行代码，亿万生活。">
+                
+                  <i class="icon-link icon"></i>
+                
+                美团技术团队
+              </a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://tech.youzan.com" target="_blank" class="search-title" title="Thoughts,stories and ideas。">
+                
+                  <i class="icon-link icon"></i>
+                
+                有赞技术团队
+              </a>
+            </li>
+          
         </ul>
   		
     	</section>
@@ -1440,7 +1563,7 @@
     	<section class="tools-section tools-section-me" q-show="aboutme">
         
           
-  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>移动端, 前端开发、<br>开源爱好者<br><br>联系QQ:970216474<br><br>写博客的原因<br><br>主要是为了自己的总结回顾<br><br>如果能帮助到大家的话<br><br>那再好不过了!O(∩_∩)O哈哈~</div>
+  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>移动端, 前端开发、<br>开源爱好者<br><br>写博客的原因<br><br>主要是为了自己的总结回顾<br><br>如果能帮助到大家的话<br><br>那再好不过了!O(∩_∩)O哈哈~</div>
   	  	
     	</section>
     

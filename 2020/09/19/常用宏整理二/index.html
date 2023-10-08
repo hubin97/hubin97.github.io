@@ -10,18 +10,18 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="12345678910111213141516171819202122232425262728293031&#x2F;&#x2F;&#x2F; 屏幕宽高public let kScreenWidth  &#x3D; UIScreen.main.bounds.size.widthpublic let kScreenHeight &#x3D; UIScreen.main.bounds.size.height&#x2F;&#x2F;&#x2F; 系统版本public let kSy">
+  <meta name="description" content="Update 2022&#x2F;4&#x2F;13  iPhone 11 安全区域48  12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用常量整理">
 <meta property="og:url" content="https://hubin97.github.io/2020/09/19/%E5%B8%B8%E7%94%A8%E5%AE%8F%E6%95%B4%E7%90%86%E4%BA%8C/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031&#x2F;&#x2F;&#x2F; 屏幕宽高public let kScreenWidth  &#x3D; UIScreen.main.bounds.size.widthpublic let kScreenHeight &#x3D; UIScreen.main.bounds.size.height&#x2F;&#x2F;&#x2F; 系统版本public let kSy">
+<meta property="og:description" content="Update 2022&#x2F;4&#x2F;13  iPhone 11 安全区域48  12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868">
 <meta property="article:published_time" content="2020-09-19T06:08:14.000Z">
-<meta property="article:modified_time" content="2021-09-14T14:24:33.195Z">
+<meta property="article:modified_time" content="2022-04-14T02:30:53.805Z">
 <meta property="article:author" content="醉疏狂">
-<meta property="article:tag" content="技术札记">
 <meta property="article:tag" content="iOS">
 <meta property="article:tag" content="Swift">
+<meta property="article:tag" content="技术札记">
 <meta property="article:tag" content="常用工具类">
 <meta name="twitter:card" content="summary">
   
@@ -225,7 +225,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">194字</span>
+      <span class="post-count">536字</span>
     </span>
   </span>
 
@@ -234,7 +234,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -245,10 +245,8 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/// 屏幕宽高</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kScreenWidth  = <span class="type">UIScreen</span>.main.bounds.size.width</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kScreenHeight = <span class="type">UIScreen</span>.main.bounds.size.height</span><br><span class="line"></span><br><span class="line"><span class="comment">/// 系统版本</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kSystemVersion = <span class="type">Float</span>(<span class="type">UIDevice</span>.current.systemVersion) ?? <span class="number">0.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/// 默认导航栏高度</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kNavBarHeight: <span class="type">CGFloat</span> = <span class="number">44.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/// 状态栏高度 iPhone X (44.0) / iPhone 11 (48.0) / 20.0</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kStatusBarHeight: <span class="type">CGFloat</span> = <span class="type">UIApplication</span>.shared.statusBarFrame.size.height</span><br><span class="line"></span><br><span class="line"><span class="comment">/// 是否有前刘海  (iPhone X系统 iOS 11+)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kIsHaveBangs = kSystemVersion &lt; <span class="number">11.0</span> ? <span class="literal">false</span>: (kStatusBarHeight &gt; <span class="number">20.0</span> ? <span class="literal">true</span>: <span class="literal">false</span>)</span><br><span class="line"><span class="comment">//@available(iOS 11.0, *)</span></span><br><span class="line"><span class="comment">//public let kIsHaveBangs = (UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0.0) &gt; 0.0 ? true: false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/// 顶部安全区域高度</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kTopSafeHeight: <span class="type">CGFloat</span> = kIsHaveBangs ? kStatusBarHeight : <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/// 底部安全区域高度</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kBottomSafeHeight: <span class="type">CGFloat</span> = kIsHaveBangs ? <span class="number">34</span>: <span class="number">0.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/// 状态栏和导航栏总高度</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kNavBarAndSafeHeight: <span class="type">CGFloat</span> = kStatusBarHeight + kNavBarHeight</span><br><span class="line"></span><br><span class="line"><span class="comment">/// tabbar和底部安全区域总高度</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kTabBarAndSafeHeight: <span class="type">CGFloat</span> = kBottomSafeHeight + <span class="number">49.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// update 2020/09/19</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>// update 2020/11/28  iPhone 11 安全区域48 </p>
-
+    <p><em>Update 2022/4/13  iPhone 11 安全区域48</em> </p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/// 屏幕宽高</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kScreenWidth  = <span class="type">UIScreen</span>.main.bounds.size.width</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kScreenHeight = <span class="type">UIScreen</span>.main.bounds.size.height</span><br><span class="line"></span><br><span class="line"><span class="comment">/// 系统版本</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kSystemVersion = <span class="type">Float</span>(<span class="type">UIDevice</span>.current.systemVersion) ?? <span class="number">0.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/// 默认导航栏高度</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kNavBarHeight: <span class="type">CGFloat</span> = <span class="number">44.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/// 状态栏高度 iPhone X (44.0) / iPhone 11 (48.0) / 20.0</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kStatusBarHeight: <span class="type">CGFloat</span> = <span class="type">UIApplication</span>.shared.statusBarFrame.size.height</span><br><span class="line"></span><br><span class="line"><span class="comment">/// 是否有前刘海  (iPhone X系统 iOS 11+)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kIsHaveBangs = kSystemVersion &lt; <span class="number">11.0</span> ? <span class="literal">false</span>: (kStatusBarHeight &gt; <span class="number">20.0</span> ? <span class="literal">true</span>: <span class="literal">false</span>)</span><br><span class="line"><span class="comment">//@available(iOS 11.0, *)</span></span><br><span class="line"><span class="comment">//public let kIsHaveBangs = (UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0.0) &gt; 0.0 ? true: false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/// 顶部安全区域高度</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kTopSafeHeight: <span class="type">CGFloat</span> = kIsHaveBangs ? kStatusBarHeight : <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/// 底部安全区域高度</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kBottomSafeHeight: <span class="type">CGFloat</span> = kIsHaveBangs ? <span class="number">34</span>: <span class="number">0.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/// 状态栏和导航栏总高度</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kNavBarAndSafeHeight: <span class="type">CGFloat</span> = kStatusBarHeight + kNavBarHeight</span><br><span class="line"></span><br><span class="line"><span class="comment">/// tabbar和底部安全区域总高度</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kTabBarAndSafeHeight: <span class="type">CGFloat</span> = kBottomSafeHeight + <span class="number">49.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//MARK: - Info</span></span><br><span class="line"><span class="comment">/// UIDevice</span></span><br><span class="line"><span class="comment">/// systemVersion</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kSystemVersion = <span class="type">Float</span>(<span class="type">UIDevice</span>.current.systemVersion) ?? <span class="number">0.0</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kiOS9Later  = (kSystemVersion &gt;= <span class="number">9</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kiOS10Later = (kSystemVersion &gt;= <span class="number">10</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kiOS11Later = (kSystemVersion &gt;= <span class="number">11</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kiOS12Later = (kSystemVersion &gt;= <span class="number">12</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kiOS13Later = (kSystemVersion &gt;= <span class="number">13</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kiOS14Later = (kSystemVersion &gt;= <span class="number">14</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">/// uuidString</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kUUIDString = <span class="type">UIDevice</span>.current.identifierForVendor?.uuidString ?? <span class="string">""</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/// info.plist</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">let</span> kInfoPlist = <span class="type">Bundle</span>.main.infoDictionary ?? <span class="type">Dictionary</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">/// Top of stack Vc</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">StackTopViewController</span><span class="params">(<span class="number">_</span> vc: UIViewController? = <span class="literal">nil</span>)</span></span> -&gt; <span class="type">UIViewController?</span> &#123;</span><br><span class="line">    <span class="comment">//注意UIApplication.shared.keyWindow?.rootViewController有时为nil 比如当页面有菊花在转的时候，这个rootViewController就为nil</span></span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">let</span> tmpRootVc = <span class="type">UIApplication</span>.shared.delegate?.window??.rootViewController <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;</span><br><span class="line">    <span class="keyword">let</span> rootVc = vc ?? tmpRootVc</span><br><span class="line">    <span class="keyword">var</span> currentVc: <span class="type">UIViewController?</span></span><br><span class="line">    <span class="comment">//presentedViewController 和presentingViewController</span></span><br><span class="line">    <span class="comment">//当A弹出B //A.presentedViewController=B //B.presentingViewController=A</span></span><br><span class="line">    <span class="keyword">if</span> rootVc.presentedViewController != <span class="literal">nil</span> &#123;</span><br><span class="line">        currentVc = <span class="type">StackTopViewController</span>(rootVc.presentedViewController)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (rootVc.isKind(of: <span class="type">UITabBarController</span>.classForCoder())) &#123;</span><br><span class="line">        currentVc = <span class="type">StackTopViewController</span>((rootVc <span class="keyword">as</span>! <span class="type">UITabBarController</span>).selectedViewController)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (rootVc.isKind(of: <span class="type">UINavigationController</span>.classForCoder())) &#123;</span><br><span class="line">        currentVc = <span class="type">StackTopViewController</span>((rootVc <span class="keyword">as</span>! <span class="type">UINavigationController</span>).visibleViewController)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        currentVc = rootVc</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> currentVc</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// 根据字符串获取工程中的对应Swift类</span></span><br><span class="line"><span class="comment">/// \\ 使用 swiftClassFromString("xxx") as? UIViewController.Type</span></span><br><span class="line"><span class="comment">///</span></span><br><span class="line"><span class="comment">/// - Parameter aClassName: 类名字符串</span></span><br><span class="line"><span class="comment">/// - Returns: 类</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">swiftClassFromString</span><span class="params">(<span class="number">_</span> aClassName: String)</span></span> -&gt; <span class="type">AnyClass?</span> &#123;</span><br><span class="line">    <span class="comment">// 获取工程名</span></span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">let</span> appName = <span class="type">Bundle</span>.main.object(forInfoDictionaryKey: <span class="string">"CFBundleName"</span>) <span class="keyword">as</span>? <span class="type">String</span> <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;</span><br><span class="line">    <span class="comment">// 过滤无效字符 空格不转换的话 得不到准确类名</span></span><br><span class="line">    <span class="keyword">let</span> formattedAppName = appName.replacingOccurrences(of: <span class="string">" "</span>, with: <span class="string">"_"</span>)</span><br><span class="line">    <span class="comment">// 拼接控制器名</span></span><br><span class="line">    <span class="keyword">let</span> classStringName = <span class="string">"\(formattedAppName).\(aClassName)"</span></span><br><span class="line">    <span class="comment">// 将控制名转换为类</span></span><br><span class="line">    <span class="keyword">return</span> <span class="type">NSClassFromString</span>(classStringName)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// 自定义Log打印</span></span><br><span class="line"><span class="comment">/// - Parameters:</span></span><br><span class="line"><span class="comment">///   - items: 输出文本</span></span><br><span class="line"><span class="comment">///   - filePath: 文件名</span></span><br><span class="line"><span class="comment">///   - method: 方法</span></span><br><span class="line"><span class="comment">///   - line: 所在行数</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">printLog</span><span class="params">(<span class="number">_</span> items: <span class="keyword">Any</span>, filePath: String = #filePath, method: String = #function, line: Int = #line)</span></span> &#123;</span><br><span class="line">    #<span class="keyword">if</span> <span class="type">DEBUG</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(URL(fileURLWithPath: filePath).lastPathComponent)[line:\(line),method:\(method)]: \(items)"</span>)</span><br><span class="line">    #endif</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     
 
     
@@ -264,11 +262,6 @@
                 <p class="reward-p"><i class="icon icon-quo-left"></i>感谢老板打赏哦!<i
                     class="icon icon-quo-right"></i></p>
                 <div class="reward-box">
-                  
-                  <div class="reward-box-item">
-                    <img class="reward-img" src="/img/alipay.jpg">
-                    <span class="reward-type">支付宝</span>
-                  </div>
                   
                   
                   <div class="reward-box-item">
@@ -316,15 +309,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -489,7 +482,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017-2021 <a href="https://hubin97.github.io/" target="_blank">醉疏狂</a>
+    		&copy; 2017-2023 <a href="https://hubin97.github.io/" target="_blank">醉疏狂</a>
     	</div>
       	<div class="footer-right">
 			
@@ -537,23 +530,6 @@
 
 
 <!--  -->
-
-<script>
-  /* 标签页标题切换 */
-  var originTitle = document.title;
-  var titleTime;
-  document.addEventListener("visibilitychange", function () {
-    if (document.hidden) {
-      document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
-      clearTimeout(titleTime);
-    } else {
-      document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
-      titleTime = setTimeout(function () {
-        document.title = originTitle;
-      }, 2000);
-    }
-  });
-</script>
 
 
     
@@ -616,11 +592,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">技术札记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -632,11 +616,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OC</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
+                <a href="javascript:void(0)" class="js-tag color3">OC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -644,7 +628,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color3">RN</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -813,6 +797,24 @@
               </a>
             </li>
           
+            <li class="search-li">
+              <a href="https://tech.meituan.com" target="_blank" class="search-title" title="一行代码，亿万生活。">
+                
+                  <i class="icon-link icon"></i>
+                
+                美团技术团队
+              </a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://tech.youzan.com" target="_blank" class="search-title" title="Thoughts,stories and ideas。">
+                
+                  <i class="icon-link icon"></i>
+                
+                有赞技术团队
+              </a>
+            </li>
+          
         </ul>
   		
     	</section>
@@ -822,7 +824,7 @@
     	<section class="tools-section tools-section-me" q-show="aboutme">
         
           
-  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>移动端, 前端开发、<br>开源爱好者<br><br>联系QQ:970216474<br><br>写博客的原因<br><br>主要是为了自己的总结回顾<br><br>如果能帮助到大家的话<br><br>那再好不过了!O(∩_∩)O哈哈~</div>
+  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>移动端, 前端开发、<br>开源爱好者<br><br>写博客的原因<br><br>主要是为了自己的总结回顾<br><br>如果能帮助到大家的话<br><br>那再好不过了!O(∩_∩)O哈哈~</div>
   	  	
     	</section>
     

@@ -10,15 +10,15 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="-Updatte 20210602: 更多CocoaPods实现细节, 原理, 源码实践参考CocoaPods历险记  准备资料关于pod repo12345678910111213141516➜  ytmqtt (master) ✔ pod repo --helpUsage:    $ pod repo [COMMAND]      Manage spec-repositoriesCommand">
+  <meta name="description" content="-Updatte 20211218: 1.对于多层级subspec可以参考QMUIKit; 2.若是测试验证时pod install拉下了整个项目仓库, 确认下Podfile文件source指定的路径是否是spec库的git地址  -Updatte 20210602: 更多CocoaPods实现细节, 原理, 源码实践参考CocoaPods历险记  准备资料关于pod repo1234567891">
 <meta property="og:type" content="article">
 <meta property="og:title" content="制作私有Pods">
 <meta property="og:url" content="https://hubin97.github.io/2021/04/12/%E5%88%B6%E4%BD%9C%E7%A7%81%E6%9C%89Pods/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="-Updatte 20210602: 更多CocoaPods实现细节, 原理, 源码实践参考CocoaPods历险记  准备资料关于pod repo12345678910111213141516➜  ytmqtt (master) ✔ pod repo --helpUsage:    $ pod repo [COMMAND]      Manage spec-repositoriesCommand">
+<meta property="og:description" content="-Updatte 20211218: 1.对于多层级subspec可以参考QMUIKit; 2.若是测试验证时pod install拉下了整个项目仓库, 确认下Podfile文件source指定的路径是否是spec库的git地址  -Updatte 20210602: 更多CocoaPods实现细节, 原理, 源码实践参考CocoaPods历险记  准备资料关于pod repo1234567891">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEgy1gphwkc4qf9j31da042mxk.jpg">
 <meta property="article:published_time" content="2021-04-12T08:01:46.000Z">
-<meta property="article:modified_time" content="2021-09-14T14:24:33.194Z">
+<meta property="article:modified_time" content="2022-04-14T02:30:53.804Z">
 <meta property="article:author" content="醉疏狂">
 <meta property="article:tag" content="iOS">
 <meta property="article:tag" content="Pod">
@@ -246,7 +246,8 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p><em>-Updatte 20210602: 更多CocoaPods实现细节, 原理, 源码实践参考<a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzA5MTM1NTc2Ng==&action=getalbum&album_id=1477103239887142918&scene=173&from_msgid=2458322728&from_itemidx=1&count=3&nolastread=1#wechat_redirect" target="_blank" rel="noopener">CocoaPods历险记</a></em> </p>
+    <p><em>-Updatte 20211218: 1.对于多层级<code>subspec</code>可以参考<a href="https://github.com/Tencent/QMUI_iOS/blob/master/QMUIKit.podspec" target="_blank" rel="noopener">QMUIKit</a>; 2.若是测试验证时<code>pod install</code>拉下了整个项目仓库, 确认下Podfile文件source指定的路径是否是<code>spec库</code>的git地址</em> </p>
+<p><em>-Updatte 20210602: 更多CocoaPods实现细节, 原理, 源码实践参考<a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzA5MTM1NTc2Ng==&action=getalbum&album_id=1477103239887142918&scene=173&from_msgid=2458322728&from_itemidx=1&count=3&nolastread=1#wechat_redirect" target="_blank" rel="noopener">CocoaPods历险记</a></em> </p>
 <h4 id="准备资料"><a href="#准备资料" class="headerlink" title="准备资料"></a>准备资料</h4><h5 id="关于pod-repo"><a href="#关于pod-repo" class="headerlink" title="关于pod repo"></a>关于pod repo</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">➜  ytmqtt (master) ✔ pod repo --help</span><br><span class="line">Usage:</span><br><span class="line"></span><br><span class="line">    $ pod repo [COMMAND]</span><br><span class="line"></span><br><span class="line">      Manage spec-repositories</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line"></span><br><span class="line">    + add          Add a spec repo</span><br><span class="line">    + add-cdn      Add a spec repo backed by a CDN</span><br><span class="line">    + lint         Validates all specs in a repo</span><br><span class="line">    &gt; list         List repos</span><br><span class="line">    + push         Push new specifications to a spec-repo</span><br><span class="line">    + remove       Remove a spec repo</span><br><span class="line">    + update       Update a spec repo</span><br></pre></td></tr></table></figure>
 <p><strong>补充</strong><br>1.私有库必须使用<code>$pod repo push REPO [NAME.podspec]</code>; 公开库发布使用<code>$pod trunk push [NAME.podspec]</code>发布到Trunk. 官方文档在<a href="https://guides.cocoapods.org/making/getting-setup-with-trunk.html" target="_blank" rel="noopener">Getting setup with Trunk</a>有说明.  </p>
 <a id="more"></a>
@@ -264,7 +265,7 @@
 <p><strong>补充</strong><br>1.本地pod引入方式<code>pod &#39;Alamofire&#39;, :path =&gt; &#39;~/Documents/Alamofire&#39;</code><br>2.Podfile的根目录中有一个隐式抽象目标，因此项目有多个target时可以省略外层抽象target</p>
 <h4 id="简述步骤"><a href="#简述步骤" class="headerlink" title="简述步骤"></a>简述步骤</h4><h5 id="创建私有repo"><a href="#创建私有repo" class="headerlink" title="创建私有repo"></a>创建私有repo</h5><p>1.创建私有repo管理仓库specs, 并添加到本地. 可以是<br><code>$pod repo add giteeSpec git@gitee.com:devhhb/specs.git</code><br>2.执行<code>$pod repo</code>查看, 并<code>cd</code>到目标私有repo文件夹, <code>$pod lint .</code>加以校验</p>
 <h5 id="制作私有Pod"><a href="#制作私有Pod" class="headerlink" title="制作私有Pod"></a>制作私有Pod</h5><p>制作私有Pod过程前面基本同<a href="https://hubin97.github.io/2021/04/12/制作公开Pods/">制作公开Pods</a>流程, 仅发布时需要注意.<br>必须使用<code>$pod repo push REPO [NAME.podspec]</code><br>必须使用<code>$pod repo push REPO [NAME.podspec]</code><br>必须使用<code>$pod repo push REPO [NAME.podspec]</code>  </p>
-<p><strong>补充</strong><br>1.同样的需要本地校验spec文件. <code>$pod lib lint</code>或者<code>pod spec lint [NAME.podspec]</code>.<br>2.注意执行发布指令<code>$ pod repo push REPO_NAME SPEC_NAME.podspec</code>时, 当前所处的终端路径和前面创建私有repo文件夹名称. 例<br><code>$pod repo push giteeSpec YTMqtt.podspec</code>,<br><code>$pod repo push artsy-specs ~/Desktop/Artsy+OSSUIFonts.podspec</code></p>
+<p><strong>补充</strong><br>1.同样的需要本地校验spec文件. <code>$pod lib lint</code>或者<code>pod spec lint [NAME.podspec]</code>.<br>2.注意执行发布指令<code>$ pod repo push REPO_NAME SPEC_NAME.podspec</code>时, 指定的podspec文件所处路径和前面创建私有repo文件夹名称. 如<br><code>$pod repo push artsy-specs ~/Desktop/Artsy+OSSUIFonts.podspec</code><br><code>$pod repo push smarthome-specs /Users/design/Documents/code/ytsmartkit/YTSmartKit.podspec</code></p>
 <h5 id="测试Pods"><a href="#测试Pods" class="headerlink" title="测试Pods"></a>测试Pods</h5><p>使用私有库时需要在Podfile文件中顶部先引入私有库源<code>source &#39;[Private Pods URL]&#39;</code></p>
 <p>例如.<br>要使用<code>pod &#39;Artsy+OSSUIFonts&#39;</code>那么提前引入<code>source &#39;https://github.com/artsy/Specs.git&#39;</code><br>要使用<code>pod &#39;IotLinkKit&#39;</code>那么提前引入<code>source &#39;https://github.com/aliyun/aliyun-specs.git&#39;</code><br>要使用<code>pod &#39;YTMqtt&#39;, &#39;0.0.1&#39;</code>那么提前引入<code>source &#39;git@gitee.com:devhhb/specs.git&#39;</code></p>
 <h4 id="相关引用"><a href="#相关引用" class="headerlink" title="相关引用"></a>相关引用</h4><p><a href="https://guides.cocoapods.org/using/the-podfile.html" target="_blank" rel="noopener">Podfile</a></p>
@@ -286,11 +287,6 @@
                 <p class="reward-p"><i class="icon icon-quo-left"></i>感谢老板打赏哦!<i
                     class="icon icon-quo-right"></i></p>
                 <div class="reward-box">
-                  
-                  <div class="reward-box-item">
-                    <img class="reward-img" src="/img/alipay.jpg">
-                    <span class="reward-type">支付宝</span>
-                  </div>
                   
                   
                   <div class="reward-box-item">
@@ -507,7 +503,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017-2021 <a href="https://hubin97.github.io/" target="_blank">醉疏狂</a>
+    		&copy; 2017-2023 <a href="https://hubin97.github.io/" target="_blank">醉疏狂</a>
     	</div>
       	<div class="footer-right">
 			
@@ -555,23 +551,6 @@
 
 
 <!--  -->
-
-<script>
-  /* 标签页标题切换 */
-  var originTitle = document.title;
-  var titleTime;
-  document.addEventListener("visibilitychange", function () {
-    if (document.hidden) {
-      document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
-      clearTimeout(titleTime);
-    } else {
-      document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
-      titleTime = setTimeout(function () {
-        document.title = originTitle;
-      }, 2000);
-    }
-  });
-</script>
 
 
     
@@ -634,11 +613,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">技术札记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -650,11 +637,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OC</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
+                <a href="javascript:void(0)" class="js-tag color3">OC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -662,7 +649,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color3">RN</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -831,6 +818,24 @@
               </a>
             </li>
           
+            <li class="search-li">
+              <a href="https://tech.meituan.com" target="_blank" class="search-title" title="一行代码，亿万生活。">
+                
+                  <i class="icon-link icon"></i>
+                
+                美团技术团队
+              </a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://tech.youzan.com" target="_blank" class="search-title" title="Thoughts,stories and ideas。">
+                
+                  <i class="icon-link icon"></i>
+                
+                有赞技术团队
+              </a>
+            </li>
+          
         </ul>
   		
     	</section>
@@ -840,7 +845,7 @@
     	<section class="tools-section tools-section-me" q-show="aboutme">
         
           
-  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>移动端, 前端开发、<br>开源爱好者<br><br>联系QQ:970216474<br><br>写博客的原因<br><br>主要是为了自己的总结回顾<br><br>如果能帮助到大家的话<br><br>那再好不过了!O(∩_∩)O哈哈~</div>
+  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>移动端, 前端开发、<br>开源爱好者<br><br>写博客的原因<br><br>主要是为了自己的总结回顾<br><br>如果能帮助到大家的话<br><br>那再好不过了!O(∩_∩)O哈哈~</div>
   	  	
     	</section>
     
