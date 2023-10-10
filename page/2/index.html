@@ -191,6 +191,293 @@
             
 
   
+    <article id="post-制作私有Pods" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/04/12/%E5%88%B6%E4%BD%9C%E7%A7%81%E6%9C%89Pods/">制作私有Pods</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/04/12/%E5%88%B6%E4%BD%9C%E7%A7%81%E6%9C%89Pods/" class="archive-article-date">
+        <time datetime="2021-04-12T08:01:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-12</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p><em>-Updatte 20211218: 1.对于多层级<code>subspec</code>可以参考<a href="https://github.com/Tencent/QMUI_iOS/blob/master/QMUIKit.podspec" target="_blank" rel="noopener">QMUIKit</a>; 2.若是测试验证时<code>pod install</code>拉下了整个项目仓库, 确认下Podfile文件source指定的路径是否是<code>spec库</code>的git地址</em> </p>
+<p><em>-Updatte 20210602: 更多CocoaPods实现细节, 原理, 源码实践参考<a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzA5MTM1NTc2Ng==&action=getalbum&album_id=1477103239887142918&scene=173&from_msgid=2458322728&from_itemidx=1&count=3&nolastread=1#wechat_redirect" target="_blank" rel="noopener">CocoaPods历险记</a></em> </p>
+<h4 id="准备资料"><a href="#准备资料" class="headerlink" title="准备资料"></a>准备资料</h4><h5 id="关于pod-repo"><a href="#关于pod-repo" class="headerlink" title="关于pod repo"></a>关于pod repo</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">➜  ytmqtt (master) ✔ pod repo --help</span><br><span class="line">Usage:</span><br><span class="line"></span><br><span class="line">    $ pod repo [COMMAND]</span><br><span class="line"></span><br><span class="line">      Manage spec-repositories</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line"></span><br><span class="line">    + add          Add a spec repo</span><br><span class="line">    + add-cdn      Add a spec repo backed by a CDN</span><br><span class="line">    + lint         Validates all specs in a repo</span><br><span class="line">    &gt; list         List repos</span><br><span class="line">    + push         Push new specifications to a spec-repo</span><br><span class="line">    + remove       Remove a spec repo</span><br><span class="line">    + update       Update a spec repo</span><br></pre></td></tr></table></figure>
+<p><strong>补充</strong><br>1.私有库必须使用<code>$pod repo push REPO [NAME.podspec]</code>; 公开库发布使用<code>$pod trunk push [NAME.podspec]</code>发布到Trunk. 官方文档在<a href="https://guides.cocoapods.org/making/getting-setup-with-trunk.html" target="_blank" rel="noopener">Getting setup with Trunk</a>有说明.  </p>
+    
+    <a class="article-more-a" href="/2021/04/12/%E5%88%B6%E4%BD%9C%E7%A7%81%E6%9C%89Pods/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Pod</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">技术栈</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-制作公开Pods" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/04/12/%E5%88%B6%E4%BD%9C%E5%85%AC%E5%BC%80Pods/">制作公开Pods</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/04/12/%E5%88%B6%E4%BD%9C%E5%85%AC%E5%BC%80Pods/" class="archive-article-date">
+        <time datetime="2021-04-12T08:01:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-12</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="准备资料"><a href="#准备资料" class="headerlink" title="准备资料"></a>准备资料</h4><h5 id="关于pod-trunk"><a href="#关于pod-trunk" class="headerlink" title="关于pod trunk"></a>关于pod trunk</h5><!--![](https://tva1.sinaimg.cn/large/008eGmZEgy1gph0yzvih0j30qk0g8mz9.jpg)
+-->
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">➜  devhhb (master) ✗ pod trunk --help</span><br><span class="line">Usage:</span><br><span class="line"></span><br><span class="line">    $ pod trunk COMMAND</span><br><span class="line"></span><br><span class="line">      Interact with the CocoaPods API (e.g. publishing new specs)</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line"></span><br><span class="line">    + add-owner      Add an owner to a pod</span><br><span class="line">    + delete         Deletes a version of a pod.</span><br><span class="line">    + deprecate      Deprecates a pod.</span><br><span class="line">    + info           Returns information about a Pod.</span><br><span class="line">    + me             Display information about your sessions</span><br><span class="line">    + push           Publish a podspec</span><br><span class="line">    + register       Manage sessions</span><br><span class="line">    + remove-owner   Remove an owner from a pod</span><br></pre></td></tr></table></figure>
+
+<p><strong>补充</strong>:<br>1.查看个人账号信息 <code>$pod trunk me</code><br>2.注册账号 <code>$pod trunk register xxx@qq.com [username]</code><br>3.查看库信息 <code>$pod trunk info Moya</code></p>
+    
+    <a class="article-more-a" href="/2021/04/12/%E5%88%B6%E4%BD%9C%E5%85%AC%E5%BC%80Pods/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Pod</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">技术栈</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Swift常用资料整理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/12/25/Swift%E5%B8%B8%E7%94%A8%E8%B5%84%E6%96%99%E6%95%B4%E7%90%86/">Swift常用资料整理</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/12/25/Swift%E5%B8%B8%E7%94%A8%E8%B5%84%E6%96%99%E6%95%B4%E7%90%86/" class="archive-article-date">
+        <time datetime="2020-12-25T08:35:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-25</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p><em>Update date: 2022-4-13</em></p>
+<p>其它</p>
+<p><a href="https://github.com/Tim9Liu9/TimLiu-iOS/blob/master/README.md" target="_blank" rel="noopener">索引菜单</a></p>
+<p><a href="https://github.com/kechengsou/awesome-ios" target="_blank" rel="noopener">iOS 开发者资源大全</a></p>
+<p><a href="https://juejin.cn/post/6937570017202405406" target="_blank" rel="noopener">iOS-GitHub上的优秀轮子</a></p>
+    
+    <a class="article-more-a" href="/2020/12/25/Swift%E5%B8%B8%E7%94%A8%E8%B5%84%E6%96%99%E6%95%B4%E7%90%86/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-iOS自动化构建三" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -242,11 +529,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -339,11 +626,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -432,11 +719,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -522,15 +809,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -715,15 +1002,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		
 		</ul>
@@ -813,306 +1100,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/05/20/%E7%AE%97%E6%B3%95/">算法</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/05/20/%E7%AE%97%E6%B3%95/" class="archive-article-date">
-        <time datetime="2020-05-20T10:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h4 id="字符串反转"><a href="#字符串反转" class="headerlink" title="字符串反转"></a>字符串反转</h4><p>给定字符串 “hello, world”, 实现将其反转</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">void char_reverse(char* cha)</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F; 指向第一个字符</span><br><span class="line">    char* begin &#x3D; cha;</span><br><span class="line">    &#x2F;&#x2F; 指向最后一个字符</span><br><span class="line">    char* end &#x3D; cha + strlen(cha) - 1;</span><br><span class="line">    </span><br><span class="line">    while (begin &lt; end) &#123;</span><br><span class="line">        &#x2F;&#x2F; 交换前后两个字符,同时移动指针</span><br><span class="line">        char temp &#x3D; *begin;</span><br><span class="line">        *(begin++) &#x3D; *end;</span><br><span class="line">        *(end--) &#x3D; temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/05/20/%E7%AE%97%E6%B3%95/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-架构-框架" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/05/20/%E6%9E%B6%E6%9E%84-%E6%A1%86%E6%9E%B6/">架构/框架</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/05/20/%E6%9E%B6%E6%9E%84-%E6%A1%86%E6%9E%B6/" class="archive-article-date">
-        <time datetime="2020-05-20T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p><code>模块化</code>, <code>分层</code>, <code>解耦</code>, <code>降低代码重合度</code></p>
-<h4 id="1-图片缓存"><a href="#1-图片缓存" class="headerlink" title="1. 图片缓存"></a>1. 图片缓存</h4><!--![](https://tva1.sinaimg.cn/large/e6c9d24egy1h13ksttfyij20qy0agaas.jpg)
--->
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Manager</span><br><span class="line">内存 | 磁盘 | 网络</span><br><span class="line">Code Manager</span><br><span class="line">图片解码 | 图片压缩&#x2F;解压缩</span><br></pre></td></tr></table></figure>
-
-<p><em>图片是通过什么方式读写的, 过程是怎样的?</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">以图片URL的单向Hash值作为Key读取</span><br><span class="line">读取过程:  内存 -&gt; 磁盘 -&gt; 网络下载</span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/05/20/%E6%9E%B6%E6%9E%84-%E6%A1%86%E6%9E%B6/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/05/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/05/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-        <time datetime="2020-05-20T08:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h4 id="1-六大设计原则"><a href="#1-六大设计原则" class="headerlink" title="1. 六大设计原则"></a>1. 六大设计原则</h4><p><em>单一职责原则</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个类只负责一件事</span><br></pre></td></tr></table></figure>
-<p><em>开闭原则</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对修改关闭, 对扩展开放</span><br></pre></td></tr></table></figure>
-<p><em>接口隔离原则</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 如 Tableview的 delegate处理事件回调&#x2F; dataSource处理数据源</span><br><span class="line">使用多个专门的协议, 而不是一个庞大臃肿的协议.</span><br><span class="line">协议中的方法尽可以的少</span><br></pre></td></tr></table></figure>
-<p><em>依赖倒置原则</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">抽象不应该依赖于具体实现, 具体实现可以依赖于抽象</span><br></pre></td></tr></table></figure>
-
-<p><em>里氏替换原则</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 如KVO</span><br><span class="line">父类可以被子类无缝替换, 且原因功能不受任何影响</span><br></pre></td></tr></table></figure>
-<p><em>迪米特原则</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">一个对象应当对其他对象有尽可能少的了解</span><br><span class="line">高内聚, 低耦合</span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/05/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术札记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -1277,7 +1269,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术札记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1285,11 +1289,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">技术札记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1301,14 +1301,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -1317,15 +1309,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">标记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">flutter</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">标记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1338,6 +1334,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">常用工具类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">物联网</a>
               </li>
              
               <li class="article-tag-list-item">
