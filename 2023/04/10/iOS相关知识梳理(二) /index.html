@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hubin97.github.io">
-  <title>iOS相关知识梳理 | 个人博客</title>
+  <title>iOS相关知识梳理(二) | 个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="基础篇1. UIView 不能接收触摸事件的三种情况:1231.不接受用户交互: userInteractionEnabled &#x3D; NO;2.隐藏: hidden &#x3D; YES;3.透明: alpha &#x3D; 0.0~0.01  2. 事件传递12345678910111213141516&#x2F;&#x2F; 核心方法hitTest:withEvent:  point">
+  <meta name="description" content="基础篇SVN和Git各适用于什么场景?12svn适用于 低频次, 少数人, 安全性要求更高的场景git适用于 多人协助, 跨地域性, 离线办公  instancetype和id区别123456id可以作为方法的返回以及参数类型 也可以用来定义变量instancetype 只能作为函数或者方法的返回值instancetype对比id的好处就是: 能精确的限制返回值的具体类型&#x2F;&#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS相关知识梳理">
-<meta property="og:url" content="https://hubin97.github.io/2023/04/10/iOS%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/index.html">
+<meta property="og:title" content="iOS相关知识梳理(二)">
+<meta property="og:url" content="https://hubin97.github.io/2023/04/10/iOS%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86(%E4%BA%8C)%20/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="基础篇1. UIView 不能接收触摸事件的三种情况:1231.不接受用户交互: userInteractionEnabled &#x3D; NO;2.隐藏: hidden &#x3D; YES;3.透明: alpha &#x3D; 0.0~0.01  2. 事件传递12345678910111213141516&#x2F;&#x2F; 核心方法hitTest:withEvent:  point">
+<meta property="og:description" content="基础篇SVN和Git各适用于什么场景?12svn适用于 低频次, 少数人, 安全性要求更高的场景git适用于 多人协助, 跨地域性, 离线办公  instancetype和id区别123456id可以作为方法的返回以及参数类型 也可以用来定义变量instancetype 只能作为函数或者方法的返回值instancetype对比id的好处就是: 能精确的限制返回值的具体类型&#x2F;&#x2F;">
 <meta property="article:published_time" content="2023-04-10T02:03:01.000Z">
-<meta property="article:modified_time" content="2023-10-10T02:33:04.189Z">
+<meta property="article:modified_time" content="2023-10-12T08:26:58.177Z">
 <meta property="article:author" content="醉疏狂">
 <meta property="article:tag" content="技术札记">
 <meta property="article:tag" content="iOS">
@@ -191,14 +191,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-iOS相关知识梳理" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-iOS相关知识梳理(二) " class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      iOS相关知识梳理
+      iOS相关知识梳理(二)
     </h1>
   
 
@@ -210,7 +210,7 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2023/04/10/iOS%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/" class="archive-article-date">
+<a href="/2023/04/10/iOS%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86(%E4%BA%8C)%20/" class="archive-article-date">
         <time datetime="2023-04-10T02:03:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-10</time>
 </a>
 
@@ -224,7 +224,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">3.5k字</span>
+      <span class="post-count">1.2k字</span>
     </span>
   </span>
 
@@ -233,7 +233,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">13分</span>
+      <span class="post-count">4分</span>
     </span>
   </span>
 </div>
@@ -244,37 +244,19 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <!--
-*Update: 2023-10-9*
+    <h3 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h3><h4 id="SVN和Git各适用于什么场景"><a href="#SVN和Git各适用于什么场景" class="headerlink" title="SVN和Git各适用于什么场景?"></a>SVN和Git各适用于什么场景?</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">svn适用于 低频次, 少数人, 安全性要求更高的场景</span><br><span class="line">git适用于 多人协助, 跨地域性, 离线办公</span><br></pre></td></tr></table></figure>
+
+<h4 id="instancetype和id区别"><a href="#instancetype和id区别" class="headerlink" title="instancetype和id区别"></a>instancetype和id区别</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">id可以作为方法的返回以及参数类型 也可以用来定义变量</span><br><span class="line">instancetype 只能作为函数或者方法的返回值</span><br><span class="line">instancetype对比id的好处就是: 能精确的限制返回值的具体类型</span><br><span class="line">&#x2F;&#x2F; 解释如下:</span><br><span class="line">id在编译的时候不能判断对象的真实类型</span><br><span class="line">instancetype在编译的时候可以判断对象的真实类型</span><br></pre></td></tr></table></figure>
+
+<h4 id="id类型-nil-Nil-NULL和NSNULL的区别"><a href="#id类型-nil-Nil-NULL和NSNULL的区别" class="headerlink" title="id类型, nil , Nil ,NULL和NSNULL的区别?"></a>id类型, nil , Nil ,NULL和NSNULL的区别?</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">id类型: 是一个独特的数据类型，可以转换为任何数据类型，id类型的变量可以存放任何数据类型的对象，</span><br><span class="line">在内部处理上，这种类型被定义为指向对象的指针，实际上是一个指向这种对象的实例变量的指针; </span><br><span class="line">id 声明的对象具有运行时特性，既可以指向任意类型的对象</span><br><span class="line">nil 是一个实例对象值; 如果我们要把一个对象设置为空的时候,就用nil</span><br><span class="line">Nil 是一个类对象的值, 如果我们要把一个class的对象设置为空的时候,就用Nil</span><br><span class="line">NULL 指向基本数据类型的空指针(C语言的变量的指针为空)</span><br><span class="line">NSNull 是一个对象,它用在不能使用nil的场合</span><br></pre></td></tr></table></figure>
+
+<h4 id="AutoReleasePool什么时候释放池里面的对象"><a href="#AutoReleasePool什么时候释放池里面的对象" class="headerlink" title="AutoReleasePool什么时候释放池里面的对象?"></a>AutoReleasePool什么时候释放池里面的对象?</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AutoReleasePool实际上是有AutoReleasePage来实现的，而AutoReleasePage有点类似于堆栈，有一个push和pop操作。</span><br><span class="line">在主线程的runloop监听了几个事件，分别是即将进入Loop，准备进入休眠和即将退出Loop，</span><br><span class="line">在即将进入Loop时进行push一个哨兵对象（或者叫边界对象），在即将休眠时是pop哨兵对象操作，然后再次push操作，在即将退出Loop时pop操作。</span><br><span class="line">在push哨兵对象之后，程序运行会push很多autorelease对象到AutoReleasePage中，pop操作就把这些对象释放，一直找到哨兵对象也把它pop掉为止。</span><br><span class="line">所以每次runLoop进入休眠前AutoReleasePool就释放一次。AutoReleasePool堆栈式结构让它可以嵌套，互不影响</span><br></pre></td></tr></table></figure>
+
+<h4 id="JSCore的几个特性"><a href="#JSCore的几个特性" class="headerlink" title="JSCore的几个特性"></a>JSCore的几个特性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 1. 单线程机制</span><br><span class="line">JS代码本身并不存在多线程处理任务的能力. 借助 强大的事件驱动机制. 可以实现多线程处理</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 2. 事件驱动机制</span><br><span class="line">JS线程和工作线程(WebWorker)，以及浏览器事件之间的通信机制叫做事件循环（EventLoop），类似于iOS的runloop。</span><br><span class="line">它有两个概念，一个是Call Stack，一个是Task Queue。当工作线程完成异步任务之后，会把消息推到Task Queue，消息就是注册时的回调函数。</span><br><span class="line">当Call Stack为空的时候，主线程会从Task Queue里取一条消息放入Call Stack来执行，JS主线程会一直重复这个动作直到消息队列为空。</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 3. JS的GC机制</span><br><span class="line">JS同样也不需要我们去手动管理内存。JS的内存管理使用的是GC机制（Tracing Garbage Collection）。</span><br><span class="line">不同于OC的引用计数，Tracing Garbage Collection是由GCRoot（Context）开始维护的一条引用链，</span><br><span class="line">一旦引用链无法触达某对象节点，这个对象就会被回收掉。</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 4. 4个大类JSVM，JSContext，JSValue，JSExport。</span><br><span class="line">JSVM: 一个JSVirtualMachine（以下简称JSVM）实例代表了一个自包含的JS运行环境，</span><br><span class="line">或者是一系列JS运行所需的资源。该类有两个主要的使用用途：</span><br><span class="line">一是支持并发的JS调用，二是管理JS和Native之间桥对象的内存。</span><br><span class="line"></span><br><span class="line">JSContext: 一个JSContext表示了一次JS的执行环境。我们可以通过创建一个JSContext去调用JS脚本，</span><br><span class="line">访问一些JS定义的值和函数，同时也提供了让JS访问Native对象，方法的接口。</span><br><span class="line"></span><br><span class="line">JSValue:JSValue实例是一个指向JS值的引用指针。我们可以使用JSValue类，在OC和JS的基础数据类型之间相互转换。</span><br><span class="line">同时我们也可以使用这个类，去创建包装了Native自定义类的JS对象，或者是那些由Native方法或者Block提供实现JS方法的JS对象。</span><br><span class="line"></span><br><span class="line">JSExport: 实现JSExport协议可以开放OC类和它们的实例方法，类方法，以及属性给JS调用。</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;总结&lt;&lt;&lt;: JSCore给iOS App提供了JS可以解释执行的运行环境与资源。</span><br><span class="line">对于我们实际开发而言，最主要的就是JSContext和JSValue这两个类。</span><br><span class="line">JSContext提供互相调用的接口，JSValue为这个互相调用提供数据类型的桥接转换。</span><br><span class="line">让JS可以执行Native方法，并让Native回调JS，反之亦然。</span><br></pre></td></tr></table></figure>
+<!--![js事件驱动机制](https://awps-assets.meituan.net/mit-x/blog-images-bundle-2018a/f905fe0b.png)
+![](https://awps-assets.meituan.net/mit-x/blog-images-bundle-2018a/3ba5f2e8.png)
 -->
-<h3 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h3><h4 id="1-UIView-不能接收触摸事件的三种情况"><a href="#1-UIView-不能接收触摸事件的三种情况" class="headerlink" title="1. UIView 不能接收触摸事件的三种情况:"></a>1. UIView 不能接收触摸事件的三种情况:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.不接受用户交互: userInteractionEnabled &#x3D; NO;</span><br><span class="line">2.隐藏: hidden &#x3D; YES;</span><br><span class="line">3.透明: alpha &#x3D; 0.0~0.01</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-事件传递"><a href="#2-事件传递" class="headerlink" title="2. 事件传递"></a>2. 事件传递</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 核心方法</span><br><span class="line">hitTest:withEvent:  </span><br><span class="line">pointInside:withEvent:</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 传递流程. (由上而下) (找到最终能响应的子视图)</span><br><span class="line"></span><br><span class="line">1. 先判断视图能否交互; &#96;v.hidden &amp;&amp; v.userInteractionEnabled &amp;&amp; v.alpha &gt; 0.01&#96;</span><br><span class="line">2. 判断是否事件位置是否在视图内, 调用&#96;pointInside:withEvent:&#96;</span><br><span class="line">3. 倒序 遍历(后添加的视图一般显示在视图最前面)&#96;v.subviews&#96;, 并调用&#96;hitTest:withEvent:&#96;寻找能响应的视图</span><br><span class="line">4. 返回最终能响应的子视图</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 响应流程. (由下而上)</span><br><span class="line">1. 事件的响应由传递链最终找到的子视图先判定是否响应, </span><br><span class="line">2. 如不能响应, 则会由子视图的父视图再去判断能否响应, </span><br><span class="line">3. 依照这个规律, 一直找到最上层的&#96;UIApplication&#96;, </span><br><span class="line">4. 如果仍不响应此处事件, 则这个事件将会被忽略掉</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-
-
-<h4 id="3-setNeedsDisplay-setNeedsLayout-layoutSubviews"><a href="#3-setNeedsDisplay-setNeedsLayout-layoutSubviews" class="headerlink" title="3. setNeedsDisplay, setNeedsLayout, layoutSubviews"></a>3. setNeedsDisplay, setNeedsLayout, layoutSubviews</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">UIView 的 setNeedsDisplay(需要重新显示,绘制)和 setNeedsLayout(需要重新布局)方法。</span><br><span class="line">首先两个方法都是 异步执行 的。而setNeedsDisplay 会调用自动调用&#96;drawRect &#96; 方法，这样可以拿到 UIGraphicsGetCurrentContext，就可以画画了。</span><br><span class="line">而 setNeedsLayout 会默认调用&#96;layoutSubViews&#96;，就可以处理子视图中的一些数据。 </span><br><span class="line">综上所述:setNeedsDisplay 方便绘图，而 layoutSubViews 方便出来数据。setNeedDisplay 告知视图它发生了改变，需要重新绘制自身，就相当于刷新界面</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; layoutSubviews 在以下情况下会被调用(视图位置变化是触发): </span><br><span class="line">1、init 初始化不会触发 layoutSubviews。 </span><br><span class="line">2、addSubview 会触发 layoutSubviews。 </span><br><span class="line">3、设置 view 的 Frame 会触发 layoutSubviews，当然前提是 frame 的值设置前后发生了变化。 </span><br><span class="line">4、滚动一个 UIScrollView 会触发 layoutSubviews。 </span><br><span class="line">5、旋转 Screen 会触发父 UIView 上的 layoutSubviews 事件。</span><br><span class="line">6、改变一个 UIView 大小的时候也会触发父 UIView 上的 layoutSubviews 事件。 </span><br><span class="line">7、直接调用 setLayoutSubviews。</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-区分UDID-amp-UUID-amp-IDFV"><a href="#4-区分UDID-amp-UUID-amp-IDFV" class="headerlink" title="4. 区分UDID&amp;UUID&amp;IDFV"></a>4. 区分UDID&amp;UUID&amp;IDFV</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">UDID 是 Unique Device Identifier 的缩写,中文意思是设备唯一标识. </span><br><span class="line">UUID 是 Universally Unique Identifier 的缩写,中文意思是通用唯一识别码. </span><br><span class="line"></span><br><span class="line">在很多需要限制一台设备一个账号的应用中经常会用到,在 Symbian 时代,我们是使用 IMEI 作为设备的唯一标识的,可惜的是 Apple 官方不允许开发者获得设备的 IMEI. </span><br><span class="line"></span><br><span class="line">但是我们需要注意的一点是,对于已越狱了的设备,UDID 并不是唯一的.使用 Cydia 插件 UDIDFaker,可以为每一个应用分配不同的 UDID. </span><br><span class="line">所以 UDID 作为标识唯一设备的用途已经不大了. </span><br><span class="line">UDID 并不是一定不会变，如:重新开关机、手机越狱都会变。决绝办法是将 UDID 保存在钥匙串中，用时去钥匙串中取。</span><br><span class="line">UUID 倒是永远不变的，使用 xcode 可以获取，但是没办法通过代码获取。</span><br></pre></td></tr></table></figure>
-
-<p><em>IDFV: <a href="https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor" target="_blank" rel="noopener">Identifier For Vendor [iOS 6.0+] 官方文档</a></em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">IDFV :Identifier For Vendor（应用开发商标识符）</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 获取方式</span><br><span class="line">public let kIDFVString &#x3D; UIDevice.current.identifierForVendor?.uuidString</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 注意: </span><br><span class="line">如果该值为 nil，则等待并稍后再次获取该值。例如，这发生在设备重新启动之后但用户解锁设备之前。</span><br><span class="line">当应用程序（或来自同一供应商的另一个应用程序）安装在iOS设备上时，此属性中的值保持不变。</span><br><span class="line">当用户从设备中删除该供应商的所有应用程序并随后重新安装其中一个或多个应用程序时，该值会发生变化。</span><br><span class="line">当使用 Xcode 安装测试版本或使用 ad-hoc 分发在设备上安装应用程序时，该值也可能发生变化。</span><br><span class="line">因此，如果您的应用程序将此属性的值存储在任何地方，您应该优雅地处理标识符更改的情况。</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-const-static和-extern修饰"><a href="#5-const-static和-extern修饰" class="headerlink" title="5. const, static和 extern修饰"></a>5. const, static和 extern修饰</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">(1) const修饰符定义的变量是不可变的</span><br><span class="line">1&gt; 首先我们需要确定的是以下的三种写法中前两种是一样的（可以修改kUserName的内容，也就是说const放在类型前还是类型后是一样的效果,</span><br><span class="line">第三种的效果不一样（无法修改kUserName的内容）。 </span><br><span class="line">static NSString const * kUserName &#x3D; @&quot;StrongX&quot;;</span><br><span class="line">static const NSString * kUserName &#x3D; @&quot;StrongX&quot;;</span><br><span class="line">static NSString  * const kUserName &#x3D; @&quot;StrongX&quot;;</span><br><span class="line">2&gt; 需要注意的是const 修饰的是他右边的部分，也就是说：</span><br><span class="line">static NSString const * kUserName &#x3D; static NSString const (* kUserName )</span><br><span class="line">static NSString  * const kUserName &#x3D; static NSString  * const (kUserName)</span><br><span class="line">3&gt; 当const修饰的是(userName)的时候，不可变的是userName。当const修饰的是( * )的时候，</span><br><span class="line">“*”在C语言中表示指针指向符，也就是说这个时候userName指向的内存块地址不可变，而内存保存的内容是可变的</span><br><span class="line"></span><br><span class="line">所以常见的一些用法如下(YYKit)</span><br><span class="line">&#x2F;&#x2F; Notifications, see UITextView&#39;s documentation for more information.</span><br><span class="line">UIKIT_EXTERN NSString *const YYTextViewTextDidBeginEditingNotification;</span><br><span class="line">UIKIT_EXTERN NSString *const YYTextViewTextDidChangeNotification;</span><br><span class="line">UIKIT_EXTERN NSString *const YYTextViewTextDidEndEditingNotification;</span><br><span class="line"></span><br><span class="line">(2)static标记的变量会存储到全局变量区，生命周期和程序相同。</span><br><span class="line">1&gt;当全局变量没有使用static修饰时其存储在静态存储区，直到程序结束才销毁。也就是其作用域是整个源程序。我们可以使用extern关键字来引用这个全局变量。</span><br><span class="line">2&gt;当全局变量使用static修饰时，其生命周期没有变，依旧是在程序结束时才销毁。但是其作用域变了。现在只限于申明它的这个文件才可见。使用extern关键字无法引用这个全局变量。</span><br><span class="line">3&gt;全局变量本来是在整个源程序的所有文件都可见，static修饰后，改为只在申明自己的文件可见，即修改了作用域。即如果在.m文件中用static定义了常量，那么就不能在.h文件中使用extern进行外部申明。</span><br><span class="line"></span><br><span class="line">(3)extern主要是用来引用全局变量</span><br><span class="line">用“extern”定义的常量必须也只能初始化一次</span><br><span class="line">&#x2F;&#x2F;在&quot;constants.h&quot;文件中，声明常量：</span><br><span class="line">extern NSString *const XUserName;</span><br><span class="line">&#x2F;&#x2F;然后在“constants.m”中定义他：</span><br><span class="line">NSString *const XUserName &#x3D; @&quot;StrongX&quot;;</span><br></pre></td></tr></table></figure>
-<p>参考: <a href="https://www.cnblogs.com/mukekeheart/p/11395063.html" target="_blank" rel="noopener">宏(define)与常量(const)的正确使用</a></p>
-<h4 id="6-解析XML文件"><a href="#6-解析XML文件" class="headerlink" title="6. 解析XML文件"></a>6. 解析XML文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">1. 解析XML文件有哪几种方式?</span><br><span class="line">以 SAX 方式解析 XML 文件; </span><br><span class="line">以 DOM 方式解析 XML 文件; 节点解析 借助第三方库 GDataXMLNode ;  </span><br><span class="line">以 XMLReader解析: 转成字典 NSDictionary *result &#x3D; [XMLReader dictionaryForXMLData:xmlData error:&amp;error];</span><br><span class="line"></span><br><span class="line">2. XML解析方式  </span><br><span class="line">SAX 方式解析特点</span><br><span class="line">-只读</span><br><span class="line">-速度快</span><br><span class="line">-从上向下 </span><br><span class="line">-通过5个代理方法解析，每个代理方中都需要写一些代码! </span><br><span class="line">-如果要实现SAX解析，思路最重要! </span><br><span class="line">-适合比价大的XML的解析 </span><br><span class="line"></span><br><span class="line">DOM解析的特点 </span><br><span class="line">-一次性将XML全部加载到内存，以树形结构 </span><br><span class="line">-好处，可以动态的修改，添加，删除节点 </span><br><span class="line">-内存消耗非常大!尤其横向节点越深! -iOS默认不支持 DOM 解析! -在 MAC 端，或者服务器端开发，都基本上使用 DOM 解析 -在 iOS 端如果需要使用 DOM 方式解析，可以使用第三方框GData&#x2F;KissXML(XMPP) </span><br><span class="line">-适合比较小的 XML 文件 -在 MAC 中，苹果提供了一个 NSXML 的类，能够做 DOM 解析，在 iOS 不能使用!</span><br></pre></td></tr></table></figure>
-<p>参考: <a href="https://www.jianshu.com/p/0e158f522a01" target="_blank" rel="noopener">iOS下XML文件的三种解析方式</a></p>
-<h4 id="7-简述iOS内存分区情况"><a href="#7-简述iOS内存分区情况" class="headerlink" title="7. 简述iOS内存分区情况"></a>7. 简述iOS内存分区情况</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">(1)栈区:由编译器自动分配释放,存放函数的参数值,局部变量的值等.其操作方式类似于数据结构中的栈. </span><br><span class="line">(2)堆区:通过malloc等函数或new等操作符动态申请得到，需程序员手动申请和释放; 若程序员不释放,程序结束时由系统回收 </span><br><span class="line">(3)全局区(静态区) </span><br><span class="line">全局变量和静态变量的存储是放在一块的,初始化的全局变量和静态变量在一块区域,未初始化 的全局变量和未初始化的静态变量相邻的另一块区域. </span><br><span class="line">全局区分为未初始化全局区: .bss段 和初始化全局区: data段. </span><br><span class="line">(4)常量区:常量字符串就是放在常量区 (5)代码区 存放函数体的二进制代码 注释:创建字符串的内存空间堆常量区 </span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; OC堆和栈的区别? [内存分区]</span><br><span class="line">Objective-C的对象在内存中是以堆的方式分配空间的,并且堆内存是由你释放的，就是release</span><br><span class="line">OC对象存放于堆里面(堆内存要程序员手动回收)</span><br><span class="line">非OC对象一般放在栈里面(栈内存会被系统自动回收)</span><br><span class="line">堆里面的内存是动态分配的，所以也就需要程序员手动的去添加内存、回收内存</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 总结区别</span><br><span class="line">(1) 按管理方式分</span><br><span class="line">对于栈来讲，是由系统编译器自动管理，不需要程序员手动管理</span><br><span class="line">对于堆来讲，释放工作由程序员手动管理，不及时回收容易产生内存泄露</span><br><span class="line"></span><br><span class="line">(2) 按分配方式分</span><br><span class="line">堆是动态分配和回收内存的，没有静态分配的堆</span><br><span class="line">栈有两种分配方式：静态分配和动态分配</span><br><span class="line">静态分配是系统编译器完成的，比如局部变量的分配</span><br><span class="line">动态分配是有alloc函数进行分配的，但是栈的动态分配和堆是不同的，它的动态分配也由系统编译器进行释放，不需要程序员手动管理</span><br><span class="line"></span><br><span class="line">(3) 碎片问题:</span><br><span class="line">对于堆来讲，频繁的new&#x2F;delete势必会造成内存空间的不连续，从而造成大量的碎片，使程序效率降低。</span><br><span class="line">对于栈来讲，则不会存在这个问题，因为栈是先进后出的队列，他们是 如此的一一对应，以至于永远都不可能有一个内存块从栈中间弹出 </span><br><span class="line"></span><br><span class="line">(4) 分配效率:</span><br><span class="line">栈是机器系统提供的数据结构，计算机会在底层对栈提供支持分配专门的寄存器存放栈的地址，压栈出栈都有专门的指令执行，这就决定了栈的效率比较高。</span><br><span class="line">堆则是C&#x2F;C++函数 库提供的，它的机制是很复杂的。</span><br></pre></td></tr></table></figure>
-
-<h4 id="8-死锁的4个必要条件"><a href="#8-死锁的4个必要条件" class="headerlink" title="8. 死锁的4个必要条件"></a>8. 死锁的4个必要条件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 互斥条件：一个资源每次只能被一个进程使用。</span><br><span class="line">2. 请求与保持条件：一个进程因请求资源而阻塞时，对已获得的资源保持不放。</span><br><span class="line">3. 不剥夺条件:进程已获得的资源，在末使用完之前，不能强行剥夺。</span><br><span class="line">4. 循环等待条件:若干进程之间形成一种头尾相接的循环等待资源关系。</span><br><span class="line"></span><br><span class="line">这四个条件是死锁的必要条件，只要系统发生死锁，这些条件必然成立，而只要上述条件之一不满足，就不会发生死锁。</span><br></pre></td></tr></table></figure>
-
-<h4 id="9-GCD零碎知识点"><a href="#9-GCD零碎知识点" class="headerlink" title="9. GCD零碎知识点"></a>9. GCD零碎知识点</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 关于dispatch_barrier_async</span><br><span class="line">使用 dispatch_barrier_async，该函数只能搭配自定义并行队列 dispatch_queue_t 使用。</span><br><span class="line">不能使用： dispatch_get_global_queue ，否则 dispatch_barrier_async 的作用会和</span><br><span class="line">dispatch_async 的作用一模一样</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 关于dispatch_after</span><br><span class="line">dispatch_after 有个致命的弱点：dispatch_after 一旦执行后，就不能撤销了。</span><br><span class="line">而performSelector 可以使用cancelPreviousPerformRequestsWithTarget 方法撤销，NSTimer也可以调用 invalidate 进行撤销。</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 关于 dispatch_source_set_timer</span><br><span class="line">&#x2F;&#x2F; 创建一个 Dispatch Source 监视定时器事件</span><br><span class="line">dispatch_source_t timer &#x3D; dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue());</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 设置定时器事件的触发时间和间隔为1s，马上触发无须延迟</span><br><span class="line">dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC, 0);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 设置定时器事件的回调函数</span><br><span class="line">dispatch_source_set_event_handler(timer, ^&#123;</span><br><span class="line">	&#x2F;&#x2F; do something</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 启动定时器事件的监视</span><br><span class="line">dispatch_resume(timer);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 暂停定时器</span><br><span class="line">dispatch_suspend(timer);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 取消定时器</span><br><span class="line">dispatch_source_cancel(timer);</span><br></pre></td></tr></table></figure>
-
-<h4 id="10-性能优化点"><a href="#10-性能优化点" class="headerlink" title="10.性能优化点"></a>10.性能优化点</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; tableview相关优化点</span><br><span class="line">1. 正确使用reuseIdentifier来重用Cells</span><br><span class="line">2. 行高一定要缓存！！！ (长列表, 动态高度时)</span><br><span class="line">3. 所有的子视图都应该添加到 contentView 上</span><br><span class="line">4. 不要动态创建子视图 (addSubview 会触发 layoutSubviews)</span><br><span class="line">5. 子视图的角、阴影、遮罩等绘制, 尽可能用小图片替代 (离屏渲染) </span><br><span class="line">6. cell 光栅化, (1)开启光栅化: self.layer.shouldRasterize &#x3D; YES; (2)指定分辨率: self.layer.rasterizationScale &#x3D; [UIScreen mainScreen].scale;</span><br><span class="line">7. 异步绘制; 如果 cell 比较复杂，可以设置cell图层的属性 self.layer.drawsAsynchronously &#x3D; YES; </span><br><span class="line">8. tableview加载图片的时候使用lazy(懒加载)模式和异步加载模式 </span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 其他优化点</span><br><span class="line">1. 避免使用过大的xib. 和分镜的区别 一次性加载 </span><br><span class="line">2. 不要阻塞主线程. 除渲染, 触摸响应等, 尽量异步处理 如存储,网络 异步线程通知 </span><br><span class="line">3. 缓存. 网络响应,图片,计算结果(行高) 网络响应NSUrlconnection默认缓存request,设置 策略 非网络请求 使用nscache nsdictionary </span><br><span class="line">4. 避免反复处理数据. 在服务器端和客户端使用相同的数据结构 </span><br><span class="line">5. 选择正确的数据格式. json 速度快 解析方便 xml sax方式逐行解析 解析大文件不占 用内存和损失性能 </span><br><span class="line">6. 选择正确的数据存储选项 plist nscoding NSUserDefaults sqlite coredata </span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 注意: 开启shouldRasterize意味着什么?</span><br><span class="line">&#x2F;&#x2F; 虽然复杂图层可以选择性的开启光栅化, 但是如果一个经常会变化的layer, 那么开启shouldRasterize是没有意义的，因为缓存的总是会被重新创建，而光栅化还要消耗性能，没准适得其反.</span><br><span class="line">所以决定是否要开启光栅化, 应该以实际测试为准. 而不是仅凭猜测.</span><br><span class="line">1. 减少视图层级</span><br><span class="line">2. 缓存得到图像，提升复杂层级视图性能</span><br><span class="line">3. 提升动画性能</span><br><span class="line">4. 改善离屏渲染的性能</span><br></pre></td></tr></table></figure>
-<p>参考: [iOS 保持界面流畅的技巧] (<a href="https://blog.ibireme.com/2015/11/12/smooth_user_interfaces_for_ios/" target="_blank" rel="noopener">https://blog.ibireme.com/2015/11/12/smooth_user_interfaces_for_ios/</a>)</p>
+<p>参考: <a href="https://tech.meituan.com/2018/08/23/deep-understanding-of-jscore.html" target="_blank" rel="noopener">深入理解JSCore</a></p>
 
     
 
@@ -316,7 +298,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://hubin97.github.io/2023/04/10/iOS相关知识梳理/" title="iOS相关知识梳理" target="_blank">https://hubin97.github.io/2023/04/10/iOS相关知识梳理/</a>
+          <a href="https://hubin97.github.io/2023/04/10/iOS相关知识梳理(二) /" title="iOS相关知识梳理(二)" target="_blank">https://hubin97.github.io/2023/04/10/iOS相关知识梳理(二) /</a>
         </li>
         
         <li>
@@ -402,7 +384,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://hubin97.github.io/2023/04/10/iOS%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://hubin97.github.io/2023/04/10/iOS%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86(%E4%BA%8C)%20/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -417,11 +399,11 @@
 
 <nav id="article-nav">
   
-    <a href="/2023/10/08/RN%E6%8A%A5%E9%94%99%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/04/10/iOS%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86(%E4%B8%80)/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          RN报错总结
+          iOS相关知识梳理(一)
         
       </div>
     </a>
@@ -455,7 +437,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基础篇"><span class="toc-number">1.</span> <span class="toc-text">基础篇</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-UIView-不能接收触摸事件的三种情况"><span class="toc-number">1.1.</span> <span class="toc-text">1. UIView 不能接收触摸事件的三种情况:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-事件传递"><span class="toc-number">1.2.</span> <span class="toc-text">2. 事件传递</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-setNeedsDisplay-setNeedsLayout-layoutSubviews"><span class="toc-number">1.3.</span> <span class="toc-text">3. setNeedsDisplay, setNeedsLayout, layoutSubviews</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-区分UDID-amp-UUID-amp-IDFV"><span class="toc-number">1.4.</span> <span class="toc-text">4. 区分UDID&amp;UUID&amp;IDFV</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-const-static和-extern修饰"><span class="toc-number">1.5.</span> <span class="toc-text">5. const, static和 extern修饰</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-解析XML文件"><span class="toc-number">1.6.</span> <span class="toc-text">6. 解析XML文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-简述iOS内存分区情况"><span class="toc-number">1.7.</span> <span class="toc-text">7. 简述iOS内存分区情况</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-死锁的4个必要条件"><span class="toc-number">1.8.</span> <span class="toc-text">8. 死锁的4个必要条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-GCD零碎知识点"><span class="toc-number">1.9.</span> <span class="toc-text">9. GCD零碎知识点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-性能优化点"><span class="toc-number">1.10.</span> <span class="toc-text">10.性能优化点</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基础篇"><span class="toc-number">1.</span> <span class="toc-text">基础篇</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SVN和Git各适用于什么场景"><span class="toc-number">1.1.</span> <span class="toc-text">SVN和Git各适用于什么场景?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#instancetype和id区别"><span class="toc-number">1.2.</span> <span class="toc-text">instancetype和id区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#id类型-nil-Nil-NULL和NSNULL的区别"><span class="toc-number">1.3.</span> <span class="toc-text">id类型, nil , Nil ,NULL和NSNULL的区别?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AutoReleasePool什么时候释放池里面的对象"><span class="toc-number">1.4.</span> <span class="toc-text">AutoReleasePool什么时候释放池里面的对象?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSCore的几个特性"><span class="toc-number">1.5.</span> <span class="toc-text">JSCore的几个特性</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -482,7 +464,7 @@
     <script src="/lib/gitment.js"></script>
   
   <script>
-    <!-- id: "iOS相关知识梳理" -->
+    <!-- id: "iOS相关知识梳理(二)" -->
     var gitment = new Gitment({
       id: "20230410100301",
       owner: 'hubin97',
@@ -609,11 +591,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">涂鸦</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">涂鸦</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -629,11 +611,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OC</a>
+                <a href="javascript:void(0)" class="js-tag color2">FFmpeg</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
+                <a href="javascript:void(0)" class="js-tag color2">macosx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -641,11 +623,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">FFmpeg</a>
+                <a href="javascript:void(0)" class="js-tag color3">OC</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">macosx</a>
+                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -657,11 +639,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+                <a href="javascript:void(0)" class="js-tag color4">物联网</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -669,7 +647,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
+                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -681,11 +663,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">常用工具类</a>
+                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">物联网</a>
+                <a href="javascript:void(0)" class="js-tag color1">常用工具类</a>
               </li>
              
               <li class="article-tag-list-item">
